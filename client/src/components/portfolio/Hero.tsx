@@ -9,9 +9,14 @@ export function Hero() {
   const [wordWeights, setWordWeights] = useState({
     design: 200,
     education: 200,
-    ampersand: 200,
-    professional: 200,
-    practice: 200
+    and: 200,
+    experience: 200,
+    design2: 200,
+    practice: 200,
+    of: 200,
+    edwin: 200,
+    mauricio: 200,
+    olivera: 200
   });
 
   const backgroundImages = [home1, home2, home3];
@@ -43,12 +48,17 @@ export function Hero() {
         }, delay);
       };
 
-      // Design .... Education ..........&....Professional.....Practice
+      // Design education and experience design practice of Edwin Mauricio Olivera
       animateWord('design', 0);        // Start immediately
-      animateWord('education', 800);    // After "Design" with pause
-      animateWord('ampersand', 2000);   // Longer pause before "&"
-      animateWord('professional', 2400); // Short pause after "&"
-      animateWord('practice', 3200);    // Pause before "Practice"
+      animateWord('education', 500);   // After "Design"
+      animateWord('and', 1000);        // After "Education"
+      animateWord('experience', 1500);  // After "and"
+      animateWord('design2', 2000);    // After "experience"
+      animateWord('practice', 2500);   // After "design"
+      animateWord('of', 3000);         // After "practice"
+      animateWord('edwin', 3500);      // After "of"
+      animateWord('mauricio', 4000);   // After "Edwin"
+      animateWord('olivera', 4500);    // After "Mauricio"
     };
     
     setTimeout(animateWords, 800);
@@ -145,33 +155,44 @@ export function Hero() {
                 backdropFilter: 'blur(10px)'
               }}
             >
-              Education
+              education
             </span>
             <span 
               className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
               style={{ 
-                fontWeight: wordWeights.ampersand,
+                fontWeight: wordWeights.and,
                 backgroundColor: 'var(--bg-primary)',
                 opacity: 0.95,
                 backdropFilter: 'blur(10px)'
               }}
             >
-              &
+              and
+            </span>
+            <span 
+              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
+              style={{ 
+                fontWeight: wordWeights.experience,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
+              }}
+            >
+              experience
             </span>
             <br />
             <span 
               className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300 gradient-text"
               style={{ 
-                fontWeight: wordWeights.professional,
+                fontWeight: wordWeights.design2,
                 backgroundColor: 'var(--bg-primary)',
                 opacity: 0.95,
                 backdropFilter: 'blur(10px)'
               }}
             >
-              Professional
+              design
             </span>
             <span 
-              className="inline-block px-4 py-2 rounded-lg transition-all duration-300 gradient-text"
+              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300 gradient-text"
               style={{ 
                 fontWeight: wordWeights.practice,
                 backgroundColor: 'var(--bg-primary)',
@@ -179,7 +200,52 @@ export function Hero() {
                 backdropFilter: 'blur(10px)'
               }}
             >
-              Practice
+              practice
+            </span>
+            <span 
+              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
+              style={{ 
+                fontWeight: wordWeights.of,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
+              }}
+            >
+              of
+            </span>
+            <br />
+            <span 
+              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300 gradient-text"
+              style={{ 
+                fontWeight: wordWeights.edwin,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
+              }}
+            >
+              Edwin
+            </span>
+            <span 
+              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300 gradient-text"
+              style={{ 
+                fontWeight: wordWeights.mauricio,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
+              }}
+            >
+              Mauricio
+            </span>
+            <span 
+              className="inline-block px-4 py-2 rounded-lg transition-all duration-300 gradient-text"
+              style={{ 
+                fontWeight: wordWeights.olivera,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
+              }}
+            >
+              Olivera
             </span>
           </h1>
           
