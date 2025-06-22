@@ -115,25 +115,15 @@ export function Hero() {
       </div>
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl ml-auto relative z-10 pl-8">
-          {/* Background box for headline */}
-          <div 
-            className="relative p-8 rounded-lg mb-6 bg-[transparent]"
+          <h1 
+            className={`text-5xl md:text-7xl lg:text-8xl mb-6 delay-200 font-['Sono'] ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
             style={{ 
-              backgroundColor: 'var(--bg-primary)',
-              opacity: 0.95,
-              backdropFilter: 'blur(10px)'
+              color: 'var(--text-primary)',
+              lineHeight: '1.1'
             }}
           >
-            <h1 
-              className={`text-5xl md:text-7xl lg:text-8xl delay-200 font-['Sono'] ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-              }`}
-              style={{ 
-                color: 'var(--text-primary)',
-                lineHeight: '1.1',
-                marginBottom: 0
-              }}
-            >
             <span 
               className="transition-all duration-300 px-3 py-1 rounded"
               style={{ 
@@ -181,8 +171,7 @@ export function Hero() {
                 Practice
               </span>
             </span>
-            </h1>
-          </div>
+          </h1>
           
           <p 
             className={`text-lg md:text-xl font-light mb-8 max-w-3xl transition-all duration-800 delay-400 font-['Sono'] ${
