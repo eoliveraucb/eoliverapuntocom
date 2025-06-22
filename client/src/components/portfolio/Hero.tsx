@@ -159,29 +159,27 @@ export function Hero() {
               &
             </span>
             <br />
-            <span className="gradient-text inline-block">
-              <span 
-                className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
-                style={{ 
-                  fontWeight: wordWeights.professional,
-                  backgroundColor: 'var(--bg-primary)',
-                  opacity: 0.95,
-                  backdropFilter: 'blur(10px)'
-                }}
-              >
-                Professional
-              </span>
-              <span 
-                className="inline-block px-4 py-2 rounded-lg transition-all duration-300"
-                style={{ 
-                  fontWeight: wordWeights.practice,
-                  backgroundColor: 'var(--bg-primary)',
-                  opacity: 0.95,
-                  backdropFilter: 'blur(10px)'
-                }}
-              >
-                Practice
-              </span>
+            <span 
+              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300 gradient-text"
+              style={{ 
+                fontWeight: wordWeights.professional,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
+              }}
+            >
+              Professional
+            </span>
+            <span 
+              className="inline-block px-4 py-2 rounded-lg transition-all duration-300 gradient-text"
+              style={{ 
+                fontWeight: wordWeights.practice,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
+              }}
+            >
+              Practice
             </span>
           </h1>
           
