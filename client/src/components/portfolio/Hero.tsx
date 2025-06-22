@@ -115,63 +115,59 @@ export function Hero() {
       </div>
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl ml-auto relative z-10 pl-8">
-          <h1 
-            className={`text-5xl md:text-7xl lg:text-8xl mb-6 delay-200 font-['Sono'] ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }`}
+          {/* Background box for headline */}
+          <div 
+            className="relative p-8 rounded-lg mb-6 bg-[transparent]"
             style={{ 
-              color: 'var(--text-primary)',
-              lineHeight: '1.1'
+              backgroundColor: 'var(--bg-primary)',
+              opacity: 0.95,
+              backdropFilter: 'blur(10px)'
             }}
           >
-            <span 
-              className="transition-all duration-300 px-3 py-1 rounded"
+            <h1 
+              className={`text-5xl md:text-7xl lg:text-8xl delay-200 font-['Sono'] ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
               style={{ 
-                fontWeight: wordWeights.design,
-                backgroundColor: '#101013'
+                color: 'var(--text-primary)',
+                lineHeight: '1.1',
+                marginBottom: 0
               }}
+            >
+            <span 
+              className="transition-all duration-300"
+              style={{ fontWeight: wordWeights.design }}
             >
               Design
             </span>{' '}
             <span 
-              className="transition-all duration-300 px-3 py-1 rounded"
-              style={{ 
-                fontWeight: wordWeights.education,
-                backgroundColor: '#101013'
-              }}
+              className="transition-all duration-300"
+              style={{ fontWeight: wordWeights.education }}
             >
               Education
             </span>{' '}
             <span 
-              className="transition-all duration-300 px-3 py-1 rounded"
-              style={{ 
-                fontWeight: wordWeights.ampersand,
-                backgroundColor: '#101013'
-              }}
+              className="transition-all duration-300"
+              style={{ fontWeight: wordWeights.ampersand }}
             >
               &
             </span>
             <span className="gradient-text block">
               <span 
-                className="transition-all duration-300 px-3 py-1 rounded"
-                style={{ 
-                  fontWeight: wordWeights.professional,
-                  backgroundColor: '#101013'
-                }}
+                className="transition-all duration-300"
+                style={{ fontWeight: wordWeights.professional }}
               >
                 Professional
               </span>{' '}
               <span 
-                className="transition-all duration-300 px-3 py-1 rounded"
-                style={{ 
-                  fontWeight: wordWeights.practice,
-                  backgroundColor: '#101013'
-                }}
+                className="transition-all duration-300"
+                style={{ fontWeight: wordWeights.practice }}
               >
                 Practice
               </span>
             </span>
-          </h1>
+            </h1>
+          </div>
           
           <p 
             className={`text-lg md:text-xl font-light mb-8 max-w-3xl transition-all duration-800 delay-400 font-['Sono'] ${
