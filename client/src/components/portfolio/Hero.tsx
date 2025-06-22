@@ -138,9 +138,7 @@ export function Hero() {
           </div>
           
           <p 
-            className={`text-lg md:text-xl font-light mb-8 max-w-3xl transition-all duration-800 delay-400 font-['Sono'] ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }`}
+            className="text-lg md:text-xl font-light mb-8 max-w-3xl transition-all duration-800 delay-400 font-['Sono'] opacity-100 translate-y-0 text-left"
             style={{ color: 'var(--text-secondary)' }}
           >
             Hello! My name is Edwin Mauricio Olivera seeking opportunities in design faculty, curriculum design, emerging tech and interactive media.
