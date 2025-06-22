@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edwin Olivera | Digital Design Professor Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f5f5f7;
+      --text-primary: #121212;
+      --text-secondary: #555555;
+      --accent-primary: #6d59ff;
+      --accent-secondary: #ff5e94;
+      --accent-tertiary: #00d9ff;
+      --transition-speed: 0.3s;
+      --border-radius: 8px;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .dark {
+      --bg-primary: #121212;
+      --bg-secondary: #1e1e1e;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color var(--transition-speed), color var(--transition-speed);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    h3 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--border-radius);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--accent-primary);
+      color: white;
+      border-radius: var(--border-radius);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      border: none;
+      outline: none;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background-color: var(--accent-secondary);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: transparent;
+      color: var(--text-primary);
+      border: 2px solid var(--accent-primary);
+      border-radius: var(--border-radius);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      outline: none;
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      background-color: var(--accent-primary);
+      color: white;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: var(--bg-primary);
+      padding: 1rem 0;
+      box-shadow: var(--shadow);
+      transition: all var(--transition-speed);
+    }
+
+    .header.scrolled {
+      padding: 0.5rem 0;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Sono', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      letter-spacing: 0.625rem;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: var(--text-primary);
+      font-weight: 500;
+      position: relative;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--accent-primary);
+      transition: width var(--transition-speed);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: transform var(--transition-speed);
+      padding: 0.5rem;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(15deg);
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background-carousel {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .background-slide {
+      position: absolute;
+      inset: 0;
+      transition: all 3s ease-in-out;
+      opacity: 0;
+      transform: scale(1);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .background-slide.active {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      background: linear-gradient(to right, transparent 0%, var(--bg-primary) 80%);
+    }
+
+    .carousel-indicators {
+      position: absolute;
+      bottom: 5rem;
+      left: 2rem;
+      z-index: 30;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .carousel-indicator {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background-color: var(--text-secondary);
+      opacity: 0.5;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+    }
+
+    .carousel-indicator.active {
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--accent-primary);
+      opacity: 1;
+    }
+
+    .carousel-indicator:hover {
+      opacity: 0.75;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 20;
+    }
+
+    .hero-inner {
+      max-width: 4xl;
+      margin-left: auto;
+      position: relative;
+      z-index: 10;
+      padding-left: 2rem;
+    }
+
+    .headline-box {
+      position: relative;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 1.5rem;
+      background-color: var(--bg-primary);
+      opacity: 0.95;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+      font-family: 'Sono', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .word-animate {
+      transition: font-weight 0.3s ease;
+    }
+
+    .hero-subtitle {
+      font-family: 'Sono', sans-serif;
+      font-size: clamp(1.125rem, 2vw, 1.25rem);
+      font-weight: 300;
+      margin-bottom: 2rem;
+      max-width: 48rem;
+      color: var(--text-secondary);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-buttons {
+        flex-direction: row;
+      }
+    }
+
+    /* About Section */
+    .about {
+      background-color: var(--bg-secondary);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about-image {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .skills-container {
+      margin-top: 2rem;
+    }
+
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-bar {
+      height: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      border-radius: var(--border-radius);
+      width: 0;
+      transition: width 1s ease-out;
+    }
+
+    /* Font Demo */
+    .font-demo {
+      background-color: var(--bg-primary);
+      text-align: center;
+    }
+
+    .weight-demo {
+      font-family: 'Fraunces', serif;
+      font-size: 4rem;
+      line-height: 1.2;
+      transition: all var(--transition-speed);
+      margin-bottom: 1.5rem;
+    }
+
+    .weight-slider {
+      width: 100%;
+      margin-top: 1rem;
+      accent-color: var(--accent-primary);
+    }
+
+    .variation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .variation-item {
+      padding: 1.5rem;
+      background-color: var(--bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: all var(--transition-speed);
+      cursor: pointer;
+    }
+
+    .variation-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .variation-item.active {
+      ring: 2px solid var(--accent-primary);
+    }
+
+    /* Courses Section */
+    .courses {
+      background-color: var(--bg-secondary);
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      background-color: var(--bg-primary);
+      color: var(--text-secondary);
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: all var(--transition-speed);
+    }
+
+    .filter-btn.active {
+      background-color: var(--accent-primary);
+      color: white;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .course-card {
+      background-color: var(--bg-primary);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all var(--transition-speed);
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .course-image {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .course-card:hover .course-image {
+      transform: scale(1.05);
+    }
+
+    .course-content {
+      padding: 1.5rem;
+    }
+
+    .course-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .course-level {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: white;
+      background-color: var(--accent-primary);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .stat-number {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: var(--bg-primary);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .contact-info {
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--accent-primary);
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-link {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: var(--border-radius);
+      border: 1px solid #e2e8f0;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      transition: all 0.3s;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(109, 89, 255, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    /* Mobile Navigation */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 40;
+      background-color: var(--bg-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-link {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 767px) {
+      .nav-list {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+      }
+    }
+
+    /* Animations */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .bounce-slow {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+      }
+      40% {
+        transform: translateY(-20px) translateX(-50%);
+      }
+      60% {
+        transform: translateY(-10px) translateX(-50%);
+      }
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <div class="logo">EDWIN OLIVERA</div>
+      
+      <nav>
+        <ul class="nav-list">
+          <li><button class="nav-link" onclick="scrollToSection('home')">Home</button></li>
+          <li><button class="nav-link" onclick="scrollToSection('about')">About</button></li>
+          <li><button class="nav-link" onclick="scrollToSection('portfolio')">Portfolio</button></li>
+          <li><button class="nav-link" onclick="scrollToSection('contact')">Contact</button></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <button class="theme-toggle" onclick="toggleTheme()">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="mobile-nav-toggle" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-nav-link" onclick="scrollToSection('home'); toggleMobileMenu()">Home</button>
+    <button class="mobile-nav-link" onclick="scrollToSection('about'); toggleMobileMenu()">About</button>
+    <button class="mobile-nav-link" onclick="scrollToSection('portfolio'); toggleMobileMenu()">Portfolio</button>
+    <button class="mobile-nav-link" onclick="scrollToSection('contact'); toggleMobileMenu()">Contact</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <!-- Background Carousel -->
+    <div class="background-carousel">
+      <div class="background-slide active" style="background-image: url('attached_assets/home1_1750633823946.png')"></div>
+      <div class="background-slide" style="background-image: url('attached_assets/home2_1750633823946.png')"></div>
+      <div class="background-slide" style="background-image: url('attached_assets/home3_1750633823946.png')"></div>
+      <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+      <button class="carousel-indicator active" onclick="setCarouselSlide(0)"></button>
+      <button class="carousel-indicator" onclick="setCarouselSlide(1)"></button>
+      <button class="carousel-indicator" onclick="setCarouselSlide(2)"></button>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-inner">
+        <div class="headline-box">
+          <h1 class="hero-title">
+            <span class="word-animate" id="word-design">Design</span>
+            <span class="word-animate" id="word-education">Education</span>
+            <span class="word-animate" id="word-ampersand">&</span><br>
+            <span class="gradient-text">
+              <span class="word-animate" id="word-professional">Professional</span>
+              <span class="word-animate" id="word-practice">Practice</span>
+            </span>
+          </h1>
+        </div>
+        
+        <p class="hero-subtitle">
+          Hello! My name is Edwin Mauricio Olivera seeking opportunities in design faculty, curriculum design, emerging tech and interactive media.
+        </p>
+        
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary" onclick="scrollToSection('contact')">Get in touch</a>
+          <a href="#portfolio" class="btn-secondary" onclick="scrollToSection('portfolio')">View My Work</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator bounce-slow" onclick="scrollToSection('about')">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="attached_assets/profile-pic_1750628627934.png" alt="Edwin Olivera - Digital Design Professor">
+        </div>
+
+        <div>
+          <h2>About Me</h2>
+          
+          <div style="margin-bottom: 2rem;">
+            <p>As a Digital Design Professor with over 15 years of experience, I specialize in bridging the gap between traditional typography principles and modern digital design practices.</p>
+            
+            <p>My work focuses on developing innovative educational methodologies that empower the next generation of designers to create meaningful, accessible, and visually compelling digital experiences.</p>
+            
+            <p>I've published extensively on variable font technologies, responsive typography, and the intersection of design education with emerging digital platforms.</p>
+          </div>
+
+          <div class="skills-container">
+            <h3>Expertise</h3>
+            
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Typography Design</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="95"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Digital Education</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>User Experience</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Brand Identity</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="88"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Motion Graphics</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Research & Analysis</span>
+                <span>92%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="92"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Font Demo Section -->
+  <section class="section font-demo">
+    <div class="container">
+      <h2>Typography Exploration</h2>
+      
+      <p style="font-size: 1.25rem; margin-bottom: 3rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
+        Discover the power of variable fonts and responsive typography. Interactive demonstrations of font weight, spacing, and hierarchy.
+      </p>
+
+      <div style="margin-bottom: 3rem; max-width: 32rem; margin-left: auto; margin-right: auto;">
+        <h3 style="margin-bottom: 1rem;">Interactive Font Weight</h3>
+        
+        <div class="weight-demo" id="weight-demo" style="color: var(--text-primary);">
+          Beautiful Typography
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span style="font-size: 0.875rem; color: var(--text-secondary);">100</span>
+          <input type="range" min="100" max="900" step="100" value="400" class="weight-slider" 
+                 oninput="updateFontWeight(this.value)">
+          <span style="font-size: 0.875rem; color: var(--text-secondary);">900</span>
+        </div>
+        
+        <div style="margin-top: 0.5rem; font-size: 0.875rem; font-weight: 500; color: var(--accent-primary);">
+          Weight: <span id="weight-display">400</span>
+        </div>
+      </div>
+
+      <div class="variation-grid">
+        <div class="variation-item" onclick="selectVariation(this, 300)">
+          <h4>Light</h4>
+          <div style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 0.75rem;">Weight: 300</div>
+          <div style="font-family: 'Fraunces', serif; font-weight: 300; color: var(--text-primary);">
+            Typography is the craft of endowing human language with a durable visual form.
+          </div>
+        </div>
+
+        <div class="variation-item active" onclick="selectVariation(this, 400)">
+          <h4>Regular</h4>
+          <div style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 0.75rem;">Weight: 400</div>
+          <div style="font-family: 'Fraunces', serif; font-weight: 400; color: var(--text-primary);">
+            Good typography is invisible, but great typography is unforgettable.
+          </div>
+        </div>
+
+        <div class="variation-item" onclick="selectVariation(this, 500)">
+          <h4>Medium</h4>
+          <div style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 0.75rem;">Weight: 500</div>
+          <div style="font-family: 'Fraunces', serif; font-weight: 500; color: var(--text-primary);">
+            The details are not the details. They make the design.
+          </div>
+        </div>
+
+        <div class="variation-item" onclick="selectVariation(this, 700)">
+          <h4>Bold</h4>
+          <div style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 0.75rem;">Weight: 700</div>
+          <div style="font-family: 'Fraunces', serif; font-weight: 700; color: var(--text-primary);">
+            Simplicity is the ultimate sophistication in design.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div style="text-align: center; padding: 1.5rem;">
+          <div style="width: 4rem; height: 4rem; margin: 0 auto 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: var(--accent-primary);">
+            <i class="fas fa-eye" style="font-size: 1.5rem; color: white;"></i>
+          </div>
+          <h4 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">Readability</h4>
+          <p>Ensuring text is easily readable across all devices and screen sizes through careful attention to contrast, spacing, and font selection.</p>
+        </div>
+
+        <div style="text-align: center; padding: 1.5rem;">
+          <div style="width: 4rem; height: 4rem; margin: 0 auto 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: var(--accent-primary);">
+            <i class="fas fa-mobile-alt" style="font-size: 1.5rem; color: white;"></i>
+          </div>
+          <h4 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">Responsive Design</h4>
+          <p>Typography that adapts fluidly to different screen sizes while maintaining hierarchy and visual harmony.</p>
+        </div>
+
+        <div style="text-align: center; padding: 1.5rem;">
+          <div style="width: 4rem; height: 4rem; margin: 0 auto 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: var(--accent-primary);">
+            <i class="fas fa-universal-access" style="font-size: 1.5rem; color: white;"></i>
+          </div>
+          <h4 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">Accessibility</h4>
+          <p>Inclusive design practices that ensure typography is accessible to users with diverse abilities and needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="portfolio" class="section courses">
+    <div class="container">
+      <div style="margin-bottom: 3rem;">
+        <h2>Courses & Workshops</h2>
+        <p style="font-size: 1.25rem; max-width: 32rem;">
+          Comprehensive design education programs covering typography, UX design, branding, and digital accessibility.
+        </p>
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterCourses('all')">All Courses</button>
+        <button class="filter-btn" onclick="filterCourses('typography')">Typography</button>
+        <button class="filter-btn" onclick="filterCourses('ux')">User Experience</button>
+        <button class="filter-btn" onclick="filterCourses('branding')">Branding</button>
+        <button class="filter-btn" onclick="filterCourses('motion')">Motion Graphics</button>
+        <button class="filter-btn" onclick="filterCourses('accessibility')">Accessibility</button>
+        <button class="filter-btn" onclick="filterCourses('research')">Research</button>
+      </div>
+
+      <div class="courses-grid" id="courses-grid">
+        <!-- Course cards will be populated by JavaScript -->
+      </div>
+
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">2,500+</div>
+          <div style="font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);">Students Taught</div>
+        </div>
+        <div>
+          <div class="stat-number">15+</div>
+          <div style="font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);">Years Experience</div>
+        </div>
+        <div>
+          <div class="stat-number">50+</div>
+          <div style="font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);">Courses Created</div>
+        </div>
+        <div>
+          <div class="stat-number">25+</div>
+          <div style="font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);">Research Publications</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div style="text-center; margin-bottom: 3rem;">
+        <h2>Get In Touch</h2>
+        <p style="font-size: 1.25rem; max-width: 32rem; margin: 0 auto;">
+          Interested in collaboration, speaking engagements, or design education? I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem;">Let's Connect</h3>
+          
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <div style="font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; color: var(--text-secondary);">Email</div>
+                <a href="mailto:edwin.olivera@university.edu" style="color: var(--text-primary); text-decoration: none;">
+                  edwin.olivera@university.edu
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <div style="font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; color: var(--text-secondary);">Phone</div>
+                <a href="tel:+15551234567" style="color: var(--text-primary); text-decoration: none;">
+                  +1 (555) 123-4567
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <div style="font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; color: var(--text-secondary);">Location</div>
+                <div style="color: var(--text-primary);">San Francisco, CA</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-calendar"></i>
+              </div>
+              <div>
+                <div style="font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; color: var(--text-secondary);">Office Hours</div>
+                <div style="color: var(--text-primary);">Mon-Fri 9:00 AM - 5:00 PM PST</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Follow My Work</h4>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-medium"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name</label>
+              <input type="text" id="name" name="name" required class="form-input" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input type="email" id="email" name="email" required class="form-input" placeholder="your.email@example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required class="form-input" placeholder="What's this about?">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea id="message" name="message" required class="form-textarea" placeholder="Tell me about your project or inquiry..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem; font-weight: 600;">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Theme Management
+    let isDarkMode = localStorage.getItem('theme') === 'dark' || 
+                    (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    function applyTheme() {
+      document.body.classList.toggle('dark', isDarkMode);
+      document.getElementById('theme-icon').className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    function toggleTheme() {
+      isDarkMode = !isDarkMode;
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+      applyTheme();
+    }
+
+    // Navigation
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('open');
+    }
+
+    // Header scroll effect
+    function handleScroll() {
+      const header = document.getElementById('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    }
+
+    // Background Carousel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.background-slide');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+
+    function setCarouselSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      indicators[currentSlide].classList.remove('active');
+      
+      currentSlide = index;
+      
+      slides[currentSlide].classList.add('active');
+      indicators[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      setCarouselSlide((currentSlide + 1) % slides.length);
+    }
+
+    // Hero title animation
+    function animateHeroTitle() {
+      const words = [
+        { id: 'word-design', delay: 0 },
+        { id: 'word-education', delay: 800 },
+        { id: 'word-ampersand', delay: 2000 },
+        { id: 'word-professional', delay: 2400 },
+        { id: 'word-practice', delay: 3200 }
+      ];
+
+      words.forEach(word => {
+        setTimeout(() => {
+          const element = document.getElementById(word.id);
+          let weight = 200;
+          const interval = setInterval(() => {
+            weight += 50;
+            element.style.fontWeight = weight;
+            if (weight >= 800) {
+              clearInterval(interval);
+              setTimeout(() => {
+                element.style.fontWeight = 500;
+              }, 200);
+            }
+          }, 80);
+        }, word.delay);
+      });
+    }
+
+    // Font weight demo
+    function updateFontWeight(value) {
+      document.getElementById('weight-demo').style.fontWeight = value;
+      document.getElementById('weight-display').textContent = value;
+    }
+
+    function selectVariation(element, weight) {
+      document.querySelectorAll('.variation-item').forEach(item => item.classList.remove('active'));
+      element.classList.add('active');
+      
+      const slider = document.querySelector('.weight-slider');
+      slider.value = weight;
+      updateFontWeight(weight);
+    }
+
+    // Skills animation
+    function animateSkills() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const progressBars = entry.target.querySelectorAll('.skill-progress');
+            progressBars.forEach((bar, index) => {
+              setTimeout(() => {
+                bar.style.width = bar.dataset.width + '%';
+              }, index * 100);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      const aboutSection = document.getElementById('about');
+      observer.observe(aboutSection);
+    }
+
+    // Courses data and filtering
+    const courses = [
+      {
+        id: 1,
+        title: "Advanced Typography in Digital Design",
+        category: "typography",
+        description: "Master the principles of typography for digital platforms, including variable fonts, responsive text, and accessibility considerations.",
+        image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop",
+        duration: "12 weeks",
+        level: "Advanced",
+        students: 245
+      },
+      {
+        id: 2,
+        title: "User Experience Fundamentals",
+        category: "ux",
+        description: "Comprehensive introduction to UX design principles, user research methodologies, and design thinking processes.",
+        image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=250&fit=crop",
+        duration: "10 weeks",
+        level: "Beginner",
+        students: 892
+      },
+      {
+        id: 3,
+        title: "Brand Identity Systems",
+        category: "branding",
+        description: "Create cohesive brand identities from concept to implementation, including logo design, color systems, and brand guidelines.",
+        image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=250&fit=crop",
+        duration: "8 weeks",
+        level: "Intermediate",
+        students: 567
+      },
+      {
+        id: 4,
+        title: "Motion Graphics for Digital Media",
+        category: "motion",
+        description: "Learn animation principles, kinetic typography, and motion design for web, mobile, and social media platforms.",
+        image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=250&fit=crop",
+        duration: "14 weeks",
+        level: "Intermediate",
+        students: 334
+      },
+      {
+        id: 5,
+        title: "Accessible Design Practices",
+        category: "accessibility",
+        description: "Design inclusive digital experiences that work for everyone, covering WCAG guidelines, color accessibility, and assistive technologies.",
+        image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=250&fit=crop",
+        duration: "6 weeks",
+        level: "Intermediate",
+        students: 421
+      },
+      {
+        id: 6,
+        title: "Design Research Methods",
+        category: "research",
+        description: "Comprehensive guide to design research, including user interviews, usability testing, and data analysis techniques.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+        duration: "9 weeks",
+        level: "Advanced",
+        students: 198
+      }
+    ];
+
+    function renderCourses(coursesToRender) {
+      const grid = document.getElementById('courses-grid');
+      grid.innerHTML = coursesToRender.map(course => `
+        <div class="course-card" data-category="${course.category}">
+          <div style="position: relative; overflow: hidden;">
+            <img src="${course.image}" alt="${course.title}" class="course-image">
+            <div class="course-level">${course.level}</div>
+          </div>
+          <div class="course-content">
+            <div class="course-meta">
+              <span style="font-size: 0.875rem; font-weight: 500; color: var(--accent-primary);">
+                ${course.duration}
+              </span>
+              <span style="font-size: 0.875rem; color: var(--text-secondary);">
+                ${course.students} students
+              </span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.4;">
+              ${course.title}
+            </h3>
+            <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+              ${course.description}
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <button style="font-size: 0.875rem; font-weight: 500; color: var(--accent-primary); background: none; border: none; cursor: pointer;">
+                Learn More
+              </button>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-users" style="font-size: 0.875rem; color: var(--text-secondary);"></i>
+                <span style="font-size: 0.875rem; color: var(--text-secondary);">
+                  ${course.students}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterCourses(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const filteredCourses = category === 'all' ? courses : courses.filter(course => course.category === category);
+      renderCourses(filteredCourses);
+    }
+
+    // Form handling
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+      
+      console.log('Form submitted:', data);
+      alert('Thank you for your message! I\'ll get back to you soon.');
+      
+      event.target.reset();
+    }
+
+    // Initialize everything
+    document.addEventListener('DOMContentLoaded', function() {
+      applyTheme();
+      window.addEventListener('scroll', handleScroll);
+      
+      // Start carousel
+      setInterval(nextSlide, 8000);
+      
+      // Start animations
+      setTimeout(animateHeroTitle, 800);
+      animateSkills();
+      
+      // Render courses
+      renderCourses(courses);
+    });
+  </script>
+</body>
+</html>
