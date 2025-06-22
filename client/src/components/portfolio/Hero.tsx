@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
+import home1 from "@assets/home1_1750633823946.png";
+import home2 from "@assets/home2_1750633823946.png";
+import home3 from "@assets/home3_1750633823946.png";
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [wordWeights, setWordWeights] = useState({
     design: 200,
     education: 200,
@@ -10,8 +14,15 @@ export function Hero() {
     practice: 200
   });
 
+  const backgroundImages = [home1, home2, home3];
+
   useEffect(() => {
     setIsVisible(true);
+    
+    // Background carousel - start after font animation completes
+    const carouselInterval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 8000); // Change image every 8 seconds
     
     // Sequential font weight animation for each word
     const animateWords = () => {
@@ -41,7 +52,11 @@ export function Hero() {
     };
     
     setTimeout(animateWords, 800);
-  }, []);
+    
+    return () => {
+      clearInterval(carouselInterval);
+    };
+  }, [backgroundImages.length]);
 
   const scrollToNext = () => {
     const aboutSection = document.getElementById("about");
@@ -54,8 +69,54 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="hero-bg min-h-screen flex items-center relative overflow-hidden">
-      <div className="container">
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
+      {/* Background Carousel */}
+      <div className="absolute inset-0 z-0">
+        {backgroundImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-all duration-3000 ease-in-out ${
+              index === currentImageIndex ? 'opacity-25 scale-105' : 'opacity-0 scale-100'
+            }`}
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+        ))}
+        {/* Dark overlay for better text readability */}
+        <div 
+          className="absolute inset-0 z-10"
+          style={{ 
+            backgroundColor: 'var(--bg-primary)',
+            opacity: 0.85
+          }}
+        />
+      </div>
+
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-20 right-8 z-30 flex flex-col gap-3">
+        {backgroundImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentImageIndex 
+                ? 'w-4 h-4' 
+                : 'opacity-50 hover:opacity-75'
+            }`}
+            style={{ 
+              backgroundColor: index === currentImageIndex 
+                ? 'var(--accent-primary)' 
+                : 'var(--text-secondary)' 
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container relative z-20">
         <div className="hero-content max-w-4xl relative z-10">
           <h1 
             className="md:text-7xl lg:text-8xl mb-6 delay-200 font-['Sono'] opacity-100 translate-y-0 text-[58px]"
