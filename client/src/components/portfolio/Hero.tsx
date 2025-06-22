@@ -6,18 +6,7 @@ import home3 from "@assets/home3_1750633823946.png";
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [wordWeights, setWordWeights] = useState({
-    design: 200,
-    education: 200,
-    and: 200,
-    experience: 200,
-    design2: 200,
-    practice: 200,
-    of: 200,
-    edwin: 200,
-    mauricio: 200,
-    olivera: 200
-  });
+  const [headlineFontWeight, setHeadlineFontWeight] = useState(200);
 
   const backgroundImages = [home1, home2, home3];
 
@@ -29,39 +18,25 @@ export function Hero() {
       setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
     }, 8000); // Change image every 8 seconds
     
-    // Sequential font weight animation for each word
-    const animateWords = () => {
-      const animateWord = (wordKey: keyof typeof wordWeights, delay: number) => {
-        setTimeout(() => {
-          let weight = 200;
-          const interval = setInterval(() => {
-            weight += 50;
-            setWordWeights(prev => ({ ...prev, [wordKey]: weight }));
-            if (weight >= 800) {
-              clearInterval(interval);
-              // Settle to medium weight
-              setTimeout(() => {
-                setWordWeights(prev => ({ ...prev, [wordKey]: 500 }));
-              }, 200);
-            }
-          }, 80);
-        }, delay);
-      };
-
-      // Design education and experience design practice of Edwin Mauricio Olivera
-      animateWord('design', 0);        // Start immediately
-      animateWord('education', 500);   // After "Design"
-      animateWord('and', 1000);        // After "Education"
-      animateWord('experience', 1500);  // After "and"
-      animateWord('design2', 2000);    // After "experience"
-      animateWord('practice', 2500);   // After "design"
-      animateWord('of', 3000);         // After "practice"
-      animateWord('edwin', 3500);      // After "of"
-      animateWord('mauricio', 4000);   // After "Edwin"
-      animateWord('olivera', 4500);    // After "Mauricio"
+    // Animate entire headline font weight
+    const animateHeadline = () => {
+      setTimeout(() => {
+        let weight = 200;
+        const interval = setInterval(() => {
+          weight += 50;
+          setHeadlineFontWeight(weight);
+          if (weight >= 800) {
+            clearInterval(interval);
+            // Settle to medium weight
+            setTimeout(() => {
+              setHeadlineFontWeight(500);
+            }, 300);
+          }
+        }, 120);
+      }, 0);
     };
     
-    setTimeout(animateWords, 800);
+    setTimeout(animateHeadline, 800);
     
     return () => {
       clearInterval(carouselInterval);
@@ -125,129 +100,29 @@ export function Hero() {
       </div>
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl ml-auto relative z-10 pl-8">
-          <h1 
-            className={`text-5xl md:text-7xl lg:text-8xl mb-6 delay-200 font-['Sono'] ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }`}
+          <div 
+            className="relative p-6 rounded-lg mb-6"
             style={{ 
-              color: 'var(--text-primary)',
-              lineHeight: '1.4',
-              marginBottom: '1.5rem'
+              backgroundColor: 'var(--bg-primary)',
+              opacity: 0.95,
+              backdropFilter: 'blur(10px)'
             }}
           >
-            <span 
-              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
+            <h1 
+              className={`text-3xl md:text-4xl lg:text-5xl font-['Sono'] transition-all duration-300 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
               style={{ 
-                fontWeight: wordWeights.design,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
+                color: 'var(--text-primary)',
+                lineHeight: '1.4',
+                marginBottom: 0,
+                fontWeight: headlineFontWeight
               }}
             >
-              Design
-            </span>
-            <span 
-              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
-              style={{ 
-                fontWeight: wordWeights.education,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
-              }}
-            >
-              education
-            </span>
-            <span 
-              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
-              style={{ 
-                fontWeight: wordWeights.and,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
-              }}
-            >
-              and
-            </span>
-            <span 
-              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
-              style={{ 
-                fontWeight: wordWeights.experience,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
-              }}
-            >
-              experience
-            </span>
-            <br />
-            <span 
-              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300 gradient-text"
-              style={{ 
-                fontWeight: wordWeights.design2,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
-              }}
-            >
-              design
-            </span>
-            <span 
-              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300 gradient-text"
-              style={{ 
-                fontWeight: wordWeights.practice,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
-              }}
-            >
-              practice
-            </span>
-            <span 
-              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
-              style={{ 
-                fontWeight: wordWeights.of,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
-              }}
-            >
-              of
-            </span>
-            <br />
-            <span 
-              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300 gradient-text"
-              style={{ 
-                fontWeight: wordWeights.edwin,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
-              }}
-            >
-              Edwin
-            </span>
-            <span 
-              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300 gradient-text"
-              style={{ 
-                fontWeight: wordWeights.mauricio,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
-              }}
-            >
-              Mauricio
-            </span>
-            <span 
-              className="inline-block px-4 py-2 rounded-lg transition-all duration-300 gradient-text"
-              style={{ 
-                fontWeight: wordWeights.olivera,
-                backgroundColor: 'var(--bg-primary)',
-                opacity: 0.95,
-                backdropFilter: 'blur(10px)'
-              }}
-            >
-              Olivera
-            </span>
-          </h1>
+              Design education and experience design practice of{' '}
+              <span className="gradient-text">Edwin Mauricio Olivera</span>
+            </h1>
+          </div>
           
           <p 
             className={`text-lg md:text-xl font-light mb-8 max-w-3xl transition-all duration-800 delay-400 font-['Sono'] ${
