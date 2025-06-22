@@ -13,10 +13,22 @@ export function Hero() {
   useEffect(() => {
     setIsVisible(true);
     
-    // Background carousel - start after font animation completes
+    // Background carousel with flickering effect
     const carouselInterval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
-    }, 8000); // Change image every 8 seconds
+      // Create flickering effect before transition
+      const flicker = () => {
+        setCurrentImageIndex((prev) => {
+          const next = (prev + 1) % backgroundImages.length;
+          // Rapid flicker between current and next
+          setTimeout(() => setCurrentImageIndex(prev), 50);
+          setTimeout(() => setCurrentImageIndex(next), 100);
+          setTimeout(() => setCurrentImageIndex(prev), 150);
+          setTimeout(() => setCurrentImageIndex(next), 200);
+          return next;
+        });
+      };
+      flicker();
+    }, 4000); // Change image every 4 seconds with flicker
     
     // Animate entire headline font weight
     const animateHeadline = () => {
@@ -55,32 +67,33 @@ export function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Background Carousel - Left Side */}
-      <div className="absolute left-0 top-0 w-1/2 h-full z-0 overflow-hidden">
+      {/* Background Carousel - Full Screen */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         {backgroundImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-3000 ease-in-out ${
-              index === currentImageIndex ? 'opacity-70 scale-105' : 'opacity-0 scale-100'
+            className={`absolute inset-0 transition-opacity duration-100 ${
+              index === currentImageIndex ? 'opacity-80' : 'opacity-0'
             }`}
             style={{
               backgroundImage: `url(${image})`,
-              backgroundSize: 'cover',
+              backgroundSize: 'contain',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
             }}
           />
         ))}
-        {/* Gradient overlay for smooth transition to content */}
+        {/* Dark overlay for text readability */}
         <div 
           className="absolute inset-0 z-10"
           style={{ 
-            background: `linear-gradient(to right, transparent 0%, var(--bg-primary) 80%)`
+            backgroundColor: 'var(--bg-primary)',
+            opacity: 0.6
           }}
         />
       </div>
       {/* Carousel Indicators */}
-      <div className="absolute bottom-20 left-8 z-30 flex flex-col gap-3">
+      <div className="absolute bottom-8 right-8 z-30 flex gap-3">
         {backgroundImages.map((_, index) => (
           <button
             key={index}
@@ -99,7 +112,7 @@ export function Hero() {
         ))}
       </div>
       <div className="container relative z-20">
-        <div className="hero-content max-w-4xl ml-auto relative z-10 pl-8">
+        <div className="hero-content max-w-4xl mx-auto relative z-10 text-center">
           <div 
             className="relative p-6 rounded-lg mb-6"
             style={{ 
