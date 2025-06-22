@@ -95,7 +95,6 @@ export function Hero() {
           }}
         />
       </div>
-
       {/* Carousel Indicators */}
       <div className="absolute bottom-20 right-8 z-30 flex flex-col gap-3">
         {backgroundImages.map((_, index) => (
@@ -115,11 +114,10 @@ export function Hero() {
           />
         ))}
       </div>
-
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl relative z-10">
           <h1 
-            className="md:text-7xl lg:text-8xl mb-6 delay-200 font-['Sono'] opacity-100 translate-y-0 text-[58px]"
+            className="md:text-7xl lg:text-8xl mb-6 delay-200 font-['Sono'] opacity-100 translate-y-0 text-[66px]"
             style={{ 
               color: 'var(--text-primary)',
               lineHeight: '1.1'
