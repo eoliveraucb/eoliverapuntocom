@@ -70,13 +70,13 @@ export function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Background Carousel */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Carousel - Left Side */}
+      <div className="absolute left-0 top-0 w-1/2 h-full z-0 overflow-hidden">
         {backgroundImages.map((image, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-all duration-3000 ease-in-out ${
-              index === currentImageIndex ? 'opacity-25 scale-105' : 'opacity-0 scale-100'
+              index === currentImageIndex ? 'opacity-70 scale-105' : 'opacity-0 scale-100'
             }`}
             style={{
               backgroundImage: `url(${image})`,
@@ -86,17 +86,16 @@ export function Hero() {
             }}
           />
         ))}
-        {/* Dark overlay for better text readability */}
+        {/* Gradient overlay for smooth transition to content */}
         <div 
           className="absolute inset-0 z-10"
           style={{ 
-            backgroundColor: 'var(--bg-primary)',
-            opacity: 0.85
+            background: `linear-gradient(to right, transparent 0%, var(--bg-primary) 80%)`
           }}
         />
       </div>
       {/* Carousel Indicators */}
-      <div className="absolute bottom-20 right-8 z-30 flex flex-col gap-3">
+      <div className="absolute bottom-20 left-8 z-30 flex flex-col gap-3">
         {backgroundImages.map((_, index) => (
           <button
             key={index}
@@ -115,14 +114,26 @@ export function Hero() {
         ))}
       </div>
       <div className="container relative z-20">
-        <div className="hero-content max-w-4xl relative z-10">
-          <h1 
-            className="md:text-7xl lg:text-8xl mb-6 delay-200 font-['Sono'] opacity-100 translate-y-0 text-[66px]"
+        <div className="hero-content max-w-4xl ml-auto relative z-10 pl-8">
+          {/* Background box for headline */}
+          <div 
+            className="relative p-8 rounded-lg mb-6"
             style={{ 
-              color: 'var(--text-primary)',
-              lineHeight: '1.1'
+              backgroundColor: 'var(--bg-primary)',
+              opacity: 0.95,
+              backdropFilter: 'blur(10px)'
             }}
           >
+            <h1 
+              className={`text-5xl md:text-7xl lg:text-8xl delay-200 font-['Sono'] ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+              style={{ 
+                color: 'var(--text-primary)',
+                lineHeight: '1.1',
+                marginBottom: 0
+              }}
+            >
             <span 
               className="transition-all duration-300"
               style={{ fontWeight: wordWeights.design }}
@@ -155,7 +166,8 @@ export function Hero() {
                 Practice
               </span>
             </span>
-          </h1>
+            </h1>
+          </div>
           
           <p 
             className={`text-lg md:text-xl font-light mb-8 max-w-3xl transition-all duration-800 delay-400 font-['Sono'] ${
