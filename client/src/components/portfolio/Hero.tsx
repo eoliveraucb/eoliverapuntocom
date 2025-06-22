@@ -47,9 +47,7 @@ export function Hero() {
       <div className="container">
         <div className="hero-content max-w-4xl relative z-10">
           <h1 
-            className={`text-5xl md:text-7xl lg:text-8xl mb-6 transition-all duration-300 delay-200 font-['Sono'] ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }`}
+            className="md:text-7xl lg:text-8xl mb-6 transition-all duration-300 delay-200 font-['Sono'] opacity-100 translate-y-0 text-[50px]"
             style={{ 
               color: 'var(--text-primary)',
               fontWeight: fontWeight,
@@ -89,7 +87,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-      
       {/* Scroll Indicator */}
       <div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce-slow cursor-pointer"
