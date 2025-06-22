@@ -115,57 +115,75 @@ export function Hero() {
       </div>
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl ml-auto relative z-10 pl-8">
-          {/* Background box for headline */}
-          <div 
-            className="relative p-8 rounded-lg mb-6 bg-[transparent] pl-[0px] pr-[0px] ml-[0px] mr-[0px]"
+          <h1 
+            className={`text-5xl md:text-7xl lg:text-8xl mb-6 delay-200 font-['Sono'] ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
             style={{ 
-              backgroundColor: 'var(--bg-primary)',
-              opacity: 0.95,
-              backdropFilter: 'blur(10px)'
+              color: 'var(--text-primary)',
+              lineHeight: '1.4',
+              marginBottom: '1.5rem'
             }}
           >
-            <h1 
-              className="md:text-7xl lg:text-8xl delay-200 font-['Sono'] opacity-100 translate-y-0 text-[48px]"
+            <span 
+              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
               style={{ 
-                color: 'var(--text-primary)',
-                lineHeight: '1.1',
-                marginBottom: 0
+                fontWeight: wordWeights.design,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
               }}
             >
-            <span 
-              className="transition-all duration-300"
-              style={{ fontWeight: wordWeights.design }}
-            >
               Design
-            </span>{' '}
+            </span>
             <span 
-              className="transition-all duration-300"
-              style={{ fontWeight: wordWeights.education }}
+              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
+              style={{ 
+                fontWeight: wordWeights.education,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
+              }}
             >
               Education
-            </span>{' '}
+            </span>
             <span 
-              className="transition-all duration-300"
-              style={{ fontWeight: wordWeights.ampersand }}
+              className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
+              style={{ 
+                fontWeight: wordWeights.ampersand,
+                backgroundColor: 'var(--bg-primary)',
+                opacity: 0.95,
+                backdropFilter: 'blur(10px)'
+              }}
             >
               &
             </span>
-            <span className="gradient-text block">
+            <br />
+            <span className="gradient-text inline-block">
               <span 
-                className="transition-all duration-300"
-                style={{ fontWeight: wordWeights.professional }}
+                className="inline-block px-4 py-2 rounded-lg mr-3 mb-2 transition-all duration-300"
+                style={{ 
+                  fontWeight: wordWeights.professional,
+                  backgroundColor: 'var(--bg-primary)',
+                  opacity: 0.95,
+                  backdropFilter: 'blur(10px)'
+                }}
               >
                 Professional
-              </span>{' '}
+              </span>
               <span 
-                className="transition-all duration-300"
-                style={{ fontWeight: wordWeights.practice }}
+                className="inline-block px-4 py-2 rounded-lg transition-all duration-300"
+                style={{ 
+                  fontWeight: wordWeights.practice,
+                  backgroundColor: 'var(--bg-primary)',
+                  opacity: 0.95,
+                  backdropFilter: 'blur(10px)'
+                }}
               >
                 Practice
               </span>
             </span>
-            </h1>
-          </div>
+          </h1>
           
           <p 
             className={`text-lg md:text-xl font-light mb-8 max-w-3xl transition-all duration-800 delay-400 font-['Sono'] ${
