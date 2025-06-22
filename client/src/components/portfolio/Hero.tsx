@@ -117,7 +117,7 @@ export function Hero() {
         <div className="hero-content max-w-4xl ml-auto relative z-10 pl-8">
           {/* Background box for headline */}
           <div 
-            className="relative p-8 rounded-lg mb-6"
+            className="relative p-8 rounded-lg mb-6 bg-[transparent]"
             style={{ 
               backgroundColor: 'var(--bg-primary)',
               opacity: 0.95,
