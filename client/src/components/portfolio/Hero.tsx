@@ -2,34 +2,45 @@ import { useEffect, useState } from "react";
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
-  const [fontWeight, setFontWeight] = useState(200);
+  const [wordWeights, setWordWeights] = useState({
+    design: 200,
+    education: 200,
+    ampersand: 200,
+    professional: 200,
+    practice: 200
+  });
 
   useEffect(() => {
     setIsVisible(true);
     
-    // Animate font weight on load
-    const animateWeight = () => {
-      let weight = 200;
-      const interval = setInterval(() => {
-        weight += 25;
-        setFontWeight(weight);
-        if (weight >= 800) {
-          clearInterval(interval);
-          // Animate back down for a subtle effect
-          setTimeout(() => {
-            const reverseInterval = setInterval(() => {
-              weight -= 50;
-              setFontWeight(weight);
-              if (weight <= 400) {
-                clearInterval(reverseInterval);
-              }
-            }, 100);
-          }, 500);
-        }
-      }, 150);
+    // Sequential font weight animation for each word
+    const animateWords = () => {
+      const animateWord = (wordKey: keyof typeof wordWeights, delay: number) => {
+        setTimeout(() => {
+          let weight = 200;
+          const interval = setInterval(() => {
+            weight += 50;
+            setWordWeights(prev => ({ ...prev, [wordKey]: weight }));
+            if (weight >= 800) {
+              clearInterval(interval);
+              // Settle to medium weight
+              setTimeout(() => {
+                setWordWeights(prev => ({ ...prev, [wordKey]: 500 }));
+              }, 200);
+            }
+          }, 80);
+        }, delay);
+      };
+
+      // Design .... Education ..........&....Professional.....Practice
+      animateWord('design', 0);        // Start immediately
+      animateWord('education', 800);    // After "Design" with pause
+      animateWord('ampersand', 2000);   // Longer pause before "&"
+      animateWord('professional', 2400); // Short pause after "&"
+      animateWord('practice', 3200);    // Pause before "Practice"
     };
     
-    setTimeout(animateWeight, 800);
+    setTimeout(animateWords, 800);
   }, []);
 
   const scrollToNext = () => {
@@ -47,15 +58,46 @@ export function Hero() {
       <div className="container">
         <div className="hero-content max-w-4xl relative z-10">
           <h1 
-            className="md:text-7xl lg:text-8xl mb-6 transition-all duration-300 delay-200 font-['Sono'] opacity-100 translate-y-0 text-[50px]"
+            className={`text-5xl md:text-7xl lg:text-8xl mb-6 delay-200 font-['Sono'] ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
             style={{ 
               color: 'var(--text-primary)',
-              fontWeight: fontWeight,
               lineHeight: '1.1'
             }}
           >
-            Design Education &
-            <span className="gradient-text block">Professional Practice</span>
+            <span 
+              className="transition-all duration-300"
+              style={{ fontWeight: wordWeights.design }}
+            >
+              Design
+            </span>{' '}
+            <span 
+              className="transition-all duration-300"
+              style={{ fontWeight: wordWeights.education }}
+            >
+              Education
+            </span>{' '}
+            <span 
+              className="transition-all duration-300"
+              style={{ fontWeight: wordWeights.ampersand }}
+            >
+              &
+            </span>
+            <span className="gradient-text block">
+              <span 
+                className="transition-all duration-300"
+                style={{ fontWeight: wordWeights.professional }}
+              >
+                Professional
+              </span>{' '}
+              <span 
+                className="transition-all duration-300"
+                style={{ fontWeight: wordWeights.practice }}
+              >
+                Practice
+              </span>
+            </span>
           </h1>
           
           <p 
