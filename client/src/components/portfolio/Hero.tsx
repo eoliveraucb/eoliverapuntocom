@@ -114,7 +114,7 @@ export function Hero() {
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl mx-auto relative z-10 text-center">
           <div 
-            className="relative p-6 rounded-lg mb-6"
+            className="relative p-6 rounded-lg mb-6 text-left"
             style={{ 
               backgroundColor: 'var(--bg-primary)',
               opacity: 0.95,
