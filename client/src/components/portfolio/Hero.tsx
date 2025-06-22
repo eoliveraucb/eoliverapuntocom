@@ -135,33 +135,48 @@ export function Hero() {
               }}
             >
             <span 
-              className="transition-all duration-300"
-              style={{ fontWeight: wordWeights.design }}
+              className="transition-all duration-300 px-3 py-1 rounded"
+              style={{ 
+                fontWeight: wordWeights.design,
+                backgroundColor: '#101013'
+              }}
             >
               Design
             </span>{' '}
             <span 
-              className="transition-all duration-300"
-              style={{ fontWeight: wordWeights.education }}
+              className="transition-all duration-300 px-3 py-1 rounded"
+              style={{ 
+                fontWeight: wordWeights.education,
+                backgroundColor: '#101013'
+              }}
             >
               Education
             </span>{' '}
             <span 
-              className="transition-all duration-300"
-              style={{ fontWeight: wordWeights.ampersand }}
+              className="transition-all duration-300 px-3 py-1 rounded"
+              style={{ 
+                fontWeight: wordWeights.ampersand,
+                backgroundColor: '#101013'
+              }}
             >
               &
             </span>
             <span className="gradient-text block">
               <span 
-                className="transition-all duration-300"
-                style={{ fontWeight: wordWeights.professional }}
+                className="transition-all duration-300 px-3 py-1 rounded"
+                style={{ 
+                  fontWeight: wordWeights.professional,
+                  backgroundColor: '#101013'
+                }}
               >
                 Professional
               </span>{' '}
               <span 
-                className="transition-all duration-300"
-                style={{ fontWeight: wordWeights.practice }}
+                className="transition-all duration-300 px-3 py-1 rounded"
+                style={{ 
+                  fontWeight: wordWeights.practice,
+                  backgroundColor: '#101013'
+                }}
               >
                 Practice
               </span>
