@@ -116,14 +116,11 @@ export function Hero() {
         ))}
       </div>
       <div className="container relative z-20">
-        <div className="hero-content max-w-4xl mx-auto relative z-10 text-center pl-[95px] pr-[95px]">
+        <div className="hero-content max-w-4xl mx-auto relative z-10 text-center pl-[120px] pr-[120px]">
           <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
-              borderRadius: "10px",
-              backgroundColor: "#101013",
-              display: "initial",
-              fontWeight: 500,
+              backgroundColor: "var(--bg-primary)",
               opacity: 0.95,
               backdropFilter: "blur(10px)",
             }}
@@ -134,12 +131,12 @@ export function Hero() {
                 color: "var(--text-primary)",
                 lineHeight: "1.2",
                 marginBottom: 0,
-                fontWeight: 500,
+                fontWeight: headlineFontWeight,
               }}
             >
               Design education & professional<br />
               experience design practice of<br />
-              <span className="gradient-text" style={{ backgroundColor: "#101013", padding: "4px 8px", borderRadius: "4px" }}>Edwin Mauricio Olivera</span>
+              <span className="gradient-text">Edwin Mauricio Olivera</span>
             </h1>
           </div>
 
