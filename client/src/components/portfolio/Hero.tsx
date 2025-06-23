@@ -120,11 +120,12 @@ export function Hero() {
           <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
+              borderRadius: "10px",
               backgroundColor: "#101013",
+              display: "initial",
+              fontWeight: 500,
               opacity: 0.95,
               backdropFilter: "blur(10px)",
-              borderRadius: "10px",
-              display: "initial",
             }}
           >
             <h1
@@ -134,9 +135,6 @@ export function Hero() {
                 lineHeight: "1.2",
                 marginBottom: 0,
                 fontWeight: 500,
-                borderRadius: "10px",
-                backgroundColor: "#101013",
-                display: "initial",
               }}
             >
               Design education & professional<br />
