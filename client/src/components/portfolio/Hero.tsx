@@ -77,7 +77,7 @@ export function Hero() {
       {/* Background Carousel - Full Screen */}
       <div
         className="absolute inset-0 z-0 overflow-hidden"
-        style={{ marginLeft: "-276px" }}
+        style={{ marginLeft: "-150px" }}
       >
         {backgroundImages.map((image, index) => (
           <div
@@ -88,7 +88,7 @@ export function Hero() {
             style={{
               backgroundImage: `url(${image})`,
               backgroundSize: "contain",
-              backgroundPosition: "center",
+              backgroundPosition: "left center",
               backgroundRepeat: "no-repeat",
             }}
           />
@@ -123,7 +123,7 @@ export function Hero() {
         ))}
       </div>
       <div className="container relative z-20">
-        <div className="hero-content max-w-4xl mx-auto relative z-10 text-center pl-[98px] pr-[98px]">
+        <div className="hero-content max-w-4xl ml-auto mr-0 relative z-10 text-center pl-[98px] pr-[98px]" style={{ marginRight: '2rem' }}>
           <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
