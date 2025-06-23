@@ -321,6 +321,9 @@ export function Hero() {
               backgroundSize: "contain",
               backgroundPosition: "left center",
               backgroundRepeat: "no-repeat",
+              transition: 'opacity 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              transform: `perspective(1000px) rotateX(${index === currentImageIndex ? '1deg' : '0deg'}) rotateY(${index === currentImageIndex ? '-0.5deg' : '0deg'}) scale(${index === currentImageIndex ? 1.02 : 1}) translateZ(${index === currentImageIndex ? '5px' : '0px'})`,
+              transformOrigin: 'center center',
             }}
           />
         ))}
