@@ -37,12 +37,12 @@ const courses: Course[] = [
   {
     id: 2,
     title: "Sensory Design Workshop",
-    category: "Multisensory Experience",
-    description: "Focus on designing multisensory experiences involving sound, smell, and touch. Learn digital audio manipulation with Audacity, binaural sounds, and designing without visuals through natural plant exploration and creative sensory work.",
+    category: "Speculative Design",
+    description: "Students collaborate in groups using futures thinking and speculative design concepts to create presentation web prototypes with native HTML, CSS, and JavaScript. This example showcases a futuristic service using neuralink-type devices to create 3D printed textures of specific memories.",
     duration: "4 weeks",
     level: "Intermediate",
     format: "Hybrid",
-    skills: ["Audio Design", "Multisensory Input", "Prototyping", "Accessibility Design"],
+    skills: ["Futures Thinking", "Speculative Design", "Web Prototyping", "Neural Interface Design"],
     image: courseImage2
   },
   {
@@ -126,6 +126,14 @@ export function Courses() {
                 {course.id === 1 ? (
                   <iframe
                     src="https://www.youtube.com/embed/PuGE5PVlhic?autoplay=1&mute=1&controls=0&loop=1&playlist=PuGE5PVlhic"
+                    title={course.title}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : course.id === 2 ? (
+                  <iframe
+                    src="https://www.youtube.com/embed/w3ZcEwXYIt0?autoplay=1&mute=1&controls=0&loop=1&playlist=w3ZcEwXYIt0"
                     title={course.title}
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
