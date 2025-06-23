@@ -34,7 +34,7 @@ export function ProjectHighlight() {
         <div className="mb-16">
           <div className="aspect-video rounded-lg overflow-hidden max-w-4xl mx-auto">
             <iframe
-              src="https://www.youtube.com/embed/WD1bq2K42W0"
+              src="https://www.youtube.com/embed/WD1bq2K42W0?autoplay=1&mute=1&controls=0&loop=1&playlist=WD1bq2K42W0"
               title="Crypto Design Student Project"
               className="w-full h-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
