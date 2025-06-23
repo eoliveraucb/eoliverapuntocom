@@ -72,74 +72,19 @@ function FocusCarousel() {
 
   return (
     <div 
-      className="relative w-full h-64 rounded-xl overflow-hidden"
+      className="relative w-full h-96 rounded-xl overflow-hidden"
       style={{ 
         backgroundColor: 'var(--bg-primary)',
         boxShadow: 'var(--shadow)'
       }}
     >
-      {/* Slides */}
-      <div className="relative w-full h-full">
-        {focusAreas.map((area, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-out ${
-              index === currentSlide 
-                ? 'opacity-100 transform translate-x-0' 
-                : index < currentSlide
-                ? 'opacity-0 transform -translate-x-full'
-                : 'opacity-0 transform translate-x-full'
-            }`}
-          >
-            <div className="flex flex-col justify-center items-center h-full p-6 text-center">
-              <div 
-                className="text-xs font-medium mb-3 px-2 py-1 rounded-full"
-                style={{ 
-                  backgroundColor: 'var(--accent-primary)',
-                  color: 'white'
-                }}
-              >
-                {String(index + 1).padStart(2, '0')} / {String(focusAreas.length).padStart(2, '0')}
-              </div>
-              
-              <h4 
-                className="text-lg font-['Fraunces'] font-semibold mb-4"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                {area.title}
-              </h4>
-              
-              <p 
-                className="text-sm leading-relaxed max-w-sm font-['Atlassian_Sans_Ext']"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                {area.description.split(/\b(hands-on|cross-disciplinary|analog|digital|peer mentorship|community-led|cultural knowledge|AI)\b/gi).map((part, i) => 
-                  area.keywords.some(keyword => keyword.toLowerCase() === part.toLowerCase()) ? (
-                    <span 
-                      key={i}
-                      className="px-1 py-0.5 rounded text-xs mx-0.5 font-medium"
-                      style={{ 
-                        background: 'linear-gradient(135deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%))',
-                        color: 'white'
-                      }}
-                    >
-                      {part}
-                    </span>
-                  ) : part
-                )}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
       {/* Indicators */}
-      <div className="absolute top-3 left-1/2 transform -translate-x-1/2 flex gap-1.5">
+      <div className="absolute top-6 left-1/2 transform -translate-x-1/2 flex gap-2">
         {focusAreas.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === currentSlide 
                 ? 'scale-150' 
                 : 'scale-100 opacity-50'
@@ -153,11 +98,74 @@ function FocusCarousel() {
         ))}
       </div>
 
+      {/* Slide Counter */}
+      <div 
+        className="absolute top-12 left-1/2 transform -translate-x-1/2 text-xs font-medium px-3 py-1 rounded-full"
+        style={{ 
+          backgroundColor: 'var(--accent-primary)',
+          color: 'white'
+        }}
+      >
+        {String(currentSlide + 1).padStart(2, '0')} / {String(focusAreas.length).padStart(2, '0')}
+      </div>
+
+      {/* Slides */}
+      <div className="relative w-full h-full">
+        {focusAreas.map((area, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-all duration-1000 ease-out ${
+              index === currentSlide 
+                ? 'opacity-100 transform translate-x-0' 
+                : index < currentSlide
+                ? 'opacity-0 transform -translate-x-full'
+                : 'opacity-0 transform translate-x-full'
+            }`}
+          >
+            <div className="flex flex-col justify-center items-center h-full p-8 text-center">
+              <h4 
+                className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                {area.title}
+              </h4>
+              
+              <p 
+                className="text-base leading-relaxed max-w-md font-['Atlassian_Sans_Ext']"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                Integrating{" "}
+                <span 
+                  className="px-2 py-1 rounded-md mx-1 font-medium"
+                  style={{ 
+                    background: 'linear-gradient(135deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%))',
+                    color: 'white'
+                  }}
+                >
+                  {area.keywords[0]}
+                </span>
+                {" "}and{" "}
+                <span 
+                  className="px-2 py-1 rounded-md mx-1 font-medium"
+                  style={{ 
+                    background: 'linear-gradient(135deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%))',
+                    color: 'white'
+                  }}
+                >
+                  {area.keywords[1] || area.keywords[0]}
+                </span>
+                {" "}approaches for skill-building, combining traditional methods with modern technology to create comprehensive learning pathways.
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Controls */}
-      <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-3">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4">
         <button
           onClick={prevSlide}
-          className="w-8 h-8 rounded-full border transition-all duration-300 hover:scale-105 flex items-center justify-center text-sm"
+          className="w-10 h-10 rounded-full border transition-all duration-300 hover:scale-105 flex items-center justify-center"
           style={{ 
             backgroundColor: 'var(--bg-secondary)',
             borderColor: 'var(--text-secondary)',
@@ -168,7 +176,7 @@ function FocusCarousel() {
         </button>
         <button
           onClick={nextSlide}
-          className="w-8 h-8 rounded-full border transition-all duration-300 hover:scale-105 flex items-center justify-center text-sm"
+          className="w-10 h-10 rounded-full border transition-all duration-300 hover:scale-105 flex items-center justify-center"
           style={{ 
             backgroundColor: 'var(--bg-secondary)',
             borderColor: 'var(--text-secondary)',
@@ -216,12 +224,16 @@ export function About() {
     >
       <div className="container">
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left Side: Profile Image and Carousel */}
+          {/* Left Side: Profile Image and About Text */}
           <div 
             className={`space-y-8 transition-all duration-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
+            <h2 className="mb-6 font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
+              About Me
+            </h2>
+            
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
                 src={profileImage} 
@@ -230,53 +242,51 @@ export function About() {
               />
             </div>
             
-            {/* Areas of Focus Carousel */}
-            <div>
-              <h3 
-                className="text-xl font-['Fraunces'] font-semibold mb-6 text-center"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                Areas of Focus
-              </h3>
-              <FocusCarousel />
+            <div className="space-y-4">
+              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
+                I am a graduate of the MFA program in Design for Social Innovation at the School of Visual Arts in New York. My work explores how design can be leveraged as a tool for social transformation—particularly within education systems that serve marginalized and underrepresented communities.
+              </p>
+              
+              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
+                Drawing from over 15 years of creative experience across disciplines, I develop hands-on, innovative learning experiences that merge technology, culture, and community engagement. My practice emphasizes collaboration, peer mentorship, and the integration of analog and digital approaches to help learners build skills that are adaptable, resilient, and future-focused.
+              </p>
+              
+              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
+                Much of my recent work centers on making emerging technologies—including AI—accessible and meaningful for students and educators in Latin America. I believe in the power of co-creation and aim to design educational models that empower learners to shape their own futures, while staying grounded in cultural knowledge and social context.
+              </p>
+
+              <p className="font-['Atlassian_Sans_Ext'] mt-6" style={{ color: 'var(--text-secondary)' }}>
+                My approach is driven by curiosity, empathy, and a commitment to lifelong learning. I am always excited to collaborate with others who share a vision for inclusive, impactful design education.
+              </p>
             </div>
           </div>
 
-          {/* Right Side: About Content */}
+          {/* Right Side: Areas of Focus */}
           <div 
             className={`transition-all duration-500 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
             <h2 className="mb-6 font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
-              About Me
+              Areas of Focus
             </h2>
+            <FocusCarousel />
             
             <div className="space-y-4">
               <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
-                I am a designer, educator, and recent graduate of the MFA program in Design for Social Innovation 
-                at the School of Visual Arts in New York. My work explores how design can be leveraged as a tool 
-                for social transformation—particularly within education systems that serve marginalized and 
-                underrepresented communities.
+                I am a graduate of the MFA program in Design for Social Innovation at the School of Visual Arts in New York. My work explores how design can be leveraged as a tool for social transformation—particularly within education systems that serve marginalized and underrepresented communities.
               </p>
               
               <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
-                Drawing from over 15 years of creative experience across disciplines, I develop hands-on, 
-                innovative learning experiences that merge technology, culture, and community engagement. 
-                My practice emphasizes collaboration, peer mentorship, and the integration of analog and 
-                digital approaches to help learners build skills that are adaptable, resilient, and future-focused.
+                Drawing from over 15 years of creative experience across disciplines, I develop hands-on, innovative learning experiences that merge technology, culture, and community engagement. My practice emphasizes collaboration, peer mentorship, and the integration of analog and digital approaches to help learners build skills that are adaptable, resilient, and future-focused.
               </p>
               
               <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
-                Much of my recent work centers on making emerging technologies—including AI—accessible and 
-                meaningful for students and educators in Latin America. I believe in the power of co-creation 
-                and aim to design educational models that empower learners to shape their own futures, while 
-                staying grounded in cultural knowledge and social context.
+                Much of my recent work centers on making emerging technologies—including AI—accessible and meaningful for students and educators in Latin America. I believe in the power of co-creation and aim to design educational models that empower learners to shape their own futures, while staying grounded in cultural knowledge and social context.
               </p>
 
               <p className="font-['Atlassian_Sans_Ext'] mt-6" style={{ color: 'var(--text-secondary)' }}>
-                My approach is driven by curiosity, empathy, and a commitment to lifelong learning. I am always 
-                excited to collaborate with others who share a vision for inclusive, impactful design education.
+                My approach is driven by curiosity, empathy, and a commitment to lifelong learning. I am always excited to collaborate with others who share a vision for inclusive, impactful design education.
               </p>
             </div>
           </div>
