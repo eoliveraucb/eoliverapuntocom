@@ -50,7 +50,7 @@ export default function Resume() {
           <div className="text-xl text-blue-600 font-semibold mb-4 print:text-lg">
             Design Strategist | UX/UI Designer | Social Innovation
           </div>
-          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed print:text-sm">
+          <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed print:text-sm">
             Strategic design leader with 15+ years of global experience bridging UX/UI, social innovation, and ethical tech. 
             Recent MFA in Design for Social Innovation at SVA, specializing in turning complex systems into participatory, 
             inclusive, and human-centered experiences. From corporate UX for telecom giants to grassroots tools for NGOs, 
@@ -61,19 +61,19 @@ export default function Resume() {
           <div className="flex flex-wrap justify-center gap-6 mt-6 text-sm print:gap-4 print:mt-4">
             <div className="flex items-center gap-2">
               <i className="fas fa-globe text-blue-600"></i>
-              <a href="http://emauric.io" className="text-gray-600 hover:text-blue-600">emauric.io</a>
+              <a href="http://emauric.io" className="text-gray-400 hover:text-blue-600">emauric.io</a>
             </div>
             <div className="flex items-center gap-2">
               <i className="fas fa-phone text-blue-600"></i>
-              <a href="tel:+13323614198" className="text-gray-600 hover:text-blue-600">332-361-4198</a>
+              <a href="tel:+13323614198" className="text-gray-400 hover:text-blue-600">332-361-4198</a>
             </div>
             <div className="flex items-center gap-2">
               <i className="fas fa-envelope text-blue-600"></i>
-              <a href="mailto:eolivera@sva.edu" className="text-gray-600 hover:text-blue-600">eolivera@sva.edu</a>
+              <a href="mailto:eolivera@sva.edu" className="text-gray-400 hover:text-blue-600">eolivera@sva.edu</a>
             </div>
             <div className="flex items-center gap-2">
               <i className="fab fa-linkedin text-blue-600"></i>
-              <a href="http://www.linkedin.com/in/emolivera" className="text-gray-600 hover:text-blue-600">linkedin.com/in/emolivera</a>
+              <a href="http://www.linkedin.com/in/emolivera" className="text-gray-400 hover:text-blue-600">linkedin.com/in/emolivera</a>
             </div>
           </div>
         </header>
@@ -90,9 +90,9 @@ export default function Resume() {
                 <div>
                   <h3 className="text-lg font-semibold print:text-base" style={{ color: 'var(--text-primary)' }}>Senior UX/UI Designer</h3>
                   <div className="text-blue-600 font-medium">Digital Academy</div>
-                  <div className="text-gray-500 text-sm">Cleveland, Ohio</div>
+                  <div className="text-gray-400 text-sm">Cleveland, Ohio</div>
                 </div>
-                <div className="text-gray-600 font-medium text-sm">2021 — Current</div>
+                <div className="text-gray-500 font-medium text-sm">2021 — Current</div>
               </div>
               <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
                 <li>Led comprehensive redesign of K-12 LMS platform, resulting in 45% increase in user satisfaction and expansion to 2 new dioceses, serving 600+ students</li>
@@ -107,9 +107,9 @@ export default function Resume() {
                 <div>
                   <h3 className="text-lg font-semibold print:text-base" style={{ color: 'var(--text-primary)' }}>Adjunct Faculty</h3>
                   <div className="text-blue-600 font-medium">Universidad Católica Boliviana</div>
-                  <div className="text-gray-500 text-sm">La Paz, Bolivia</div>
+                  <div className="text-gray-400 text-sm">La Paz, Bolivia</div>
                 </div>
-                <div className="text-gray-600 font-medium text-sm">2020 — 2024</div>
+                <div className="text-gray-500 font-medium text-sm">2020 — 2024</div>
               </div>
               <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
                 <li>Professor of Digital Design and UX/UI, and Program Coordinator of Continuing Education. Led the country's first accredited bachelor's degree program in Digital Design</li>
@@ -124,9 +124,9 @@ export default function Resume() {
                 <div>
                   <h3 className="text-lg font-semibold print:text-base" style={{ color: 'var(--text-primary)' }}>Senior UX Designer</h3>
                   <div className="text-blue-600 font-medium">Vulcan Software</div>
-                  <div className="text-gray-500 text-sm">La Paz, Bolivia</div>
+                  <div className="text-gray-400 text-sm">La Paz, Bolivia</div>
                 </div>
-                <div className="text-gray-600 font-medium text-sm">2018 — 2021</div>
+                <div className="text-gray-500 font-medium text-sm">2018 — 2021</div>
               </div>
               <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
                 <li>Redesigned financial management SaaS tools for education clients, incorporating role-based dashboards and accessibility-first workflows for Milicomm Tigo (Sweden, LATAM)</li>
@@ -140,9 +140,9 @@ export default function Resume() {
                 <div>
                   <h3 className="text-lg font-semibold print:text-base" style={{ color: 'var(--text-primary)' }}>Sr. Digital Art Director</h3>
                   <div className="text-blue-600 font-medium">Stealth Creative</div>
-                  <div className="text-gray-500 text-sm">Remote</div>
+                  <div className="text-gray-400 text-sm">Remote</div>
                 </div>
-                <div className="text-gray-600 font-medium text-sm">2013 — 2016</div>
+                <div className="text-gray-500 font-medium text-sm">2013 — 2016</div>
               </div>
               <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
                 <li>Led UX/UI design for 20+ B2B SaaS platforms, including administrative dashboards for business enterprise clients: Spectrum Enterprise, Comcast Enterprise, RCN Business, improving task completion rates by 35% through intuitive interface redesigns</li>
@@ -164,18 +164,18 @@ export default function Resume() {
               <div>
                 <h3 className="text-lg font-semibold print:text-base" style={{ color: 'var(--text-primary)' }}>Masters of Design for Social Innovation</h3>
                 <div className="text-blue-600 font-medium">School of Visual Arts</div>
-                <div className="text-gray-500 text-sm">New York City, NY</div>
+                <div className="text-gray-400 text-sm">New York City, NY</div>
               </div>
-              <div className="text-gray-600 font-medium text-sm">2023 — 2025</div>
+              <div className="text-gray-500 font-medium text-sm">2023 — 2025</div>
             </div>
             
             <div className="flex justify-between items-start">
               <div>
                 <h3 className="text-lg font-semibold print:text-base" style={{ color: 'var(--text-primary)' }}>BFA Graphic Design, BS Sociology</h3>
                 <div className="text-blue-600 font-medium">The University of Memphis</div>
-                <div className="text-gray-500 text-sm">Memphis, TN</div>
+                <div className="text-gray-400 text-sm">Memphis, TN</div>
               </div>
-              <div className="text-gray-600 font-medium text-sm">2003 — 2009</div>
+              <div className="text-gray-500 font-medium text-sm">2003 — 2009</div>
             </div>
           </div>
         </section>
