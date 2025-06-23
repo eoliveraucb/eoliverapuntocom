@@ -123,7 +123,15 @@ export function Courses() {
               }}
             >
               <div className="aspect-video overflow-hidden">
-                {course.id === 3 ? (
+                {course.id === 1 ? (
+                  <iframe
+                    src="https://www.youtube.com/embed/PuGE5PVlhic?autoplay=1&mute=1&controls=0&loop=1&playlist=PuGE5PVlhic"
+                    title={course.title}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : course.id === 3 ? (
                   <iframe
                     src="https://www.youtube.com/embed/-Nwveq3EAZo"
                     title={course.title}
