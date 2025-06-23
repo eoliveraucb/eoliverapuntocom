@@ -97,12 +97,7 @@ export function Header() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:scale-110 transition-transform duration-200"
-                  style={{ 
-                    background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-linkedin text-lg"></i>
                 </a>
@@ -111,12 +106,7 @@ export function Header() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:scale-110 transition-transform duration-200"
-                  style={{ 
-                    background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-instagram text-lg"></i>
                 </a>
@@ -125,12 +115,7 @@ export function Header() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:scale-110 transition-transform duration-200"
-                  style={{ 
-                    background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-whatsapp text-lg"></i>
                 </a>
@@ -139,12 +124,7 @@ export function Header() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:scale-110 transition-transform duration-200"
-                  style={{ 
-                    background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-discord text-lg"></i>
                 </a>
@@ -153,12 +133,7 @@ export function Header() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:scale-110 transition-transform duration-200"
-                  style={{ 
-                    background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-soundcloud text-lg"></i>
                 </a>
@@ -167,12 +142,7 @@ export function Header() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:scale-110 transition-transform duration-200"
-                  style={{ 
-                    background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-behance text-lg"></i>
                 </a>
@@ -241,12 +211,7 @@ export function Header() {
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform duration-200"
-              style={{ 
-                background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-linkedin text-2xl"></i>
             </a>
@@ -255,12 +220,7 @@ export function Header() {
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform duration-200"
-              style={{ 
-                background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-instagram text-2xl"></i>
             </a>
@@ -269,12 +229,7 @@ export function Header() {
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform duration-200"
-              style={{ 
-                background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-whatsapp text-2xl"></i>
             </a>
@@ -283,12 +238,7 @@ export function Header() {
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform duration-200"
-              style={{ 
-                background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-discord text-2xl"></i>
             </a>
@@ -297,12 +247,7 @@ export function Header() {
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform duration-200"
-              style={{ 
-                background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-soundcloud text-2xl"></i>
             </a>
@@ -311,12 +256,7 @@ export function Header() {
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform duration-200"
-              style={{ 
-                background: 'linear-gradient(to right, #9333ea, #3b82f6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-behance text-2xl"></i>
             </a>

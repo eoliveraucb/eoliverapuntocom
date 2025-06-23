@@ -235,7 +235,7 @@ export function Hero() {
         ref={canvasRef}
         className="absolute inset-0 z-0"
         style={{ 
-          background: 'linear-gradient(135deg, #101013 0%, #1a1a2e 50%, #16213e 100%)',
+          background: 'purple',
           opacity: 0.8
         }}
       />
@@ -336,7 +336,23 @@ export function Hero() {
             </h1>
           </div>
 
-          
+          <div
+            className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
+            style={{
+              backgroundColor: "var(--bg-primary)",
+              opacity: 0.95,
+              backdropFilter: "blur(4px)",
+            }}
+          >
+            <p
+              className="text-lg md:text-xl max-w-3xl transition-all duration-800 delay-400 font-['Roboto_Flex'] opacity-100 translate-y-0 text-left font-medium mt-[28px] mb-[28px]"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              Hello! My name is Edwin Mauricio Olivera seeking opportunities in
+              design faculty, curriculum design, emerging tech and interactive
+              media.
+            </p>
+          </div>
 
           <div
             className={`flex flex-col sm:flex-row gap-4 transition-all duration-800 delay-600 ${
@@ -349,21 +365,21 @@ export function Hero() {
               className="btn-primary btn-ripple px-8 py-4 font-['Sono']"
               onClick={() =>
                 document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Get in touch
-            </button>
-            <button
-              className="btn-secondary px-8 py-4 font-['Sono']"
-              onClick={() =>
-                document
                   .getElementById("portfolio")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              View My Work
+              Design Practice
+            </button>
+            <button
+              className="btn-primary px-8 py-4 font-['Sono']"
+              onClick={() =>
+                document
+                  .getElementById("projects-and-exercises")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Education Experience
             </button>
           </div>
         </div>
