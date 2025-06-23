@@ -124,7 +124,7 @@ export function Hero() {
       </div>
       <div className="w-full relative z-20 px-4">
         <div
-          className="hero-content max-w-4xl relative z-10 text-center ml-[69.3985px] mr-[69.3985px] pl-[48px] pr-[48px] mt-[0px] mb-[0px] pt-[0px] pb-[0px]"
+          className="hero-content max-w-4xl relative z-10 text-center pl-[48px] pr-[48px] mt-[0px] mb-[0px] pt-[0px] pb-[0px] ml-[9.3985px] mr-[9.3985px]"
           style={{ marginLeft: "40%", marginRight: "2rem" }}
         >
           <div
