@@ -90,8 +90,8 @@ export function Hero() {
         <div
           className="absolute inset-0 z-10"
           style={{
-            backgroundColor: "var(--bg-primary)",
-            opacity: 0.2,
+            backgroundColor: "hsl(240, 10%, 12%)",
+            opacity: 0.1,
           }}
         />
       </div>
@@ -120,9 +120,10 @@ export function Hero() {
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl mx-auto relative z-10 text-center">
           <div
-            className="relative mb-6 text-left"
+            className="relative mb-6 text-left p-6 rounded-lg"
             style={{
-              textShadow: "2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.8)",
+              backgroundColor: "hsl(240, 10%, 12%)",
+              textShadow: "2px 2px 8px hsl(240, 10%, 12%), 0 0 10px hsl(240, 10%, 12%)",
             }}
           >
             <h1
