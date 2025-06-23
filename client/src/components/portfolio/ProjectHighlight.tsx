@@ -115,18 +115,14 @@ export function ProjectHighlight() {
 
           {/* Visual Element */}
           <div className="relative">
-            <div 
-              className="aspect-square rounded-lg p-8 flex items-center justify-center"
-              style={{ 
-                background: 'linear-gradient(135deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%))',
-                color: 'white'
-              }}
-            >
-              <div className="text-center">
-                <div className="text-6xl mb-4">₿</div>
-                <h4 className="text-2xl font-['Fraunces'] font-bold mb-2">KUSILLX</h4>
-                <p className="font-['Atlassian Sans Ext'] opacity-90">Bolivian Cryptocurrency Consortium</p>
-              </div>
+            <div className="aspect-video rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/WD1bq2K42W0"
+                title="Crypto Design Student Project"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
