@@ -7,7 +7,20 @@ interface Course {
   level: string;
   format: string;
   skills: string[];
+  image: string;
 }
+
+// Import course images
+import courseImage1 from '@assets/Digital Design 4 _ Digital Workshop 1_1750640874283.jpeg';
+import courseImage2 from '@assets/Digital Design 4 _ Digital Workshop 2_1750640874282.jpeg';
+import courseImage3 from '@assets/Digital Design 4 _ Digital Workshop 3_1750640874282.jpeg';
+import courseImage4 from '@assets/Digital Design 4 _ Digital Workshop 4_1750640874282.jpeg';
+import courseImage6 from '@assets/Digital Design 4 _ Digital Workshop 6_1750640874282.jpeg';
+import courseImage8 from '@assets/Digital Design 4 _ Digital Workshop 8_1750640874282.jpeg';
+import courseImage9 from '@assets/Digital Design 4 _ Digital Workshop 9_1750640874282.jpeg';
+import courseImage10 from '@assets/Digital Design 4 _ Digital Workshop 10_1750640874282.jpeg';
+import courseImage11 from '@assets/Digital Design 4 _ Digital Workshop 11_1750640874283.jpeg';
+import courseImage12 from '@assets/Digital Design 4 _ Digital Workshop 12_1750640874282.jpeg';
 
 const courses: Course[] = [
   {
@@ -18,7 +31,8 @@ const courses: Course[] = [
     duration: "1 Semester",
     level: "Advanced",
     format: "Online (Zoom)",
-    skills: ["Speculative Design", "Systems Thinking", "Emerging Technologies", "UX/UI Design"]
+    skills: ["Speculative Design", "Systems Thinking", "Emerging Technologies", "UX/UI Design"],
+    image: courseImage1
   },
   {
     id: 2,
@@ -28,7 +42,8 @@ const courses: Course[] = [
     duration: "4 weeks",
     level: "Intermediate",
     format: "Hybrid",
-    skills: ["Audio Design", "Multisensory Input", "Prototyping", "Accessibility Design"]
+    skills: ["Audio Design", "Multisensory Input", "Prototyping", "Accessibility Design"],
+    image: courseImage2
   },
   {
     id: 3,
@@ -38,7 +53,8 @@ const courses: Course[] = [
     duration: "6 weeks",
     level: "Advanced",
     format: "Online",
-    skills: ["AR/XR Development", "Projection Mapping", "Machine Learning", "Prompt Design"]
+    skills: ["AR/XR Development", "Projection Mapping", "Machine Learning", "Prompt Design"],
+    image: courseImage3
   },
   {
     id: 4,
@@ -48,7 +64,8 @@ const courses: Course[] = [
     duration: "8 weeks",
     level: "Intermediate",
     format: "Online",
-    skills: ["Creative Coding", "p5.js", "Systems Mapping", "Brand Systems"]
+    skills: ["Creative Coding", "p5.js", "Systems Mapping", "Brand Systems"],
+    image: courseImage4
   },
   {
     id: 5,
@@ -58,7 +75,8 @@ const courses: Course[] = [
     duration: "10 weeks",
     level: "Advanced",
     format: "Online",
-    skills: ["Blockchain", "Smart Contracts", "NFT Creation", "Speculative Design"]
+    skills: ["Blockchain", "Smart Contracts", "NFT Creation", "Speculative Design"],
+    image: courseImage6
   },
   {
     id: 6,
@@ -68,7 +86,8 @@ const courses: Course[] = [
     duration: "5 weeks",
     level: "Beginner",
     format: "Online",
-    skills: ["Figma", "UX Testing", "Analytics", "Team Collaboration"]
+    skills: ["Figma", "UX Testing", "Analytics", "Team Collaboration"],
+    image: courseImage8
   }
 ];
 
@@ -104,20 +123,11 @@ export function Courses() {
               }}
             >
               <div className="aspect-video overflow-hidden">
-                <div 
-                  className="w-full h-full flex items-center justify-center text-6xl transition-transform duration-300 group-hover:scale-110"
-                  style={{ 
-                    background: 'linear-gradient(135deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%))',
-                    color: 'white'
-                  }}
-                >
-                  {course.category === 'Interactive Design' && '🎨'}
-                  {course.category === 'Multisensory Experience' && '👂'}
-                  {course.category === 'Extended Reality' && '🥽'}
-                  {course.category === 'Creative Coding' && '💻'}
-                  {course.category === 'Blockchain & Web3' && '⛓️'}
-                  {course.category === 'Collaborative Design' && '🤝'}
-                </div>
+                <img
+                  src={course.image}
+                  alt={course.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
               </div>
               
               <div className="p-6">
@@ -331,6 +341,52 @@ export function Courses() {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Course Materials Gallery */}
+        <div className="mt-20">
+          <h3 
+            className="text-2xl font-['Fraunces'] font-semibold mb-8 text-center"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Course Materials & Student Work
+          </h3>
+          <div className="masonry-grid columns-2 md:columns-3 lg:columns-4 gap-4">
+            {[
+              { image: courseImage9, title: "Interactive Design Boards", category: "Design Process" },
+              { image: courseImage10, title: "Digital Reality Exercises", category: "AR/XR Projects" },
+              { image: courseImage11, title: "Student Collaboration", category: "Team Work" },
+              { image: courseImage12, title: "Creative Coding Examples", category: "p5.js Projects" }
+            ].map((material, index) => (
+              <div
+                key={index}
+                className="masonry-item group relative overflow-hidden rounded-lg mb-4 cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-1"
+                style={{ 
+                  backgroundColor: 'var(--bg-primary)',
+                  boxShadow: 'var(--shadow)'
+                }}
+              >
+                <img
+                  src={material.image}
+                  alt={material.title}
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div 
+                      className="text-xs font-medium mb-1 font-['Atlassian Sans Ext']"
+                      style={{ color: 'var(--accent-primary)' }}
+                    >
+                      {material.category}
+                    </div>
+                    <h4 className="text-white font-['Fraunces'] font-medium text-sm leading-tight">
+                      {material.title}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
