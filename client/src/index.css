@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atlassian+Sans+Ext:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -78,13 +82,14 @@
     @apply font-sans antialiased;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Atlassian Sans Ext', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     transition: background-color var(--transition-speed), color var(--transition-speed);
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
     font-weight: 700;
     letter-spacing: -0.5px;
     margin-bottom: 1rem;

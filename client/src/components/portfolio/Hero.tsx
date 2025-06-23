@@ -126,7 +126,7 @@ export function Hero() {
             }}
           >
             <h1
-              className="text-3xl md:text-[44px] font-['Sono'] transition-all duration-300 opacity-100 translate-y-0"
+              className="text-3xl md:text-[44px] font-['Fraunces'] transition-all duration-300 opacity-100 translate-y-0"
               style={{
                 color: "var(--text-primary)",
                 lineHeight: "1.2",
@@ -141,7 +141,7 @@ export function Hero() {
           </div>
 
           <p
-            className="text-lg md:text-xl max-w-3xl transition-all duration-800 delay-400 font-['Sono'] opacity-100 translate-y-0 text-left font-medium mt-[28px] mb-[28px]"
+            className="text-lg md:text-xl max-w-3xl transition-all duration-800 delay-400 font-['Atlassian_Sans_Ext'] opacity-100 translate-y-0 text-left font-medium mt-[28px] mb-[28px]"
             style={{ color: "var(--text-secondary)" }}
           >
             Hello! My name is Edwin Mauricio Olivera seeking opportunities in

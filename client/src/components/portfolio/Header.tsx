@@ -45,7 +45,7 @@ export function Header() {
           {/* Logo */}
           <div className="logo">
             <div 
-              className="flex items-center gap-3 h-8 text-xl font-bold tracking-[0.625rem]"
+              className="flex items-center gap-3 h-8 text-xl font-bold tracking-[0.625rem] font-['Fraunces']"
               style={{ color: 'var(--text-primary)' }}
             >
               EDWIN OLIVERA
@@ -112,7 +112,7 @@ export function Header() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link"
+              className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link font-['Fraunces']"
               style={{ color: 'var(--text-primary)' }}
             >
               {item.label}
