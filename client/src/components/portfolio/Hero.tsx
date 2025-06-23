@@ -120,7 +120,7 @@ export function Hero() {
           <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
-              backgroundColor: "var(--bg-primary)",
+              backgroundColor: "transparent",
               opacity: 0.95,
               backdropFilter: "blur(10px)",
             }}
