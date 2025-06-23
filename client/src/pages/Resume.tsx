@@ -94,7 +94,7 @@ export default function Resume() {
                 </div>
                 <div className="text-gray-500 font-medium text-sm">2021 — Current</div>
               </div>
-              <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
+              <ul className="list-disc list-outside ml-5 space-y-2 text-gray-400 print:text-sm print:space-y-1">
                 <li>Led comprehensive redesign of K-12 LMS platform, resulting in 45% increase in user satisfaction and expansion to 2 new dioceses, serving 600+ students</li>
                 <li>Early integration of an AI-driven learning content creation tool for K-12 with ethical and accessibility considerations</li>
                 <li>Role-based analytics dashboards with cross-device compatibility, improving administrative efficiency, and data-driven decision-making</li>
@@ -111,7 +111,7 @@ export default function Resume() {
                 </div>
                 <div className="text-gray-500 font-medium text-sm">2020 — 2024</div>
               </div>
-              <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
+              <ul className="list-disc list-outside ml-5 space-y-2 text-gray-400 print:text-sm print:space-y-1">
                 <li>Professor of Digital Design and UX/UI, and Program Coordinator of Continuing Education. Led the country's first accredited bachelor's degree program in Digital Design</li>
                 <li>Developed adaptive curricula for over 200 undergraduate students, incorporating AI-driven UX principles and human-centered design (HCD)</li>
                 <li>Facilitated hands-on workshops with educators to create intuitive dashboards, resulting in 30% reduced workflow friction in pilot programs</li>
@@ -128,7 +128,7 @@ export default function Resume() {
                 </div>
                 <div className="text-gray-500 font-medium text-sm">2018 — 2021</div>
               </div>
-              <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
+              <ul className="list-disc list-outside ml-5 space-y-2 text-gray-400 print:text-sm print:space-y-1">
                 <li>Redesigned financial management SaaS tools for education clients, incorporating role-based dashboards and accessibility-first workflows for Milicomm Tigo (Sweden, LATAM)</li>
                 <li>Led development team in building scalable, modular systems for administrative reporting, adopted by 10+ institutions</li>
                 <li>Mentored cross-functional teams in component-driven prototyping (Figma), ensuring seamless handoff to development teams for Sparkassen-Finanzgruppe (Germany Global), PLAN International (Bolivia, Global)</li>
@@ -144,7 +144,7 @@ export default function Resume() {
                 </div>
                 <div className="text-gray-500 font-medium text-sm">2013 — 2016</div>
               </div>
-              <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
+              <ul className="list-disc list-outside ml-5 space-y-2 text-gray-400 print:text-sm print:space-y-1">
                 <li>Led UX/UI design for 20+ B2B SaaS platforms, including administrative dashboards for business enterprise clients: Spectrum Enterprise, Comcast Enterprise, RCN Business, improving task completion rates by 35% through intuitive interface redesigns</li>
                 <li>Collaborated with PMO teams to align digital strategy (infographics, whitepapers) with client compliance standards, reducing revision cycles by 40%</li>
                 <li>Designed interactive collateral and data visualizations (R Studio) to simplify complex administrative workflows for stakeholders</li>
@@ -189,7 +189,7 @@ export default function Resume() {
           <div className="grid md:grid-cols-2 gap-8 print:grid-cols-2 print:gap-4">
             <div className="print:break-inside-avoid">
               <h3 className="text-lg font-semibold mb-4 print:text-base print:mb-2" style={{ color: 'var(--text-primary)' }}>Design & Creative</h3>
-              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm">
+              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-400 text-sm">
                 <li>UX/UI Design (web & mobile)</li>
                 <li>Visual Identity & Branding</li>
                 <li>Digital Product Design</li>
@@ -203,7 +203,7 @@ export default function Resume() {
             
             <div className="print:break-inside-avoid">
               <h3 className="text-lg font-semibold mb-4 print:text-base print:mb-2" style={{ color: 'var(--text-primary)' }}>Tech & Emerging Fields</h3>
-              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm">
+              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-400 text-sm">
                 <li>Front-End Development (HTML/CSS, JavaScript)</li>
                 <li>Web3 & Blockchain Literacy</li>
                 <li>AI Literacy in Education</li>
@@ -215,7 +215,7 @@ export default function Resume() {
             
             <div className="print:break-inside-avoid">
               <h3 className="text-lg font-semibold mb-4 print:text-base print:mb-2" style={{ color: 'var(--text-primary)' }}>Education & Facilitation</h3>
-              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm">
+              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-400 text-sm">
                 <li>STEAM Curriculum Development</li>
                 <li>Workshop Facilitation</li>
                 <li>Mentorship & Peer-to-Peer Learning Design</li>
@@ -226,7 +226,7 @@ export default function Resume() {
             
             <div className="print:break-inside-avoid">
               <h3 className="text-lg font-semibold mb-4 print:text-base print:mb-2" style={{ color: 'var(--text-primary)' }}>Strategy & Innovation</h3>
-              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm">
+              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-400 text-sm">
                 <li>Design Thinking & Human-Centered Design</li>
                 <li>Social Innovation & Systemic Design</li>
                 <li>Grant Writing & Educational Program Development</li>
@@ -243,7 +243,7 @@ export default function Resume() {
           <div className="grid md:grid-cols-2 gap-8 print:grid-cols-2 print:gap-4">
             <div className="print:break-inside-avoid">
               <h3 className="text-lg font-semibold mb-4 print:text-base print:mb-2" style={{ color: 'var(--text-primary)' }}>Languages</h3>
-              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm">
+              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-400 text-sm">
                 <li>English (Native)</li>
                 <li>Spanish (Native)</li>
               </ul>
@@ -251,7 +251,7 @@ export default function Resume() {
             
             <div className="print:break-inside-avoid">
               <h3 className="text-lg font-semibold mb-4 print:text-base print:mb-2" style={{ color: 'var(--text-primary)' }}>Certifications</h3>
-              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm">
+              <ul className="list-disc list-outside ml-5 space-y-1 text-gray-400 text-sm">
                 <li>Social-Behavioral-Educational (SBE) Comprehensive</li>
                 <li>OHRP: Participant-Centered Informed Consent Training</li>
               </ul>
