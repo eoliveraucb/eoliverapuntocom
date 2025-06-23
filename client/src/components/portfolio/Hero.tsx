@@ -295,7 +295,7 @@ export function Hero() {
         className="absolute inset-0 z-0"
         style={{ 
           background: 'linear-gradient(135deg, #101013 0%, #1a1a2e 50%, #16213e 100%)',
-          opacity: 0.8
+          opacity: 0.8 , width: '50%'
         }}
       />
 
@@ -322,8 +322,8 @@ export function Hero() {
         <div
           className="absolute inset-0 z-20 bg-[transparent]"
           style={{
-            backgroundColor: "var(--bg-primary)",
-            opacity: 0.1,
+            backgroundColor: "transparent",
+            opacity: 0,
           }}
         />
       </div>
