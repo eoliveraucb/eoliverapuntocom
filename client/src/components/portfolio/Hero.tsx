@@ -120,10 +120,9 @@ export function Hero() {
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl mx-auto relative z-10 text-center">
           <div
-            className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
+            className="relative mb-6 text-left"
             style={{
-              backgroundColor: "rgba(255, 255, 255, 0.9)",
-              backdropFilter: "blur(10px)",
+              textShadow: "2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.8)",
             }}
           >
             <h1
