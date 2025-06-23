@@ -81,13 +81,13 @@ const courses: Course[] = [
   },
   {
     id: 6,
-    title: "Cross-Disciplinary Digital Tools",
-    category: "Collaborative Design",
-    description: "Master professional collaboration using Discord, Miro, Figma, and FigJam. Learn UX testing with Quant-UX, HotJar, and Google Analytics. Emphasis on active experimentation with emerging technologies.",
-    duration: "5 weeks",
-    level: "Beginner",
+    title: "Double-Diamond Exercise",
+    category: "Design Process",
+    description: "Students collectively use a Miro board to apply the double-diamond methodology for understanding divergent and convergent creative ideation in product design process. This collaborative exercise deepens comprehension of design thinking frameworks through hands-on practice.",
+    duration: "2 weeks",
+    level: "Intermediate",
     format: "Online",
-    skills: ["Figma", "UX Testing", "Analytics", "Team Collaboration"],
+    skills: ["Design Thinking", "Miro Collaboration", "Divergent Thinking", "Convergent Thinking"],
     image: courseImage8
   }
 ];
@@ -156,6 +156,14 @@ export function Courses() {
                     muted
                     loop
                     playsInline
+                  />
+                ) : course.id === 6 ? (
+                  <iframe
+                    src="https://www.youtube.com/embed/xYo3_4T4owY?autoplay=1&mute=1&controls=0&loop=1&playlist=xYo3_4T4owY"
+                    title={course.title}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                   />
                 ) : (
                   <img
