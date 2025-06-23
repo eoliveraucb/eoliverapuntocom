@@ -243,7 +243,7 @@ export function Hero() {
       {/* Background Carousel - Full Screen */}
       <div
         className="absolute inset-0 z-10 overflow-hidden"
-        style={{ marginTop: "5%", marginLeft: "12%" , maxHeight: "90%" }}
+        style={{ marginTop: "5%", marginLeft: "10%" , maxHeight: "90%" }}
       >
         {backgroundImages.map((image, index) => (
           <div
