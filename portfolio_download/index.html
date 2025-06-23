@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edwin Mauricio Olivera - Digital Design Professor & Experience Designer</title>
+  <meta name="description" content="Design education and professional experience design practice of Edwin Mauricio Olivera. Seeking opportunities in design faculty, curriculum design, emerging tech and interactive media.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Roboto+Flex:slnt,wght@-10..0,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      /* Light theme colors */
+      --bg-primary: #ffffff;
+      --bg-secondary: #f5f5f7;
+      --text-primary: #121212;
+      --text-secondary: #555555;
+      --accent-primary: #6d59ff;
+      --accent-secondary: #7c3aed;
+      --accent-tertiary: #00d9ff;
+      --transition-speed: 0.3s;
+      --border-radius: 8px;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --invert-filter: 0;
+    }
+
+    .dark-theme {
+      --bg-primary: #121212;
+      --bg-secondary: #1e1e1e;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      --invert-filter: 1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto Flex', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color var(--transition-speed), color var(--transition-speed);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    h3 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    /* Header Styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      background-color: var(--bg-primary);
+      box-shadow: var(--shadow);
+      transition: all var(--transition-speed);
+    }
+
+    .header.scrolled {
+      padding: 8px 0;
+      backdrop-filter: blur(10px);
+      background-color: var(--bg-primary)cc;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.625rem;
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .nav.desktop {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity var(--transition-speed);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Fraunces', serif;
+    }
+
+    .nav-link:hover {
+      opacity: 0.8;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      transition: transform var(--transition-speed);
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(12deg);
+    }
+
+    .mobile-menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--bg-primary);
+      z-index: 40;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      transform: translateX(-100%);
+      transition: transform var(--transition-speed);
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-link {
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-family: 'Fraunces', serif;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: opacity var(--transition-speed);
+    }
+
+    .mobile-nav-link:hover {
+      opacity: 0.8;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: opacity 0.1s;
+      opacity: 0;
+    }
+
+    .hero-bg-image.active {
+      opacity: 0.9;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      background-color: var(--bg-primary);
+      opacity: 0.6;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 20;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-title {
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 0;
+      transition: font-weight 0.3s;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 2rem auto;
+      font-weight: 500;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--transition-speed);
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(109, 89, 255, 0.3);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 2px solid var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--text-primary);
+      color: var(--bg-primary);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+    }
+
+    .carousel-indicators {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 30;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .carousel-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--text-secondary);
+      opacity: 0.5;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      border: none;
+    }
+
+    .carousel-indicator.active {
+      width: 16px;
+      height: 16px;
+      background-color: var(--accent-primary);
+      opacity: 1;
+    }
+
+    .carousel-indicator:hover {
+      opacity: 0.75;
+    }
+
+    /* About Section */
+    .about {
+      background-color: var(--bg-secondary);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-image {
+      text-align: center;
+    }
+
+    .about-image img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-text {
+      space-y: 1rem;
+    }
+
+    .about-text h2 {
+      color: var(--text-primary);
+      text-align: center;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    /* Areas of Focus */
+    .focus-areas {
+      background-color: var(--bg-primary);
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .focus-card {
+      padding: 2rem;
+      background-color: var(--bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: transform var(--transition-speed);
+    }
+
+    .focus-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .focus-card h3 {
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .focus-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .highlight-keyword {
+      color: var(--accent-primary);
+      font-weight: 600;
+    }
+
+    /* Portfolio Grid */
+    .portfolio {
+      background-color: var(--bg-primary);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-item {
+      background-color: var(--bg-secondary);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition-speed);
+      cursor: pointer;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.02);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform var(--transition-speed);
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2), transparent);
+      opacity: 0;
+      transition: opacity var(--transition-speed);
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-info {
+      color: white;
+    }
+
+    .portfolio-category {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    /* Project Highlight */
+    .project-highlight {
+      background-color: var(--bg-primary);
+    }
+
+    .featured-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-primary);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .video-container {
+      aspect-ratio: 16/9;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin: 2rem 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .highlight-quote {
+      background-color: var(--bg-secondary);
+      border-left: 4px solid var(--accent-primary);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      margin: 2rem 0;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .outcome-item {
+      text-align: center;
+    }
+
+    .outcome-icon {
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--accent-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    /* Courses Section */
+    .courses {
+      background-color: var(--bg-secondary);
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .course-card {
+      background-color: var(--bg-primary);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition-speed);
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .course-media {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .course-media img,
+    .course-media iframe,
+    .course-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 1.5rem;
+    }
+
+    .course-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .course-category {
+      background-color: var(--accent-primary);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .course-format {
+      background-color: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+
+    .course-title {
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .course-description {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .course-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .skill-tag {
+      background-color: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+
+    .course-duration {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: var(--bg-primary);
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .contact-info h3 {
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--accent-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .contact-details {
+      flex: 1;
+    }
+
+    .contact-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-value {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .contact-value a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: opacity var(--transition-speed);
+    }
+
+    .contact-value a:hover {
+      opacity: 0.8;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .social-link {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all var(--transition-speed);
+    }
+
+    .social-link:hover {
+      transform: translateY(-4px);
+      background-color: var(--accent-primary);
+      color: white;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-label {
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--text-secondary);
+      border-radius: var(--border-radius);
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      font-family: inherit;
+      transition: all var(--transition-speed);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(109, 89, 255, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Animations */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+      }
+      40% {
+        transform: translateY(-10px) translateX(-50%);
+      }
+      60% {
+        transform: translateY(-5px) translateX(-50%);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      .mobile-menu-toggle {
+        display: none;
+      }
+
+      .nav {
+        display: flex;
+      }
+
+      .btn-group {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .about-content {
+        grid-template-columns: 300px 1fr;
+        text-align: left;
+      }
+
+      .about-text h2 {
+        text-align: left;
+      }
+
+      .focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .outcomes-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-content {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .focus-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+
+    /* Utility Classes */
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .mb-12 {
+      margin-bottom: 3rem;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .mt-12 {
+      margin-top: 3rem;
+    }
+
+    /* Hidden class for mobile menu */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          EDWIN.M.OLIVERA
+        </div>
+        
+        <nav class="nav desktop">
+          <button class="nav-link" onclick="scrollToSection('home')">Home</button>
+          <button class="nav-link" onclick="scrollToSection('about')">About</button>
+          <button class="nav-link" onclick="scrollToSection('portfolio')">Portfolio</button>
+          <button class="nav-link" onclick="scrollToSection('contact')">Contact</button>
+          <a href="resume.html" class="nav-link" style="text-decoration: none;">Resume</a>
+        </nav>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-nav-link" onclick="scrollToSection('home')">Home</button>
+    <button class="mobile-nav-link" onclick="scrollToSection('about')">About</button>
+    <button class="mobile-nav-link" onclick="scrollToSection('portfolio')">Portfolio</button>
+    <button class="mobile-nav-link" onclick="scrollToSection('contact')">Contact</button>
+    <a href="resume.html" class="mobile-nav-link" style="text-decoration: none;">Resume</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg">
+      <div class="hero-bg-image active" style="background-image: url('attached_assets/home1_1750633823946.png')"></div>
+      <div class="hero-bg-image" style="background-image: url('attached_assets/home2_1750633823946.png')"></div>
+      <div class="hero-bg-image" style="background-image: url('attached_assets/home3_1750633823946.png')"></div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="carousel-indicators">
+      <button class="carousel-indicator active" onclick="setCarouselImage(0)"></button>
+      <button class="carousel-indicator" onclick="setCarouselImage(1)"></button>
+      <button class="carousel-indicator" onclick="setCarouselImage(2)"></button>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title" id="heroTitle" style="font-weight: 200;">
+          Design education & professional<br>
+          experience design practice of<br>
+          <span class="gradient-text">Edwin Mauricio Olivera</span>
+        </h1>
+        <p class="hero-description">
+          Hello! My name is Edwin Mauricio Olivera seeking opportunities in
+          design faculty, curriculum design, emerging tech and interactive media.
+        </p>
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="scrollToSection('contact')">
+            Get in touch
+          </button>
+          <button class="btn btn-secondary" onclick="scrollToSection('portfolio')">
+            View My Work
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" onclick="scrollToSection('about')">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image fade-in">
+          <img src="attached_assets/profile-pic_1750628627934.png" alt="Edwin Olivera - Digital Design Professor">
+        </div>
+        <div class="about-text fade-in">
+          <h2>About Me</h2>
+          <p>
+            I am a designer, educator, and recent graduate of the MFA program in Design for Social Innovation at the School of Visual Arts in New York. My work explores how design can be leveraged as a tool for social transformation—particularly within education systems that serve marginalized and underrepresented communities.
+          </p>
+          <p>
+            Drawing from over 15 years of creative experience across disciplines, I develop hands-on, innovative learning experiences that merge technology, culture, and community engagement. My practice emphasizes collaboration, peer mentorship, and the integration of analog and digital approaches to help learners build skills that are adaptable, resilient, and future-focused.
+          </p>
+          <p>
+            Much of my recent work centers on making emerging technologies—including AI—accessible and meaningful for students and educators in Latin America. I believe in the power of co-creation and aim to design educational models that empower learners to shape their own futures, while staying grounded in cultural knowledge and social context.
+          </p>
+          <p>
+            My approach is driven by curiosity, empathy, and a commitment to lifelong learning. I am always excited to collaborate with others who share a vision for inclusive, impactful design education.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas of Focus -->
+  <section class="section focus-areas">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2>Areas of Focus</h2>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+          Key areas where design education intersects with social innovation, technology, and community building.
+        </p>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-card fade-in">
+          <h3>Hands-on Learning</h3>
+          <p>
+            Creating <span class="highlight-keyword">hands-on</span>, <span class="highlight-keyword">cross-disciplinary</span> learning experiences that engage multiple senses and encourage active participation across diverse fields of study.
+          </p>
+        </div>
+        <div class="focus-card fade-in">
+          <h3>Analog & Digital Integration</h3>
+          <p>
+            Integrating <span class="highlight-keyword">analog</span> and <span class="highlight-keyword">digital</span> approaches for skill-building, combining traditional methods with modern technology to create comprehensive learning pathways.
+          </p>
+        </div>
+        <div class="focus-card fade-in">
+          <h3>Peer Mentorship</h3>
+          <p>
+            Supporting <span class="highlight-keyword">peer mentorship</span> and <span class="highlight-keyword">community-led</span> education initiatives that foster collaborative learning and knowledge sharing among participants.
+          </p>
+        </div>
+        <div class="focus-card fade-in">
+          <h3>Cultural Knowledge Bridge</h3>
+          <p>
+            Bridging <span class="highlight-keyword">cultural knowledge</span> with new technology, including <span class="highlight-keyword">AI</span>, to preserve traditional wisdom while embracing innovative solutions for modern challenges.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2>Selected Works</h2>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+          A collection of design projects spanning branding, digital interfaces, 
+          and educational materials created over years of creative practice.
+        </p>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Portfolio items will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Highlight -->
+  <section class="section project-highlight">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="featured-badge">Featured Project</div>
+        <h2>Crypto Design Student Project</h2>
+        <p style="font-size: 1.2rem; max-width: 900px; margin: 0 auto;">
+          A speculative design project where students created Bolivian cryptocurrency brands 
+          during economic uncertainty, bridging traditional culture with blockchain technology.
+        </p>
+      </div>
+
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/WD1bq2K42W0"
+          title="Crypto Design Student Project"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="mb-12">
+        <h3>The Kusillx Consortium Challenge</h3>
+        <div class="highlight-quote">
+          "In a fictional future scenario, local currencies begin a devaluation process not unlike what Bolivia experienced in the 1980s. A digital consortium of citizens, investors, and hacktivists creates a Bolivian Stablecoin to protect common citizens from negative effects of devaluation."
+        </div>
+
+        <div class="outcomes-grid">
+          <div class="outcome-item fade-in">
+            <div class="outcome-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h4>Student Challenge</h4>
+            <p>Ten emerging digital designers created visual identity proposals for the Bolivian cryptocurrency, addressing national identity amid regional diversity.</p>
+          </div>
+          <div class="outcome-item fade-in">
+            <div class="outcome-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h4>Technical Innovation</h4>
+            <p>Students learned "code-economy aware digital design" - optimizing SVG graphics to reduce blockchain deployment costs and gas fees.</p>
+          </div>
+          <div class="outcome-item fade-in">
+            <div class="outcome-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h4>Real-World Context</h4>
+            <p>Taught during actual economic fluctuations in Bolivia, students witnessed cryptocurrency transition from perceived scam to viable financial solution.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background-color: var(--bg-secondary); padding: 2rem; border-radius: var(--border-radius);">
+        <h3 class="text-center mb-8">Key Learning Outcomes</h3>
+        <div class="outcomes-grid">
+          <div class="text-center">
+            <h4>Digital Branding</h4>
+            <p>Students learned to create cohesive visual identities that represent national culture while addressing modern technological needs.</p>
+          </div>
+          <div class="text-center">
+            <h4>Code-Economy Design</h4>
+            <p>Understanding how design decisions impact technical implementation costs and blockchain deployment efficiency.</p>
+          </div>
+          <div class="text-center">
+            <h4>Social Responsibility</h4>
+            <p>Exploring the role of designers in addressing economic inequality and social challenges through technology.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="https://medium.com/@emauric.io/e7eac4d10a5b" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Read Full Case Study <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="section courses">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2>Projects and Exercises</h2>
+        <p style="font-size: 1.2rem; max-width: 900px; margin: 0 auto;">
+          A comprehensive overview of workshops and projects from my BFA and MFA level Digital Design 4 course. 
+          These case studies demonstrate advanced pedagogical approaches combining speculative design, 
+          emerging technologies, and cultural context in university-level design education.
+        </p>
+      </div>
+      <div class="courses-grid" id="coursesGrid">
+        <!-- Course items will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2>Get In Touch</h2>
+        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+          Interested in collaboration, speaking engagements, or design education? 
+          I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">
+                <a href="mailto:edwin.olivera@university.edu">edwin.olivera@university.edu</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">
+                <a href="tel:+15551234567">+1 (555) 123-4567</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">San Francisco, CA</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-calendar"></i>
+            </div>
+            <div class="contact-details">
+              <div class="contact-label">Office Hours</div>
+              <div class="contact-value">Mon-Fri 9:00 AM - 5:00 PM PST</div>
+            </div>
+          </div>
+
+          <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Follow My Work</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-link" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" title="Dribbble">
+              <i class="fab fa-dribbble"></i>
+            </a>
+            <a href="#" class="social-link" title="Behance">
+              <i class="fab fa-behance"></i>
+            </a>
+            <a href="#" class="social-link" title="Medium">
+              <i class="fab fa-medium"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <form class="contact-form" onsubmit="handleContactForm(event)">
+            <div class="form-group">
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-label" for="name">Full Name</label>
+                  <input class="form-input" type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="email">Email Address</label>
+                  <input class="form-input" type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="subject">Subject</label>
+                <input class="form-input" type="text" id="subject" name="subject" required placeholder="What's this about?">
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-textarea" id="message" name="message" required placeholder="Tell me about your project or inquiry..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Theme Management
+    let currentTheme = 'light';
+    
+    function toggleTheme() {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.body.classList.toggle('dark-theme', currentTheme === 'dark');
+      
+      const themeToggle = document.getElementById('themeToggle');
+      const icon = themeToggle.querySelector('i');
+      icon.className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      
+      localStorage.setItem('theme', currentTheme);
+    }
+
+    // Initialize theme from localStorage
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark') {
+        currentTheme = 'dark';
+        document.body.classList.add('dark-theme');
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+        icon.className = 'fas fa-sun';
+      }
+    }
+
+    // Mobile Menu Management
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('open');
+    }
+
+    // Smooth Scrolling
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+      // Close mobile menu if open
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.remove('open');
+    }
+
+    // Header Scroll Effect
+    function handleScroll() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    // Hero Carousel Management
+    let currentImageIndex = 0;
+    let carouselInterval;
+    const backgroundImages = [
+      'attached_assets/home1_1750633823946.png',
+      'attached_assets/home2_1750633823946.png',
+      'attached_assets/home3_1750633823946.png'
+    ];
+
+    function setCarouselImage(index) {
+      const images = document.querySelectorAll('.hero-bg-image');
+      const indicators = document.querySelectorAll('.carousel-indicator');
+      
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+      
+      indicators.forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === index);
+      });
+      
+      currentImageIndex = index;
+    }
+
+    function startCarousel() {
+      carouselInterval = setInterval(() => {
+        // Create flickering effect
+        const nextIndex = (currentImageIndex + 1) % backgroundImages.length;
+        const images = document.querySelectorAll('.hero-bg-image');
+        
+        // Flicker sequence
+        setTimeout(() => setCarouselImage(currentImageIndex), 0);
+        setTimeout(() => setCarouselImage(nextIndex), 50);
+        setTimeout(() => setCarouselImage(currentImageIndex), 100);
+        setTimeout(() => setCarouselImage(nextIndex), 150);
+        setTimeout(() => setCarouselImage(nextIndex), 200);
+      }, 4000);
+    }
+
+    // Hero Title Animation
+    function animateHeroTitle() {
+      const title = document.getElementById('heroTitle');
+      let weight = 200;
+      
+      setTimeout(() => {
+        const interval = setInterval(() => {
+          weight += 50;
+          title.style.fontWeight = weight;
+          if (weight >= 800) {
+            clearInterval(interval);
+            setTimeout(() => {
+              title.style.fontWeight = '500';
+            }, 300);
+          }
+        }, 120);
+      }, 800);
+    }
+
+    // Portfolio Data and Rendering
+    const portfolioItems = [
+      {
+        id: 1,
+        title: "Church of Emergence",
+        category: "Branding & Identity",
+        image: "attached_assets/work--church_1750639835231.png",
+        icon: "heart"
+      },
+      {
+        id: 2,
+        title: "Business Energy Checkup",
+        category: "Corporate Design",
+        image: "attached_assets/b6494416084587.562a5300002a5_1750639835231.jpg",
+        icon: "building"
+      },
+      {
+        id: 3,
+        title: "WorldNet Digital Services",
+        category: "Logo Design",
+        image: "attached_assets/worldnet-new-logo_1750639835232.png",
+        icon: "globe"
+      },
+      {
+        id: 4,
+        title: "Cleaning Concepts",
+        category: "Brand Identity",
+        image: "attached_assets/cleaning-concets_1750639835232.png",
+        icon: "home"
+      },
+      {
+        id: 5,
+        title: "SOMOS Identity",
+        category: "Cultural Design",
+        image: "attached_assets/Untitled-2_1750639835232.jpg",
+        icon: "users"
+      },
+      {
+        id: 6,
+        title: "Focus Fest 2013",
+        category: "Event Design",
+        image: "attached_assets/Screenshot-2025-01-29-at-1.03.48PM_1750639835233.png",
+        icon: "film"
+      },
+      {
+        id: 7,
+        title: "Finanzgruppe Interface",
+        category: "Digital Design",
+        image: "attached_assets/1604098117810_1750639835233.jpg",
+        icon: "briefcase"
+      },
+      {
+        id: 8,
+        title: "Chili Fest 2009",
+        category: "Event Branding",
+        image: "attached_assets/chili_1750639835233.png",
+        icon: "utensils"
+      },
+      {
+        id: 9,
+        title: "Student Journey Map",
+        category: "UX Design",
+        image: "attached_assets/Screenshot-2025-02-05-at-6.49.02PM_1750639835233.png",
+        icon: "lightbulb"
+      },
+      {
+        id: 10,
+        title: "Arte + Tecnología",
+        category: "Educational Design",
+        image: "attached_assets/Untitled-5_1750639835233.jpg",
+        icon: "palette"
+      },
+      {
+        id: 11,
+        title: "Pride Campaign",
+        category: "Social Impact",
+        image: "attached_assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233.png",
+        icon: "heart"
+      },
+      {
+        id: 12,
+        title: "Disaster Response Cards",
+        category: "Information Design",
+        image: "attached_assets/DISASTERCARDS_1750639835233.png",
+        icon: "award"
+      }
+    ];
+
+    function renderPortfolio() {
+      const grid = document.getElementById('portfolioGrid');
+      grid.innerHTML = portfolioItems.map(item => `
+        <div class="portfolio-item fade-in" style="position: relative;">
+          <img src="${item.image}" alt="${item.title}" loading="lazy">
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <div class="portfolio-category">
+                <i class="fas fa-${item.icon}"></i> ${item.category}
+              </div>
+              <div class="portfolio-title">${item.title}</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Courses Data and Rendering
+    const courses = [
+      {
+        id: 1,
+        title: "Digital Design 4",
+        category: "Interactive Design",
+        description: "Examine digital design through future-oriented perspectives, emphasizing transformative social and cultural relationships in designing with emerging technologies. A participatory design experience fostering critical thinking about post-humanist and transhumanist design practice.",
+        duration: "1 Semester",
+        level: "Advanced",
+        format: "Online (Zoom)",
+        skills: ["Speculative Design", "Systems Thinking", "Emerging Technologies", "UX/UI Design"],
+        media: {
+          type: "youtube",
+          src: "https://www.youtube.com/embed/PuGE5PVlhic?autoplay=1&mute=1&controls=0&loop=1&playlist=PuGE5PVlhic"
+        }
+      },
+      {
+        id: 2,
+        title: "Sensory Design Workshop",
+        category: "Speculative Design",
+        description: "Students collaborate in groups using futures thinking and speculative design concepts to create presentation web prototypes with native HTML, CSS, and JavaScript. This example showcases a futuristic service using neuralink-type devices to create 3D printed textures of specific memories.",
+        duration: "4 weeks",
+        level: "Intermediate",
+        format: "Hybrid",
+        skills: ["Futures Thinking", "Speculative Design", "Web Prototyping", "Neural Interface Design"],
+        media: {
+          type: "youtube",
+          src: "https://www.youtube.com/embed/w3ZcEwXYIt0?autoplay=1&mute=1&controls=0&loop=1&playlist=w3ZcEwXYIt0"
+        }
+      },
+      {
+        id: 3,
+        title: "Digital Realities & AR/XR",
+        category: "Extended Reality",
+        description: "Explore AR, XR, and projection mapping using Studio Lens and TouchDesigner. Analyze reality persistence in emerging technologies from Plato's cave to modern projection mapping, including LLM prompt design and machine learning exercises.",
+        duration: "6 weeks",
+        level: "Advanced",
+        format: "Online",
+        skills: ["AR/XR Development", "Projection Mapping", "Machine Learning", "Prompt Design"],
+        media: {
+          type: "youtube",
+          src: "https://www.youtube.com/embed/-Nwveq3EAZo"
+        }
+      },
+      {
+        id: 4,
+        title: "Systems in Digital Design",
+        category: "Creative Coding",
+        description: "Learn creative coding with p5.js and AI-assisted programming. Introduction to systems mapping, workflow optimization, and bridging visual identity with digital systems through brand standards.",
+        duration: "8 weeks",
+        level: "Intermediate",
+        format: "Online",
+        skills: ["Creative Coding", "p5.js", "Systems Mapping", "Brand Systems"],
+        media: {
+          type: "image",
+          src: "attached_assets/Digital Design 4 _ Digital Workshop 4_1750640874282.jpeg"
+        }
+      },
+      {
+        id: 5,
+        title: "Memory Box Sensorial Memory",
+        category: "Sensory Design",
+        description: "Design a box containing a sensorial memory using binaural sound reproduction and scent composition. Students create low-fidelity prototypes that limit visual stimuli while opening experiences through binaural audio combined with olfactory elements, accompanied by explanatory haiku poetry.",
+        duration: "3 weeks",
+        level: "Intermediate",
+        format: "Hybrid",
+        skills: ["Binaural Audio", "Scent Design", "Haiku Poetry", "Sensory Prototyping"],
+        media: {
+          type: "video",
+          src: "attached_assets/ExperienciaMemoryBox_1750642203857.mp4"
+        }
+      },
+      {
+        id: 6,
+        title: "Double-Diamond Exercise",
+        category: "Design Process",
+        description: "Students collectively use a Miro board to apply the double-diamond methodology for understanding divergent and convergent creative ideation in product design process. This collaborative exercise deepens comprehension of design thinking frameworks through hands-on practice.",
+        duration: "2 weeks",
+        level: "Intermediate",
+        format: "Online",
+        skills: ["Design Thinking", "Miro Collaboration", "Divergent Thinking", "Convergent Thinking"],
+        media: {
+          type: "youtube",
+          src: "https://www.youtube.com/embed/xYo3_4T4owY?autoplay=1&mute=1&controls=0&loop=1&playlist=xYo3_4T4owY"
+        }
+      }
+    ];
+
+    function renderCourses() {
+      const grid = document.getElementById('coursesGrid');
+      grid.innerHTML = courses.map(course => {
+        let mediaHtml = '';
+        
+        if (course.media.type === 'youtube') {
+          mediaHtml = `<iframe src="${course.media.src}" title="${course.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        } else if (course.media.type === 'video') {
+          mediaHtml = `<video src="${course.media.src}" autoplay muted loop playsinline></video>`;
+        } else {
+          mediaHtml = `<img src="${course.media.src}" alt="${course.title}">`;
+        }
+
+        return `
+          <div class="course-card fade-in">
+            <div class="course-media">
+              ${mediaHtml}
+            </div>
+            <div class="course-content">
+              <div class="course-meta">
+                <span class="course-category">${course.category}</span>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                  <span class="course-format">${course.format}</span>
+                  <span style="color: var(--text-secondary); font-size: 0.9rem;">${course.level}</span>
+                </div>
+              </div>
+              <h3 class="course-title">${course.title}</h3>
+              <p class="course-description">${course.description}</p>
+              <div class="course-skills">
+                ${course.skills.slice(0, 3).map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                ${course.skills.length > 3 ? `<span class="skill-tag" style="background-color: var(--accent-primary); color: white;">+${course.skills.length - 3}</span>` : ''}
+              </div>
+              <div class="course-duration">
+                📅 ${course.duration}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Contact Form Handling
+    function handleContactForm(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+      
+      // Here you would typically send the data to your server
+      console.log('Form submitted:', data);
+      
+      // Show success message (you could replace this with a proper notification)
+      alert('Thank you for your message! I\'ll get back to you soon.');
+      
+      // Reset form
+      event.target.reset();
+    }
+
+    // Intersection Observer for Animations
+    function setupAnimations() {
+      const animatedElements = document.querySelectorAll('.fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      animatedElements.forEach(element => {
+        observer.observe(element);
+      });
+    }
+
+    // Initialize Everything
+    document.addEventListener('DOMContentLoaded', function() {
+      initTheme();
+      renderPortfolio();
+      renderCourses();
+      startCarousel();
+      animateHeroTitle();
+      setupAnimations();
+      
+      // Event listeners
+      window.addEventListener('scroll', handleScroll);
+    });
+  </script>
+</body>
+</html>
