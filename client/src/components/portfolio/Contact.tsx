@@ -60,14 +60,14 @@ export function Contact() {
                   {
                     icon: "fa-envelope",
                     label: "Email",
-                    value: "edwin.olivera@university.edu",
-                    link: "mailto:edwin.olivera@university.edu"
+                    value: "eolivera@sva.edu",
+                    link: "mailto:eolivera@sva.edu"
                   },
                   {
                     icon: "fa-phone",
                     label: "Phone",
-                    value: "+1 (555) 123-4567",
-                    link: "tel:+15551234567"
+                    value: "+1 (332) 261-4198",
+                    link: "tel:+13322614198"
                   },
                   {
                     icon: "fa-map-marker-alt",
