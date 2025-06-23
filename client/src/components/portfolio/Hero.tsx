@@ -153,7 +153,7 @@ export function Hero() {
 
             // Draw node
             const alpha = Math.max(0, 1 - node.age / node.maxAge);
-            const size = scale * 2;
+            const size = Math.max(0.5, Math.abs(scale * 2));
             
             ctx.beginPath();
             ctx.arc(projectedX, projectedY, size, 0, Math.PI * 2);
