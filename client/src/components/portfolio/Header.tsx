@@ -51,9 +51,9 @@ export function Header() {
             >
               <img 
                 src={emlogo} 
-                alt="EM Logo" 
-                className="h-10"
-                style={{ filter: 'brightness(0) saturate(100%) invert(var(--invert-filter, 0))' }}
+                alt="Logo" 
+                className="h-8"
+                style={{ filter: `invert(var(--invert-filter, 0)) sepia(1) saturate(5) hue-rotate(240deg) brightness(0.8)` }}
               />
             </div>
           </div>
