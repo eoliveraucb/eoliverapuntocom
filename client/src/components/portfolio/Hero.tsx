@@ -7,6 +7,11 @@ export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [headlineFontWeight, setHeadlineFontWeight] = useState(200);
+  const [lineAnimations, setLineAnimations] = useState({
+    line1: false,
+    line2: false,
+    line3: false
+  });
 
   const backgroundImages = [home1, home2, home3];
 
@@ -30,6 +35,21 @@ export function Hero() {
       flicker();
     }, 4000); // Change image every 4 seconds with flicker
 
+    // Sequential line animations
+    const animateLines = () => {
+      setTimeout(() => {
+        setLineAnimations(prev => ({ ...prev, line1: true }));
+      }, 300);
+      
+      setTimeout(() => {
+        setLineAnimations(prev => ({ ...prev, line2: true }));
+      }, 600);
+      
+      setTimeout(() => {
+        setLineAnimations(prev => ({ ...prev, line3: true }));
+      }, 900);
+    };
+
     // Animate entire headline font weight
     const animateHeadline = () => {
       setTimeout(() => {
@@ -47,6 +67,8 @@ export function Hero() {
         }, 120);
       }, 0);
     };
+
+    animateLines();
 
     setTimeout(animateHeadline, 800);
 
@@ -126,7 +148,7 @@ export function Hero() {
             }}
           >
             <h1
-              className="text-3xl md:text-[44px] font-['Fraunces'] transition-all duration-300 opacity-100 translate-y-0"
+              className="text-3xl md:text-[44px] font-['Fraunces']"
               style={{
                 color: "var(--text-primary)",
                 lineHeight: "1.2",
@@ -134,9 +156,21 @@ export function Hero() {
                 fontWeight: headlineFontWeight,
               }}
             >
-              Design education & professional<br />
-              experience design practice of<br />
-              <span className="gradient-text">Edwin Mauricio Olivera</span>
+              <div 
+                className={`transition-all duration-500 ${lineAnimations.line1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              >
+                Design education & professional
+              </div>
+              <div 
+                className={`transition-all duration-500 ${lineAnimations.line2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              >
+                experience design practice of
+              </div>
+              <div 
+                className={`transition-all duration-500 ${lineAnimations.line3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              >
+                <span className="gradient-text">Edwin Mauricio Olivera</span>
+              </div>
             </h1>
           </div>
 
