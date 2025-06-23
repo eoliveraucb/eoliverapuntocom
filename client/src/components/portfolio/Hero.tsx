@@ -85,32 +85,43 @@ export function Hero() {
           connections: number[];
         }> = [];
 
-        // Create initial nodes in a loose grid pattern
-        const nodeCount = 40;
-        for (let i = 0; i < nodeCount; i++) {
-          const x = (Math.random() * 0.8 + 0.1) * canvas.width;
-          const y = (Math.random() * 0.8 + 0.1) * canvas.height;
+        // Create grid-based rectangles and lines
+        const gridSize = 80;
+        const rows = Math.ceil(canvas.height / gridSize);
+        const cols = Math.ceil(canvas.width / gridSize);
+        
+        for (let row = 0; row < rows; row++) {
+          for (let col = 0; col < cols; col++) {
+            // Only create nodes at grid intersections
+            if (Math.random() < 0.4) {
+              const x = col * gridSize + (Math.random() - 0.5) * 20;
+              const y = row * gridSize + (Math.random() - 0.5) * 20;
 
-          nodes.push({
-            x: x,
-            y: y,
-            vx: 0,
-            vy: 0,
-            originalX: x,
-            originalY: y,
-            connections: [],
-          });
+              nodes.push({
+                x: x,
+                y: y,
+                vx: 0,
+                vy: 0,
+                originalX: x,
+                originalY: y,
+                connections: [],
+              });
+            }
+          }
         }
 
-        // Create connections between nearby nodes
+        // Create only horizontal and vertical connections
         nodes.forEach((node, index) => {
           nodes.forEach((otherNode, otherIndex) => {
             if (index !== otherIndex) {
-              const dx = node.x - otherNode.x;
-              const dy = node.y - otherNode.y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-
-              if (distance < 120 && Math.random() < 0.3) {
+              const dx = Math.abs(node.x - otherNode.x);
+              const dy = Math.abs(node.y - otherNode.y);
+              
+              // Only connect if nodes are aligned horizontally or vertically
+              const isHorizontal = dy < 20 && dx < 150;
+              const isVertical = dx < 20 && dy < 150;
+              
+              if ((isHorizontal || isVertical) && Math.random() < 0.6) {
                 node.connections.push(otherIndex);
               }
             }
@@ -129,58 +140,79 @@ export function Hero() {
 
           time += 0.01;
 
-          // Update nodes with temporal forces
+          // Update nodes with grid-aligned movement
           nodes.forEach((node, index) => {
-            // Temporal wave forces
-            const timeOffset = index * 0.5;
-            const waveX = Math.sin(time * 2 + timeOffset) * 15;
-            const waveY = Math.cos(time * 1.5 + timeOffset) * 12;
+            // Grid-aligned movement - only horizontal or vertical
+            const timeOffset = index * 0.3;
+            const moveX = Math.sin(time + timeOffset) > 0 ? 1 : -1;
+            const moveY = Math.cos(time * 0.8 + timeOffset) > 0 ? 1 : -1;
+            
+            // Constrain movement to small grid steps
+            const stepSize = 0.5;
+            node.vx += moveX * stepSize * 0.01;
+            node.vy += moveY * stepSize * 0.01;
 
-            // Spring force back to original position
-            const springX = (node.originalX - node.x) * 0.02;
-            const springY = (node.originalY - node.y) * 0.02;
+            // Spring force back to grid position
+            const springX = (node.originalX - node.x) * 0.03;
+            const springY = (node.originalY - node.y) * 0.03;
+            
+            node.vx += springX;
+            node.vy += springY;
 
-            // Apply forces
-            node.vx += waveX * 0.01 + springX;
-            node.vy += waveY * 0.01 + springY;
-
-            // Damping
-            node.vx *= 0.95;
-            node.vy *= 0.95;
+            // Strong damping for grid-like movement
+            node.vx *= 0.9;
+            node.vy *= 0.9;
 
             // Update position
             node.x += node.vx;
             node.y += node.vy;
 
-            // Draw node
-            const intensity = Math.sin(time * 3 + index * 0.3) * 0.5 + 0.5;
-            const nodeSize = 3 + intensity * 2;
-
-            ctx.beginPath();
-            ctx.arc(node.x, node.y, nodeSize, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(109, 89, 255, ${0.6 + intensity * 0.4})`;
-            ctx.fill();
+            // Draw rectangular nodes
+            const intensity = Math.sin(time * 2 + index * 0.4) * 0.3 + 0.3;
+            const nodeOpacity = 0.3 + intensity * 0.4;
+            
+            ctx.fillStyle = `rgba(147, 51, 234, ${nodeOpacity})`;
+            
+            // Draw small squares instead of circles
+            const size = 3 + intensity * 2;
+            ctx.fillRect(node.x - size/2, node.y - size/2, size, size);
+            
+            // Occasionally add larger rectangles
+            if (Math.sin(time * 0.5 + index) > 0.7) {
+              ctx.fillStyle = `rgba(147, 51, 234, ${nodeOpacity * 0.5})`;
+              ctx.fillRect(node.x - 8, node.y - 8, 16, 16);
+            }
           });
 
-          // Draw connections
+          // Draw straight line connections only
           nodes.forEach((node, index) => {
             node.connections.forEach((connectionIndex) => {
               const connectedNode = nodes[connectionIndex];
               if (connectedNode) {
-                const distance = Math.sqrt(
-                  Math.pow(node.x - connectedNode.x, 2) + 
-                  Math.pow(node.y - connectedNode.y, 2)
-                );
+                const dx = Math.abs(connectedNode.x - node.x);
+                const dy = Math.abs(connectedNode.y - node.y);
+                
+                // Only draw if connection is horizontal or vertical
+                const isHorizontal = dy < 30;
+                const isVertical = dx < 30;
+                
+                if (isHorizontal || isVertical) {
+                  const distance = Math.max(dx, dy);
+                  const opacity = Math.max(0, 0.4 - distance / 300) * 
+                                 (0.3 + 0.3 * Math.sin(time * 0.5 + index * 0.2));
 
-                if (distance < 150) {
-                  const alpha = Math.max(0, (150 - distance) / 150) * 0.4;
-                  const pulse = Math.sin(time * 4 + index * 0.2) * 0.3 + 0.7;
-
+                  ctx.strokeStyle = `rgba(147, 51, 234, ${opacity})`;
+                  ctx.lineWidth = isHorizontal ? 2 : 1;
                   ctx.beginPath();
-                  ctx.moveTo(node.x, node.y);
-                  ctx.lineTo(connectedNode.x, connectedNode.y);
-                  ctx.strokeStyle = `rgba(109, 89, 255, ${alpha * pulse})`;
-                  ctx.lineWidth = 1;
+                  
+                  // Draw straight lines with 90-degree angles
+                  if (isHorizontal) {
+                    ctx.moveTo(Math.min(node.x, connectedNode.x), node.y);
+                    ctx.lineTo(Math.max(node.x, connectedNode.x), node.y);
+                  } else {
+                    ctx.moveTo(node.x, Math.min(node.y, connectedNode.y));
+                    ctx.lineTo(node.x, Math.max(node.y, connectedNode.y));
+                  }
                   ctx.stroke();
                 }
               }
@@ -235,7 +267,7 @@ export function Hero() {
         ref={canvasRef}
         className="absolute inset-0 z-0"
         style={{ 
-          background: 'purple',
+          background: 'transparent',
           opacity: 0.8
         }}
       />
@@ -336,23 +368,7 @@ export function Hero() {
             </h1>
           </div>
 
-          <div
-            className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
-            style={{
-              backgroundColor: "var(--bg-primary)",
-              opacity: 0.95,
-              backdropFilter: "blur(4px)",
-            }}
-          >
-            <p
-              className="text-lg md:text-xl max-w-3xl transition-all duration-800 delay-400 font-['Roboto_Flex'] opacity-100 translate-y-0 text-left font-medium mt-[28px] mb-[28px]"
-              style={{ color: "var(--text-secondary)" }}
-            >
-              Hello! My name is Edwin Mauricio Olivera seeking opportunities in
-              design faculty, curriculum design, emerging tech and interactive
-              media.
-            </p>
-          </div>
+
 
           <div
             className={`flex flex-col sm:flex-row gap-4 transition-all duration-800 delay-600 ${
