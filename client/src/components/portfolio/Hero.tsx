@@ -59,7 +59,7 @@ export function Hero() {
 
     animateLines();
 
-    // 3D Force Map Animation
+    // 2D Connectivity Temporal Force Map
     const canvas = canvasRef.current;
     if (canvas) {
       const ctx = canvas.getContext('2d');
@@ -70,37 +70,52 @@ export function Hero() {
             canvas.height = window.innerHeight;
           }
         };
-        
+
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Force map nodes
+        // 2D Force map nodes
         const nodes: Array<{
           x: number;
           y: number;
-          z: number;
           vx: number;
           vy: number;
-          vz: number;
+          originalX: number;
+          originalY: number;
           connections: number[];
-          age: number;
-          maxAge: number;
         }> = [];
 
-        // Create initial nodes
-        for (let i = 0; i < 50; i++) {
+        // Create initial nodes in a loose grid pattern
+        const nodeCount = 40;
+        for (let i = 0; i < nodeCount; i++) {
+          const x = (Math.random() * 0.8 + 0.1) * canvas.width;
+          const y = (Math.random() * 0.8 + 0.1) * canvas.height;
+
           nodes.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            z: Math.random() * 200 - 100,
-            vx: (Math.random() - 0.5) * 2,
-            vy: (Math.random() - 0.5) * 2,
-            vz: (Math.random() - 0.5) * 1,
+            x: x,
+            y: y,
+            vx: 0,
+            vy: 0,
+            originalX: x,
+            originalY: y,
             connections: [],
-            age: 0,
-            maxAge: Math.random() * 300 + 200,
           });
         }
+
+        // Create connections between nearby nodes
+        nodes.forEach((node, index) => {
+          nodes.forEach((otherNode, otherIndex) => {
+            if (index !== otherIndex) {
+              const dx = node.x - otherNode.x;
+              const dy = node.y - otherNode.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < 120 && Math.random() < 0.3) {
+                node.connections.push(otherIndex);
+              }
+            }
+          });
+        });
 
         let time = 0;
         let isAnimating = true;
@@ -108,78 +123,64 @@ export function Hero() {
         const animate = () => {
           if (!isAnimating || !canvas || !ctx) return;
 
-          ctx.fillStyle = 'rgba(16, 16, 19, 0.1)';
+          // Clear with slight trail effect
+          ctx.fillStyle = 'rgba(16, 16, 19, 0.05)';
           ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-          time += 0.02;
+          time += 0.01;
 
-          // Update nodes
+          // Update nodes with temporal forces
           nodes.forEach((node, index) => {
-            // Temporal force - nodes move in response to time
-            const temporalForce = Math.sin(time + index * 0.1) * 0.5;
-            node.vx += temporalForce * 0.1;
-            node.vy += Math.cos(time + index * 0.15) * 0.1;
-            node.vz += temporalForce * 0.05;
+            // Temporal wave forces
+            const timeOffset = index * 0.5;
+            const waveX = Math.sin(time * 2 + timeOffset) * 15;
+            const waveY = Math.cos(time * 1.5 + timeOffset) * 12;
 
-            // Apply forces and movement
-            node.x += node.vx;
-            node.y += node.vy;
-            node.z += node.vz;
+            // Spring force back to original position
+            const springX = (node.originalX - node.x) * 0.02;
+            const springY = (node.originalY - node.y) * 0.02;
 
-            // Boundary conditions with wrapping
-            if (node.x < 0) node.x = canvas.width;
-            if (node.x > canvas.width) node.x = 0;
-            if (node.y < 0) node.y = canvas.height;
-            if (node.y > canvas.height) node.y = 0;
+            // Apply forces
+            node.vx += waveX * 0.01 + springX;
+            node.vy += waveY * 0.01 + springY;
 
             // Damping
-            node.vx *= 0.99;
-            node.vy *= 0.99;
-            node.vz *= 0.99;
+            node.vx *= 0.95;
+            node.vy *= 0.95;
 
-            // Age the node
-            node.age++;
-            if (node.age > node.maxAge) {
-              node.age = 0;
-              node.x = Math.random() * canvas.width;
-              node.y = Math.random() * canvas.height;
-              node.z = Math.random() * 200 - 100;
-            }
-
-            // 3D projection
-            const scale = 200 / (200 + node.z);
-            const projectedX = node.x * scale;
-            const projectedY = node.y * scale;
+            // Update position
+            node.x += node.vx;
+            node.y += node.vy;
 
             // Draw node
-            const alpha = Math.max(0, 1 - node.age / node.maxAge);
-            const size = Math.max(0.5, Math.abs(scale * 2));
-            
-            ctx.beginPath();
-            ctx.arc(projectedX, projectedY, size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(109, 89, 255, ${alpha * 0.6})`;
-            ctx.fill();
+            const intensity = Math.sin(time * 3 + index * 0.3) * 0.5 + 0.5;
+            const nodeSize = 3 + intensity * 2;
 
-            // Draw connections to nearby nodes
-            nodes.forEach((otherNode, otherIndex) => {
-              if (index !== otherIndex) {
-                const dx = node.x - otherNode.x;
-                const dy = node.y - otherNode.y;
-                const dz = node.z - otherNode.z;
-                const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, nodeSize, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(109, 89, 255, ${0.6 + intensity * 0.4})`;
+            ctx.fill();
+          });
+
+          // Draw connections
+          nodes.forEach((node, index) => {
+            node.connections.forEach((connectionIndex) => {
+              const connectedNode = nodes[connectionIndex];
+              if (connectedNode) {
+                const distance = Math.sqrt(
+                  Math.pow(node.x - connectedNode.x, 2) + 
+                  Math.pow(node.y - connectedNode.y, 2)
+                );
 
                 if (distance < 150) {
-                  const otherScale = 200 / (200 + otherNode.z);
-                  const otherProjectedX = otherNode.x * otherScale;
-                  const otherProjectedY = otherNode.y * otherScale;
+                  const alpha = Math.max(0, (150 - distance) / 150) * 0.4;
+                  const pulse = Math.sin(time * 4 + index * 0.2) * 0.3 + 0.7;
 
-                  const connectionAlpha = Math.max(0, (150 - distance) / 150) * alpha * 0.3;
-                  
                   ctx.beginPath();
-                  ctx.moveTo(projectedX, projectedY);
-                  ctx.lineTo(otherProjectedX, otherProjectedY);
-                  ctx.strokeStyle = `rgba(109, 89, 255, ${connectionAlpha})`;
-                  ctx.lineWidth = 0.5;
+                  ctx.moveTo(node.x, node.y);
+                  ctx.lineTo(connectedNode.x, connectedNode.y);
+                  ctx.strokeStyle = `rgba(109, 89, 255, ${alpha * pulse})`;
+                  ctx.lineWidth = 1;
                   ctx.stroke();
                 }
               }
@@ -238,7 +239,7 @@ export function Hero() {
           opacity: 0.8
         }}
       />
-      
+
       {/* Background Carousel - Full Screen */}
       <div
         className="absolute inset-0 z-10 overflow-hidden"
