@@ -142,7 +142,7 @@ export function Courses() {
                   />
                 ) : course.id === 3 ? (
                   <iframe
-                    src="https://www.youtube.com/embed/-Nwveq3EAZo"
+                    src="https://www.youtube.com/embed/-Nwveq3EAZo?autoplay=1&mute=1&controls=0&loop=1&playlist=-Nwveq3EAZo"
                     title={course.title}
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
