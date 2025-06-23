@@ -30,8 +30,21 @@ export function ProjectHighlight() {
           </p>
         </div>
 
+        {/* Video Section */}
+        <div className="mb-16">
+          <div className="aspect-video rounded-lg overflow-hidden max-w-4xl mx-auto">
+            <iframe
+              src="https://www.youtube.com/embed/WD1bq2K42W0"
+              title="Crypto Design Student Project"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-1 gap-12 mb-16">
           {/* Project Details */}
           <div>
             <h3 
@@ -56,12 +69,12 @@ export function ProjectHighlight() {
               </p>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Users className="w-5 h-5 mt-1" style={{ color: 'var(--accent-primary)' }} />
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center">
+                <Users className="w-8 h-8 mb-3" style={{ color: 'var(--accent-primary)' }} />
                 <div>
                   <h4 
-                    className="font-['Fraunces'] font-medium mb-1"
+                    className="font-['Fraunces'] font-medium mb-2"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     Student Challenge
@@ -75,11 +88,11 @@ export function ProjectHighlight() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <Code className="w-5 h-5 mt-1" style={{ color: 'var(--accent-primary)' }} />
+              <div className="flex flex-col items-center text-center">
+                <Code className="w-8 h-8 mb-3" style={{ color: 'var(--accent-primary)' }} />
                 <div>
                   <h4 
-                    className="font-['Fraunces'] font-medium mb-1"
+                    className="font-['Fraunces'] font-medium mb-2"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     Technical Innovation
@@ -93,11 +106,11 @@ export function ProjectHighlight() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <Zap className="w-5 h-5 mt-1" style={{ color: 'var(--accent-primary)' }} />
+              <div className="flex flex-col items-center text-center">
+                <Zap className="w-8 h-8 mb-3" style={{ color: 'var(--accent-primary)' }} />
                 <div>
                   <h4 
-                    className="font-['Fraunces'] font-medium mb-1"
+                    className="font-['Fraunces'] font-medium mb-2"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     Real-World Context
@@ -110,19 +123,6 @@ export function ProjectHighlight() {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Visual Element */}
-          <div className="relative">
-            <div className="aspect-video rounded-lg overflow-hidden">
-              <iframe
-                src="https://www.youtube.com/embed/WD1bq2K42W0"
-                title="Crypto Design Student Project"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
             </div>
           </div>
         </div>
