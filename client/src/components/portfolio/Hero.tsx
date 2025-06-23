@@ -88,7 +88,7 @@ export function Hero() {
         ))}
         {/* Dark overlay for text readability */}
         <div
-          className="absolute inset-0 z-10 bg-[#1c1c21]"
+          className="absolute inset-0 z-10 bg-[transparent]"
           style={{
             backgroundColor: "var(--bg-primary)",
             opacity: 0.1,
