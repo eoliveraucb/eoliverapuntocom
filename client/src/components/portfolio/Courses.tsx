@@ -101,11 +101,11 @@ export function Courses() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
           <div>
-            <h2 className="mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="mb-4 font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
               Courses & Workshops
             </h2>
             <p 
-              className="text-xl max-w-2xl"
+              className="text-xl max-w-2xl font-['Atlassian_Sans_Ext']"
               style={{ color: 'var(--text-secondary)' }}
             >
               Comprehensive design education programs covering typography, UX design, 

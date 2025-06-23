@@ -70,22 +70,22 @@ export function About() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
-            <h2 className="mb-6" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="mb-6 font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
               About Me
             </h2>
             
             <div className="space-y-4 mb-8">
-              <p style={{ color: 'var(--text-secondary)' }}>
+              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
                 As a Digital Design Professor with over 15 years of experience, I specialize in 
                 bridging the gap between traditional typography principles and modern digital design practices.
               </p>
               
-              <p style={{ color: 'var(--text-secondary)' }}>
+              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
                 My work focuses on developing innovative educational methodologies that empower the next 
                 generation of designers to create meaningful, accessible, and visually compelling digital experiences.
               </p>
               
-              <p style={{ color: 'var(--text-secondary)' }}>
+              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
                 I've published extensively on variable font technologies, responsive typography, 
                 and the intersection of design education with emerging digital platforms.
               </p>
@@ -93,7 +93,7 @@ export function About() {
 
             {/* Skills */}
             <div className="skills-container">
-              <h3 className="mb-6" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="mb-6 font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
                 Expertise
               </h3>
               

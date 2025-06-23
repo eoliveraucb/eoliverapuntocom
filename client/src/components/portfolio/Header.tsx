@@ -64,7 +64,7 @@ export function Header() {
                 <li key={item.id}>
                   <button
                     onClick={() => scrollToSection(item.id)}
-                    className="nav-link font-medium hover:opacity-80 transition-opacity"
+                    className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     {item.label}

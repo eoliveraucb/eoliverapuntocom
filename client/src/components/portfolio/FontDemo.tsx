@@ -38,11 +38,11 @@ export function FontDemo() {
       style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       <div className="container">
-        <h2 className="mb-8" style={{ color: 'var(--text-primary)' }}>
+        <h2 className="mb-8 font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
           Typography Exploration
         </h2>
         
-        <p className="text-xl mb-12 max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+        <p className="text-xl mb-12 max-w-3xl mx-auto font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
           Discover the power of variable fonts and responsive typography. 
           Interactive demonstrations of font weight, spacing, and hierarchy.
         </p>

@@ -33,11 +33,11 @@ export function Contact() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="mb-4 font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
               Get In Touch
             </h2>
             <p 
-              className="text-xl max-w-2xl mx-auto"
+              className="text-xl max-w-2xl mx-auto font-['Atlassian_Sans_Ext']"
               style={{ color: 'var(--text-secondary)' }}
             >
               Interested in collaboration, speaking engagements, or design education? 
@@ -49,7 +49,7 @@ export function Contact() {
             {/* Contact Information */}
             <div>
               <h3 
-                className="text-2xl font-semibold mb-6"
+                className="text-2xl font-semibold mb-6 font-['Fraunces']"
                 style={{ color: 'var(--text-primary)' }}
               >
                 Let's Connect
