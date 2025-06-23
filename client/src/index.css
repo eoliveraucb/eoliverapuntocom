@@ -32,7 +32,7 @@
   --text-primary: hsl(240, 10%, 3.9%);
   --text-secondary: hsl(0, 0%, 33%);
   --accent-primary: hsl(262, 100%, 67%);
-  --accent-secondary: hsl(324, 100%, 68%);
+  --accent-secondary: hsl(279.19deg 62.09% 43.44%);
   --accent-tertiary: hsl(192, 100%, 50%);
   --transition-speed: 0.3s;
   --border-radius: 8px;
@@ -65,6 +65,7 @@
   --bg-secondary: hsl(240, 10%, 12%);
   --text-primary: hsl(0, 0%, 98%);
   --text-secondary: hsl(0, 0%, 69%);
+  --accent-secondary: hsl(279.19deg 62.09% 43.44%);
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -171,14 +172,14 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(135deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .skill-progress {
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(90deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%));
   }
 
   .glass-morphism {

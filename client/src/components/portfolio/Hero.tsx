@@ -12,7 +12,7 @@ export function Hero() {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     // Background carousel with flickering effect
     const carouselInterval = setInterval(() => {
       // Create flickering effect before transition
@@ -29,7 +29,7 @@ export function Hero() {
       };
       flicker();
     }, 4000); // Change image every 4 seconds with flicker
-    
+
     // Animate entire headline font weight
     const animateHeadline = () => {
       setTimeout(() => {
@@ -47,9 +47,9 @@ export function Hero() {
         }, 120);
       }, 0);
     };
-    
+
     setTimeout(animateHeadline, 800);
-    
+
     return () => {
       clearInterval(carouselInterval);
     };
@@ -66,29 +66,32 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center relative overflow-hidden"
+    >
       {/* Background Carousel - Full Screen */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {backgroundImages.map((image, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-100 ${
-              index === currentImageIndex ? 'opacity-80' : 'opacity-0'
+              index === currentImageIndex ? "opacity-80" : "opacity-0"
             }`}
             style={{
               backgroundImage: `url(${image})`,
-              backgroundSize: 'contain',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           />
         ))}
         {/* Dark overlay for text readability */}
-        <div 
+        <div
           className="absolute inset-0 z-10"
-          style={{ 
-            backgroundColor: 'var(--bg-primary)',
-            opacity: 0.6
+          style={{
+            backgroundColor: "var(--bg-primary)",
+            opacity: 0.6,
           }}
         />
       </div>
@@ -99,65 +102,80 @@ export function Hero() {
             key={index}
             onClick={() => setCurrentImageIndex(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentImageIndex 
-                ? 'w-4 h-4' 
-                : 'opacity-50 hover:opacity-75'
+              index === currentImageIndex
+                ? "w-4 h-4"
+                : "opacity-50 hover:opacity-75"
             }`}
-            style={{ 
-              backgroundColor: index === currentImageIndex 
-                ? 'var(--accent-primary)' 
-                : 'var(--text-secondary)' 
+            style={{
+              backgroundColor:
+                index === currentImageIndex
+                  ? "var(--accent-primary)"
+                  : "var(--text-secondary)",
             }}
           />
         ))}
       </div>
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl mx-auto relative z-10 text-center">
-          <div 
+          <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px]"
-            style={{ 
-              backgroundColor: 'var(--bg-primary)',
+            style={{
+              backgroundColor: "var(--bg-primary)",
               opacity: 0.95,
-              backdropFilter: 'blur(10px)'
+              backdropFilter: "blur(10px)",
             }}
           >
-            <h1 
+            <h1
               className={`text-3xl md:text-4xl lg:text-5xl font-['Sono'] transition-all duration-300 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-5"
               }`}
-              style={{ 
-                color: 'var(--text-primary)',
-                lineHeight: '1.4',
+              style={{
+                color: "var(--text-primary)",
+                lineHeight: "1.4",
                 marginBottom: 0,
-                fontWeight: headlineFontWeight
+                fontWeight: headlineFontWeight,
               }}
             >
-              Design education and experience design practice of{' '}
+              Design education & professional experience design practice of{" "}
               <span className="gradient-text">Edwin Mauricio Olivera</span>
             </h1>
           </div>
-          
-          <p 
+
+          <p
             className="text-lg md:text-xl font-light mb-8 max-w-3xl transition-all duration-800 delay-400 font-['Sono'] opacity-100 translate-y-0 text-left"
-            style={{ color: 'var(--text-secondary)' }}
+            style={{ color: "var(--text-secondary)" }}
           >
-            Hello! My name is Edwin Mauricio Olivera seeking opportunities in design faculty, curriculum design, emerging tech and interactive media.
+            Hello! My name is Edwin Mauricio Olivera seeking opportunities in
+            design faculty, curriculum design, emerging tech and interactive
+            media.
           </p>
-          
-          <div 
+
+          <div
             className={`flex flex-col sm:flex-row gap-4 transition-all duration-800 delay-600 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-5"
             }`}
           >
-            <button 
+            <button
               className="btn-primary btn-ripple px-8 py-4 font-['Sono']"
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Get in touch
             </button>
-            <button 
+            <button
               className="btn-secondary px-8 py-4 font-['Sono']"
-              onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document
+                  .getElementById("portfolio")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               View My Work
             </button>
@@ -165,11 +183,14 @@ export function Hero() {
         </div>
       </div>
       {/* Scroll Indicator */}
-      <div 
+      <div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce-slow cursor-pointer"
         onClick={scrollToNext}
       >
-        <i className="fas fa-chevron-down text-2xl" style={{ color: 'var(--text-secondary)' }}></i>
+        <i
+          className="fas fa-chevron-down text-2xl"
+          style={{ color: "var(--text-secondary)" }}
+        ></i>
       </div>
     </section>
   );
