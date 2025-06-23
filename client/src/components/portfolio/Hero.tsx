@@ -115,53 +115,7 @@ export function Hero() {
           />
         ))}
       </div>
-      {/* Decorative Motif - Left Side */}
-      <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-30 hidden md:block">
-        <div className="motif-pattern space-y-4">
-          {/* Row 1 */}
-          <div className="flex items-center space-x-4">
-            <div className="flex space-x-2">
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-            </div>
-            <div className="w-8"></div>
-            <div className="flex space-x-2">
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-            </div>
-          </div>
-          {/* Row 2 */}
-          <div className="flex items-center space-x-4">
-            <div className="flex space-x-2">
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 invisible"></div>
-            </div>
-            <div className="w-8"></div>
-            <div className="flex space-x-2">
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-            </div>
-          </div>
-          {/* Row 3 */}
-          <div className="flex items-center space-x-4">
-            <div className="flex space-x-2">
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-            </div>
-            <div className="w-8"></div>
-            <div className="flex space-x-2">
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-              <div className="w-2 h-2 invisible"></div>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-primary)' }}></div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       <div className="container relative z-20">
         <div className="hero-content max-w-4xl mx-auto relative z-10 text-center">
