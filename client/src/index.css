@@ -41,6 +41,7 @@
   --transition-speed: 0.3s;
   --border-radius: 8px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --invert-filter: 0;
 }
 
 .dark {
@@ -71,6 +72,7 @@
   --text-secondary: hsl(0, 0%, 69%);
   --accent-secondary: hsl(279.19deg 62.09% 43.44%);
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --invert-filter: 1;
 }
 
 @layer base {

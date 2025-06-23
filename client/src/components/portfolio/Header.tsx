@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../ThemeProvider";
+import emlogo from "../../assets/emlogo.svg";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,22 +49,12 @@ export function Header() {
               className="flex items-center gap-8 h-10 text-xl font-bold tracking-[0.625rem] font-['Fraunces']"
               style={{ color: 'var(--text-primary)' }}
             >
-              <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ color: 'var(--text-primary)' }}>
-                {/* E */}
-                <rect x="5" y="8" width="3" height="24" fill="currentColor"/>
-                <rect x="5" y="8" width="12" height="3" fill="currentColor"/>
-                <rect x="5" y="18.5" width="10" height="3" fill="currentColor"/>
-                <rect x="5" y="29" width="12" height="3" fill="currentColor"/>
-                
-                {/* M */}
-                <rect x="25" y="8" width="3" height="24" fill="currentColor"/>
-                <rect x="40" y="8" width="3" height="24" fill="currentColor"/>
-                <polygon points="28,8 31,15 34,8 37,8 31,20 25,8" fill="currentColor"/>
-                
-                {/* Logo mark */}
-                <circle cx="95" cy="20" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
-                <circle cx="95" cy="20" r="6" fill="currentColor"/>
-              </svg>
+              <img 
+                src={emlogo} 
+                alt="EM Logo" 
+                className="h-10"
+                style={{ filter: 'brightness(0) saturate(100%) invert(var(--invert-filter, 0))' }}
+              />
             </div>
           </div>
 
