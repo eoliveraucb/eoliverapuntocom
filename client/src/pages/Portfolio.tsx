@@ -74,10 +74,9 @@ function AreasOfFocus() {
                   area.keywords.some(keyword => keyword.toLowerCase() === part.toLowerCase()) ? (
                     <span 
                       key={i}
-                      className="px-2 py-1 rounded-md mx-0.5 font-medium text-xs"
+                      className="font-medium"
                       style={{ 
-                        background: 'linear-gradient(135deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%))',
-                        color: 'white'
+                        color: 'var(--accent-primary)'
                       }}
                     >
                       {part}
