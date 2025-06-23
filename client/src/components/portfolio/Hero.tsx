@@ -71,7 +71,7 @@ export function Hero() {
       className="min-h-screen flex items-center relative overflow-hidden"
     >
       {/* Background Carousel - Full Screen */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden" style={{ marginLeft: '-276px' }}>
         {backgroundImages.map((image, index) => (
           <div
             key={index}
