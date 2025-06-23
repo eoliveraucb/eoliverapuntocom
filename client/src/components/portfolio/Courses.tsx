@@ -101,15 +101,15 @@ export function Courses() {
             className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-4"
             style={{ color: 'var(--text-primary)' }}
           >
-            Courses & Workshops
+            Digital Design 4: Case Studies
           </h2>
           <p 
             className="text-lg max-w-4xl mx-auto font-['Atlassian Sans Ext']"
             style={{ color: 'var(--text-secondary)' }}
           >
-            Future-oriented digital design education that examines transformative social and cultural relationships 
-            in designing with emerging technologies. Participatory design experiences rooted in critical thinking 
-            and real-world applications.
+            A comprehensive overview of workshops and projects from my BFA and MFA level Digital Design 4 course. 
+            These case studies demonstrate advanced pedagogical approaches combining speculative design, 
+            emerging technologies, and cultural context in university-level design education.
           </p>
         </div>
 
@@ -259,27 +259,27 @@ export function Courses() {
           ))}
         </div>
 
-        {/* Teaching Goals & Methodology */}
+        {/* Course Framework & Academic Context */}
         <div className="mt-20">
           <h3 
             className="text-2xl font-['Fraunces'] font-semibold mb-8 text-center"
             style={{ color: 'var(--text-primary)' }}
           >
-            Teaching Goals & Methodology
+            Academic Framework & Outcomes
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Innovative Pedagogy",
-                description: "Effectively integrate speculative design, systems thinking, and emerging technologies to prepare students for future challenges in digital design practice."
+                title: "BFA/MFA Integration",
+                description: "Course curriculum designed for both undergraduate and graduate students, adapting complexity and theoretical depth based on academic level while maintaining rigorous design standards."
               },
               {
-                title: "Real-World Applications",
-                description: "Projects tied to local resources and global challenges provide cultural relevance with potential for international scalability and impact."
+                title: "Cultural Contextualization",
+                description: "Projects consistently integrate Bolivian cultural elements with global design challenges, creating locally relevant solutions with international applicability and academic rigor."
               },
               {
-                title: "Holistic Development",
-                description: "Students develop technical, creative, and socio-ethical skills through diverse assignments, interactive learning, and community of practice engagement."
+                title: "Cross-Modal Learning",
+                description: "Students engage through multiple sensory modalities—visual, auditory, tactile, and olfactory—developing comprehensive design thinking beyond traditional screen-based interfaces."
               }
             ].map((goal, index) => (
               <div key={index} className="p-6 rounded-lg" style={{ backgroundColor: 'var(--bg-primary)' }}>
@@ -300,31 +300,31 @@ export function Courses() {
           </div>
         </div>
 
-        {/* Course Schedule & Contact */}
+        {/* Course Impact & Academic Results */}
         <div className="mt-16 grid md:grid-cols-2 gap-8">
           <div className="p-8 rounded-lg" style={{ backgroundColor: 'var(--bg-primary)' }}>
             <h3 
               className="text-xl font-['Fraunces'] font-semibold mb-4"
               style={{ color: 'var(--text-primary)' }}
             >
-              Course Information
+              Academic Implementation
             </h3>
             <div className="space-y-3 font-['Atlassian Sans Ext']">
               <div>
-                <span className="font-medium" style={{ color: 'var(--text-primary)' }}>Schedule:</span>
-                <span style={{ color: 'var(--text-secondary)' }}> Saturdays, 1:15–3:45 PM</span>
+                <span className="font-medium" style={{ color: 'var(--text-primary)' }}>Institution:</span>
+                <span style={{ color: 'var(--text-secondary)' }}> Universidad Católica Boliviana</span>
               </div>
               <div>
-                <span className="font-medium" style={{ color: 'var(--text-primary)' }}>Format:</span>
-                <span style={{ color: 'var(--text-secondary)' }}> Online (Zoom)</span>
+                <span className="font-medium" style={{ color: 'var(--text-primary)' }}>Program Level:</span>
+                <span style={{ color: 'var(--text-secondary)' }}> BFA & MFA Digital Design</span>
               </div>
               <div>
-                <span className="font-medium" style={{ color: 'var(--text-primary)' }}>Office Hours:</span>
-                <span style={{ color: 'var(--text-secondary)' }}> 8 hours during daytime</span>
+                <span className="font-medium" style={{ color: 'var(--text-primary)' }}>Course Format:</span>
+                <span style={{ color: 'var(--text-secondary)' }}> Hybrid (Online/In-Person)</span>
               </div>
               <div>
-                <span className="font-medium" style={{ color: 'var(--text-primary)' }}>Email:</span>
-                <span style={{ color: 'var(--text-secondary)' }}> eolivera.a@ucb.edu.bo</span>
+                <span className="font-medium" style={{ color: 'var(--text-primary)' }}>Duration:</span>
+                <span style={{ color: 'var(--text-secondary)' }}> 16-week semester</span>
               </div>
             </div>
           </div>
@@ -334,12 +334,12 @@ export function Courses() {
               className="text-xl font-['Fraunces'] font-semibold mb-6"
               style={{ color: 'var(--text-primary)' }}
             >
-              Course Evaluation
+              Student Learning Outcomes
             </h3>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="font-['Atlassian Sans Ext']" style={{ color: 'var(--text-primary)' }}>
-                  Attendance & Participation
+                  Conceptual Development
                 </span>
                 <span 
                   className="font-['Fraunces'] font-bold"
@@ -350,12 +350,12 @@ export function Courses() {
                     backgroundClip: 'text'
                   }}
                 >
-                  30%
+                  40%
                 </span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="font-['Atlassian Sans Ext']" style={{ color: 'var(--text-primary)' }}>
-                  Exercises & Synthesis
+                  Technical Execution
                 </span>
                 <span 
                   className="font-['Fraunces'] font-bold"
@@ -366,12 +366,12 @@ export function Courses() {
                     backgroundClip: 'text'
                   }}
                 >
-                  45%
+                  35%
                 </span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="font-['Atlassian Sans Ext']" style={{ color: 'var(--text-primary)' }}>
-                  Reading & Reflections
+                  Critical Analysis
                 </span>
                 <span 
                   className="font-['Fraunces'] font-bold"
@@ -388,13 +388,13 @@ export function Courses() {
           </div>
         </div>
 
-        {/* Course Materials Gallery */}
+        {/* Documentation & Student Work */}
         <div className="mt-20">
           <h3 
             className="text-2xl font-['Fraunces'] font-semibold mb-8 text-center"
             style={{ color: 'var(--text-primary)' }}
           >
-            Course Materials & Student Work
+            Workshop Documentation & Student Outcomes
           </h3>
           <div className="masonry-grid columns-2 md:columns-3 lg:columns-4 gap-4">
             {[
