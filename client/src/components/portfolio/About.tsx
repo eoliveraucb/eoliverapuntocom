@@ -224,9 +224,9 @@ export function About() {
     >
       <div className="container">
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left Side: Profile Image and About Text */}
+          {/* Left Side: About Me */}
           <div 
-            className={`space-y-8 transition-all duration-500 ${
+            className={`transition-all duration-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
@@ -234,7 +234,7 @@ export function About() {
               About Me
             </h2>
             
-            <div className="rounded-lg overflow-hidden shadow-lg">
+            <div className="rounded-lg overflow-hidden shadow-lg mb-6">
               <img 
                 src={profileImage} 
                 alt="Edwin Olivera - Digital Design Professor"
@@ -255,7 +255,7 @@ export function About() {
                 Much of my recent work centers on making emerging technologies—including AI—accessible and meaningful for students and educators in Latin America. I believe in the power of co-creation and aim to design educational models that empower learners to shape their own futures, while staying grounded in cultural knowledge and social context.
               </p>
 
-              <p className="font-['Atlassian_Sans_Ext'] mt-6" style={{ color: 'var(--text-secondary)' }}>
+              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
                 My approach is driven by curiosity, empathy, and a commitment to lifelong learning. I am always excited to collaborate with others who share a vision for inclusive, impactful design education.
               </p>
             </div>
@@ -271,24 +271,6 @@ export function About() {
               Areas of Focus
             </h2>
             <FocusCarousel />
-            
-            <div className="space-y-4">
-              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
-                I am a graduate of the MFA program in Design for Social Innovation at the School of Visual Arts in New York. My work explores how design can be leveraged as a tool for social transformation—particularly within education systems that serve marginalized and underrepresented communities.
-              </p>
-              
-              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
-                Drawing from over 15 years of creative experience across disciplines, I develop hands-on, innovative learning experiences that merge technology, culture, and community engagement. My practice emphasizes collaboration, peer mentorship, and the integration of analog and digital approaches to help learners build skills that are adaptable, resilient, and future-focused.
-              </p>
-              
-              <p className="font-['Atlassian_Sans_Ext']" style={{ color: 'var(--text-secondary)' }}>
-                Much of my recent work centers on making emerging technologies—including AI—accessible and meaningful for students and educators in Latin America. I believe in the power of co-creation and aim to design educational models that empower learners to shape their own futures, while staying grounded in cultural knowledge and social context.
-              </p>
-
-              <p className="font-['Atlassian_Sans_Ext'] mt-6" style={{ color: 'var(--text-secondary)' }}>
-                My approach is driven by curiosity, empathy, and a commitment to lifelong learning. I am always excited to collaborate with others who share a vision for inclusive, impactful design education.
-              </p>
-            </div>
           </div>
         </div>
       </div>
