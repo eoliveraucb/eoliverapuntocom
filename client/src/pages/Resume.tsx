@@ -59,6 +59,28 @@ export default function Resume() {
             my practice is rooted in creative education, positive disruption, and futures thinking.
           </p>
           
+          {/* Social Media Icons */}
+          <div className="flex justify-center gap-4 mt-6 print:hidden">
+            <a href="https://www.linkedin.com/in/emolivera/" target="_blank" className="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+              <i className="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/unkerned" target="_blank" className="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+              <i className="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="https://wa.link/p5civg" target="_blank" className="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+              <i className="fab fa-whatsapp text-xl"></i>
+            </a>
+            <a href="https://discord.com/channels/1282866549925085206" target="_blank" className="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+              <i className="fab fa-discord text-xl"></i>
+            </a>
+            <a href="https://soundcloud.com/e-mauricio-olivera" target="_blank" className="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+              <i className="fab fa-soundcloud text-xl"></i>
+            </a>
+            <a href="https://www.behance.net/emolivera" target="_blank" className="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+              <i className="fab fa-behance text-xl"></i>
+            </a>
+          </div>
+
           {/* Contact Info */}
           <div className="flex flex-wrap justify-center gap-6 mt-6 text-sm print:gap-4 print:mt-4">
             <div className="flex items-center gap-2">
@@ -75,7 +97,7 @@ export default function Resume() {
             </div>
             <div className="flex items-center gap-2">
               <i className="fab fa-linkedin text-blue-600"></i>
-              <a href="http://www.linkedin.com/in/emolivera" className="text-gray-400 hover:text-blue-600">linkedin.com/in/emolivera</a>
+              <a href="https://www.linkedin.com/in/emolivera/" className="text-gray-400 hover:text-blue-600">linkedin.com/in/emolivera</a>
             </div>
           </div>
         </header>
@@ -289,7 +311,7 @@ export default function Resume() {
             Agency & Brand Collaborations
           </h2>
           
-          <ul className="list-disc list-outside ml-5 space-y-2 text-gray-400 print:text-sm print:space-y-1">
+          <ul className="list-disc list-outside ml-5 space-y-2 print:text-sm print:space-y-1 text-[#9ca3af]">
             <li>Executed creative projects for PG&E (San Francisco), Red Bull (Panama/LA), and Miller Lite through agency placements at Momentum Worldwide, Brown Shoe, and Schupp Company</li>
             <li>Developed design solutions for C-level executives at Comcast Enterprise and Spectrum Business Enterprise during tenure at Stealth, leading to award-winning outcomes</li>
           </ul>
