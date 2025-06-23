@@ -268,7 +268,7 @@ export default function Resume() {
           <div className="space-y-4 print:space-y-2">
             <div className="p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2 bg-[#101013]">
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>Gold Award, AIGA TEN Show</h4>
-              <p className="text-gray-600 text-sm">WarrantError project recognition</p>
+              <p className="text-gray-600 text-sm mt-[-8px] mb-[-8px]">WarrantError project recognition</p>
             </div>
             <div className="p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2 bg-[#101013]">
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>AIGA Worldstudio D×D Scholarship</h4>
