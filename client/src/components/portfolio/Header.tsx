@@ -50,12 +50,14 @@ export function Header() {
               className="flex items-center gap-8 h-10 text-xl font-bold tracking-[0.625rem] font-['Fraunces']"
               style={{ color: 'var(--text-primary)' }}
             >
-              <img 
-                src={emlogo} 
-                alt="Logo" 
-                className="h-8"
-                style={{ filter: `invert(var(--invert-filter, 0)) sepia(1) saturate(5) hue-rotate(240deg) brightness(0.8)` }}
-              />
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center">
+                <img 
+                  src={emlogo} 
+                  alt="Logo" 
+                  className="h-5 w-5"
+                  style={{ filter: 'brightness(0) invert(1)' }}
+                />
+              </div>
             </div>
           </div>
 
@@ -94,49 +96,49 @@ export function Header() {
                   href="https://www.linkedin.com/in/emolivera/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
                 >
-                  <i className="fab fa-linkedin text-lg"></i>
+                  <i className="fab fa-linkedin text-white text-sm"></i>
                 </a>
                 <a 
                   href="https://www.instagram.com/unkerned" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
                 >
-                  <i className="fab fa-instagram text-lg"></i>
+                  <i className="fab fa-instagram text-white text-sm"></i>
                 </a>
                 <a 
                   href="https://wa.link/p5civg" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
                 >
-                  <i className="fab fa-whatsapp text-lg"></i>
+                  <i className="fab fa-whatsapp text-white text-sm"></i>
                 </a>
                 <a 
                   href="https://discord.com/channels/1282866549925085206" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
                 >
-                  <i className="fab fa-discord text-lg"></i>
+                  <i className="fab fa-discord text-white text-sm"></i>
                 </a>
                 <a 
                   href="https://soundcloud.com/e-mauricio-olivera" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
                 >
-                  <i className="fab fa-soundcloud text-lg"></i>
+                  <i className="fab fa-soundcloud text-white text-sm"></i>
                 </a>
                 <a 
                   href="https://www.behance.net/emolivera" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
                 >
-                  <i className="fab fa-behance text-lg"></i>
+                  <i className="fab fa-behance text-white text-sm"></i>
                 </a>
               </div>
             </div>
@@ -197,54 +199,54 @@ export function Header() {
           </Link>
           
           {/* Mobile Social Media Icons */}
-          <div className="flex items-center gap-6 mt-4">
+          <div className="flex items-center gap-4 mt-4">
             <a 
               href="https://www.linkedin.com/in/emolivera/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
             >
-              <i className="fab fa-linkedin text-2xl"></i>
+              <i className="fab fa-linkedin text-white text-lg"></i>
             </a>
             <a 
               href="https://www.instagram.com/unkerned" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
             >
-              <i className="fab fa-instagram text-2xl"></i>
+              <i className="fab fa-instagram text-white text-lg"></i>
             </a>
             <a 
               href="https://wa.link/p5civg" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
             >
-              <i className="fab fa-whatsapp text-2xl"></i>
+              <i className="fab fa-whatsapp text-white text-lg"></i>
             </a>
             <a 
               href="https://discord.com/channels/1282866549925085206" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
             >
-              <i className="fab fa-discord text-2xl"></i>
+              <i className="fab fa-discord text-white text-lg"></i>
             </a>
             <a 
               href="https://soundcloud.com/e-mauricio-olivera" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
             >
-              <i className="fab fa-soundcloud text-2xl"></i>
+              <i className="fab fa-soundcloud text-white text-lg"></i>
             </a>
             <a 
               href="https://www.behance.net/emolivera" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center hover:scale-110 transition-transform duration-200"
             >
-              <i className="fab fa-behance text-2xl"></i>
+              <i className="fab fa-behance text-white text-lg"></i>
             </a>
           </div>
         </div>
