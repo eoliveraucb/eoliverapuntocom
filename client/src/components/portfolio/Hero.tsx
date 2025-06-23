@@ -140,7 +140,7 @@ export function Hero() {
           </div>
 
           <p
-            className="text-lg md:text-xl font-light mb-8 max-w-3xl transition-all duration-800 delay-400 font-['Sono'] opacity-100 translate-y-0 text-left"
+            className="text-lg md:text-xl max-w-3xl transition-all duration-800 delay-400 font-['Sono'] opacity-100 translate-y-0 text-left mt-[2px] mb-[2px] font-medium"
             style={{ color: "var(--text-secondary)" }}
           >
             Hello! My name is Edwin Mauricio Olivera seeking opportunities in
