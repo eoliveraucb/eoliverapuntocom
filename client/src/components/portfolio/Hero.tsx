@@ -116,7 +116,7 @@ export function Hero() {
         ))}
       </div>
       <div className="container relative z-20">
-        <div className="hero-content max-w-4xl mx-auto relative z-10 text-center pl-[120px] pr-[120px]">
+        <div className="hero-content max-w-4xl mx-auto relative z-10 text-center pl-[95px] pr-[95px]">
           <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
