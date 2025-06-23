@@ -24,23 +24,29 @@ export function Hero() {
     let animationId: number;
     let timeouts: NodeJS.Timeout[] = [];
 
-    // Background carousel with flickering effect
+    // Enhanced carousel with bezier transitions and 3D effects
     carouselInterval = setInterval(() => {
-      // Create flickering effect before transition
-      const flicker = () => {
-        setCurrentImageIndex((prev) => {
-          const next = (prev + 1) % backgroundImages.length;
-          // Rapid flicker between current and next
-          const t1 = setTimeout(() => setCurrentImageIndex(prev), 50);
-          const t2 = setTimeout(() => setCurrentImageIndex(next), 100);
-          const t3 = setTimeout(() => setCurrentImageIndex(prev), 150);
-          const t4 = setTimeout(() => setCurrentImageIndex(next), 200);
-          timeouts.push(t1, t2, t3, t4);
-          return next;
-        });
-      };
-      flicker();
-    }, 4000);
+      const nextIndex = (currentImageIndex + 1) % backgroundImages.length;
+      
+      // Enhanced flickering sequence with elastic easing
+      const flickerSequence = [
+        { index: currentImageIndex, delay: 0, duration: 80 },
+        { index: nextIndex, delay: 80, duration: 40 },
+        { index: currentImageIndex, delay: 120, duration: 60 },
+        { index: nextIndex, delay: 180, duration: 30 },
+        { index: currentImageIndex, delay: 210, duration: 40 },
+        { index: nextIndex, delay: 250, duration: 20 },
+        { index: currentImageIndex, delay: 270, duration: 30 },
+        { index: nextIndex, delay: 300, duration: 0 }
+      ];
+      
+      flickerSequence.forEach(({ index, delay }) => {
+        const timeout = setTimeout(() => {
+          setCurrentImageIndex(index);
+        }, delay);
+        timeouts.push(timeout);
+      });
+    }, 5000);
 
     // Sequential font-weight animations for each line
     const animateLines = () => {
@@ -302,7 +308,7 @@ export function Hero() {
       {/* Background Carousel - Full Screen */}
       <div
         className="absolute inset-0 z-10 overflow-hidden"
-        style={{ marginTop: "5%", marginLeft: "10%" , maxHeight: "90%" }}
+        style={{ marginTop: "5%", marginLeft: "7%" , maxHeight: "90%" }}
       >
         {backgroundImages.map((image, index) => (
           <div
@@ -318,31 +324,36 @@ export function Hero() {
             }}
           />
         ))}
-        {/* Dark overlay for text readability */}
+        {/* Enhanced overlay with gradient and 3D effect */}
         <div
-          className="absolute inset-0 z-20 bg-[transparent]"
+          className="absolute inset-0 z-20"
           style={{
-            backgroundColor: "var(--bg-primary)",
-            opacity: 0.1,
+            background: `linear-gradient(135deg, 
+              hsla(0, 0%, 100%, 0.1) 0%, 
+              hsla(0, 0%, 100%, 0.05) 50%, 
+              hsla(0, 0%, 100%, 0.15) 100%)`,
+            transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+            transform: 'perspective(1000px) translateZ(1px)'
           }}
         />
       </div>
-      {/* Carousel Indicators */}
-      <div className="absolute bottom-8 right-8 z-40 flex gap-3">
+      {/* Enhanced Carousel Indicators with 3D Effects */}
+      <div className="absolute bottom-8 right-8 z-40 flex gap-4">
         {backgroundImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentImageIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`transition-all duration-500 ease-out rounded-full ${
               index === currentImageIndex
-                ? "w-4 h-4"
-                : "opacity-50 hover:opacity-75"
+                ? "w-10 h-4 bg-gradient-to-r from-purple-500 to-blue-500 scale-110 shadow-lg"
+                : "w-4 h-4 bg-white/30 hover:bg-white/50 hover:scale-105"
             }`}
             style={{
-              backgroundColor:
-                index === currentImageIndex
-                  ? "var(--accent-primary)"
-                  : "var(--text-secondary)",
+              transition: 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+              boxShadow: index === currentImageIndex 
+                ? '0 6px 20px rgba(147, 51, 234, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)' 
+                : '0 2px 8px rgba(0, 0, 0, 0.1)',
+              transform: `perspective(100px) rotateX(${index === currentImageIndex ? '5deg' : '0deg'}) translateZ(${index === currentImageIndex ? '2px' : '0px'})`
             }}
           />
         ))}
@@ -350,7 +361,7 @@ export function Hero() {
       <div className="w-full relative z-30 px-4">
         <div
           className="hero-content max-w-4xl relative z-30 text-center mt-[0px] mb-[0px] pt-[0px] pb-[0px] ml-[9.3985px] mr-[9.3985px] pl-[20px] pr-[20px]"
-          style={{ marginLeft: "20%", marginTop: "7%" }}
+          style={{ marginLeft: "26%", marginTop: "6%" }}
         >
           <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
@@ -395,23 +406,7 @@ export function Hero() {
             </h1>
           </div>
 
-          <div
-            className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
-            style={{
-              backgroundColor: "var(--bg-primary)",
-              opacity: 0.95,
-              backdropFilter: "blur(4px)",
-            }}
-          >
-            <p
-              className="text-lg md:text-xl max-w-3xl transition-all duration-800 delay-400 font-['Roboto_Flex'] opacity-100 translate-y-0 text-left font-medium mt-[28px] mb-[28px]"
-              style={{ color: "var(--text-secondary)" }}
-            >
-              Hello! My name is Edwin Mauricio Olivera seeking opportunities in
-              design faculty, curriculum design, emerging tech and interactive
-              media.
-            </p>
-          </div>
+
 
           <div
             className={`flex flex-col sm:flex-row gap-4 transition-all duration-800 delay-600 ${
@@ -431,14 +426,14 @@ export function Hero() {
               Get in touch
             </button>
             <button
-              className="btn-secondary px-8 py-4 font-['Sono']"
+              className="btn-primary px-8 py-4 font-['Sono']"
               onClick={() =>
                 document
                   .getElementById("portfolio")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              View My Work
+              View My Teaching Work
             </button>
           </div>
         </div>
