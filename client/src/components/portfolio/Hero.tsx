@@ -134,6 +134,9 @@ export function Hero() {
                 lineHeight: "1.2",
                 marginBottom: 0,
                 fontWeight: 500,
+                borderRadius: "10px",
+                backgroundColor: "#101013",
+                display: "initial",
               }}
             >
               Design education & professional<br />
