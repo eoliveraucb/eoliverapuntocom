@@ -126,15 +126,16 @@ export function Hero() {
             }}
           >
             <h1
-              className="md:text-4xl lg:text-5xl font-['Sono'] transition-all duration-300 opacity-100 translate-y-0 text-[44px]"
+              className="text-3xl md:text-[44px] font-['Sono'] transition-all duration-300 opacity-100 translate-y-0"
               style={{
                 color: "var(--text-primary)",
-                lineHeight: "1.4",
+                lineHeight: "1.2",
                 marginBottom: 0,
                 fontWeight: headlineFontWeight,
               }}
             >
-              Design education & professional experience design practice of{" "}
+              Design education & professional<br />
+              experience design practice of<br />
               <span className="gradient-text">Edwin Mauricio Olivera</span>
             </h1>
           </div>
