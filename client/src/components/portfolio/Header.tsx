@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../ThemeProvider";
+import { Link } from "wouter";
 import emlogo from "../../assets/emlogo.svg";
 
 export function Header() {
@@ -77,6 +78,13 @@ export function Header() {
                   </button>
                 </li>
               ))}
+              <li>
+                <Link href="/cv">
+                  <button className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
+                    CV
+                  </button>
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -124,6 +132,15 @@ export function Header() {
               {item.label}
             </button>
           ))}
+          <Link href="/cv">
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link font-['Fraunces']"
+              style={{ color: 'var(--text-primary)' }}
+            >
+              CV
+            </button>
+          </Link>
         </div>
       </div>
     </>
