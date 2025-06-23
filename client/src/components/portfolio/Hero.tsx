@@ -86,12 +86,12 @@ export function Hero() {
             }}
           />
         ))}
-        {/* Dark overlay for text readability */}
+        {/* Light overlay for text readability */}
         <div
           className="absolute inset-0 z-10"
           style={{
             backgroundColor: "var(--bg-primary)",
-            opacity: 1.0,
+            opacity: 0.2,
           }}
         />
       </div>
@@ -122,8 +122,7 @@ export function Hero() {
           <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
-              backgroundColor: "var(--bg-primary)",
-              opacity: 1.0,
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
               backdropFilter: "blur(10px)",
             }}
           >
