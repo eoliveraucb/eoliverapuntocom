@@ -44,7 +44,7 @@ function AreasOfFocus() {
         </h2>
         
         <p 
-          className="text-lg max-w-3xl mx-auto mb-12 font-['Atlassian Sans Ext']"
+          className="text-lg max-w-3xl mx-auto mb-12 font-['Roboto_Flex']"
           style={{ color: 'var(--text-secondary)' }}
         >
           Key areas where design education intersects with social innovation, technology, and community building.
@@ -67,7 +67,7 @@ function AreasOfFocus() {
                 {area.title}
               </h3>
               <p 
-                className="text-sm leading-relaxed font-['Atlassian Sans Ext']"
+                className="text-sm leading-relaxed font-['Roboto_Flex']"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 {area.description.split(/\b(hands-on|cross-disciplinary|analog|digital|peer mentorship|community-led|cultural knowledge|AI)\b/gi).map((part, i) => 

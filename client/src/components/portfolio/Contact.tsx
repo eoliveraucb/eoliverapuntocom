@@ -37,7 +37,7 @@ export function Contact() {
               Get In Touch
             </h2>
             <p 
-              className="text-xl max-w-2xl mx-auto font-['Atlassian_Sans_Ext']"
+              className="text-xl max-w-2xl mx-auto font-['Roboto_Flex']"
               style={{ color: 'var(--text-secondary)' }}
             >
               Interested in collaboration, speaking engagements, or design education? 
