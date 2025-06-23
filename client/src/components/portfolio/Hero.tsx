@@ -139,7 +139,7 @@ export function Hero() {
             >
               Design education & professional<br />
               experience design practice of<br />
-              <span className="gradient-text">Edwin Mauricio Olivera</span>
+              <span className="gradient-text" style={{ backgroundColor: "#101013", padding: "4px 8px", borderRadius: "4px" }}>Edwin Mauricio Olivera</span>
             </h1>
           </div>
 
