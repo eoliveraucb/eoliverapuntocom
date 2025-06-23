@@ -54,7 +54,9 @@ export function Header() {
                 src={emlogo} 
                 alt="Logo" 
                 className="h-8"
-                style={{ filter: `invert(var(--invert-filter, 0)) sepia(1) saturate(5) hue-rotate(240deg) brightness(0.8)` }}
+                style={{ 
+                  filter: 'invert(27%) sepia(51%) saturate(2878%) hue-rotate(246deg) brightness(104%) contrast(97%)'
+                }}
               />
             </div>
           </div>
@@ -94,7 +96,8 @@ export function Header() {
                   href="https://www.linkedin.com/in/emolivera/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="hover:scale-110 transition-transform duration-200"
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-linkedin text-lg"></i>
                 </a>
@@ -102,7 +105,8 @@ export function Header() {
                   href="https://www.instagram.com/unkerned" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="hover:scale-110 transition-transform duration-200"
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-instagram text-lg"></i>
                 </a>
@@ -110,7 +114,8 @@ export function Header() {
                   href="https://wa.link/p5civg" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="hover:scale-110 transition-transform duration-200"
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-whatsapp text-lg"></i>
                 </a>
@@ -118,7 +123,8 @@ export function Header() {
                   href="https://discord.com/channels/1282866549925085206" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="hover:scale-110 transition-transform duration-200"
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-discord text-lg"></i>
                 </a>
@@ -126,7 +132,8 @@ export function Header() {
                   href="https://soundcloud.com/e-mauricio-olivera" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="hover:scale-110 transition-transform duration-200"
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-soundcloud text-lg"></i>
                 </a>
@@ -134,7 +141,8 @@ export function Header() {
                   href="https://www.behance.net/emolivera" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  className="hover:scale-110 transition-transform duration-200"
+                  style={{ color: 'var(--accent-primary)' }}
                 >
                   <i className="fab fa-behance text-lg"></i>
                 </a>
@@ -202,7 +210,8 @@ export function Header() {
               href="https://www.linkedin.com/in/emolivera/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="hover:scale-110 transition-transform duration-200"
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-linkedin text-2xl"></i>
             </a>
@@ -210,7 +219,8 @@ export function Header() {
               href="https://www.instagram.com/unkerned" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="hover:scale-110 transition-transform duration-200"
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-instagram text-2xl"></i>
             </a>
@@ -218,7 +228,8 @@ export function Header() {
               href="https://wa.link/p5civg" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="hover:scale-110 transition-transform duration-200"
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-whatsapp text-2xl"></i>
             </a>
@@ -226,7 +237,8 @@ export function Header() {
               href="https://discord.com/channels/1282866549925085206" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="hover:scale-110 transition-transform duration-200"
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-discord text-2xl"></i>
             </a>
@@ -234,7 +246,8 @@ export function Header() {
               href="https://soundcloud.com/e-mauricio-olivera" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="hover:scale-110 transition-transform duration-200"
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-soundcloud text-2xl"></i>
             </a>
@@ -242,7 +255,8 @@ export function Header() {
               href="https://www.behance.net/emolivera" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+              className="hover:scale-110 transition-transform duration-200"
+              style={{ color: 'var(--accent-primary)' }}
             >
               <i className="fab fa-behance text-2xl"></i>
             </a>

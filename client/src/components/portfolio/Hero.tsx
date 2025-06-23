@@ -12,6 +12,8 @@ export function Hero() {
     line3: 200,
   });
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const mousePos = useRef({ x: 0, y: 0 });
+  const scrollY = useRef(0);
 
   const backgroundImages = [home1, home2, home3];
 
@@ -59,7 +61,7 @@ export function Hero() {
 
     animateLines();
 
-    // 2D Connectivity Temporal Force Map
+    // Interactive 2D Connectivity Temporal Force Map
     const canvas = canvasRef.current;
     if (canvas) {
       const ctx = canvas.getContext('2d');
@@ -73,6 +75,23 @@ export function Hero() {
 
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
+
+        // Mouse movement tracking
+        const handleMouseMove = (e: MouseEvent) => {
+          const rect = canvas.getBoundingClientRect();
+          mousePos.current = {
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top
+          };
+        };
+
+        // Scroll tracking
+        const handleScroll = () => {
+          scrollY.current = window.scrollY;
+        };
+
+        canvas.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('scroll', handleScroll);
 
         // 2D Force map nodes
         const nodes: Array<{
@@ -136,13 +155,27 @@ export function Hero() {
             const waveX = Math.sin(time * 2 + timeOffset) * 15;
             const waveY = Math.cos(time * 1.5 + timeOffset) * 12;
 
+            // Mouse interaction force
+            const mouseDistance = Math.sqrt(
+              Math.pow(node.x - mousePos.current.x, 2) + 
+              Math.pow(node.y - mousePos.current.y, 2)
+            );
+            const mouseInfluence = Math.max(0, 200 - mouseDistance) / 200;
+            const mouseForceX = (mousePos.current.x - node.x) * mouseInfluence * 0.02;
+            const mouseForceY = (mousePos.current.y - node.y) * mouseInfluence * 0.02;
+
+            // Scroll-based displacement
+            const scrollInfluence = scrollY.current * 0.1;
+            const scrollWaveX = Math.sin(scrollInfluence + index * 0.3) * 8;
+            const scrollWaveY = Math.cos(scrollInfluence + index * 0.4) * 6;
+
             // Spring force back to original position
             const springX = (node.originalX - node.x) * 0.02;
             const springY = (node.originalY - node.y) * 0.02;
 
-            // Apply forces
-            node.vx += waveX * 0.01 + springX;
-            node.vy += waveY * 0.01 + springY;
+            // Apply all forces
+            node.vx += waveX * 0.01 + mouseForceX + scrollWaveX * 0.01 + springX;
+            node.vy += waveY * 0.01 + mouseForceY + scrollWaveY * 0.01 + springY;
 
             // Damping
             node.vx *= 0.95;
@@ -152,17 +185,29 @@ export function Hero() {
             node.x += node.vx;
             node.y += node.vy;
 
-            // Draw node
-            const intensity = Math.sin(time * 3 + index * 0.3) * 0.5 + 0.5;
-            const nodeSize = 3 + intensity * 2;
+            // Draw node with interaction-based intensity
+            const baseIntensity = Math.sin(time * 3 + index * 0.3) * 0.5 + 0.5;
+            const mouseIntensity = mouseInfluence * 0.8;
+            const scrollIntensity = Math.abs(Math.sin(scrollInfluence + index * 0.2)) * 0.4;
+            const totalIntensity = Math.min(1, baseIntensity + mouseIntensity + scrollIntensity);
+            
+            const nodeSize = 3 + totalIntensity * 3;
 
             ctx.beginPath();
             ctx.arc(node.x, node.y, nodeSize, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(109, 89, 255, ${0.6 + intensity * 0.4})`;
+            ctx.fillStyle = `rgba(109, 89, 255, ${0.4 + totalIntensity * 0.6})`;
             ctx.fill();
+
+            // Add glow effect for nodes near mouse
+            if (mouseInfluence > 0.3) {
+              ctx.beginPath();
+              ctx.arc(node.x, node.y, nodeSize + 5, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(109, 89, 255, ${mouseInfluence * 0.2})`;
+              ctx.fill();
+            }
           });
 
-          // Draw connections
+          // Draw connections with enhanced interactivity
           nodes.forEach((node, index) => {
             node.connections.forEach((connectionIndex) => {
               const connectedNode = nodes[connectionIndex];
@@ -175,12 +220,24 @@ export function Hero() {
                 if (distance < 150) {
                   const alpha = Math.max(0, (150 - distance) / 150) * 0.4;
                   const pulse = Math.sin(time * 4 + index * 0.2) * 0.3 + 0.7;
+                  
+                  // Check if connection is near mouse
+                  const midX = (node.x + connectedNode.x) / 2;
+                  const midY = (node.y + connectedNode.y) / 2;
+                  const mouseDistToConnection = Math.sqrt(
+                    Math.pow(midX - mousePos.current.x, 2) + 
+                    Math.pow(midY - mousePos.current.y, 2)
+                  );
+                  const connectionMouseInfluence = Math.max(0, 100 - mouseDistToConnection) / 100;
+                  
+                  // Scroll influence on connections
+                  const scrollConnectionInfluence = Math.abs(Math.sin(scrollY.current * 0.01 + index * 0.1)) * 0.3;
 
                   ctx.beginPath();
                   ctx.moveTo(node.x, node.y);
                   ctx.lineTo(connectedNode.x, connectedNode.y);
-                  ctx.strokeStyle = `rgba(109, 89, 255, ${alpha * pulse})`;
-                  ctx.lineWidth = 1;
+                  ctx.strokeStyle = `rgba(109, 89, 255, ${alpha * pulse + connectionMouseInfluence * 0.4 + scrollConnectionInfluence})`;
+                  ctx.lineWidth = 1 + connectionMouseInfluence * 2;
                   ctx.stroke();
                 }
               }
@@ -196,6 +253,8 @@ export function Hero() {
 
         return () => {
           isAnimating = false;
+          canvas.removeEventListener('mousemove', handleMouseMove);
+          window.removeEventListener('scroll', handleScroll);
           window.removeEventListener('resize', resizeCanvas);
           if (animationId) {
             cancelAnimationFrame(animationId);
@@ -243,7 +302,7 @@ export function Hero() {
       {/* Background Carousel - Full Screen */}
       <div
         className="absolute inset-0 z-10 overflow-hidden"
-        style={{ marginTop: "5%", marginLeft: "12%" , maxHeight: "90%" }}
+        style={{ marginTop: "5%", marginLeft: "10%" , maxHeight: "90%" }}
       >
         {backgroundImages.map((image, index) => (
           <div
