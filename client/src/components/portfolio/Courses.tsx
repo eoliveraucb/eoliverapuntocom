@@ -123,11 +123,21 @@ export function Courses() {
               }}
             >
               <div className="aspect-video overflow-hidden">
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
+                {course.id === 3 ? (
+                  <iframe
+                    src="https://www.youtube.com/embed/-Nwveq3EAZo"
+                    title={course.title}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                )}
               </div>
               
               <div className="p-6">
