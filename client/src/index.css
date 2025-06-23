@@ -199,6 +199,34 @@
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   }
 
+  /* Masonry layout enhancements */
+  .masonry-grid {
+    column-gap: 1.5rem;
+    orphans: 1;
+    widows: 1;
+  }
+
+  .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Prevent awkward breaks in masonry items */
+  .masonry-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Smooth hover transitions for masonry items */
+  .masonry-item:hover {
+    transform: translateY(-4px);
+    transition: transform 0.3s ease;
+  }
+
   .nav-link {
     position: relative;
   }

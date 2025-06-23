@@ -129,40 +129,41 @@ export function Portfolio() {
           </p>
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Portfolio Masonry Grid */}
+        <div className="masonry-grid columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6">
           {portfolioItems.map((item) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={item.id}
-                className="group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-2"
+                className="masonry-item group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 break-inside-avoid mb-6"
                 style={{ 
                   backgroundColor: 'var(--bg-secondary)',
                   boxShadow: 'var(--shadow)'
                 }}
               >
                 {/* Image Container */}
-                <div className="aspect-square overflow-hidden">
+                <div className="relative overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
-                </div>
-                
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-end">
-                  <div className="p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="flex items-center gap-2 mb-2">
-                      <IconComponent className="w-4 h-4 text-white" />
-                      <span className="text-xs font-medium text-white opacity-80">
-                        {item.category}
-                      </span>
+                  
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <IconComponent className="w-4 h-4 text-white" />
+                        <span className="text-xs font-medium text-white/80 font-['Atlassian Sans Ext']">
+                          {item.category}
+                        </span>
+                      </div>
+                      <h3 className="text-white font-['Fraunces'] font-semibold text-base leading-tight">
+                        {item.title}
+                      </h3>
                     </div>
-                    <h3 className="text-white font-['Fraunces'] font-semibold text-lg leading-tight">
-                      {item.title}
-                    </h3>
                   </div>
                 </div>
               </div>
