@@ -40,11 +40,11 @@ export function Hero() {
       setTimeout(() => {
         setLineAnimations(prev => ({ ...prev, line1: true }));
       }, 300);
-      
+
       setTimeout(() => {
         setLineAnimations(prev => ({ ...prev, line2: true }));
       }, 600);
-      
+
       setTimeout(() => {
         setLineAnimations(prev => ({ ...prev, line3: true }));
       }, 900);
@@ -143,7 +143,7 @@ export function Hero() {
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
               backgroundColor: "var(--bg-primary)",
-              opacity: 0.95,
+              opacity: 0.3,
               backdropFilter: "blur(10px)",
             }}
           >
