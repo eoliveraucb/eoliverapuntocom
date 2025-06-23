@@ -103,12 +103,11 @@ export function Hero() {
           connections: number[];
         }> = [];
 
-        // Create initial nodes in a loose grid pattern, starting below hero section
-        const nodeCount = 60;
-        const heroHeight = window.innerHeight;
+        // Create initial nodes distributed across entire canvas
+        const nodeCount = 80;
         for (let i = 0; i < nodeCount; i++) {
-          const x = (Math.random() * 0.8 + 0.1) * canvas.width;
-          const y = heroHeight + (Math.random() * 0.8 + 0.1) * (canvas.height - heroHeight);
+          const x = (Math.random() * 0.9 + 0.05) * canvas.width;
+          const y = (Math.random() * 0.9 + 0.05) * canvas.height;
 
           nodes.push({
             x: x,
@@ -142,11 +141,16 @@ export function Hero() {
         const animate = () => {
           if (!isAnimating || !canvas || !ctx) return;
 
-          // Clear with slight trail effect, but preserve hero area
-          ctx.fillStyle = 'rgba(16, 16, 19, 0.05)';
-          ctx.fillRect(0, window.innerHeight, canvas.width, canvas.height - window.innerHeight);
+          // Clear canvas with trail effect for smooth animation
+          ctx.fillStyle = 'rgba(16, 16, 19, 0.03)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
 
           time += 0.01;
+
+          // Apply parallax transform to canvas
+          if (canvas) {
+            canvas.style.transform = `translateY(${scrollY.current * 0.3}px)`;
+          }
 
           // Update nodes with temporal forces
           nodes.forEach((node, index) => {
@@ -185,24 +189,25 @@ export function Hero() {
             node.x += node.vx;
             node.y += node.vy;
 
-            // Draw node with interaction-based intensity
+            // Calculate depth-based intensity for parallax effect
+            const depthFactor = (node.y / canvas.height) * 0.5 + 0.5; // Nodes lower on screen appear closer
             const baseIntensity = Math.sin(time * 3 + index * 0.3) * 0.5 + 0.5;
             const mouseIntensity = mouseInfluence * 0.8;
             const scrollIntensity = Math.abs(Math.sin(scrollInfluence + index * 0.2)) * 0.4;
-            const totalIntensity = Math.min(1, baseIntensity + mouseIntensity + scrollIntensity);
+            const totalIntensity = Math.min(1, (baseIntensity + mouseIntensity + scrollIntensity) * depthFactor);
             
-            const nodeSize = 3 + totalIntensity * 3;
+            const nodeSize = (2 + totalIntensity * 4) * depthFactor;
 
             ctx.beginPath();
             ctx.arc(node.x, node.y, nodeSize, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(109, 89, 255, ${0.4 + totalIntensity * 0.6})`;
+            ctx.fillStyle = `rgba(109, 89, 255, ${(0.3 + totalIntensity * 0.7) * depthFactor})`;
             ctx.fill();
 
-            // Add glow effect for nodes near mouse
-            if (mouseInfluence > 0.3) {
+            // Add glow effect for nodes near mouse with depth consideration
+            if (mouseInfluence > 0.2) {
               ctx.beginPath();
-              ctx.arc(node.x, node.y, nodeSize + 5, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(109, 89, 255, ${mouseInfluence * 0.2})`;
+              ctx.arc(node.x, node.y, nodeSize + (3 * depthFactor), 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(109, 89, 255, ${mouseInfluence * 0.15 * depthFactor})`;
               ctx.fill();
             }
           });
@@ -217,8 +222,12 @@ export function Hero() {
                   Math.pow(node.y - connectedNode.y, 2)
                 );
 
-                if (distance < 150) {
-                  const alpha = Math.max(0, (150 - distance) / 150) * 0.4;
+                if (distance < 180) {
+                  // Calculate depth for parallax connections
+                  const avgY = (node.y + connectedNode.y) / 2;
+                  const connectionDepth = (avgY / canvas.height) * 0.6 + 0.4;
+                  
+                  const alpha = Math.max(0, (180 - distance) / 180) * 0.3 * connectionDepth;
                   const pulse = Math.sin(time * 4 + index * 0.2) * 0.3 + 0.7;
                   
                   // Check if connection is near mouse
@@ -228,16 +237,16 @@ export function Hero() {
                     Math.pow(midX - mousePos.current.x, 2) + 
                     Math.pow(midY - mousePos.current.y, 2)
                   );
-                  const connectionMouseInfluence = Math.max(0, 100 - mouseDistToConnection) / 100;
+                  const connectionMouseInfluence = Math.max(0, 120 - mouseDistToConnection) / 120;
                   
-                  // Scroll influence on connections
-                  const scrollConnectionInfluence = Math.abs(Math.sin(scrollY.current * 0.01 + index * 0.1)) * 0.3;
+                  // Scroll influence with parallax
+                  const scrollConnectionInfluence = Math.abs(Math.sin(scrollY.current * 0.01 + index * 0.1)) * 0.2 * connectionDepth;
 
                   ctx.beginPath();
                   ctx.moveTo(node.x, node.y);
                   ctx.lineTo(connectedNode.x, connectedNode.y);
-                  ctx.strokeStyle = `rgba(109, 89, 255, ${alpha * pulse + connectionMouseInfluence * 0.4 + scrollConnectionInfluence})`;
-                  ctx.lineWidth = 1 + connectionMouseInfluence * 2;
+                  ctx.strokeStyle = `rgba(109, 89, 255, ${alpha * pulse + connectionMouseInfluence * 0.3 + scrollConnectionInfluence})`;
+                  ctx.lineWidth = (0.8 + connectionMouseInfluence * 1.5) * connectionDepth;
                   ctx.stroke();
                 }
               }
@@ -289,14 +298,15 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center relative overflow-hidden"
     >
-      {/* 2D Force Map Background - Now covers entire page except hero */}
+      {/* 2D Force Map Background - Fixed with parallax throughout page */}
       <canvas
         ref={canvasRef}
         className="fixed inset-0 z-0 pointer-events-none"
         style={{ 
           background: 'linear-gradient(135deg, #101013 0%, #1a1a2e 50%, #16213e 100%)',
-          opacity: 0.8,
-          clipPath: 'polygon(0 100vh, 100% 100vh, 100% 100%, 0 100%)'
+          opacity: 0.6,
+          transform: `translateY(${scrollY.current * 0.3}px)`,
+          willChange: 'transform'
         }}
       />
 
