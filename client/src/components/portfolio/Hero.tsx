@@ -6,11 +6,10 @@ import home3 from "@assets/home3_1750633823946.png";
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [headlineFontWeight, setHeadlineFontWeight] = useState(200);
-  const [lineAnimations, setLineAnimations] = useState({
-    line1: false,
-    line2: false,
-    line3: false,
+  const [lineWeights, setLineWeights] = useState({
+    line1: 200,
+    line2: 200,
+    line3: 200,
   });
 
   const backgroundImages = [home1, home2, home3];
@@ -35,42 +34,55 @@ export function Hero() {
       flicker();
     }, 4000); // Change image every 4 seconds with flicker
 
-    // Sequential line animations
+    // Sequential font-weight animations for each line
     const animateLines = () => {
-      setTimeout(() => {
-        setLineAnimations((prev) => ({ ...prev, line1: true }));
-      }, 300);
-
-      setTimeout(() => {
-        setLineAnimations((prev) => ({ ...prev, line2: true }));
-      }, 600);
-
-      setTimeout(() => {
-        setLineAnimations((prev) => ({ ...prev, line3: true }));
-      }, 900);
-    };
-
-    // Animate entire headline font weight
-    const animateHeadline = () => {
+      // Line 1 animation
       setTimeout(() => {
         let weight = 200;
-        const interval = setInterval(() => {
+        const interval1 = setInterval(() => {
           weight += 50;
-          setHeadlineFontWeight(weight);
+          setLineWeights(prev => ({ ...prev, line1: weight }));
           if (weight >= 800) {
-            clearInterval(interval);
-            // Settle to medium weight
+            clearInterval(interval1);
             setTimeout(() => {
-              setHeadlineFontWeight(500);
+              setLineWeights(prev => ({ ...prev, line1: 500 }));
             }, 300);
           }
         }, 120);
-      }, 0);
+      }, 300);
+
+      // Line 2 animation
+      setTimeout(() => {
+        let weight = 200;
+        const interval2 = setInterval(() => {
+          weight += 50;
+          setLineWeights(prev => ({ ...prev, line2: weight }));
+          if (weight >= 800) {
+            clearInterval(interval2);
+            setTimeout(() => {
+              setLineWeights(prev => ({ ...prev, line2: 500 }));
+            }, 300);
+          }
+        }, 120);
+      }, 1100);
+
+      // Line 3 animation
+      setTimeout(() => {
+        let weight = 200;
+        const interval3 = setInterval(() => {
+          weight += 50;
+          setLineWeights(prev => ({ ...prev, line3: weight }));
+          if (weight >= 800) {
+            clearInterval(interval3);
+            setTimeout(() => {
+              setLineWeights(prev => ({ ...prev, line3: 500 }));
+            }, 300);
+          }
+        }, 120);
+      }, 1900);
     };
 
     animateLines();
-
-    setTimeout(animateHeadline, 800);
 
     return () => {
       clearInterval(carouselInterval);
@@ -156,21 +168,29 @@ export function Hero() {
                 color: "var(--text-primary)",
                 lineHeight: "1.2",
                 marginBottom: 0,
-                fontWeight: headlineFontWeight,
               }}
             >
               <div
-                className={`transition-all duration-500 ${lineAnimations.line1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                style={{
+                  fontWeight: lineWeights.line1,
+                  transition: "font-weight 0.1s ease-out"
+                }}
               >
                 Design education & professional
               </div>
               <div
-                className={`transition-all duration-500 ${lineAnimations.line2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                style={{
+                  fontWeight: lineWeights.line2,
+                  transition: "font-weight 0.1s ease-out"
+                }}
               >
                 experience design practice of
               </div>
               <div
-                className={`transition-all duration-500 ${lineAnimations.line3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                style={{
+                  fontWeight: lineWeights.line3,
+                  transition: "font-weight 0.1s ease-out"
+                }}
               >
                 <span className="gradient-text">Edwin Mauricio Olivera</span>
               </div>
