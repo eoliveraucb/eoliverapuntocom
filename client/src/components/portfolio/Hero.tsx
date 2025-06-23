@@ -126,11 +126,7 @@ export function Hero() {
             }}
           >
             <h1
-              className={`text-3xl md:text-4xl lg:text-5xl font-['Sono'] transition-all duration-300 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-5"
-              }`}
+              className="md:text-4xl lg:text-5xl font-['Sono'] transition-all duration-300 opacity-100 translate-y-0 text-[44px]"
               style={{
                 color: "var(--text-primary)",
                 lineHeight: "1.4",
