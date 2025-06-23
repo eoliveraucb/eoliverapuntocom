@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import home1 from "@assets/home1_1750633823946.png";
 import home2 from "@assets/home2_1750633823946.png";
 import home3 from "@assets/home3_1750633823946.png";
@@ -11,6 +11,7 @@ export function Hero() {
     line2: 200,
     line3: 200,
   });
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const backgroundImages = [home1, home2, home3];
 
@@ -54,6 +55,139 @@ export function Hero() {
 
     animateLines();
 
+    // 3D Force Map Animation
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        const resizeCanvas = () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        };
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Force map nodes
+        const nodes: Array<{
+          x: number;
+          y: number;
+          z: number;
+          vx: number;
+          vy: number;
+          vz: number;
+          connections: number[];
+          age: number;
+          maxAge: number;
+        }> = [];
+
+        // Create initial nodes
+        for (let i = 0; i < 50; i++) {
+          nodes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            z: Math.random() * 200 - 100,
+            vx: (Math.random() - 0.5) * 2,
+            vy: (Math.random() - 0.5) * 2,
+            vz: (Math.random() - 0.5) * 1,
+            connections: [],
+            age: 0,
+            maxAge: Math.random() * 300 + 200,
+          });
+        }
+
+        let time = 0;
+
+        const animate = () => {
+          ctx.fillStyle = 'rgba(16, 16, 19, 0.1)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          time += 0.02;
+
+          // Update nodes
+          nodes.forEach((node, index) => {
+            // Temporal force - nodes move in response to time
+            const temporalForce = Math.sin(time + index * 0.1) * 0.5;
+            node.vx += temporalForce * 0.1;
+            node.vy += Math.cos(time + index * 0.15) * 0.1;
+            node.vz += temporalForce * 0.05;
+
+            // Apply forces and movement
+            node.x += node.vx;
+            node.y += node.vy;
+            node.z += node.vz;
+
+            // Boundary conditions with wrapping
+            if (node.x < 0) node.x = canvas.width;
+            if (node.x > canvas.width) node.x = 0;
+            if (node.y < 0) node.y = canvas.height;
+            if (node.y > canvas.height) node.y = 0;
+
+            // Damping
+            node.vx *= 0.99;
+            node.vy *= 0.99;
+            node.vz *= 0.99;
+
+            // Age the node
+            node.age++;
+            if (node.age > node.maxAge) {
+              node.age = 0;
+              node.x = Math.random() * canvas.width;
+              node.y = Math.random() * canvas.height;
+              node.z = Math.random() * 200 - 100;
+            }
+
+            // 3D projection
+            const scale = 200 / (200 + node.z);
+            const projectedX = node.x * scale;
+            const projectedY = node.y * scale;
+
+            // Draw node
+            const alpha = Math.max(0, 1 - node.age / node.maxAge);
+            const size = scale * 2;
+            
+            ctx.beginPath();
+            ctx.arc(projectedX, projectedY, size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(109, 89, 255, ${alpha * 0.6})`;
+            ctx.fill();
+
+            // Draw connections to nearby nodes
+            nodes.forEach((otherNode, otherIndex) => {
+              if (index !== otherIndex) {
+                const dx = node.x - otherNode.x;
+                const dy = node.y - otherNode.y;
+                const dz = node.z - otherNode.z;
+                const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+                if (distance < 150) {
+                  const otherScale = 200 / (200 + otherNode.z);
+                  const otherProjectedX = otherNode.x * otherScale;
+                  const otherProjectedY = otherNode.y * otherScale;
+
+                  const connectionAlpha = Math.max(0, (150 - distance) / 150) * alpha * 0.3;
+                  
+                  ctx.beginPath();
+                  ctx.moveTo(projectedX, projectedY);
+                  ctx.lineTo(otherProjectedX, otherProjectedY);
+                  ctx.strokeStyle = `rgba(109, 89, 255, ${connectionAlpha})`;
+                  ctx.lineWidth = 0.5;
+                  ctx.stroke();
+                }
+              }
+            });
+          });
+
+          requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        return () => {
+          window.removeEventListener('resize', resizeCanvas);
+        };
+      }
+    }
+
     return () => {
       clearInterval(carouselInterval);
     };
@@ -74,9 +208,19 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center relative overflow-hidden"
     >
+      {/* 3D Force Map Background */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 z-0"
+        style={{ 
+          background: 'linear-gradient(135deg, #101013 0%, #1a1a2e 50%, #16213e 100%)',
+          opacity: 0.8
+        }}
+      />
+      
       {/* Background Carousel - Full Screen */}
       <div
-        className="absolute inset-0 z-0 overflow-hidden"
+        className="absolute inset-0 z-10 overflow-hidden"
         style={{ marginTop: "5%", marginLeft: "12%" , maxHeight: "90%" }}
       >
         {backgroundImages.map((image, index) => (
@@ -95,7 +239,7 @@ export function Hero() {
         ))}
         {/* Dark overlay for text readability */}
         <div
-          className="absolute inset-0 z-10 bg-[transparent]"
+          className="absolute inset-0 z-20 bg-[transparent]"
           style={{
             backgroundColor: "var(--bg-primary)",
             opacity: 0.1,
@@ -103,7 +247,7 @@ export function Hero() {
         />
       </div>
       {/* Carousel Indicators */}
-      <div className="absolute bottom-8 right-8 z-30 flex gap-3">
+      <div className="absolute bottom-8 right-8 z-40 flex gap-3">
         {backgroundImages.map((_, index) => (
           <button
             key={index}
@@ -122,9 +266,9 @@ export function Hero() {
           />
         ))}
       </div>
-      <div className="w-full relative z-20 px-4">
+      <div className="w-full relative z-30 px-4">
         <div
-          className="hero-content max-w-4xl relative z-10 text-center mt-[0px] mb-[0px] pt-[0px] pb-[0px] ml-[9.3985px] mr-[9.3985px] pl-[20px] pr-[20px]"
+          className="hero-content max-w-4xl relative z-30 text-center mt-[0px] mb-[0px] pt-[0px] pb-[0px] ml-[9.3985px] mr-[9.3985px] pl-[20px] pr-[20px]"
           style={{ marginLeft: "20%", marginTop: "7%" }}
         >
           <div
@@ -220,7 +364,7 @@ export function Hero() {
       </div>
       {/* Scroll Indicator */}
       <div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce-slow cursor-pointer"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce-slow cursor-pointer z-40"
         onClick={scrollToNext}
       >
         <i
