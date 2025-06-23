@@ -122,8 +122,8 @@ export function Hero() {
           />
         ))}
       </div>
-      <div className="container relative z-20">
-        <div className="hero-content max-w-4xl ml-auto mr-0 relative z-10 text-center pl-[98px] pr-[98px]" style={{ marginRight: '2rem' }}>
+      <div className="w-full relative z-20 px-4">
+        <div className="hero-content max-w-4xl ml-auto relative z-10 text-center pl-[98px] pr-[98px]" style={{ marginLeft: '40%', marginRight: '2rem' }}>
           <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
