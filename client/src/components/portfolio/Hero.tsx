@@ -38,17 +38,17 @@ export function Hero() {
     const animateLines = () => {
       // Line 1 animation
       setTimeout(() => {
-        setLineWeights(prev => ({ ...prev, line1: 500 }));
+        setLineWeights((prev) => ({ ...prev, line1: 500 }));
       }, 300);
 
       // Line 2 animation
       setTimeout(() => {
-        setLineWeights(prev => ({ ...prev, line2: 500 }));
+        setLineWeights((prev) => ({ ...prev, line2: 500 }));
       }, 800);
 
       // Line 3 animation
       setTimeout(() => {
-        setLineWeights(prev => ({ ...prev, line3: 500 }));
+        setLineWeights((prev) => ({ ...prev, line3: 500 }));
       }, 1300);
     };
 
@@ -77,7 +77,7 @@ export function Hero() {
       {/* Background Carousel - Full Screen */}
       <div
         className="absolute inset-0 z-0 overflow-hidden"
-        style={{ marginLeft: "-150px" }}
+        style={{ marginLeft: "10px" }}
       >
         {backgroundImages.map((image, index) => (
           <div
@@ -123,7 +123,10 @@ export function Hero() {
         ))}
       </div>
       <div className="w-full relative z-20 px-4">
-        <div className="hero-content max-w-4xl relative z-10 text-center pl-[98px] pr-[98px] ml-[20.3985px] mr-[20.3985px]" style={{ marginLeft: '40%', marginRight: '2rem' }}>
+        <div
+          className="hero-content max-w-4xl relative z-10 text-center ml-[69.3985px] mr-[69.3985px] pl-[48px] pr-[48px] mt-[0px] mb-[0px] pt-[0px] pb-[0px]"
+          style={{ marginLeft: "40%", marginRight: "2rem" }}
+        >
           <div
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
@@ -143,7 +146,7 @@ export function Hero() {
               <div
                 style={{
                   fontWeight: lineWeights.line1,
-                  transition: "font-weight 0.3s ease-out"
+                  transition: "font-weight 0.3s ease-out",
                 }}
               >
                 Design education & professional
@@ -151,7 +154,7 @@ export function Hero() {
               <div
                 style={{
                   fontWeight: lineWeights.line2,
-                  transition: "font-weight 0.3s ease-out"
+                  transition: "font-weight 0.3s ease-out",
                 }}
               >
                 experience design practice of
@@ -159,7 +162,7 @@ export function Hero() {
               <div
                 style={{
                   fontWeight: lineWeights.line3,
-                  transition: "font-weight 0.3s ease-out"
+                  transition: "font-weight 0.3s ease-out",
                 }}
               >
                 <span className="gradient-text">Edwin Mauricio Olivera</span>
