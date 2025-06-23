@@ -266,7 +266,7 @@ export default function Resume() {
           </h2>
           
           <div className="space-y-4 print:space-y-2">
-            <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2">
+            <div className="p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2 bg-[#101013]">
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>Gold Award, AIGA TEN Show</h4>
               <p className="text-gray-600 text-sm">WarrantError project recognition</p>
             </div>
