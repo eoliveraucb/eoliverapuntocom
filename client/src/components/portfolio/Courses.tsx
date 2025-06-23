@@ -10,7 +10,7 @@ interface Course {
   image: string;
 }
 
-// Import course images
+// Import course images and videos
 import courseImage1 from '@assets/Digital Design 4 _ Digital Workshop 1_1750640874283.jpeg';
 import courseImage2 from '@assets/Digital Design 4 _ Digital Workshop 2_1750640874282.jpeg';
 import courseImage3 from '@assets/Digital Design 4 _ Digital Workshop 3_1750640874282.jpeg';
@@ -21,6 +21,7 @@ import courseImage9 from '@assets/Digital Design 4 _ Digital Workshop 9_17506408
 import courseImage10 from '@assets/Digital Design 4 _ Digital Workshop 10_1750640874282.jpeg';
 import courseImage11 from '@assets/Digital Design 4 _ Digital Workshop 11_1750640874283.jpeg';
 import courseImage12 from '@assets/Digital Design 4 _ Digital Workshop 12_1750640874282.jpeg';
+import memoryBoxVideo from '@assets/ExperienciaMemoryBox_1750642203857.mp4';
 
 const courses: Course[] = [
   {
@@ -69,13 +70,13 @@ const courses: Course[] = [
   },
   {
     id: 5,
-    title: "Futures-Thinking & Post-Digital",
-    category: "Blockchain & Web3",
-    description: "Explore smart contracts, NFT creation, and cryptocurrency wallets. Use Futures Cone methodology for blockchain implementation strategies during economic transitions, connecting ancestral barter values with decentralized digital systems.",
-    duration: "10 weeks",
-    level: "Advanced",
-    format: "Online",
-    skills: ["Blockchain", "Smart Contracts", "NFT Creation", "Speculative Design"],
+    title: "Memory Box Sensorial Memory",
+    category: "Sensory Design",
+    description: "Design a box containing a sensorial memory using binaural sound reproduction and scent composition. Students create low-fidelity prototypes that limit visual stimuli while opening experiences through binaural audio combined with olfactory elements, accompanied by explanatory haiku poetry.",
+    duration: "3 weeks",
+    level: "Intermediate",
+    format: "Hybrid",
+    skills: ["Binaural Audio", "Scent Design", "Haiku Poetry", "Sensory Prototyping"],
     image: courseImage6
   },
   {
@@ -146,6 +147,15 @@ export function Courses() {
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                  />
+                ) : course.id === 5 ? (
+                  <video
+                    src={memoryBoxVideo}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                   />
                 ) : (
                   <img
