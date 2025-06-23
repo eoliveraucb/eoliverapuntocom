@@ -10,7 +10,7 @@ export function Hero() {
   const [lineAnimations, setLineAnimations] = useState({
     line1: false,
     line2: false,
-    line3: false
+    line3: false,
   });
 
   const backgroundImages = [home1, home2, home3];
@@ -38,15 +38,15 @@ export function Hero() {
     // Sequential line animations
     const animateLines = () => {
       setTimeout(() => {
-        setLineAnimations(prev => ({ ...prev, line1: true }));
+        setLineAnimations((prev) => ({ ...prev, line1: true }));
       }, 300);
 
       setTimeout(() => {
-        setLineAnimations(prev => ({ ...prev, line2: true }));
+        setLineAnimations((prev) => ({ ...prev, line2: true }));
       }, 600);
 
       setTimeout(() => {
-        setLineAnimations(prev => ({ ...prev, line3: true }));
+        setLineAnimations((prev) => ({ ...prev, line3: true }));
       }, 900);
     };
 
@@ -93,7 +93,10 @@ export function Hero() {
       className="min-h-screen flex items-center relative overflow-hidden"
     >
       {/* Background Carousel - Full Screen */}
-      <div className="absolute inset-0 z-0 overflow-hidden" style={{ marginLeft: '-276px' }}>
+      <div
+        className="absolute inset-0 z-0 overflow-hidden"
+        style={{ marginLeft: "-276px" }}
+      >
         {backgroundImages.map((image, index) => (
           <div
             key={index}
@@ -143,8 +146,8 @@ export function Hero() {
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
               backgroundColor: "var(--bg-primary)",
-              opacity: 0.3,
-              backdropFilter: "blur(10px)",
+              opacity: 0.85,
+              backdropFilter: "blur(4px)",
             }}
           >
             <h1
@@ -156,18 +159,18 @@ export function Hero() {
                 fontWeight: headlineFontWeight,
               }}
             >
-              <div 
-                className={`transition-all duration-500 ${lineAnimations.line1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              <div
+                className={`transition-all duration-500 ${lineAnimations.line1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               >
                 Design education & professional
               </div>
-              <div 
-                className={`transition-all duration-500 ${lineAnimations.line2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              <div
+                className={`transition-all duration-500 ${lineAnimations.line2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               >
                 experience design practice of
               </div>
-              <div 
-                className={`transition-all duration-500 ${lineAnimations.line3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              <div
+                className={`transition-all duration-500 ${lineAnimations.line3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               >
                 <span className="gradient-text">Edwin Mauricio Olivera</span>
               </div>
@@ -179,7 +182,7 @@ export function Hero() {
             style={{
               backgroundColor: "var(--bg-primary)",
               opacity: 0.95,
-              backdropFilter: "blur(10px)",
+              backdropFilter: "blur(4px)",
             }}
           >
             <p
