@@ -38,48 +38,18 @@ export function Hero() {
     const animateLines = () => {
       // Line 1 animation
       setTimeout(() => {
-        let weight = 200;
-        const interval1 = setInterval(() => {
-          weight += 50;
-          setLineWeights(prev => ({ ...prev, line1: weight }));
-          if (weight >= 800) {
-            clearInterval(interval1);
-            setTimeout(() => {
-              setLineWeights(prev => ({ ...prev, line1: 500 }));
-            }, 300);
-          }
-        }, 120);
+        setLineWeights(prev => ({ ...prev, line1: 500 }));
       }, 300);
 
       // Line 2 animation
       setTimeout(() => {
-        let weight = 200;
-        const interval2 = setInterval(() => {
-          weight += 50;
-          setLineWeights(prev => ({ ...prev, line2: weight }));
-          if (weight >= 800) {
-            clearInterval(interval2);
-            setTimeout(() => {
-              setLineWeights(prev => ({ ...prev, line2: 500 }));
-            }, 300);
-          }
-        }, 120);
-      }, 1100);
+        setLineWeights(prev => ({ ...prev, line2: 500 }));
+      }, 800);
 
       // Line 3 animation
       setTimeout(() => {
-        let weight = 200;
-        const interval3 = setInterval(() => {
-          weight += 50;
-          setLineWeights(prev => ({ ...prev, line3: weight }));
-          if (weight >= 800) {
-            clearInterval(interval3);
-            setTimeout(() => {
-              setLineWeights(prev => ({ ...prev, line3: 500 }));
-            }, 300);
-          }
-        }, 120);
-      }, 1900);
+        setLineWeights(prev => ({ ...prev, line3: 500 }));
+      }, 1300);
     };
 
     animateLines();
@@ -173,7 +143,7 @@ export function Hero() {
               <div
                 style={{
                   fontWeight: lineWeights.line1,
-                  transition: "font-weight 0.1s ease-out"
+                  transition: "font-weight 0.3s ease-out"
                 }}
               >
                 Design education & professional
@@ -181,7 +151,7 @@ export function Hero() {
               <div
                 style={{
                   fontWeight: lineWeights.line2,
-                  transition: "font-weight 0.1s ease-out"
+                  transition: "font-weight 0.3s ease-out"
                 }}
               >
                 experience design practice of
@@ -189,7 +159,7 @@ export function Hero() {
               <div
                 style={{
                   fontWeight: lineWeights.line3,
-                  transition: "font-weight 0.1s ease-out"
+                  transition: "font-weight 0.3s ease-out"
                 }}
               >
                 <span className="gradient-text">Edwin Mauricio Olivera</span>
