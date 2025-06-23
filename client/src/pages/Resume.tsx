@@ -36,7 +36,6 @@ export default function Resume() {
           </button>
         </div>
       )}
-
       <div className="max-w-4xl mx-auto p-8 print:p-0 print:max-w-none">
         {/* Header */}
         <header className="text-center mb-12 print:mb-8">
@@ -271,7 +270,7 @@ export default function Resume() {
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>Gold Award, AIGA TEN Show</h4>
               <p className="text-gray-600 text-sm">WarrantError project recognition</p>
             </div>
-            <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2">
+            <div className="p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2 bg-[#101013]">
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>AIGA Worldstudio D×D Scholarship</h4>
               <p className="text-gray-600 text-sm">Recipient of prestigious design scholarship</p>
             </div>
@@ -320,7 +319,6 @@ export default function Resume() {
           </div>
         </section>
       </div>
-
       <style jsx>{`
         @media print {
           @page {
