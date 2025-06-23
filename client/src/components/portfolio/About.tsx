@@ -50,14 +50,14 @@ export function About() {
       style={{ backgroundColor: 'var(--bg-secondary)' }}
     >
       <div className="container">
-        <div className="flex items-start gap-12">
+        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
           {/* Left Side: Profile Image */}
           <div 
-            className={`transition-all duration-500 ${
+            className={`w-full lg:w-auto flex justify-center lg:justify-start transition-all duration-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
-            <div className="rounded-lg overflow-hidden shadow-lg" style={{ width: '300px' }}>
+            <div className="rounded-lg overflow-hidden shadow-lg w-64 lg:w-80">
               <img 
                 src={profileImage} 
                 alt="Edwin Olivera - Digital Design Professor"
@@ -72,7 +72,7 @@ export function About() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
-            <h2 className="mb-6 font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="mb-6 font-['Fraunces'] text-center lg:text-left" style={{ color: 'var(--text-primary)' }}>
               About Me
             </h2>
             
