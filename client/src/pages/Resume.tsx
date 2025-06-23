@@ -268,15 +268,15 @@ export default function Resume() {
           <div className="space-y-4 print:space-y-2">
             <div className="p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2 bg-[#101013]">
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>Gold Award, AIGA TEN Show</h4>
-              <p className="text-gray-600 text-sm mt-[-8px] mb-[-8px]">WarrantError project recognition</p>
+              <p className="text-gray-400 text-sm mt-[-8px] mb-[-8px]">WarrantError project recognition</p>
             </div>
             <div className="p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2 bg-[#101013]">
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>AIGA Worldstudio D×D Scholarship</h4>
-              <p className="text-gray-600 text-sm mt-[-6px] mb-[-6px]">Recipient of prestigious design scholarship</p>
+              <p className="text-gray-400 text-sm mt-[-6px] mb-[-6px]">Recipient of prestigious design scholarship</p>
             </div>
             <div className="p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2 bg-[#101013]">
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>SVA Alumni Scholarship Award</h4>
-              <p className="text-gray-600 text-sm mt-[-8px] mb-[-8px]">Recognition for academic excellence and design innovation</p>
+              <p className="text-gray-400 text-sm mt-[-8px] mb-[-8px]">Recognition for academic excellence and design innovation</p>
             </div>
           </div>
         </section>
@@ -287,7 +287,7 @@ export default function Resume() {
             Agency & Brand Collaborations
           </h2>
           
-          <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
+          <ul className="list-disc list-outside ml-5 space-y-2 text-gray-400 print:text-sm print:space-y-1">
             <li>Executed creative projects for PG&E (San Francisco), Red Bull (Panama/LA), and Miller Lite through agency placements at Momentum Worldwide, Brown Shoe, and Schupp Company</li>
             <li>Developed design solutions for C-level executives at Comcast Enterprise and Spectrum Business Enterprise during tenure at Stealth, leading to award-winning outcomes</li>
           </ul>
@@ -299,7 +299,7 @@ export default function Resume() {
             Social Impact & Academic Initiatives
           </h2>
           
-          <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 print:text-sm print:space-y-1">
+          <ul className="list-disc list-outside ml-5 space-y-2 text-gray-400 print:text-sm print:space-y-1">
             <li>Engaged with over 30 NGOs in the U.S. and Latin America, focusing on LGBTQ rights and civil advocacy</li>
             <li>Collaborated with NYU Law's Technology & Racial Justice Collaborative on equity-driven digital projects</li>
           </ul>
