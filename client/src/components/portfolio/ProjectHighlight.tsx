@@ -3,7 +3,7 @@ import { ExternalLink, Code, Users, Zap } from 'lucide-react';
 export function ProjectHighlight() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: 'var(--bg-primary)' }}>
-      <div className="max-w-7xl mx-auto ml-16 lg:ml-24">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div 
@@ -129,7 +129,65 @@ export function ProjectHighlight() {
 
         
 
-        
+        {/* Learning Outcomes */}
+        <div 
+          className="p-8 rounded-lg"
+          style={{ backgroundColor: 'var(--bg-secondary)' }}
+        >
+          <h3 
+            className="text-2xl font-['Fraunces'] font-semibold mb-6 text-center"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Key Learning Outcomes
+          </h3>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <h4 
+                className="font-['Fraunces'] font-medium mb-3"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                Digital Branding
+              </h4>
+              <p 
+                className="text-sm font-['Roboto_Flex']"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                Students learned to create cohesive visual identities that represent national culture while addressing modern technological needs.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <h4 
+                className="font-['Fraunces'] font-medium mb-3"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                Code-Economy Design
+              </h4>
+              <p 
+                className="text-sm font-['Roboto_Flex']"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                Understanding how design decisions impact technical implementation costs and blockchain deployment efficiency.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <h4 
+                className="font-['Fraunces'] font-medium mb-3"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                Social Responsibility
+              </h4>
+              <p 
+                className="text-sm font-['Roboto_Flex']"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                Exploring the role of designers in addressing economic inequality and social challenges through technology.
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Call to Action */}
         <div className="text-center mt-12">
