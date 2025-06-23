@@ -72,13 +72,13 @@ export function Contact() {
                   {
                     icon: "fa-map-marker-alt",
                     label: "Location",
-                    value: "San Francisco, CA",
+                    value: "New York, NY | LPB, Bolivia",
                     link: null
                   },
                   {
                     icon: "fa-calendar",
                     label: "Office Hours",
-                    value: "Mon-Fri 9:00 AM - 5:00 PM PST",
+                    value: "Mon-Fri 9:00 AM - 5:00 PM EST",
                     link: null
                   }
                 ].map((contact, index) => (
@@ -115,38 +115,7 @@ export function Contact() {
                 ))}
               </div>
 
-              {/* Social Links */}
-              <div>
-                <h4 
-                  className="text-lg font-semibold mb-4"
-                  style={{ color: 'var(--text-primary)' }}
-                >
-                  Follow My Work
-                </h4>
-                
-                <div className="flex gap-4">
-                  {[
-                    { icon: "fa-linkedin", link: "#", label: "LinkedIn" },
-                    { icon: "fa-twitter", link: "#", label: "Twitter" },
-                    { icon: "fa-dribbble", link: "#", label: "Dribbble" },
-                    { icon: "fa-behance", link: "#", label: "Behance" },
-                    { icon: "fa-medium", link: "#", label: "Medium" }
-                  ].map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.link}
-                      className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:transform hover:-translate-y-1"
-                      style={{ 
-                        backgroundColor: 'var(--bg-secondary)',
-                        color: 'var(--text-primary)'
-                      }}
-                      title={social.label}
-                    >
-                      <i className={`fab ${social.icon}`}></i>
-                    </a>
-                  ))}
-                </div>
-              </div>
+              
             </div>
 
             {/* Contact Form */}
