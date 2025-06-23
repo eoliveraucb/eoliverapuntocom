@@ -18,39 +18,43 @@ export function Hero() {
   useEffect(() => {
     setIsVisible(true);
 
+    let carouselInterval: NodeJS.Timeout;
+    let animationId: number;
+    let timeouts: NodeJS.Timeout[] = [];
+
     // Background carousel with flickering effect
-    const carouselInterval = setInterval(() => {
+    carouselInterval = setInterval(() => {
       // Create flickering effect before transition
       const flicker = () => {
         setCurrentImageIndex((prev) => {
           const next = (prev + 1) % backgroundImages.length;
           // Rapid flicker between current and next
-          setTimeout(() => setCurrentImageIndex(prev), 50);
-          setTimeout(() => setCurrentImageIndex(next), 100);
-          setTimeout(() => setCurrentImageIndex(prev), 150);
-          setTimeout(() => setCurrentImageIndex(next), 200);
+          const t1 = setTimeout(() => setCurrentImageIndex(prev), 50);
+          const t2 = setTimeout(() => setCurrentImageIndex(next), 100);
+          const t3 = setTimeout(() => setCurrentImageIndex(prev), 150);
+          const t4 = setTimeout(() => setCurrentImageIndex(next), 200);
+          timeouts.push(t1, t2, t3, t4);
           return next;
         });
       };
       flicker();
-    }, 4000); // Change image every 4 seconds with flicker
+    }, 4000);
 
     // Sequential font-weight animations for each line
     const animateLines = () => {
-      // Line 1 animation
-      setTimeout(() => {
+      const t1 = setTimeout(() => {
         setLineWeights((prev) => ({ ...prev, line1: 500 }));
       }, 300);
 
-      // Line 2 animation
-      setTimeout(() => {
+      const t2 = setTimeout(() => {
         setLineWeights((prev) => ({ ...prev, line2: 500 }));
       }, 800);
 
-      // Line 3 animation
-      setTimeout(() => {
+      const t3 = setTimeout(() => {
         setLineWeights((prev) => ({ ...prev, line3: 500 }));
       }, 1300);
+
+      timeouts.push(t1, t2, t3);
     };
 
     animateLines();
@@ -61,8 +65,10 @@ export function Hero() {
       const ctx = canvas.getContext('2d');
       if (ctx) {
         const resizeCanvas = () => {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
+          if (canvas) {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+          }
         };
         
         resizeCanvas();
@@ -97,8 +103,11 @@ export function Hero() {
         }
 
         let time = 0;
+        let isAnimating = true;
 
         const animate = () => {
+          if (!isAnimating || !canvas || !ctx) return;
+
           ctx.fillStyle = 'rgba(16, 16, 19, 0.1)';
           ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -177,19 +186,31 @@ export function Hero() {
             });
           });
 
-          requestAnimationFrame(animate);
+          if (isAnimating) {
+            animationId = requestAnimationFrame(animate);
+          }
         };
 
         animate();
 
         return () => {
+          isAnimating = false;
           window.removeEventListener('resize', resizeCanvas);
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+          }
+          clearInterval(carouselInterval);
+          timeouts.forEach(timeout => clearTimeout(timeout));
         };
       }
     }
 
     return () => {
       clearInterval(carouselInterval);
+      timeouts.forEach(timeout => clearTimeout(timeout));
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
     };
   }, [backgroundImages.length]);
 
