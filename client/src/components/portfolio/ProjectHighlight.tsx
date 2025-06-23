@@ -13,7 +13,7 @@ export function ProjectHighlight() {
               color: 'white'
             }}
           >
-            <span className="text-sm font-medium font-['Atlassian Sans Ext']">Featured Project</span>
+            <span className="text-sm font-medium font-['Roboto_Flex']">Featured Project</span>
           </div>
           <h2 
             className="text-3xl md:text-5xl font-['Fraunces'] font-bold mb-6"
@@ -22,7 +22,7 @@ export function ProjectHighlight() {
             Crypto Design Student Project
           </h2>
           <p 
-            className="text-xl max-w-4xl mx-auto font-['Atlassian Sans Ext']"
+            className="text-xl max-w-4xl mx-auto font-['Roboto_Flex']"
             style={{ color: 'var(--text-secondary)' }}
           >
             A speculative design project where students created Bolivian cryptocurrency brands 
@@ -49,7 +49,7 @@ export function ProjectHighlight() {
               }}
             >
               <p 
-                className="font-['Atlassian Sans Ext'] italic text-lg leading-relaxed"
+                className="font-['Roboto_Flex'] italic text-lg leading-relaxed"
                 style={{ color: 'var(--text-primary)' }}
               >
                 "In a fictional future scenario, local currencies begin a devaluation process not unlike what Bolivia experienced in the 1980s. A digital consortium of citizens, investors, and hacktivists creates a Bolivian Stablecoin to protect common citizens from negative effects of devaluation."
@@ -67,7 +67,7 @@ export function ProjectHighlight() {
                     Student Challenge
                   </h4>
                   <p 
-                    className="text-sm font-['Atlassian Sans Ext']"
+                    className="text-sm font-['Roboto_Flex']"
                     style={{ color: 'var(--text-secondary)' }}
                   >
                     Ten emerging digital designers created visual identity proposals for the Bolivian cryptocurrency, addressing national identity amid regional diversity.
@@ -85,7 +85,7 @@ export function ProjectHighlight() {
                     Technical Innovation
                   </h4>
                   <p 
-                    className="text-sm font-['Atlassian Sans Ext']"
+                    className="text-sm font-['Roboto_Flex']"
                     style={{ color: 'var(--text-secondary)' }}
                   >
                     Students learned "code-economy aware digital design" - optimizing SVG graphics to reduce blockchain deployment costs and gas fees.
@@ -103,7 +103,7 @@ export function ProjectHighlight() {
                     Real-World Context
                   </h4>
                   <p 
-                    className="text-sm font-['Atlassian Sans Ext']"
+                    className="text-sm font-['Roboto_Flex']"
                     style={{ color: 'var(--text-secondary)' }}
                   >
                     Taught during actual economic fluctuations in Bolivia, students witnessed cryptocurrency transition from perceived scam to viable financial solution.
@@ -127,77 +127,7 @@ export function ProjectHighlight() {
           </div>
         </div>
 
-        {/* Student Work Highlights */}
-        <div className="mb-16">
-          <h3 
-            className="text-2xl font-['Fraunces'] font-semibold mb-8 text-center"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            Notable Student Solutions
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div 
-              className="p-6 rounded-lg"
-              style={{ 
-                backgroundColor: 'var(--bg-secondary)',
-                boxShadow: 'var(--shadow)'
-              }}
-            >
-              <h4 
-                className="text-xl font-['Fraunces'] font-semibold mb-3"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                UYUNI Token
-              </h4>
-              <p 
-                className="text-sm font-['Atlassian Sans Ext'] mb-4"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                By Laura Pamela Torrico Morón. Captured the mirror-like effect of Bolivian Salt Plains as a metaphor for transitioning to a digital blockchain economy.
-              </p>
-              <div 
-                className="text-xs px-3 py-1 rounded-full inline-block"
-                style={{ 
-                  backgroundColor: 'var(--accent-primary)',
-                  color: 'white'
-                }}
-              >
-                Cultural Symbolism
-              </div>
-            </div>
-
-            <div 
-              className="p-6 rounded-lg"
-              style={{ 
-                backgroundColor: 'var(--bg-secondary)',
-                boxShadow: 'var(--shadow)'
-              }}
-            >
-              <h4 
-                className="text-xl font-['Fraunces'] font-semibold mb-3"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                WallakeCoin
-              </h4>
-              <p 
-                className="text-sm font-['Atlassian Sans Ext'] mb-4"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                By Sharim Eivian Correa Cordova. Inspired by traditional fish stew, symbolizing resilience and resourcefulness—making the best out of challenging circumstances.
-              </p>
-              <div 
-                className="text-xs px-3 py-1 rounded-full inline-block"
-                style={{ 
-                  backgroundColor: 'var(--accent-primary)',
-                  color: 'white'
-                }}
-              >
-                Adaptive Design
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         {/* Learning Outcomes */}
         <div 
@@ -220,7 +150,7 @@ export function ProjectHighlight() {
                 Digital Branding
               </h4>
               <p 
-                className="text-sm font-['Atlassian Sans Ext']"
+                className="text-sm font-['Roboto_Flex']"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 Students learned to create cohesive visual identities that represent national culture while addressing modern technological needs.
@@ -235,7 +165,7 @@ export function ProjectHighlight() {
                 Code-Economy Design
               </h4>
               <p 
-                className="text-sm font-['Atlassian Sans Ext']"
+                className="text-sm font-['Roboto_Flex']"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 Understanding how design decisions impact technical implementation costs and blockchain deployment efficiency.
@@ -250,7 +180,7 @@ export function ProjectHighlight() {
                 Social Responsibility
               </h4>
               <p 
-                className="text-sm font-['Atlassian Sans Ext']"
+                className="text-sm font-['Roboto_Flex']"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 Exploring the role of designers in addressing economic inequality and social challenges through technology.
@@ -271,7 +201,7 @@ export function ProjectHighlight() {
               color: 'white'
             }}
           >
-            <span className="font-['Atlassian Sans Ext'] font-medium">Read Full Case Study</span>
+            <span className="font-['Roboto_Flex'] font-medium">Read Full Case Study</span>
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>

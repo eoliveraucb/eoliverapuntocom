@@ -101,10 +101,10 @@ export function Courses() {
             className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-4"
             style={{ color: 'var(--text-primary)' }}
           >
-            Digital Design 4: Case Studies
+            Projects and Exercises
           </h2>
           <p 
-            className="text-lg max-w-4xl mx-auto font-['Atlassian Sans Ext']"
+            className="text-lg max-w-4xl mx-auto font-['Roboto_Flex']"
             style={{ color: 'var(--text-secondary)' }}
           >
             A comprehensive overview of workshops and projects from my BFA and MFA level Digital Design 4 course. 
@@ -177,7 +177,7 @@ export function Courses() {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <span 
-                    className="text-xs font-medium px-3 py-1 rounded-full font-['Atlassian Sans Ext']"
+                    className="text-xs font-medium px-3 py-1 rounded-full font-['Roboto_Flex']"
                     style={{ 
                       backgroundColor: 'var(--accent-primary)',
                       color: 'white'
@@ -212,7 +212,7 @@ export function Courses() {
                 </h3>
                 
                 <p 
-                  className="text-sm leading-relaxed mb-4 font-['Atlassian Sans Ext']"
+                  className="text-sm leading-relaxed mb-4 font-['Roboto_Flex']"
                   style={{ color: 'var(--text-secondary)' }}
                 >
                   {course.description}
@@ -223,7 +223,7 @@ export function Courses() {
                     {course.skills.slice(0, 3).map((skill, index) => (
                       <span
                         key={index}
-                        className="text-xs px-2 py-1 rounded font-['Atlassian Sans Ext']"
+                        className="text-xs px-2 py-1 rounded font-['Roboto_Flex']"
                         style={{
                           backgroundColor: 'var(--bg-secondary)',
                           color: 'var(--text-secondary)'
@@ -234,7 +234,7 @@ export function Courses() {
                     ))}
                     {course.skills.length > 3 && (
                       <span
-                        className="text-xs px-2 py-1 rounded font-['Atlassian Sans Ext']"
+                        className="text-xs px-2 py-1 rounded font-['Roboto_Flex']"
                         style={{
                           backgroundColor: 'var(--accent-primary)',
                           color: 'white'
@@ -248,7 +248,7 @@ export function Courses() {
                 
                 <div className="flex items-center justify-between text-sm">
                   <span 
-                    className="font-['Atlassian Sans Ext']"
+                    className="font-['Roboto_Flex']"
                     style={{ color: 'var(--text-secondary)' }}
                   >
                     📅 {course.duration}
@@ -290,7 +290,7 @@ export function Courses() {
                   {goal.title}
                 </h4>
                 <p 
-                  className="font-['Atlassian Sans Ext']"
+                  className="font-['Roboto_Flex']"
                   style={{ color: 'var(--text-secondary)' }}
                 >
                   {goal.description}
@@ -309,7 +309,7 @@ export function Courses() {
             >
               Academic Implementation
             </h3>
-            <div className="space-y-3 font-['Atlassian Sans Ext']">
+            <div className="space-y-3 font-['Roboto_Flex']">
               <div>
                 <span className="font-medium" style={{ color: 'var(--text-primary)' }}>Institution:</span>
                 <span style={{ color: 'var(--text-secondary)' }}> Universidad Católica Boliviana</span>
@@ -338,7 +338,7 @@ export function Courses() {
             </h3>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="font-['Atlassian Sans Ext']" style={{ color: 'var(--text-primary)' }}>
+                <span className="font-['Roboto_Flex']" style={{ color: 'var(--text-primary)' }}>
                   Conceptual Development
                 </span>
                 <span 
@@ -354,7 +354,7 @@ export function Courses() {
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="font-['Atlassian Sans Ext']" style={{ color: 'var(--text-primary)' }}>
+                <span className="font-['Roboto_Flex']" style={{ color: 'var(--text-primary)' }}>
                   Technical Execution
                 </span>
                 <span 
@@ -370,7 +370,7 @@ export function Courses() {
                 </span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="font-['Atlassian Sans Ext']" style={{ color: 'var(--text-primary)' }}>
+                <span className="font-['Roboto_Flex']" style={{ color: 'var(--text-primary)' }}>
                   Critical Analysis
                 </span>
                 <span 
@@ -419,7 +419,7 @@ export function Courses() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <div 
-                      className="text-xs font-medium mb-1 font-['Atlassian Sans Ext']"
+                      className="text-xs font-medium mb-1 font-['Roboto_Flex']"
                       style={{ color: 'var(--accent-primary)' }}
                     >
                       {material.category}

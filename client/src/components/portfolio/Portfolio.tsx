@@ -156,7 +156,7 @@ export function Portfolio() {
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <IconComponent className="w-4 h-4 text-white" />
-                        <span className="text-xs font-medium text-white/80 font-['Atlassian Sans Ext']">
+                        <span className="text-xs font-medium text-white/80 font-['Roboto_Flex']">
                           {item.category}
                         </span>
                       </div>
@@ -171,35 +171,7 @@ export function Portfolio() {
           })}
         </div>
 
-        {/* Portfolio Statistics */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { number: "50+", label: "Projects Completed" },
-            { number: "12", label: "Years Experience" },
-            { number: "25+", label: "Brands Designed" },
-            { number: "100+", label: "Students Taught" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div 
-                className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-2"
-                style={{ 
-                  background: 'linear-gradient(135deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%))',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}
-              >
-                {stat.number}
-              </div>
-              <div 
-                className="text-sm font-medium"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+        
       </div>
     </section>
   );
