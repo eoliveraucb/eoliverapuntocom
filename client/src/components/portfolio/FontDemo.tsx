@@ -47,48 +47,7 @@ export function FontDemo() {
           Interactive demonstrations of font weight, spacing, and hierarchy.
         </p>
 
-        {/* Font Weight Slider */}
-        <div className="mb-12 max-w-2xl mx-auto">
-          <div className="mb-6">
-            <h3 className="mb-4" style={{ color: 'var(--text-primary)' }}>
-              Interactive Font Weight
-            </h3>
-            
-            <div 
-              className="text-4xl md:text-6xl font-['Fraunces'] leading-tight mb-6 transition-all duration-300"
-              style={{ 
-                fontWeight: fontWeight,
-                color: 'var(--text-primary)'
-              }}
-            >
-              Beautiful Typography
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>100</span>
-              <input
-                type="range"
-                min="100"
-                max="900"
-                step="100"
-                value={fontWeight}
-                onChange={(e) => setFontWeight(Number(e.target.value))}
-                className="flex-1 h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
-                style={{ 
-                  background: `linear-gradient(to right, var(--accent-primary), var(--accent-secondary))` 
-                }}
-              />
-              <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>900</span>
-            </div>
-            
-            <div 
-              className="mt-2 text-sm font-medium"
-              style={{ color: 'var(--accent-primary)' }}
-            >
-              Weight: {fontWeight}
-            </div>
-          </div>
-        </div>
+        
 
         {/* Font Variations Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

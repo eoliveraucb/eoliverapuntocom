@@ -1,0 +1,205 @@
+import { Briefcase, Globe, Heart, Palette, Film, Users, Lightbulb, Award, Camera, Building, Utensils, Home } from 'lucide-react';
+
+// Import all portfolio images
+import churchImage from '@assets/work--church_1750639835231.png';
+import businessEnergyImage from '@assets/b6494416084587.562a5300002a5_1750639835231.jpg';
+import worldnetImage from '@assets/worldnet-new-logo_1750639835232.png';
+import cleaningImage from '@assets/cleaning-concets_1750639835232.png';
+import somosImage from '@assets/Untitled-2_1750639835232.jpg';
+import focusFestImage from '@assets/Screenshot-2025-01-29-at-1.03.48PM_1750639835233.png';
+import finanzgruppeImage from '@assets/1604098117810_1750639835233.jpg';
+import chiliFestImage from '@assets/chili_1750639835233.png';
+import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_1750639835233.png';
+import arteImage from '@assets/Untitled-5_1750639835233.jpg';
+import prideImage from '@assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233.png';
+import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
+
+interface PortfolioItem {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+const portfolioItems: PortfolioItem[] = [
+  {
+    id: 1,
+    title: "Church of Emergence",
+    category: "Branding & Identity",
+    image: churchImage,
+    icon: Heart
+  },
+  {
+    id: 2,
+    title: "Business Energy Checkup",
+    category: "Corporate Design",
+    image: businessEnergyImage,
+    icon: Building
+  },
+  {
+    id: 3,
+    title: "WorldNet Digital Services",
+    category: "Logo Design",
+    image: worldnetImage,
+    icon: Globe
+  },
+  {
+    id: 4,
+    title: "Cleaning Concepts",
+    category: "Brand Identity",
+    image: cleaningImage,
+    icon: Home
+  },
+  {
+    id: 5,
+    title: "SOMOS Identity",
+    category: "Cultural Design",
+    image: somosImage,
+    icon: Users
+  },
+  {
+    id: 6,
+    title: "Focus Fest 2013",
+    category: "Event Design",
+    image: focusFestImage,
+    icon: Film
+  },
+  {
+    id: 7,
+    title: "Finanzgruppe Interface",
+    category: "Digital Design",
+    image: finanzgruppeImage,
+    icon: Briefcase
+  },
+  {
+    id: 8,
+    title: "Chili Fest 2009",
+    category: "Event Branding",
+    image: chiliFestImage,
+    icon: Utensils
+  },
+  {
+    id: 9,
+    title: "Student Journey Map",
+    category: "UX Design",
+    image: journeyMapImage,
+    icon: Lightbulb
+  },
+  {
+    id: 10,
+    title: "Arte + Tecnología",
+    category: "Educational Design",
+    image: arteImage,
+    icon: Palette
+  },
+  {
+    id: 11,
+    title: "Pride Campaign",
+    category: "Social Impact",
+    image: prideImage,
+    icon: Heart
+  },
+  {
+    id: 12,
+    title: "Disaster Response Cards",
+    category: "Information Design",
+    image: disasterCardsImage,
+    icon: Award
+  }
+];
+
+export function Portfolio() {
+  return (
+    <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 
+            className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-4"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Selected Works
+          </h2>
+          <p 
+            className="text-lg max-w-3xl mx-auto"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            A collection of design projects spanning branding, digital interfaces, 
+            and educational materials created over years of creative practice.
+          </p>
+        </div>
+
+        {/* Portfolio Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {portfolioItems.map((item) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={item.id}
+                className="group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-2"
+                style={{ 
+                  backgroundColor: 'var(--bg-secondary)',
+                  boxShadow: 'var(--shadow)'
+                }}
+              >
+                {/* Image Container */}
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-end">
+                  <div className="p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <IconComponent className="w-4 h-4 text-white" />
+                      <span className="text-xs font-medium text-white opacity-80">
+                        {item.category}
+                      </span>
+                    </div>
+                    <h3 className="text-white font-['Fraunces'] font-semibold text-lg leading-tight">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Portfolio Statistics */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { number: "50+", label: "Projects Completed" },
+            { number: "12", label: "Years Experience" },
+            { number: "25+", label: "Brands Designed" },
+            { number: "100+", label: "Students Taught" }
+          ].map((stat, index) => (
+            <div key={index} className="text-center">
+              <div 
+                className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-2"
+                style={{ 
+                  background: 'linear-gradient(135deg, var(--accent-primary), hsl(279.19deg 62.09% 43.44%))',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}
+              >
+                {stat.number}
+              </div>
+              <div 
+                className="text-sm font-medium"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -91,46 +91,7 @@ export function About() {
               </p>
             </div>
 
-            {/* Skills */}
-            <div className="skills-container">
-              <h3 className="mb-6 font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
-                Expertise
-              </h3>
-              
-              <div className="space-y-4">
-                {skills.map((skill, index) => (
-                  <div key={skill.name} className="skill-item">
-                    <div className="flex justify-between mb-2">
-                      <span 
-                        className="font-medium"
-                        style={{ color: 'var(--text-primary)' }}
-                      >
-                        {skill.name}
-                      </span>
-                      <span 
-                        className="text-sm"
-                        style={{ color: 'var(--text-secondary)' }}
-                      >
-                        {skill.percentage}%
-                      </span>
-                    </div>
-                    
-                    <div 
-                      className="h-2 rounded-full overflow-hidden"
-                      style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
-                    >
-                      <div 
-                        className="skill-progress h-full rounded-full transition-all duration-1000 ease-out"
-                        style={{ 
-                          width: skillsAnimated ? `${skill.percentage}%` : "0%",
-                          transitionDelay: `${index * 100}ms`
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
