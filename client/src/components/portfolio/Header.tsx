@@ -48,28 +48,32 @@ export function Header() {
               className="flex items-center gap-4 h-8 text-xl font-bold tracking-[0.625rem] font-['Fraunces']"
               style={{ color: 'var(--text-primary)' }}
             >
-              <svg width="80" height="40" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ color: 'var(--accent-primary)' }}>
-                <circle cx="8" cy="8" r="3" fill="currentColor"/>
-                <circle cx="20" cy="8" r="3" fill="currentColor"/>
-                <circle cx="32" cy="8" r="3" fill="currentColor"/>
+              <svg width="60" height="30" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ color: 'var(--accent-primary)' }}>
+                {/* First 3x3 grid */}
+                <circle cx="4" cy="4" r="2" fill="currentColor"/>
+                <circle cx="12" cy="4" r="2" fill="currentColor"/>
+                <circle cx="20" cy="4" r="2" fill="currentColor"/>
                 
-                <circle cx="8" cy="20" r="3" fill="currentColor"/>
-                <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                <circle cx="4" cy="12" r="2" fill="currentColor"/>
+                <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                <circle cx="20" cy="12" r="2" fill="currentColor"/>
                 
-                <circle cx="8" cy="32" r="3" fill="currentColor"/>
-                <circle cx="20" cy="32" r="3" fill="currentColor"/>
-                <circle cx="32" cy="32" r="3" fill="currentColor"/>
+                <circle cx="4" cy="20" r="2" fill="currentColor"/>
+                <circle cx="12" cy="20" r="2" fill="currentColor"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
                 
-                <circle cx="56" cy="8" r="3" fill="currentColor"/>
-                <circle cx="68" cy="8" r="3" fill="currentColor"/>
-                <circle cx="80" cy="8" r="3" fill="currentColor"/>
+                {/* Second 3x3 grid */}
+                <circle cx="32" cy="4" r="2" fill="currentColor"/>
+                <circle cx="40" cy="4" r="2" fill="currentColor"/>
+                <circle cx="48" cy="4" r="2" fill="currentColor"/>
                 
-                <circle cx="56" cy="20" r="3" fill="currentColor"/>
-                <circle cx="68" cy="20" r="3" fill="currentColor"/>
-                <circle cx="80" cy="20" r="3" fill="currentColor"/>
+                <circle cx="32" cy="12" r="2" fill="currentColor"/>
+                <circle cx="40" cy="12" r="2" fill="currentColor"/>
+                <circle cx="48" cy="12" r="2" fill="currentColor"/>
                 
-                <circle cx="56" cy="32" r="3" fill="currentColor"/>
-                <circle cx="80" cy="32" r="3" fill="currentColor"/>
+                <circle cx="32" cy="20" r="2" fill="currentColor"/>
+                <circle cx="40" cy="20" r="2" fill="currentColor"/>
+                <circle cx="48" cy="20" r="2" fill="currentColor"/>
               </svg>
               DESIGN <span className="gradient-text">ED</span>
             </div>
