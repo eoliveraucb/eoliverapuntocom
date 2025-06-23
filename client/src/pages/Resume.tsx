@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../components/ThemeProvider";
 
+import profile2 from "@assets/profile2.png";
+
 export default function Resume() {
   const { theme } = useTheme();
   const [isPrintMode, setIsPrintMode] = useState(false);
@@ -40,9 +42,9 @@ export default function Resume() {
         {/* Header */}
         <header className="text-center mb-12 print:mb-8">
           <img 
-            src="/attached_assets/profile-pic_1750628627934.png" 
+            src={profile2} 
             alt="Edwin Mauricio Olivera" 
-            className="w-32 h-32 rounded-full mx-auto mb-6 print:w-24 print:h-24 print:mb-4"
+            className="w-32 h-32 rounded-full mx-auto print:w-24 print:h-24 print:mb-4 ml-[328px] mr-[328px] mt-[12px] mb-[12px]"
           />
           <h1 className="text-4xl font-bold mb-2 print:text-3xl" style={{ color: 'var(--text-primary)' }}>
             Edwin Mauricio Olivera
