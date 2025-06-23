@@ -48,7 +48,7 @@ export function Header() {
               className="flex items-center gap-3 h-8 text-xl font-bold tracking-[0.625rem] font-['Fraunces']"
               style={{ color: 'var(--text-primary)' }}
             >
-              EDWIN OLIVERA
+              DESIGN <span className="gradient-text">ED</span>
             </div>
           </div>
 
