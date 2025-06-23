@@ -69,19 +69,18 @@ export function Hero() {
         const resizeCanvas = () => {
           if (canvas) {
             canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.height = document.documentElement.scrollHeight;
           }
         };
 
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Mouse movement tracking
+        // Mouse movement tracking for full page
         const handleMouseMove = (e: MouseEvent) => {
-          const rect = canvas.getBoundingClientRect();
           mousePos.current = {
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
+            x: e.clientX,
+            y: e.clientY + window.scrollY
           };
         };
 
@@ -90,7 +89,7 @@ export function Hero() {
           scrollY.current = window.scrollY;
         };
 
-        canvas.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('scroll', handleScroll);
 
         // 2D Force map nodes
@@ -104,11 +103,12 @@ export function Hero() {
           connections: number[];
         }> = [];
 
-        // Create initial nodes in a loose grid pattern
-        const nodeCount = 40;
+        // Create initial nodes in a loose grid pattern, starting below hero section
+        const nodeCount = 60;
+        const heroHeight = window.innerHeight;
         for (let i = 0; i < nodeCount; i++) {
           const x = (Math.random() * 0.8 + 0.1) * canvas.width;
-          const y = (Math.random() * 0.8 + 0.1) * canvas.height;
+          const y = heroHeight + (Math.random() * 0.8 + 0.1) * (canvas.height - heroHeight);
 
           nodes.push({
             x: x,
@@ -142,9 +142,9 @@ export function Hero() {
         const animate = () => {
           if (!isAnimating || !canvas || !ctx) return;
 
-          // Clear with slight trail effect
+          // Clear with slight trail effect, but preserve hero area
           ctx.fillStyle = 'rgba(16, 16, 19, 0.05)';
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.fillRect(0, window.innerHeight, canvas.width, canvas.height - window.innerHeight);
 
           time += 0.01;
 
@@ -253,7 +253,7 @@ export function Hero() {
 
         return () => {
           isAnimating = false;
-          canvas.removeEventListener('mousemove', handleMouseMove);
+          document.removeEventListener('mousemove', handleMouseMove);
           window.removeEventListener('scroll', handleScroll);
           window.removeEventListener('resize', resizeCanvas);
           if (animationId) {
@@ -289,13 +289,14 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center relative overflow-hidden"
     >
-      {/* 3D Force Map Background */}
+      {/* 2D Force Map Background - Now covers entire page except hero */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 z-0"
+        className="fixed inset-0 z-0 pointer-events-none"
         style={{ 
           background: 'linear-gradient(135deg, #101013 0%, #1a1a2e 50%, #16213e 100%)',
-          opacity: 0.8 , width: '50%'
+          opacity: 0.8,
+          clipPath: 'polygon(0 100vh, 100% 100vh, 100% 100%, 0 100%)'
         }}
       />
 
