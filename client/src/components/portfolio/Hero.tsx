@@ -301,7 +301,7 @@ export function Hero() {
         className="absolute inset-0 z-0"
         style={{ 
           background: 'linear-gradient(135deg, #101013 0%, #1a1a2e 50%, #16213e 100%)',
-          opacity: 0.8
+          opacity: 0.2
         }}
       />
 
@@ -331,10 +331,7 @@ export function Hero() {
         <div
           className="absolute inset-0 z-20"
           style={{
-            background: `linear-gradient(135deg, 
-              hsla(0, 0%, 100%, 0.1) 0%, 
-              hsla(0, 0%, 100%, 0.05) 50%, 
-              hsla(0, 0%, 100%, 0.15) 100%)`,
+            
             transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
             transform: 'perspective(1000px) translateZ(1px)'
           }}
