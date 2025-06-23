@@ -61,31 +61,85 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
-            <ul className="flex gap-8 list-none">
-              {[
-                { id: "home", label: "Home" },
-                { id: "about", label: "About" },
-                { id: "portfolio", label: "Portfolio" },
-                { id: "contact", label: "Contact" },
-              ].map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']"
-                    style={{ color: 'var(--text-primary)' }}
-                  >
-                    {item.label}
-                  </button>
+            <div className="flex items-center gap-8">
+              <ul className="flex gap-8 list-none">
+                {[
+                  { id: "home", label: "Home" },
+                  { id: "about", label: "About" },
+                  { id: "portfolio", label: "Portfolio" },
+                  { id: "contact", label: "Contact" },
+                ].map((item) => (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => scrollToSection(item.id)}
+                      className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
+                <li>
+                  <Link href="/cv">
+                    <button className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
+                      CV
+                    </button>
+                  </Link>
                 </li>
-              ))}
-              <li>
-                <Link href="/cv">
-                  <button className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
-                    CV
-                  </button>
-                </Link>
-              </li>
-            </ul>
+              </ul>
+              
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-3 ml-6 border-l border-gray-600 pl-6">
+                <a 
+                  href="https://www.linkedin.com/in/emolivera/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                >
+                  <i className="fab fa-linkedin text-lg"></i>
+                </a>
+                <a 
+                  href="https://www.instagram.com/unkerned" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                >
+                  <i className="fab fa-instagram text-lg"></i>
+                </a>
+                <a 
+                  href="https://wa.link/p5civg" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                >
+                  <i className="fab fa-whatsapp text-lg"></i>
+                </a>
+                <a 
+                  href="https://discord.com/channels/1282866549925085206" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                >
+                  <i className="fab fa-discord text-lg"></i>
+                </a>
+                <a 
+                  href="https://soundcloud.com/e-mauricio-olivera" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                >
+                  <i className="fab fa-soundcloud text-lg"></i>
+                </a>
+                <a 
+                  href="https://www.behance.net/emolivera" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                >
+                  <i className="fab fa-behance text-lg"></i>
+                </a>
+              </div>
+            </div>
           </nav>
 
           {/* Theme Toggle & Mobile Menu */}
@@ -141,6 +195,58 @@ export function Header() {
               CV
             </button>
           </Link>
+          
+          {/* Mobile Social Media Icons */}
+          <div className="flex items-center gap-6 mt-4">
+            <a 
+              href="https://www.linkedin.com/in/emolivera/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+            >
+              <i className="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a 
+              href="https://www.instagram.com/unkerned" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+            >
+              <i className="fab fa-instagram text-2xl"></i>
+            </a>
+            <a 
+              href="https://wa.link/p5civg" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+            >
+              <i className="fab fa-whatsapp text-2xl"></i>
+            </a>
+            <a 
+              href="https://discord.com/channels/1282866549925085206" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+            >
+              <i className="fab fa-discord text-2xl"></i>
+            </a>
+            <a 
+              href="https://soundcloud.com/e-mauricio-olivera" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+            >
+              <i className="fab fa-soundcloud text-2xl"></i>
+            </a>
+            <a 
+              href="https://www.behance.net/emolivera" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+            >
+              <i className="fab fa-behance text-2xl"></i>
+            </a>
+          </div>
         </div>
       </div>
     </>
