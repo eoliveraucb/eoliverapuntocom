@@ -171,7 +171,7 @@ export default function Resume() {
             
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="text-lg font-semibold print:text-base mt-[-2px] mb-[-2px]" style={{ color: 'var(--text-primary)' }}>BFA Graphic Design, BS Sociology</h3>
+                <h3 className="text-lg font-semibold print:text-base mt-[0px] mb-[0px]" style={{ color: 'var(--text-primary)' }}>BFA Graphic Design, BS Sociology</h3>
                 <div className="text-blue-600 font-medium">The University of Memphis</div>
                 <div className="text-gray-400 text-sm">Memphis, TN</div>
               </div>
