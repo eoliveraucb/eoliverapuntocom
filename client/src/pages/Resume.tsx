@@ -272,7 +272,7 @@ export default function Resume() {
             </div>
             <div className="p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2 bg-[#101013]">
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>AIGA Worldstudio D×D Scholarship</h4>
-              <p className="text-gray-600 text-sm">Recipient of prestigious design scholarship</p>
+              <p className="text-gray-600 text-sm mt-[-6px] mb-[-6px]">Recipient of prestigious design scholarship</p>
             </div>
             <div className="p-4 rounded-lg border-l-4 border-blue-600 print:bg-transparent print:p-2 bg-[#101013]">
               <h4 className="font-semibold print:text-sm" style={{ color: 'var(--text-primary)' }}>SVA Alumni Scholarship Award</h4>
