@@ -76,7 +76,7 @@ export function Hero() {
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-100 ${
-              index === currentImageIndex ? "opacity-80" : "opacity-0"
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
             }`}
             style={{
               backgroundImage: `url(${image})`,
@@ -91,7 +91,7 @@ export function Hero() {
           className="absolute inset-0 z-10"
           style={{
             backgroundColor: "var(--bg-primary)",
-            opacity: 0.6,
+            opacity: 1.0,
           }}
         />
       </div>
@@ -104,7 +104,7 @@ export function Hero() {
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentImageIndex
                 ? "w-4 h-4"
-                : "opacity-50 hover:opacity-75"
+                : "opacity-100 hover:opacity-100"
             }`}
             style={{
               backgroundColor:
@@ -123,7 +123,7 @@ export function Hero() {
             className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
             style={{
               backgroundColor: "var(--bg-primary)",
-              opacity: 0.95,
+              opacity: 1.0,
               backdropFilter: "blur(10px)",
             }}
           >
