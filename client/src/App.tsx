@@ -9,11 +9,13 @@ import Resume from "@/pages/Resume";
 import NotFound from "@/pages/not-found";
 import Projects from "@/pages/Projects";
 import ProjectDetail from "@/pages/ProjectDetail";
+import SelectedWorks from "@/pages/SelectedWorks";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Portfolio} />
+      <Route path="/selected-works" component={SelectedWorks} />
       <Route path="/projects" component={Projects} />
       <Route path="/projects/:id" component={ProjectDetail} />
       <Route path="/resume" component={Resume} />

@@ -143,6 +143,23 @@ export function Portfolio() {
           </p>
         </div>
 
+        {/* View Selected Works Link */}
+        <div className="text-center mb-12">
+          <Link
+            to="/selected-works"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:-translate-y-1 font-medium"
+            style={{ 
+              backgroundColor: 'var(--accent-primary)',
+              color: 'white'
+            }}
+          >
+            View Selected Works
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+
         {/* Portfolio Masonry Grid */}
         <div className="masonry-grid columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6">
           {portfolioItems.map((item) => {
