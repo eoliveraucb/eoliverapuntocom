@@ -1,9 +1,9 @@
 [
   {
     "ip": "96.11.223.37",
-    "timestamp": "2025-06-27T08:05:38.868Z",
+    "timestamp": "2025-06-27T08:07:59.316Z",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-    "path": "/api/unique-visitors"
+    "path": "/src/components/ui/alert.tsx"
   },
   {
     "ip": "174.207.106.245",
