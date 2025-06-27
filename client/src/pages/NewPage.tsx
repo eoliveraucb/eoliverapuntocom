@@ -11,6 +11,8 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
 
+
+
 // Custom component example
 function CustomCounter() {
   const [count, setCount] = useState(0);
@@ -61,7 +63,7 @@ export function NewPage() {
           <p className="text-xl mb-4" style={{ color: 'var(--text-secondary)' }}>
             This page demonstrates various UI components and custom functionality.
           </p>
-          
+
           <div className="flex gap-2 mb-6">
             <Badge>React</Badge>
             <Badge variant="secondary">TypeScript</Badge>
