@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
+import RadialMandala from '@/components/portfolio/RadialMandala';
 
 
 
@@ -63,6 +64,10 @@ export function NewPage() {
           <p className="text-xl mb-4" style={{ color: 'var(--text-secondary)' }}>
             This page demonstrates various UI components and custom functionality.
           </p>
+
+          <div className="mb-8">
+            <RadialMandala />
+          </div>
 
           <div className="flex gap-2 mb-6">
             <Badge>React</Badge>
