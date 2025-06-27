@@ -19,7 +19,7 @@ interface VisitorRecord {
 
 const VISITORS_FILE = path.join(process.cwd(), 'visitors.json');
 
-function saveVisitor(visitor: VisitorRecord) {
+function saveUniqueVisitor(visitor: VisitorRecord) {
   try {
     let visitors: VisitorRecord[] = [];
     if (fs.existsSync(VISITORS_FILE)) {
@@ -27,11 +27,19 @@ function saveVisitor(visitor: VisitorRecord) {
       visitors = JSON.parse(data);
     }
     
-    // Add new visitor to the beginning
-    visitors.unshift(visitor);
+    // Check if IP already exists
+    const existingIndex = visitors.findIndex(v => v.ip === visitor.ip);
     
-    // Keep only last 100 visitors to prevent file from growing too large
-    visitors = visitors.slice(0, 100);
+    if (existingIndex !== -1) {
+      // Update existing visitor with latest timestamp
+      visitors[existingIndex] = visitor;
+    } else {
+      // Add new unique visitor to the beginning
+      visitors.unshift(visitor);
+    }
+    
+    // Keep only last 20 unique visitors
+    visitors = visitors.slice(0, 20);
     
     fs.writeFileSync(VISITORS_FILE, JSON.stringify(visitors, null, 2));
   } catch (error) {
@@ -39,7 +47,7 @@ function saveVisitor(visitor: VisitorRecord) {
   }
 }
 
-function getRecentVisitors(count: number = 10): VisitorRecord[] {
+function getUniqueVisitors(count: number = 20): VisitorRecord[] {
   try {
     if (fs.existsSync(VISITORS_FILE)) {
       const data = fs.readFileSync(VISITORS_FILE, 'utf8');
@@ -51,6 +59,9 @@ function getRecentVisitors(count: number = 10): VisitorRecord[] {
   }
   return [];
 }
+
+// Password protection middleware
+const ADMIN_PASSWORD = 'Dmitry69!';
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -82,7 +93,7 @@ app.use((req, res, next) => {
         userAgent: req.get('User-Agent') || 'Unknown',
         path
       };
-      saveVisitor(visitor);
+      saveUniqueVisitor(visitor);
     }
     
     // Log all requests with IP addresses
