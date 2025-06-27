@@ -189,6 +189,190 @@ export default function ProjectDetail() {
                 </div>
               )}
 
+              {/* Special content for Church of Emergence project */}
+              {project.id === 'church-emergence' && (
+                <div className="mt-12">
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Project Components
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-2 gap-8 mb-8">
+                    <div 
+                      className="p-6 rounded-lg"
+                      style={{ backgroundColor: 'var(--bg-secondary)' }}
+                    >
+                      <h4 
+                        className="text-xl font-['Fraunces'] font-semibold mb-4"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        Exploration Goals
+                      </h4>
+                      <ul 
+                        className="space-y-2 font-['Roboto_Flex']"
+                        style={{ color: 'var(--text-secondary)' }}
+                      >
+                        <li>• <strong>Ethical Concerns:</strong> AI's increasing use in sensitive areas like criminal justice raises questions about bias, fairness, and accountability</li>
+                        <li>• <strong>Cultural Impact:</strong> Just as televangelism has exploited vulnerable communities, AI-driven systems can perpetuate harm if left unchecked</li>
+                        <li>• <strong>Social Reflection:</strong> In a world marked by war, climate change, and political instability, AI becomes a symbol of hope, fear, and control</li>
+                      </ul>
+                    </div>
+                    
+                    <div 
+                      className="p-6 rounded-lg"
+                      style={{ backgroundColor: 'var(--bg-secondary)' }}
+                    >
+                      <h4 
+                        className="text-xl font-['Fraunces'] font-semibold mb-4"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        Project Elements
+                      </h4>
+                      <ul 
+                        className="space-y-2 font-['Roboto_Flex']"
+                        style={{ color: 'var(--text-secondary)' }}
+                      >
+                        <li>• Street Interventions & Sunday Morning Worship series</li>
+                        <li>• Multi-Faith Inclusion initiatives</li>
+                        <li>• Mapping of Televangelist Churches with Financial Corruption Cases</li>
+                        <li>• Social Media Interventions</li>
+                        <li>• Speculative Rituals: AI-generated sermons and stories</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div 
+                    className="p-6 rounded-lg border-l-4 mb-6"
+                    style={{ 
+                      backgroundColor: 'var(--bg-secondary)',
+                      borderLeftColor: 'var(--accent-primary)'
+                    }}
+                  >
+                    <h4 
+                      className="text-lg font-['Fraunces'] font-semibold mb-3"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      "My God is a Bolivian Shoe-Shiner"
+                    </h4>
+                    <p 
+                      className="text-lg leading-relaxed font-['Roboto_Flex']"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      A provocative narrative connecting AI worship to marginalized communities, inspired by the shoe-shiners of La Paz. This project invites thinkers, creators, and technologists to reflect on AI's role beyond code and algorithms, asking: How do we responsibly integrate AI into society without losing sight of human values?
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Special content for FAMELI project */}
+              {project.id === 'fameli-bolivia' && (
+                <div className="mt-12">
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Impact & Achievements
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-3 gap-6 mb-8">
+                    <div 
+                      className="p-6 rounded-lg text-center"
+                      style={{ backgroundColor: 'var(--bg-secondary)' }}
+                    >
+                      <div 
+                        className="text-3xl font-bold mb-2"
+                        style={{ color: 'var(--accent-primary)' }}
+                      >
+                        100+
+                      </div>
+                      <p 
+                        className="text-sm font-medium"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        Active Members
+                      </p>
+                    </div>
+                    
+                    <div 
+                      className="p-6 rounded-lg text-center"
+                      style={{ backgroundColor: 'var(--bg-secondary)' }}
+                    >
+                      <div 
+                        className="text-3xl font-bold mb-2"
+                        style={{ color: 'var(--accent-primary)' }}
+                      >
+                        9
+                      </div>
+                      <p 
+                        className="text-sm font-medium"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        Years Active
+                      </p>
+                    </div>
+                    
+                    <div 
+                      className="p-6 rounded-lg text-center"
+                      style={{ backgroundColor: 'var(--bg-secondary)' }}
+                    >
+                      <div 
+                        className="text-3xl font-bold mb-2"
+                        style={{ color: 'var(--accent-primary)' }}
+                      >
+                        1st
+                      </div>
+                      <p 
+                        className="text-sm font-medium"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        Pride Participation in La Paz
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div 
+                    className="p-6 rounded-lg border-l-4 mb-6"
+                    style={{ 
+                      backgroundColor: 'var(--bg-secondary)',
+                      borderLeftColor: 'var(--accent-primary)'
+                    }}
+                  >
+                    <h4 
+                      className="text-lg font-['Fraunces'] font-semibold mb-3"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      ¡Desde el Corazón! International Convention
+                    </h4>
+                    <p 
+                      className="text-lg leading-relaxed font-['Roboto_Flex']"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      FAMELI hosted an international convention of families and allies of LGBTQ+ youth in La Paz, Bolivia, solidifying a network of support that transcends borders. This landmark event brought together parents, families, and allies from across Latin America to share experiences, resources, and build lasting connections in support of LGBTQ+ youth.
+                    </p>
+                  </div>
+                  
+                  <div 
+                    className="p-6 rounded-lg"
+                    style={{ backgroundColor: 'var(--bg-secondary)' }}
+                  >
+                    <h4 
+                      className="text-xl font-['Fraunces'] font-semibold mb-4"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                    Historical Significance
+                    </h4>
+                    <p 
+                      className="text-lg leading-relaxed font-['Roboto_Flex']"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      FAMELI made history as the first group to participate in the diversity march (pride) in La Paz, Bolivia, marking a significant milestone in the country's journey toward tolerance and diversity. This groundbreaking participation opened doors for greater LGBTQ+ visibility and acceptance in Bolivian society.
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* Special content for Rate Race project */}
               {project.id === 'rate-race' && (
                 <div className="mt-12">

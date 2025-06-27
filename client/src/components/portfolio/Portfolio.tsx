@@ -129,6 +129,14 @@ const portfolioItems: PortfolioItem[] = [
     category: "Interactive Design",
     image: rateRaceImage,
     icon: Lightbulb
+  },
+  {
+    id: 14,
+    projectId: "fameli-bolivia",
+    title: "FAMELI Group Bolivia",
+    category: "Community Building",
+    image: prideImage,
+    icon: Heart
   }
 ];
 

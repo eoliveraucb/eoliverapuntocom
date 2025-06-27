@@ -50,13 +50,13 @@ export const projectsData: Project[] = [
   {
     id: 'church-emergence',
     title: 'Church of Emergence',
-    category: 'Branding & Identity',
-    description: 'Complete brand identity design for a progressive spiritual community.',
-    fullDescription: 'Developed a comprehensive visual identity for the Church of Emergence, a progressive spiritual community focused on personal growth and social justice. The design reflects themes of transformation, community, and spiritual awakening through modern, inclusive visual language.',
+    category: 'Speculative Design',
+    description: 'AI as Emergent Religion: A critical exploration of AI\'s mythologization in modern society.',
+    fullDescription: 'A multidisciplinary speculative design project investigating how Artificial Intelligence is becoming a cultural phenomenon that resembles modern-day religions. This project examines AI\'s mythologization in a world fractured by trauma, misinformation, and rapid technological change. Through provocative narratives like "My God is a Bolivian Shoe-Shiner" and speculative rituals including AI-generated sermons, the project challenges our understanding of belief, technology, and power. The work includes street interventions, Sunday morning worship series, multi-faith inclusion initiatives, and social media interventions that critically engage with AI\'s ethical, social, and cultural implications in areas like criminal justice, cultural impact, and social reflection.',
     image: churchImage,
-    year: '2022',
-    client: 'Church of Emergence',
-    technologies: ['Brand Identity', 'Logo Design', 'Print Design', 'Digital Assets'],
+    year: '1990',
+    client: 'Independent Research',
+    technologies: ['Speculative Design', 'Social Commentary', 'Street Interventions', 'Critical Design', 'AI Ethics', 'Religious Studies'],
     featured: true
   },
   {
@@ -190,6 +190,18 @@ export const projectsData: Project[] = [
     client: 'Independent Project',
     technologies: ['Game Design', 'Social Impact Design', 'Educational Design', 'Role Playing Games', 'Immigration Policy', 'Interactive Storytelling'],
     externalLink: 'https://emolivera.cargo.site/3-percent-rate-race',
+    featured: true
+  },
+  {
+    id: 'fameli-bolivia',
+    title: 'FAMELI Group Bolivia',
+    category: 'Community Building',
+    description: 'The first group of parents and friends supporting LGBTQ+ youth in Bolivia.',
+    fullDescription: 'FAMELI is the first group of parents and friends in support of their LGBTQ+ youth in Bolivia, designed with the ethos of self-guidance and self-support to combat loneliness and isolation among parents. The group provides resources and compassionate guidance for families with diverse children. Over 9 years, FAMELI has grown to include 100+ members with international impact, becoming a significant force in Bolivia\'s LGBTQ+ rights movement. The group made history as the first to participate in the diversity march (pride) in La Paz, Bolivia, marking a milestone in tolerance and diversity. FAMELI hosted "¡Desde el Corazón!" (From the Heart!), an international convention of families and allies of LGBTQ+ youth in La Paz, Bolivia, solidifying a network of support across borders.',
+    image: prideImage,
+    year: '2015-2024',
+    client: 'FAMELI Bolivia',
+    technologies: ['Community Organizing', 'LGBTQ+ Advocacy', 'International Relations', 'Event Management', 'Social Impact', 'Non-profit Leadership'],
     featured: true
   }
 ];
