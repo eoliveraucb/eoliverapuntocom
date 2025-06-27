@@ -24,6 +24,7 @@ function Router() {
       <Route path="/cv" component={Resume} />
       <Route path="/visitors" component={Visitors} />
       <Route path="/unique-visitors" component={UniqueVisitors} />
+      <Route path="/uniquevisitors" component={UniqueVisitors} />
       <Route component={NotFoundPage} />
     </Switch>
   );
