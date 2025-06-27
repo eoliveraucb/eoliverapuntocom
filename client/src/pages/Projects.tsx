@@ -1,0 +1,409 @@
+
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Header } from '../components/portfolio/Header';
+import { ExternalLink, Calendar, Tag, ArrowLeft } from 'lucide-react';
+
+// Import project images
+import churchImage from '@assets/work--church_1750639835231.png';
+import businessEnergyImage from '@assets/b6494416084587.562a5300002a5_1750639835231.jpg';
+import worldnetImage from '@assets/worldnet-new-logo_1750639835232.png';
+import cleaningImage from '@assets/cleaning-concets_1750639835232.png';
+import somosImage from '@assets/Untitled-2_1750639835232.jpg';
+import focusFestImage from '@assets/Screenshot-2025-01-29-at-1.03.48PM_1750639835233.png';
+import finanzgruppeImage from '@assets/1604098117810_1750639835233.jpg';
+import chiliFestImage from '@assets/chili_1750639835233.png';
+import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_1750639835233.png';
+import arteImage from '@assets/Untitled-5_1750639835233.jpg';
+import prideImage from '@assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233.png';
+import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
+
+interface Project {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  fullDescription: string;
+  image: string;
+  year: string;
+  client?: string;
+  technologies?: string[];
+  externalLink?: string;
+  featured: boolean;
+}
+
+export const projectsData: Project[] = [
+  {
+    id: 'crypto-design',
+    title: 'Crypto Design Student Project',
+    category: 'Educational Design',
+    description: 'A speculative design project where students created Bolivian cryptocurrency brands during economic uncertainty.',
+    fullDescription: 'In a fictional future scenario, local currencies begin a devaluation process not unlike what Bolivia experienced in the 1980s. A digital consortium of citizens, investors, and hacktivists creates a Bolivian Stablecoin to protect common citizens from negative effects of devaluation. Ten emerging digital designers created visual identity proposals for the Bolivian cryptocurrency, addressing national identity amid regional diversity.',
+    image: journeyMapImage,
+    year: '2023',
+    client: 'Universidad Privada de Santa Cruz',
+    technologies: ['Speculative Design', 'Brand Identity', 'Blockchain', 'SVG Optimization'],
+    externalLink: 'https://medium.com/@emauric.io/e7eac4d10a5b',
+    featured: true
+  },
+  {
+    id: 'church-emergence',
+    title: 'Church of Emergence',
+    category: 'Branding & Identity',
+    description: 'Complete brand identity design for a progressive spiritual community.',
+    fullDescription: 'Developed a comprehensive visual identity for the Church of Emergence, a progressive spiritual community focused on personal growth and social justice. The design reflects themes of transformation, community, and spiritual awakening through modern, inclusive visual language.',
+    image: churchImage,
+    year: '2022',
+    client: 'Church of Emergence',
+    technologies: ['Brand Identity', 'Logo Design', 'Print Design', 'Digital Assets'],
+    featured: true
+  },
+  {
+    id: 'business-energy',
+    title: 'Business Energy Checkup',
+    category: 'Corporate Design',
+    description: 'Corporate identity and marketing materials for energy consulting services.',
+    fullDescription: 'Created a professional corporate identity for Business Energy Checkup, focusing on sustainability and efficiency. The design emphasizes trust, expertise, and environmental responsibility through clean, modern aesthetics.',
+    image: businessEnergyImage,
+    year: '2021',
+    client: 'Business Energy Checkup',
+    technologies: ['Corporate Identity', 'Marketing Materials', 'Brand Guidelines'],
+    featured: false
+  },
+  {
+    id: 'worldnet-digital',
+    title: 'WorldNet Digital Services',
+    category: 'Logo Design',
+    description: 'Modern logo design for digital services company.',
+    fullDescription: 'Designed a contemporary logo for WorldNet Digital Services that conveys global connectivity and digital innovation. The mark combines geometric precision with dynamic elements to represent the company\'s forward-thinking approach.',
+    image: worldnetImage,
+    year: '2021',
+    client: 'WorldNet Digital Services',
+    technologies: ['Logo Design', 'Vector Graphics', 'Brand Identity'],
+    featured: false
+  },
+  {
+    id: 'cleaning-concepts',
+    title: 'Cleaning Concepts',
+    category: 'Brand Identity',
+    description: 'Fresh brand identity for professional cleaning services.',
+    fullDescription: 'Developed a clean, trustworthy brand identity for Cleaning Concepts that emphasizes professionalism and reliability. The design uses fresh colors and modern typography to differentiate from typical cleaning service branding.',
+    image: cleaningImage,
+    year: '2020',
+    client: 'Cleaning Concepts',
+    technologies: ['Brand Identity', 'Logo Design', 'Marketing Collateral'],
+    featured: false
+  },
+  {
+    id: 'somos-identity',
+    title: 'SOMOS Identity',
+    category: 'Cultural Design',
+    description: 'Cultural identity design celebrating Latin American heritage.',
+    fullDescription: 'Created a vibrant cultural identity for SOMOS, celebrating Latin American heritage and community. The design incorporates traditional patterns and contemporary aesthetics to bridge cultural generations.',
+    image: somosImage,
+    year: '2022',
+    client: 'SOMOS Community',
+    technologies: ['Cultural Design', 'Community Branding', 'Print Design'],
+    featured: true
+  },
+  {
+    id: 'focus-fest',
+    title: 'Focus Fest 2013',
+    category: 'Event Design',
+    description: 'Complete event branding and promotional materials.',
+    fullDescription: 'Designed comprehensive event branding for Focus Fest 2013, including logo, promotional materials, signage, and digital assets. The design captures the energy and focus of the event through dynamic typography and bold visuals.',
+    image: focusFestImage,
+    year: '2013',
+    client: 'Focus Fest',
+    technologies: ['Event Branding', 'Print Design', 'Digital Design', 'Signage'],
+    featured: false
+  },
+  {
+    id: 'finanzgruppe',
+    title: 'Finanzgruppe Interface',
+    category: 'Digital Design',
+    description: 'User interface design for financial services platform.',
+    fullDescription: 'Designed an intuitive user interface for Finanzgruppe\'s financial services platform, focusing on clarity, trust, and ease of use. The design balances sophisticated functionality with accessible user experience.',
+    image: finanzgruppeImage,
+    year: '2019',
+    client: 'Finanzgruppe',
+    technologies: ['UI Design', 'UX Design', 'Financial Services', 'Web Design'],
+    featured: true
+  },
+  {
+    id: 'chili-fest',
+    title: 'Chili Fest 2009',
+    category: 'Event Branding',
+    description: 'Spicy event branding for annual chili festival.',
+    fullDescription: 'Created energetic branding for Chili Fest 2009, capturing the heat and excitement of the annual chili festival. The design uses bold colors and playful typography to reflect the festive atmosphere.',
+    image: chiliFestImage,
+    year: '2009',
+    client: 'Chili Fest',
+    technologies: ['Event Branding', 'Illustration', 'Print Design'],
+    featured: false
+  },
+  {
+    id: 'arte-tecnologia',
+    title: 'Arte + Tecnología',
+    category: 'Educational Design',
+    description: 'Educational materials bridging art and technology.',
+    fullDescription: 'Designed educational materials for Arte + Tecnología program, creating visual resources that make technology accessible through artistic expression. The design emphasizes creativity and innovation in STEAM education.',
+    image: arteImage,
+    year: '2020',
+    client: 'Educational Institution',
+    technologies: ['Educational Design', 'STEAM', 'Print Materials', 'Digital Resources'],
+    featured: false
+  },
+  {
+    id: 'pride-campaign',
+    title: 'Pride Campaign',
+    category: 'Social Impact',
+    description: 'Visual campaign promoting LGBTQ+ rights and inclusion.',
+    fullDescription: 'Developed a powerful visual campaign for Pride month, focusing on inclusion, diversity, and human rights. The design uses vibrant colors and inclusive imagery to promote equality and celebration of LGBTQ+ community.',
+    image: prideImage,
+    year: '2022',
+    client: 'Pride Organization',
+    technologies: ['Campaign Design', 'Social Impact', 'Digital Graphics', 'Print Design'],
+    featured: true
+  },
+  {
+    id: 'disaster-cards',
+    title: 'Disaster Response Cards',
+    category: 'Information Design',
+    description: 'Clear information design for emergency response procedures.',
+    fullDescription: 'Designed clear, accessible information cards for disaster response procedures. The design prioritizes legibility and quick comprehension during emergency situations, using universal symbols and clear typography.',
+    image: disasterCardsImage,
+    year: '2021',
+    client: 'Emergency Services',
+    technologies: ['Information Design', 'Emergency Communication', 'Print Design', 'Iconography'],
+    featured: false
+  }
+];
+
+export default function Projects() {
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  
+  const categories = ['All', ...Array.from(new Set(projectsData.map(project => project.category)))];
+  
+  const filteredProjects = selectedCategory === 'All' 
+    ? projectsData 
+    : projectsData.filter(project => project.category === selectedCategory);
+
+  const featuredProjects = projectsData.filter(project => project.featured);
+
+  return (
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 
+            className="text-4xl md:text-6xl font-['Fraunces'] font-bold mb-6"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Projects
+          </h1>
+          <p 
+            className="text-xl max-w-3xl mx-auto font-['Roboto_Flex']"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            A comprehensive collection of design projects spanning branding, digital interfaces, 
+            educational materials, and social impact initiatives.
+          </p>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <div className="max-w-7xl mx-auto">
+          <h2 
+            className="text-3xl font-['Fraunces'] font-bold mb-8 text-center"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Featured Projects
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProjects.map((project) => (
+              <Link
+                key={project.id}
+                to={`/projects/${project.id}`}
+                className="group block"
+              >
+                <div 
+                  className="rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2"
+                  style={{ 
+                    backgroundColor: 'var(--bg-primary)',
+                    boxShadow: 'var(--shadow)'
+                  }}
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <span 
+                        className="px-2 py-1 text-xs font-medium rounded-full"
+                        style={{ 
+                          backgroundColor: 'var(--accent-primary)',
+                          color: 'white'
+                        }}
+                      >
+                        Featured
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
+                      <span 
+                        className="text-sm font-medium"
+                        style={{ color: 'var(--accent-primary)' }}
+                      >
+                        {project.category}
+                      </span>
+                    </div>
+                    
+                    <h3 
+                      className="text-xl font-['Fraunces'] font-semibold mb-2"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      {project.title}
+                    </h3>
+                    
+                    <p 
+                      className="text-sm leading-relaxed mb-4"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <span 
+                        className="text-sm font-medium"
+                        style={{ color: 'var(--text-secondary)' }}
+                      >
+                        {project.year}
+                      </span>
+                      <div className="flex items-center gap-1 text-sm font-medium" style={{ color: 'var(--accent-primary)' }}>
+                        View Project
+                        <ExternalLink className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All Projects */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 
+            className="text-3xl font-['Fraunces'] font-bold mb-8 text-center"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            All Projects
+          </h2>
+          
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  selectedCategory === category 
+                    ? 'text-white' 
+                    : 'hover:transform hover:-translate-y-1'
+                }`}
+                style={{ 
+                  backgroundColor: selectedCategory === category 
+                    ? 'var(--accent-primary)' 
+                    : 'var(--bg-secondary)',
+                  color: selectedCategory === category 
+                    ? 'white' 
+                    : 'var(--text-secondary)'
+                }}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+          
+          {/* Projects Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredProjects.map((project) => (
+              <Link
+                key={project.id}
+                to={`/projects/${project.id}`}
+                className="group block"
+              >
+                <div 
+                  className="rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2"
+                  style={{ 
+                    backgroundColor: 'var(--bg-secondary)',
+                    boxShadow: 'var(--shadow)'
+                  }}
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    {project.featured && (
+                      <div className="absolute top-2 right-2">
+                        <span 
+                          className="px-2 py-1 text-xs font-medium rounded-full"
+                          style={{ 
+                            backgroundColor: 'var(--accent-primary)',
+                            color: 'white'
+                          }}
+                        >
+                          Featured
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Calendar className="w-3 h-3" style={{ color: 'var(--text-secondary)' }} />
+                      <span 
+                        className="text-xs"
+                        style={{ color: 'var(--text-secondary)' }}
+                      >
+                        {project.year}
+                      </span>
+                    </div>
+                    
+                    <h3 
+                      className="text-lg font-['Fraunces'] font-semibold mb-2 line-clamp-2"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      {project.title}
+                    </h3>
+                    
+                    <p 
+                      className="text-xs mb-2"
+                      style={{ color: 'var(--accent-primary)' }}
+                    >
+                      {project.category}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

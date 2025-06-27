@@ -7,11 +7,15 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Portfolio from "@/pages/Portfolio";
 import Resume from "@/pages/Resume";
 import NotFound from "@/pages/not-found";
+import Projects from "@/pages/Projects";
+import ProjectDetail from "@/pages/ProjectDetail";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Portfolio} />
+      <Route path="/projects" component={Projects} />
+      <Route path="/projects/:id" component={ProjectDetail} />
       <Route path="/resume" component={Resume} />
       <Route path="/cv" component={Resume} />
       <Route component={NotFound} />

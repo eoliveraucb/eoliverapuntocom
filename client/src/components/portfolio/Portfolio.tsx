@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Briefcase, Globe, Heart, Palette, Film, Users, Lightbulb, Award, Camera, Building, Utensils, Home } from 'lucide-react';
 
 // Import all portfolio images
@@ -16,6 +17,7 @@ import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
 
 interface PortfolioItem {
   id: number;
+  projectId: string;
   title: string;
   category: string;
   image: string;
@@ -25,6 +27,7 @@ interface PortfolioItem {
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
+    projectId: "church-emergence",
     title: "Church of Emergence",
     category: "Branding & Identity",
     image: churchImage,
@@ -32,6 +35,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 2,
+    projectId: "business-energy",
     title: "Business Energy Checkup",
     category: "Corporate Design",
     image: businessEnergyImage,
@@ -39,6 +43,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 3,
+    projectId: "worldnet-digital",
     title: "WorldNet Digital Services",
     category: "Logo Design",
     image: worldnetImage,
@@ -46,6 +51,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 4,
+    projectId: "cleaning-concepts",
     title: "Cleaning Concepts",
     category: "Brand Identity",
     image: cleaningImage,
@@ -53,6 +59,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 5,
+    projectId: "somos-identity",
     title: "SOMOS Identity",
     category: "Cultural Design",
     image: somosImage,
@@ -60,6 +67,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 6,
+    projectId: "focus-fest",
     title: "Focus Fest 2013",
     category: "Event Design",
     image: focusFestImage,
@@ -67,6 +75,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 7,
+    projectId: "finanzgruppe",
     title: "Finanzgruppe Interface",
     category: "Digital Design",
     image: finanzgruppeImage,
@@ -74,6 +83,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 8,
+    projectId: "chili-fest",
     title: "Chili Fest 2009",
     category: "Event Branding",
     image: chiliFestImage,
@@ -81,6 +91,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 9,
+    projectId: "crypto-design",
     title: "Student Journey Map",
     category: "UX Design",
     image: journeyMapImage,
@@ -88,6 +99,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 10,
+    projectId: "arte-tecnologia",
     title: "Arte + Tecnología",
     category: "Educational Design",
     image: arteImage,
@@ -95,6 +107,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 11,
+    projectId: "pride-campaign",
     title: "Pride Campaign",
     category: "Social Impact",
     image: prideImage,
@@ -102,6 +115,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 12,
+    projectId: "disaster-cards",
     title: "Disaster Response Cards",
     category: "Information Design",
     image: disasterCardsImage,
@@ -134,9 +148,10 @@ export function Portfolio() {
           {portfolioItems.map((item) => {
             const IconComponent = item.icon;
             return (
-              <div
+              <Link
                 key={item.id}
-                className="masonry-item group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 break-inside-avoid mb-6"
+                to={`/projects/${item.projectId}`}
+                className="masonry-item group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 break-inside-avoid mb-6 block"
                 style={{ 
                   backgroundColor: 'var(--bg-secondary)',
                   boxShadow: 'var(--shadow)'
@@ -166,7 +181,7 @@ export function Portfolio() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

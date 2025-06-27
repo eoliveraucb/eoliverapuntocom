@@ -89,7 +89,7 @@ export function Header() {
                   </Link>
                 </li>
               </ul>
-              
+
               {/* Social Media Icons */}
               <div className="flex items-center gap-3 ml-6 border-l border-gray-600 pl-6">
                 <a 
@@ -159,7 +159,7 @@ export function Header() {
             >
               <i className={`fas ${theme === "dark" ? "fa-sun" : "fa-moon"} text-lg`}></i>
             </button>
-            
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2"
@@ -203,7 +203,7 @@ export function Header() {
               CV
             </button>
           </Link>
-          
+
           {/* Mobile Social Media Icons */}
           <div className="flex items-center gap-6 mt-4">
             <a 
