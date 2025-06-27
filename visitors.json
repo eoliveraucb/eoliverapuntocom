@@ -1,9 +1,27 @@
 [
   {
+    "ip": "66.249.89.98",
+    "timestamp": "2025-06-27T08:34:52.187Z",
+    "userAgent": "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.7151.68 Mobile Safari/537.36",
+    "path": "/src/components/ui/toast.tsx"
+  },
+  {
+    "ip": "66.249.89.99",
+    "timestamp": "2025-06-27T08:34:39.585Z",
+    "userAgent": "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.7151.68 Mobile Safari/537.36",
+    "path": "/src/pages/Resume.tsx"
+  },
+  {
+    "ip": "66.249.89.100",
+    "timestamp": "2025-06-27T08:34:33.326Z",
+    "userAgent": "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.7151.68 Mobile Safari/537.36",
+    "path": "/@react-refresh"
+  },
+  {
     "ip": "96.11.223.37",
-    "timestamp": "2025-06-27T08:10:12.389Z",
+    "timestamp": "2025-06-27T08:34:32.434Z",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-    "path": "/uniquevisitors"
+    "path": "/src/components/ui/input.tsx"
   },
   {
     "ip": "174.207.106.245",
