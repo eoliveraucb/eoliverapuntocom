@@ -14,6 +14,7 @@ import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_17506398
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
 import prideImage from '@assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233.png';
 import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
+import rateRaceImage from '@assets/future-analog-voices_1750639835234.png';
 
 interface PortfolioItem {
   id: number;
@@ -120,6 +121,14 @@ const portfolioItems: PortfolioItem[] = [
     category: "Information Design",
     image: disasterCardsImage,
     icon: Award
+  },
+  {
+    id: 13,
+    projectId: "rate-race",
+    title: "3 Percent Rate Race",
+    category: "Interactive Design",
+    image: rateRaceImage,
+    icon: Lightbulb
   }
 ];
 

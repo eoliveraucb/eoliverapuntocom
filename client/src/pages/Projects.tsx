@@ -17,6 +17,7 @@ import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_17506398
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
 import prideImage from '@assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233.png';
 import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
+import rateRaceImage from '@assets/future-analog-voices_1750639835234.png';
 
 interface Project {
   id: string;
@@ -177,6 +178,19 @@ export const projectsData: Project[] = [
     client: 'Emergency Services',
     technologies: ['Information Design', 'Emergency Communication', 'Print Design', 'Iconography'],
     featured: false
+  },
+  {
+    id: 'rate-race',
+    title: '3 Percent Rate Race',
+    category: 'Interactive Design',
+    description: 'A speculative design exploring economic inequality through interactive data visualization.',
+    fullDescription: 'An interactive digital experience that examines the growing wealth gap and economic inequality in modern society. The project uses data visualization and speculative design to create an immersive narrative about the "rate race" where only 3% of the population controls the majority of wealth. Through interactive elements and compelling visual storytelling, users explore economic data and future scenarios in an engaging, thought-provoking format.',
+    image: rateRaceImage,
+    year: '2023',
+    client: 'Independent Project',
+    technologies: ['Interactive Design', 'Data Visualization', 'Speculative Design', 'Web Development', 'Economic Research'],
+    externalLink: 'https://emolivera.cargo.site/3-percent-rate-race',
+    featured: true
   }
 ];
 
