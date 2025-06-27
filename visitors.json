@@ -1,6 +1,486 @@
 [
   {
     "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.377Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/lib/utils.ts"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.368Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/card.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.190Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/card.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.166Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Contact.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.089Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Courses.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.088Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Portfolio.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.079Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/ProjectHighlight.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.078Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Contact.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.076Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Portfolio.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.068Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/About.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.066Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Courses.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.065Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Hero.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.062Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/ProjectHighlight.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:21.061Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Hero.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.790Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/toast.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.789Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/toast.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.787Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/About.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.786Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Header.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.782Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/lib/utils.ts"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.780Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/hooks/use-toast.ts"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.777Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/hooks/use-toast.ts"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.729Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ThemeProvider.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.728Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/tooltip.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.696Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/not-found.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.687Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/ProjectDetail.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.686Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/SelectedWorks.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.678Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Projects.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.513Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Visitors.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.511Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Resume.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.420Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Header.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.419Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Portfolio.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.417Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/lib/queryClient.ts"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.415Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/toaster.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.412Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/not-found.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.406Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/ProjectDetail.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.398Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Portfolio.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.316Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/App.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.313Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/lib/queryClient.ts"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.310Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Resume.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.309Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/SelectedWorks.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.308Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Visitors.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.290Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/toaster.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.155Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/tooltip.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.150Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Projects.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.102Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/@react-refresh"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:20.054Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/@vite/client"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:19.128Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/main.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:19.123Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/@react-refresh"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:19.121Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ThemeProvider.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:18.508Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/App.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:17.936Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/main.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:17.869Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:17.620Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:15.319Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/lib/utils.ts"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:15.317Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/toast.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:15.280Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/hooks/use-toast.ts"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:15.277Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/card.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:15.065Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Contact.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.991Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Courses.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.977Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Portfolio.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.956Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/About.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.955Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/ProjectHighlight.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.944Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Header.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.887Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/portfolio/Hero.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.853Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/tooltip.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.848Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ui/toaster.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.787Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Visitors.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.777Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/not-found.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.734Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/ProjectDetail.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.685Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/SelectedWorks.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.675Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Projects.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.606Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Portfolio.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.569Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/pages/Resume.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.567Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/lib/queryClient.ts"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.508Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/components/ThemeProvider.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.469Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/@react-refresh"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.468Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/@vite/client"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.406Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/App.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.307Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/src/main.tsx"
+  },
+  {
+    "ip": "174.207.106.245",
+    "timestamp": "2025-06-27T07:37:14.016Z",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
+    "path": "/"
+  },
+  {
+    "ip": "174.207.106.245",
     "timestamp": "2025-06-27T07:36:03.918Z",
     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
     "path": "/src/lib/utils.ts"
@@ -118,485 +598,5 @@
     "timestamp": "2025-06-27T07:36:03.404Z",
     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
     "path": "/src/components/portfolio/ProjectHighlight.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.402Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Projects.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.379Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/not-found.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.378Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Portfolio.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.376Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/About.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.347Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Hero.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.321Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Header.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.311Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Portfolio.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.309Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/hooks/use-toast.ts"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.307Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/SelectedWorks.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.277Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Resume.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.275Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/toast.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.208Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/lib/queryClient.ts"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.206Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/not-found.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.189Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/ProjectDetail.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.186Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/toaster.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.184Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Visitors.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.181Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Projects.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.120Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/SelectedWorks.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.065Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Resume.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.063Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/tooltip.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:03.051Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/App.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:01.913Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/@react-refresh"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:01.906Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/lib/queryClient.ts"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:01.900Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Portfolio.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:01.896Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ThemeProvider.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:01.889Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/toaster.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:01.832Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/@react-refresh"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:01.384Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/@vite/client"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:01.014Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/App.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:00.872Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/main.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:00.871Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/main.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:00.538Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:36:00.537Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.496Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/SelectedWorks.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.479Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Projects.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.468Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ThemeProvider.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.396Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/tooltip.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.361Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Resume.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.358Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Portfolio.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.286Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/not-found.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.257Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/@react-refresh"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.241Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/@vite/client"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.184Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/App.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:55.066Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/main.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:35:54.773Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.839Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/card.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.642Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Contact.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.641Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Courses.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.587Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/ProjectHighlight.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.577Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Portfolio.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.539Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Hero.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.537Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Header.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.535Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/About.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.481Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/toast.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.477Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/hooks/use-toast.ts"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.403Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/lib/utils.ts"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.390Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/ProjectDetail.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.375Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Visitors.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:38.373Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/not-found.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:37.235Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/SelectedWorks.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:37.001Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Projects.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:36.993Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Portfolio.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:36.992Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Resume.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:36.983Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/toaster.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:36.486Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/tooltip.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:36.484Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ThemeProvider.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:36.435Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/lib/queryClient.ts"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:36.389Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/@react-refresh"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:35.929Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/@vite/client"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:35.867Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/App.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:35.720Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/main.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:35.344Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:34:35.343Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:32:22.758Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ui/card.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:32:22.531Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Contact.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:32:22.528Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Hero.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:32:22.527Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/Courses.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:32:22.477Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/portfolio/ProjectHighlight.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:32:22.434Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/pages/Resume.tsx"
-  },
-  {
-    "ip": "174.207.106.245",
-    "timestamp": "2025-06-27T07:32:22.431Z",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.5 (iOS 18.3.2)",
-    "path": "/src/components/ThemeProvider.tsx"
   }
 ]
