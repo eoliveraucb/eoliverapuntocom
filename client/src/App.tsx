@@ -10,7 +10,7 @@ import Projects from "@/pages/Projects";
 import SelectedWorks from "@/pages/SelectedWorks";
 import { ProjectDetail } from "./pages/ProjectDetail";
 import { Visitors } from "./pages/Visitors";
-import { NotFound } from "./pages/not-found";
+import { NotFoundPage } from "./pages/not-found";
 
 function Router() {
   return (
@@ -22,7 +22,7 @@ function Router() {
       <Route path="/resume" component={Resume} />
       <Route path="/cv" component={Resume} />
       <Route path="/visitors" component={Visitors} />
-      <Route component={NotFound} />
+      <Route component={NotFoundPage} />
     </Switch>
   );
 }
