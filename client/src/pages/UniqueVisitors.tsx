@@ -255,7 +255,7 @@ export function UniqueVisitors() {
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
                         {visitors.map((visitor, index) => (
-                          <tr key={visitor.ip} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                          <tr key={`${visitor.ip}-${index}`} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                               {index + 1}
                             </td>

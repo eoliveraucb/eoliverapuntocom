@@ -38,8 +38,8 @@ function saveUniqueVisitor(visitor: VisitorRecord) {
       visitors.unshift(visitor);
     }
     
-    // Keep only last 20 unique visitors
-    visitors = visitors.slice(0, 20);
+    // Keep only last 100 unique visitors
+    visitors = visitors.slice(0, 100);
     
     fs.writeFileSync(VISITORS_FILE, JSON.stringify(visitors, null, 2));
   } catch (error) {
