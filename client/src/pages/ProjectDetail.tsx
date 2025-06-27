@@ -188,6 +188,84 @@ export default function ProjectDetail() {
                   </div>
                 </div>
               )}
+
+              {/* Special content for Rate Race project */}
+              {project.id === 'rate-race' && (
+                <div className="mt-12">
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Game Overview
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-2 gap-8 mb-8">
+                    <div 
+                      className="p-6 rounded-lg"
+                      style={{ backgroundColor: 'var(--bg-secondary)' }}
+                    >
+                      <h4 
+                        className="text-xl font-['Fraunces'] font-semibold mb-4"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        Gameplay Overview
+                      </h4>
+                      <ul 
+                        className="space-y-2 font-['Roboto_Flex']"
+                        style={{ color: 'var(--text-secondary)' }}
+                      >
+                        <li>• Players take on the roles of immigrants navigating the U.S. immigration system</li>
+                        <li>• Encounter challenges such as paperwork delays, interviews, and legal fees</li>
+                        <li>• Random setbacks mirror real-life bureaucracy and uncertainty</li>
+                        <li>• Ultimate goal: collect your Green Card by overcoming obstacles</li>
+                        <li>• Game design makes success nearly impossible, reflecting harsh reality</li>
+                      </ul>
+                    </div>
+                    
+                    <div 
+                      className="p-6 rounded-lg"
+                      style={{ backgroundColor: 'var(--bg-secondary)' }}
+                    >
+                      <h4 
+                        className="text-xl font-['Fraunces'] font-semibold mb-4"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        Key Features
+                      </h4>
+                      <ul 
+                        className="space-y-2 font-['Roboto_Flex']"
+                        style={{ color: 'var(--text-secondary)' }}
+                      >
+                        <li>• <strong>Bureaucratic Complexity:</strong> Simulates real-world paperwork and waiting periods</li>
+                        <li>• <strong>Stress and Uncertainty:</strong> Random event cards introduce setbacks or opportunities</li>
+                        <li>• <strong>Educational Impact:</strong> Sparks conversation about immigration policy</li>
+                        <li>• <strong>Social Awareness:</strong> Highlights the human side of migration</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div 
+                    className="p-6 rounded-lg border-l-4 mb-6"
+                    style={{ 
+                      backgroundColor: 'var(--bg-secondary)',
+                      borderLeftColor: 'var(--accent-primary)'
+                    }}
+                  >
+                    <h4 
+                      className="text-lg font-['Fraunces'] font-semibold mb-3"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      Educational & Social Impact
+                    </h4>
+                    <p 
+                      className="text-lg leading-relaxed font-['Roboto_Flex']"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      By turning a stressful journey into an interactive experience, 3% Rat Race sparks conversation about policy, perseverance, and the human side of migration. The game serves as both entertainment and education, helping players understand the complexities and emotional toll of the immigration process.
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
             
             {/* Sidebar */}

@@ -181,14 +181,14 @@ export const projectsData: Project[] = [
   },
   {
     id: 'rate-race',
-    title: '3 Percent Rate Race',
-    category: 'Interactive Design',
-    description: 'A speculative design exploring economic inequality through interactive data visualization.',
-    fullDescription: 'An interactive digital experience that examines the growing wealth gap and economic inequality in modern society. The project uses data visualization and speculative design to create an immersive narrative about the "rate race" where only 3% of the population controls the majority of wealth. Through interactive elements and compelling visual storytelling, users explore economic data and future scenarios in an engaging, thought-provoking format.',
+    title: '3 Percent Rate Race (RPG)',
+    category: 'Game Design',
+    description: 'A hybrid Role Playing Game depicting the complex process of obtaining a Green Card in the USA.',
+    fullDescription: '3% Rat Race is a hybrid Role Playing Game that depicts the complex, stressful, and often bureaucratic process of obtaining a Green Card in the USA. Through playful mechanics and immersive storytelling, the game highlights the hurdles, paperwork, and emotional rollercoaster faced by immigrants on their path to permanent residency. Players take on the roles of immigrants navigating the U.S. immigration system, encountering challenges such as paperwork delays, interviews, legal fees, and random setbacks that mirror real-life bureaucracy and uncertainty. The ultimate goal is to collect your Green Card by overcoming obstacles and outlasting the "rat race" - though the game design makes this nearly impossible, reflecting the harsh reality many face. By turning a stressful journey into an interactive experience, it sparks conversation about policy, perseverance, and the human side of migration.',
     image: rateRaceImage,
     year: '2023',
     client: 'Independent Project',
-    technologies: ['Interactive Design', 'Data Visualization', 'Speculative Design', 'Web Development', 'Economic Research'],
+    technologies: ['Game Design', 'Social Impact Design', 'Educational Design', 'Role Playing Games', 'Immigration Policy', 'Interactive Storytelling'],
     externalLink: 'https://emolivera.cargo.site/3-percent-rate-race',
     featured: true
   }
