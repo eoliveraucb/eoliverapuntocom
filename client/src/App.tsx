@@ -8,7 +8,7 @@ import Portfolio from "@/pages/Portfolio";
 import Resume from "@/pages/Resume";
 import Projects from "@/pages/Projects";
 import SelectedWorks from "@/pages/SelectedWorks";
-import { ProjectDetail } from "./pages/ProjectDetail";
+import ProjectDetail from "./pages/ProjectDetail";
 import { Visitors } from "./pages/Visitors";
 import { NotFoundPage } from "./pages/not-found";
 
