@@ -203,7 +203,7 @@ export function UniqueVisitors() {
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">Last 20 Unique Visitors</h1>
+          <h1 className="text-3xl font-bold">Last 100 Unique Visitors</h1>
           <Button onClick={() => setAuthenticated(false)} variant="outline">
             Logout
           </Button>

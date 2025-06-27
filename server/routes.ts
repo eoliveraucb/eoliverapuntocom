@@ -13,7 +13,7 @@ interface VisitorRecord {
 
 const ADMIN_PASSWORD = 'Dmitry69!';
 
-function getUniqueVisitors(count: number = 20): VisitorRecord[] {
+function getUniqueVisitors(count: number = 100): VisitorRecord[] {
   try {
     const VISITORS_FILE = path.join(process.cwd(), 'visitors.json');
     if (fs.existsSync(VISITORS_FILE)) {
@@ -48,7 +48,7 @@ export function registerRoutes(app: Express): Server {
 
   // Protected API endpoint for unique visitors with location data
   app.get("/api/unique-visitors", requirePassword, (req, res) => {
-    const visitors = getUniqueVisitors(20);
+    const visitors = getUniqueVisitors(100);
     res.json(visitors);
   });
 
