@@ -24,29 +24,37 @@ export function Hero() {
     let animationId: number;
     let timeouts: NodeJS.Timeout[] = [];
 
-    // Enhanced carousel with bezier transitions and 3D effects
+    // Simplified carousel with smooth transitions
     carouselInterval = setInterval(() => {
-      const nextIndex = (currentImageIndex + 1) % backgroundImages.length;
-      
-      // Enhanced flickering sequence with elastic easing
-      const flickerSequence = [
-        { index: currentImageIndex, delay: 0, duration: 80 },
-        { index: nextIndex, delay: 80, duration: 40 },
-        { index: currentImageIndex, delay: 120, duration: 60 },
-        { index: nextIndex, delay: 180, duration: 30 },
-        { index: currentImageIndex, delay: 210, duration: 40 },
-        { index: nextIndex, delay: 250, duration: 20 },
-        { index: currentImageIndex, delay: 270, duration: 30 },
-        { index: nextIndex, delay: 300, duration: 0 }
-      ];
-      
-      flickerSequence.forEach(({ index, delay }) => {
-        const timeout = setTimeout(() => {
-          setCurrentImageIndex(index);
-        }, delay);
-        timeouts.push(timeout);
+      setCurrentImageIndex(prevIndex => {
+        const nextIndex = (prevIndex + 1) % backgroundImages.length;
+        
+        // Clear any existing timeouts to prevent conflicts
+        timeouts.forEach(timeout => clearTimeout(timeout));
+        timeouts.length = 0;
+        
+        // Quick flicker effect before transition
+        const flickerTimeout1 = setTimeout(() => {
+          setCurrentImageIndex(prevIndex);
+        }, 50);
+        
+        const flickerTimeout2 = setTimeout(() => {
+          setCurrentImageIndex(nextIndex);
+        }, 100);
+        
+        const flickerTimeout3 = setTimeout(() => {
+          setCurrentImageIndex(prevIndex);
+        }, 150);
+        
+        const finalTimeout = setTimeout(() => {
+          setCurrentImageIndex(nextIndex);
+        }, 200);
+        
+        timeouts.push(flickerTimeout1, flickerTimeout2, flickerTimeout3, finalTimeout);
+        
+        return nextIndex;
       });
-    }, 5000);
+    }, 4000);
 
     // Sequential font-weight animations for each line
     const animateLines = () => {
