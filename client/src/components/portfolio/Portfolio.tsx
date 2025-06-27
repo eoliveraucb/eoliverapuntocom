@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import { Briefcase, Globe, Heart, Palette, Film, Users, Lightbulb, Award, Camera, Building, Utensils, Home } from 'lucide-react';
 
 // Import all portfolio images

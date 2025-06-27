@@ -1,5 +1,6 @@
 
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'wouter';
+import { Link } from 'wouter';
 import { Header } from '../components/portfolio/Header';
 import { ArrowLeft, ExternalLink, Calendar, User, Wrench } from 'lucide-react';
 import { projectsData } from './Projects';
