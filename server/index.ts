@@ -1,11 +1,56 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import fs from 'fs';
+import path from 'path';
 
 const app = express();
 app.set('trust proxy', true); // Enable trust proxy for accurate IP detection
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Visitor tracking
+interface VisitorRecord {
+  ip: string;
+  timestamp: string;
+  userAgent: string;
+  path: string;
+}
+
+const VISITORS_FILE = path.join(process.cwd(), 'visitors.json');
+
+function saveVisitor(visitor: VisitorRecord) {
+  try {
+    let visitors: VisitorRecord[] = [];
+    if (fs.existsSync(VISITORS_FILE)) {
+      const data = fs.readFileSync(VISITORS_FILE, 'utf8');
+      visitors = JSON.parse(data);
+    }
+    
+    // Add new visitor to the beginning
+    visitors.unshift(visitor);
+    
+    // Keep only last 100 visitors to prevent file from growing too large
+    visitors = visitors.slice(0, 100);
+    
+    fs.writeFileSync(VISITORS_FILE, JSON.stringify(visitors, null, 2));
+  } catch (error) {
+    console.error('Error saving visitor:', error);
+  }
+}
+
+function getRecentVisitors(count: number = 10): VisitorRecord[] {
+  try {
+    if (fs.existsSync(VISITORS_FILE)) {
+      const data = fs.readFileSync(VISITORS_FILE, 'utf8');
+      const visitors = JSON.parse(data);
+      return visitors.slice(0, count);
+    }
+  } catch (error) {
+    console.error('Error reading visitors:', error);
+  }
+  return [];
+}
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -28,6 +73,17 @@ app.use((req, res, next) => {
   res.on("finish", () => {
     const duration = Date.now() - start;
     const timestamp = new Date().toISOString();
+    
+    // Save visitor data (only for non-asset requests to avoid spam)
+    if (!path.includes('/@fs/') && !path.includes('.js') && !path.includes('.css') && !path.includes('.png') && !path.includes('.jpg') && !path.includes('.svg')) {
+      const visitor: VisitorRecord = {
+        ip: visitorIP,
+        timestamp,
+        userAgent: req.get('User-Agent') || 'Unknown',
+        path
+      };
+      saveVisitor(visitor);
+    }
     
     // Log all requests with IP addresses
     let logLine = `[${timestamp}] ${visitorIP} - ${req.method} ${path} ${res.statusCode} in ${duration}ms`;

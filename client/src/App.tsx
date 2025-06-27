@@ -6,10 +6,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Portfolio from "@/pages/Portfolio";
 import Resume from "@/pages/Resume";
-import NotFound from "@/pages/not-found";
 import Projects from "@/pages/Projects";
-import ProjectDetail from "@/pages/ProjectDetail";
 import SelectedWorks from "@/pages/SelectedWorks";
+import { ProjectDetail } from "./pages/ProjectDetail";
+import { Visitors } from "./pages/Visitors";
+import { NotFound } from "./pages/not-found";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/projects/:id" component={ProjectDetail} />
       <Route path="/resume" component={Resume} />
       <Route path="/cv" component={Resume} />
+      <Route path="/visitors" component={Visitors} />
       <Route component={NotFound} />
     </Switch>
   );
