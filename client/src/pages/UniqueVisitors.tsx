@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -63,27 +62,42 @@ export function UniqueVisitors() {
           data.map(async (visitor: VisitorRecord) => {
             try {
               // Get location data from ip-api.com (free service)
-              const locationResponse = await fetch(`http://ip-api.com/json/${visitor.ip}`);
+              const locationResponse = await fetch(`https://ip-api.com/json/${visitor.ip}`);
+
+              if (!locationResponse.ok) {
+                throw new Error(`HTTP ${locationResponse.status}`);
+              }
+
               const locationData = await locationResponse.json();
-              
-              if (locationData.status === 'success') {
-                return {
-                  ...visitor,
-                  location: {
+
+              if (locationData.status === 'fail') {
+                throw new Error(locationData.message || 'API request failed');
+              }
+
+              return {
+                ...visitor,
+                location: {
                     lat: locationData.lat,
                     lng: locationData.lon,
                     city: locationData.city,
                     country: locationData.country,
                   }
+              };
+            } catch (error) {
+              console.error('Error getting location for IP:', visitor.ip, error);
+               return {
+                  ...visitor,
+                  location: {
+                    lat: 0,
+                    lng: 0,
+                    city: 'Unknown',
+                    country: 'Unknown',
+                  }
                 };
-              }
-            } catch (err) {
-              console.error('Error getting location for IP:', visitor.ip, err);
             }
-            return visitor;
           })
         );
-        
+
         setVisitors(visitorsWithLocation);
         initializeMap(visitorsWithLocation);
       } else {
