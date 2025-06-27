@@ -312,7 +312,6 @@ export function Hero() {
           opacity: 0.2
         }}
       />
-
       {/* Background Carousel - Full Screen */}
       <div
         className="absolute inset-0 z-10 overflow-hidden"
@@ -368,7 +367,7 @@ export function Hero() {
       </div>
       <div className="w-full relative z-30 px-4">
         <div
-          className="hero-content max-w-4xl relative z-30 text-center mt-[0px] mb-[0px] pt-[0px] pb-[0px] ml-[9.3985px] mr-[9.3985px] pl-[20px] pr-[20px]"
+          className="hero-content max-w-4xl relative z-30 text-center mt-[0px] mb-[0px] pt-[0px] pb-[0px] pl-[20px] pr-[20px] ml-[166.65625px] mr-[166.65625px]"
           style={{ marginLeft: "26%", marginTop: "6%" }}
         >
           <div
