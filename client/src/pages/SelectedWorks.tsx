@@ -1,10 +1,16 @@
 
 import { Link } from 'wouter';
+import { useEffect } from 'react';
 import { Header } from '../components/portfolio/Header';
 import { ExternalLink, ArrowRight, Calendar, Tag } from 'lucide-react';
 import { projectsData } from './Projects';
 
 export default function SelectedWorks() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Filter for featured projects and sort by year (newest first)
   const selectedWorks = projectsData
     .filter(project => project.featured)
