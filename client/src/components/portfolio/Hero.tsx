@@ -312,140 +312,259 @@ export function Hero() {
           opacity: 0.2
         }}
       />
-      {/* Background Carousel - Full Screen */}
-      <div
-        className="absolute inset-0 z-10 overflow-hidden"
-        style={{ marginTop: "5%", marginLeft: "7%" , maxHeight: "90%" }}
-      >
-        {backgroundImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-100 ${
-              index === currentImageIndex ? "opacity-80" : "opacity-0"
-            }`}
-            style={{
-              backgroundImage: `url(${image})`,
-              backgroundSize: "contain",
-              backgroundPosition: "left center",
-              backgroundRepeat: "no-repeat",
-              transition: 'opacity 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-              transform: `perspective(1000px) rotateX(${index === currentImageIndex ? '1deg' : '0deg'}) rotateY(${index === currentImageIndex ? '-0.5deg' : '0deg'}) scale(${index === currentImageIndex ? 1.02 : 1}) translateZ(${index === currentImageIndex ? '5px' : '0px'})`,
-              transformOrigin: 'center center',
-            }}
-          />
-        ))}
-        {/* Enhanced overlay with gradient and 3D effect */}
+
+      {/* DESKTOP & TABLET VERSION (768px and up) */}
+      <div className="hidden md:block w-full">
+        {/* Background Carousel - Full Screen */}
         <div
-          className="absolute inset-0 z-20"
-          style={{
-            
-            transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-            transform: 'perspective(1000px) translateZ(1px)'
-          }}
-        />
-      </div>
-      {/* Enhanced Carousel Indicators with 3D Effects */}
-      <div className="absolute bottom-8 right-8 z-40 flex gap-4">
-        {backgroundImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentImageIndex(index)}
-            className={`transition-all duration-500 ease-out rounded-full ${
-              index === currentImageIndex
-                ? "w-10 h-4 bg-gradient-to-r from-purple-500 to-blue-500 scale-110 shadow-lg"
-                : "w-4 h-4 bg-white/30 hover:bg-white/50 hover:scale-105"
-            }`}
-            style={{
-              transition: 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-              boxShadow: index === currentImageIndex 
-                ? '0 6px 20px rgba(147, 51, 234, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)' 
-                : '0 2px 8px rgba(0, 0, 0, 0.1)',
-              transform: `perspective(100px) rotateX(${index === currentImageIndex ? '5deg' : '0deg'}) translateZ(${index === currentImageIndex ? '2px' : '0px'})`
-            }}
-          />
-        ))}
-      </div>
-      <div className="w-full relative z-30 px-4">
-        <div
-          className="hero-content max-w-4xl relative z-30 text-center mt-[0px] mb-[0px] pt-[0px] pb-[0px] pl-[20px] pr-[20px] ml-[166.65625px] mr-[166.65625px]"
-          style={{ marginLeft: "26%", marginTop: "6%" }}
+          className="absolute inset-0 z-10 overflow-hidden"
+          style={{ marginTop: "5%", marginLeft: "7%" , maxHeight: "90%" }}
         >
-          <div
-            className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
-            style={{
-              backgroundColor: "var(--bg-primary)",
-              opacity: 0.85,
-              backdropFilter: "blur(4px)",
-            }}
-          >
-            <h1
-              className="text-3xl md:text-[44px] font-['Fraunces']"
+          {backgroundImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-100 ${
+                index === currentImageIndex ? "opacity-80" : "opacity-0"
+              }`}
               style={{
-                color: "var(--text-primary)",
-                lineHeight: "1.2",
-                marginBottom: 0,
+                backgroundImage: `url(${image})`,
+                backgroundSize: "contain",
+                backgroundPosition: "left center",
+                backgroundRepeat: "no-repeat",
+                transition: 'opacity 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                transform: `perspective(1000px) rotateX(${index === currentImageIndex ? '1deg' : '0deg'}) rotateY(${index === currentImageIndex ? '-0.5deg' : '0deg'}) scale(${index === currentImageIndex ? 1.02 : 1}) translateZ(${index === currentImageIndex ? '5px' : '0px'})`,
+                transformOrigin: 'center center',
+              }}
+            />
+          ))}
+          {/* Enhanced overlay with gradient and 3D effect */}
+          <div
+            className="absolute inset-0 z-20"
+            style={{
+              
+              transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+              transform: 'perspective(1000px) translateZ(1px)'
+            }}
+          />
+        </div>
+        {/* Enhanced Carousel Indicators with 3D Effects */}
+        <div className="absolute bottom-8 right-8 z-40 flex gap-4">
+          {backgroundImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`transition-all duration-500 ease-out rounded-full ${
+                index === currentImageIndex
+                  ? "w-10 h-4 bg-gradient-to-r from-purple-500 to-blue-500 scale-110 shadow-lg"
+                  : "w-4 h-4 bg-white/30 hover:bg-white/50 hover:scale-105"
+              }`}
+              style={{
+                transition: 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                boxShadow: index === currentImageIndex 
+                  ? '0 6px 20px rgba(147, 51, 234, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)' 
+                  : '0 2px 8px rgba(0, 0, 0, 0.1)',
+                transform: `perspective(100px) rotateX(${index === currentImageIndex ? '5deg' : '0deg'}) translateZ(${index === currentImageIndex ? '2px' : '0px'})`
+              }}
+            />
+          ))}
+        </div>
+        <div className="w-full relative z-30 px-4">
+          <div
+            className="hero-content max-w-4xl relative z-30 text-center mt-[0px] mb-[0px] pt-[0px] pb-[0px] pl-[20px] pr-[20px] ml-[166.65625px] mr-[166.65625px]"
+            style={{ marginLeft: "26%", marginTop: "6%" }}
+          >
+            <div
+              className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
+              style={{
+                backgroundColor: "var(--bg-primary)",
+                opacity: 0.85,
+                backdropFilter: "blur(4px)",
               }}
             >
-              <div
+              <h1
+                className="text-3xl md:text-[44px] font-['Fraunces']"
                 style={{
-                  fontWeight: lineWeights.line1,
-                  transition: "font-weight 0.3s ease-out",
+                  color: "var(--text-primary)",
+                  lineHeight: "1.2",
+                  marginBottom: 0,
                 }}
               >
-                Design education & professional
-              </div>
-              <div
-                style={{
-                  fontWeight: lineWeights.line2,
-                  transition: "font-weight 0.3s ease-out",
-                }}
-              >
-                experience design practice of
-              </div>
-              <div
-                style={{
-                  fontWeight: lineWeights.line3,
-                  transition: "font-weight 0.3s ease-out",
-                }}
-              >
-                <span className="gradient-text">Edwin Mauricio Olivera</span>
-              </div>
-            </h1>
-          </div>
+                <div
+                  style={{
+                    fontWeight: lineWeights.line1,
+                    transition: "font-weight 0.3s ease-out",
+                  }}
+                >
+                  Design education & professional
+                </div>
+                <div
+                  style={{
+                    fontWeight: lineWeights.line2,
+                    transition: "font-weight 0.3s ease-out",
+                  }}
+                >
+                  experience design practice of
+                </div>
+                <div
+                  style={{
+                    fontWeight: lineWeights.line3,
+                    transition: "font-weight 0.3s ease-out",
+                  }}
+                >
+                  <span className="gradient-text">Edwin Mauricio Olivera</span>
+                </div>
+              </h1>
+            </div>
 
-
-
-          <div
-            className={`flex flex-col sm:flex-row gap-4 transition-all duration-800 delay-600 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-5"
-            }`}
-          >
-            <button
-              className="btn-primary btn-ripple px-8 py-4 font-['Sono']"
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+            <div
+              className={`flex flex-col sm:flex-row gap-4 transition-all duration-800 delay-600 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-5"
+              }`}
             >
-              Get in touch
-            </button>
-            <button
-              className="btn-primary px-8 py-4 font-['Sono']"
-              onClick={() =>
-                document
-                  .getElementById("portfolio")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              View My Teaching Work
-            </button>
+              <button
+                className="btn-primary btn-ripple px-8 py-4 font-['Sono']"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Get in touch
+              </button>
+              <button
+                className="btn-primary px-8 py-4 font-['Sono']"
+                onClick={() =>
+                  document
+                    .getElementById("portfolio")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                View My Teaching Work
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      {/* Scroll Indicator */}
+
+      {/* MOBILE VERSION (Below 768px) */}
+      <div className="block md:hidden w-full">
+        {/* Mobile Background - Simplified */}
+        <div className="absolute inset-0 z-10">
+          <div
+            className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20"
+            style={{ backdropFilter: 'blur(1px)' }}
+          />
+          {/* Simplified mobile background carousel */}
+          <div className="absolute inset-0 opacity-30">
+            {backgroundImages.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentImageIndex ? "opacity-60" : "opacity-0"
+                }`}
+                style={{
+                  backgroundImage: `url(${image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Content */}
+        <div className="relative z-30 flex flex-col items-center justify-center min-h-screen px-6 text-center">
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
+            {/* Mobile Title */}
+            <h1
+              className="text-2xl font-['Fraunces'] mb-6 leading-tight"
+              style={{
+                color: "var(--text-primary)",
+                fontWeight: lineWeights.line1,
+              }}
+            >
+              <div className="mb-2">
+                Design Education &
+              </div>
+              <div className="mb-2">
+                Professional Experience
+              </div>
+              <div>
+                <span className="gradient-text text-3xl block mt-3">
+                  Edwin Mauricio Olivera
+                </span>
+              </div>
+            </h1>
+
+            {/* Mobile Description */}
+            <p 
+              className="text-lg mb-8 max-w-sm mx-auto leading-relaxed font-['Sono']"
+              style={{ 
+                color: "var(--text-secondary)",
+                opacity: 0.9 
+              }}
+            >
+              Transforming digital education through innovative design and 
+              interactive learning experiences
+            </p>
+
+            {/* Mobile Action Buttons */}
+            <div className="flex flex-col gap-4 w-full max-w-xs">
+              <button
+                className="btn-primary btn-ripple px-6 py-4 text-sm font-['Sono'] w-full rounded-full"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Get in Touch
+              </button>
+              <button
+                className="btn-secondary px-6 py-4 text-sm font-['Sono'] w-full rounded-full border-2 transition-all duration-300"
+                style={{
+                  borderColor: "var(--accent-primary)",
+                  color: "var(--accent-primary)",
+                  backgroundColor: "transparent"
+                }}
+                onClick={() =>
+                  document
+                    .getElementById("portfolio")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                View Portfolio
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Carousel Indicators */}
+          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-2">
+            {backgroundImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  index === currentImageIndex
+                    ? "w-8 h-2 bg-gradient-to-r from-purple-400 to-blue-400"
+                    : "w-2 h-2 bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator - Common for both versions */}
       <div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce-slow cursor-pointer z-40"
         onClick={scrollToNext}

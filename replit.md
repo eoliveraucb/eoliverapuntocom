@@ -101,6 +101,7 @@ This is a comprehensive portfolio and professional platform for Edwin Mauricio O
 
 ## Changelog
 - June 27, 2025. Initial setup
+- June 28, 2025. Enhanced hero section with mobile-optimized version while preserving tablet/desktop layout
 
 ## User Preferences
 
