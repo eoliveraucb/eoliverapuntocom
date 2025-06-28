@@ -38,15 +38,15 @@ export default function Resume() {
           </button>
         </div>
       )}
-      <div className="max-w-4xl mx-auto p-8 print:p-0 print:max-w-none">
+      <div className="max-w-4xl mx-auto pt-20 md:pt-8 p-8 print:p-0 print:max-w-none print:pt-0">
         {/* Header */}
         <header className="text-center mb-12 print:mb-8">
           <img 
             src={profile2} 
             alt="Edwin Mauricio Olivera" 
-            className="w-32 h-32 rounded-full mx-auto print:w-24 print:h-24 print:mb-4 ml-[328px] mr-[328px] mt-[12px] mb-[12px]"
+            className="w-24 md:w-32 h-24 md:h-32 rounded-full mx-auto print:w-24 print:h-24 print:mb-4 mt-4 md:mt-3 mb-4 md:mb-3"
           />
-          <h1 className="text-4xl font-bold mb-2 print:text-3xl" style={{ color: 'var(--text-primary)' }}>
+          <h1 id="page-title" className="text-3xl md:text-4xl font-bold mb-2 print:text-3xl scroll-mt-20" style={{ color: 'var(--text-primary)' }}>
             Edwin Mauricio Olivera
           </h1>
           <div className="text-xl text-blue-600 font-semibold mb-4 print:text-lg">

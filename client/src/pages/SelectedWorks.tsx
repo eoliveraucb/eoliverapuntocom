@@ -20,12 +20,13 @@ export default function SelectedWorks() {
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <Header />
       
-      {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Mobile Scroll Optimization */}
+      <section className="pt-24 md:pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 
-              className="text-4xl md:text-6xl font-['Fraunces'] font-bold mb-6"
+              id="page-title"
+              className="text-3xl md:text-6xl font-['Fraunces'] font-bold mb-4 md:mb-6 scroll-mt-20"
               style={{ color: 'var(--text-primary)' }}
             >
               Selected Works

@@ -48,13 +48,13 @@ export default function ProjectDetail() {
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <Header />
       
-      {/* Hero Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Mobile Scroll Optimization */}
+      <section className="pt-24 md:pt-12 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           {/* Back Button */}
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 mb-8 text-sm font-medium transition-all duration-300 hover:transform hover:-translate-x-1"
+            className="inline-flex items-center gap-2 mb-6 md:mb-8 text-sm font-medium transition-all duration-300 hover:transform hover:-translate-x-1"
             style={{ color: 'var(--accent-primary)' }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -78,7 +78,8 @@ export default function ProjectDetail() {
             )}
             
             <h1 
-              className="text-4xl md:text-5xl font-['Fraunces'] font-bold mb-4"
+              id="page-title"
+              className="text-3xl md:text-5xl font-['Fraunces'] font-bold mb-4 scroll-mt-20"
               style={{ color: 'var(--text-primary)' }}
             >
               {project.title}

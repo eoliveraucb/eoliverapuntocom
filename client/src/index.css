@@ -284,6 +284,17 @@
   .theme-transition {
     transition: all var(--transition-speed) ease;
   }
+
+  /* Mobile scroll optimization */
+  .mobile-scroll-offset {
+    scroll-margin-top: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-scroll-offset {
+      scroll-margin-top: 1rem;
+    }
+  }
 }
 
 @keyframes fadeInUp {

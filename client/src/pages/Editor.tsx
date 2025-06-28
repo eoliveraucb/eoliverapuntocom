@@ -9,7 +9,7 @@ export default function Editor() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Header />
       
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 pt-24 md:pt-8 pb-8">
         <div className="mb-8">
           <Link href="/">
             <Button variant="outline" className="mb-4">
@@ -21,7 +21,7 @@ export default function Editor() {
           <div className="flex items-center gap-3 mb-6">
             <Edit3 className="w-8 h-8 text-purple-600" />
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+              <h1 id="page-title" className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white scroll-mt-20">
                 Visual Editor
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300">
