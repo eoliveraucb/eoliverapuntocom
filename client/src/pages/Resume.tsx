@@ -343,7 +343,7 @@ export default function Resume() {
           </div>
         </section>
       </div>
-      <style jsx>{`
+      <style>{`
         @media print {
           @page {
             margin: 0.5in;
