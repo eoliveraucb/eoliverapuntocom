@@ -12,6 +12,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import { Visitors } from "./pages/Visitors";
 import { UniqueVisitors } from "./pages/UniqueVisitors";
 import { NewPage } from "./pages/NewPage";
+import Editor from "./pages/Editor";
 import { NotFoundPage } from "./pages/not-found";
 
 function Router() {
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/unique-visitors" component={UniqueVisitors} />
       <Route path="/uniquevisitors" component={UniqueVisitors} />
       <Route path="/new-page" component={NewPage} />
+      <Route path="/editor" component={Editor} />
       <Route component={NotFoundPage} />
     </Switch>
   );

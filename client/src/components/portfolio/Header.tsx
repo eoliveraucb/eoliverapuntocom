@@ -88,6 +88,13 @@ export function Header() {
                     </button>
                   </Link>
                 </li>
+                <li>
+                  <Link href="/editor">
+                    <button className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
+                      Editor
+                    </button>
+                  </Link>
+                </li>
               </ul>
 
               {/* Social Media Icons */}
