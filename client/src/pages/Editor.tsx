@@ -2,14 +2,41 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/portfolio/Header';
 import { WysiwygEditor } from '@/components/WysiwygEditor';
-import { ArrowLeft, Edit3 } from 'lucide-react';
+import { ArrowLeft, Edit3, Lock } from 'lucide-react';
+import { isEditModeEnabled } from '../lib/auth';
 
 export default function Editor() {
+  if (!isEditModeEnabled()) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <Header />
+        
+        <div className="container mx-auto px-4 pt-24 md:pt-8 pb-8">
+          <div className="text-center py-16">
+            <Lock className="w-16 h-16 mx-auto text-gray-400 mb-4" />
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              Access Restricted
+            </h1>
+            <p className="text-gray-600 dark:text-gray-300 mb-8">
+              You need special access to view this page.
+            </p>
+            <Link href="/">
+              <Button variant="outline">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Home
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Header />
       
-      <div className="container mx-auto px-4 pt-24 md:pt-8 pb-8">
+      <div className="container mx-auto px-4 pt-24 md:pt-8 pb-8"></div>
         <div className="mb-8">
           <Link href="/">
             <Button variant="outline" className="mb-4">

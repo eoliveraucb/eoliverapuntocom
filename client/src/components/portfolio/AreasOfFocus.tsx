@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Edit3, X } from 'lucide-react';
 import { WysiwygEditor } from '../WysiwygEditor';
@@ -16,7 +15,7 @@ export function AreasOfFocus() {
         <h3 class="font-bold text-xl mb-3">Digital Education</h3>
         <p>Developing innovative learning experiences that merge technology with pedagogy, focusing on accessibility and cultural relevance.</p>
       </div>
-      
+
       <div class="text-center p-6">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
           <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -26,7 +25,7 @@ export function AreasOfFocus() {
         <h3 class="font-bold text-xl mb-3">Social Innovation</h3>
         <p>Using design as a catalyst for social transformation, with emphasis on community engagement and participatory approaches.</p>
       </div>
-      
+
       <div class="text-center p-6">
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
           <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,7 +37,7 @@ export function AreasOfFocus() {
       </div>
     </div>
   `;
-  
+
   const [focusContent, setFocusContent] = useState(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('focus-content');
@@ -50,12 +49,24 @@ export function AreasOfFocus() {
   const handleSave = (newContent: string) => {
     setFocusContent(newContent);
     setIsEditing(false);
-    
+
     // Save to localStorage
     if (typeof window !== 'undefined') {
       localStorage.setItem('focus-content', newContent);
     }
   };
+
+  // Function to determine if edit mode is enabled based on URL token
+  const isEditModeEnabled = () => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('token');
+      // Replace 'your_secret_token' with your actual secret token
+      return token === 'your_secret_token';
+    }
+    return false;
+  };
+
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: 'var(--bg-primary)' }}>
@@ -75,8 +86,8 @@ export function AreasOfFocus() {
               Core areas where design meets education and social impact
             </p>
           </div>
-          
-          {!isEditing ? (
+
+          {!isEditing && isEditModeEnabled() ? (
             <button
               onClick={() => setIsEditing(true)}
               className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:transform hover:-translate-y-1 ml-4"
@@ -89,6 +100,7 @@ export function AreasOfFocus() {
               Edit
             </button>
           ) : (
+            isEditing ? (
             <button
               onClick={() => setIsEditing(false)}
               className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:bg-gray-500 ml-4"
@@ -100,6 +112,7 @@ export function AreasOfFocus() {
               <X className="w-4 h-4" />
               Cancel
             </button>
+            ) : null
           )}
         </div>
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "../ThemeProvider";
 import { Link } from "wouter";
 import emlogo from "../../assets/emlogo.svg";
+import { isEditModeEnabled } from '../../lib/auth';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,6 +32,18 @@ export function Header() {
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
+
+  const baseNavItems = [
+        { id: "home", label: "Home" },
+        { id: "about", label: "About" },
+        { id: "portfolio", label: "Portfolio" },
+        { id: "contact", label: "Contact" },
+        { id: "cv", label: "CV", href: "/cv" },
+      ];
+
+  const navItems = isEditModeEnabled()
+        ? [...baseNavItems, { id: "editor", label: "Editor", href: "/editor" }]
+        : baseNavItems;
 
   return (
     <>
@@ -65,36 +78,25 @@ export function Header() {
           <nav className="hidden md:block">
             <div className="flex items-center gap-8">
               <ul className="flex gap-8 list-none">
-                {[
-                  { id: "home", label: "Home" },
-                  { id: "about", label: "About" },
-                  { id: "portfolio", label: "Portfolio" },
-                  { id: "contact", label: "Contact" },
-                ].map((item) => (
+                {navItems.map((item) => (
                   <li key={item.id}>
-                    <button
-                      onClick={() => scrollToSection(item.id)}
-                      className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']"
-                      style={{ color: 'var(--text-primary)' }}
-                    >
-                      {item.label}
-                    </button>
+                    {item.href ? (
+                      <Link href={item.href}>
+                        <button className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
+                          {item.label}
+                        </button>
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => scrollToSection(item.id)}
+                        className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        {item.label}
+                      </button>
+                    )}
                   </li>
                 ))}
-                <li>
-                  <Link href="/cv">
-                    <button className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
-                      CV
-                    </button>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/editor">
-                    <button className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
-                      Editor
-                    </button>
-                  </Link>
-                </li>
               </ul>
 
               {/* Social Media Icons */}
@@ -186,12 +188,7 @@ export function Header() {
         style={{ backgroundColor: 'var(--bg-primary)' }}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
-          {[
-            { id: "home", label: "Home" },
-            { id: "about", label: "About" },
-            { id: "portfolio", label: "Portfolio" },
-            { id: "contact", label: "Contact" },
-          ].map((item) => (
+          {baseNavItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
@@ -201,15 +198,17 @@ export function Header() {
               {item.label}
             </button>
           ))}
-          <Link href="/cv">
-            <button 
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link font-['Fraunces']"
-              style={{ color: 'var(--text-primary)' }}
-            >
-              CV
-            </button>
-          </Link>
+          {navItems.find(item => item.id === "cv") && (
+            <Link href="/cv">
+              <button 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link font-['Fraunces']"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                CV
+              </button>
+            </Link>
+          )}
 
           {/* Mobile Social Media Icons */}
           <div className="flex items-center gap-6 mt-4">

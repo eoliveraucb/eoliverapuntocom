@@ -17,6 +17,14 @@ const skills: Skill[] = [
   { name: "Research & Analysis", percentage: 92 },
 ];
 
+// Function to check if edit mode is enabled based on URL parameter
+const isEditModeEnabled = () => {
+  if (typeof window !== 'undefined') {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('editToken') === 'yourLongStringToken'; // Replace 'yourLongStringToken' with your actual token
+  }
+  return false;
+};
 
 
 export function About() {
@@ -25,14 +33,14 @@ export function About() {
   const [isEditing, setIsEditing] = useState(false);
   const defaultContent = `
     <p>I am a designer, educator, and recent graduate of the MFA program in Design for Social Innovation at the School of Visual Arts in New York. My work explores how design can be leveraged as a tool for social transformation—particularly within education systems that serve marginalized and underrepresented communities.</p>
-    
+
     <p>Drawing from over 15 years of creative experience across disciplines, I develop hands-on, innovative learning experiences that merge technology, culture, and community engagement. My practice emphasizes collaboration, peer mentorship, and the integration of analog and digital approaches to help learners build skills that are adaptable, resilient, and future-focused.</p>
-    
+
     <p>Much of my recent work centers on making emerging technologies—including AI—accessible and meaningful for students and educators in Latin America. I believe in the power of co-creation and aim to design educational models that empower learners to shape their own futures, while staying grounded in cultural knowledge and social context.</p>
 
     <p>My approach is driven by curiosity, empathy, and a commitment to lifelong learning. I am always excited to collaborate with others who share a vision for inclusive, impactful design education.</p>
   `;
-  
+
   const [aboutContent, setAboutContent] = useState(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('about-content');
@@ -40,18 +48,18 @@ export function About() {
     }
     return defaultContent;
   });
-  
+
   const sectionRef = useRef<HTMLElement>(null);
 
   const handleSave = (newContent: string) => {
     setAboutContent(newContent);
     setIsEditing(false);
-    
+
     // Save to localStorage
     if (typeof window !== 'undefined') {
       localStorage.setItem('about-content', newContent);
     }
-    
+
     console.log('About content saved:', newContent);
   };
 
@@ -109,8 +117,8 @@ export function About() {
               <h2 className="font-['Fraunces'] text-center lg:text-left" style={{ color: 'var(--text-primary)' }}>
                 About Me
               </h2>
-              
-              {!isEditing ? (
+
+              {!isEditing && isEditModeEnabled() && (
                 <button
                   onClick={() => setIsEditing(true)}
                   className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:transform hover:-translate-y-1"
@@ -122,7 +130,9 @@ export function About() {
                   <Edit3 className="w-4 h-4" />
                   Edit
                 </button>
-              ) : (
+              )}
+
+              {isEditing && (
                 <div className="flex gap-2">
                   <button
                     onClick={() => setIsEditing(false)}
@@ -138,7 +148,7 @@ export function About() {
                 </div>
               )}
             </div>
-            
+
             {isEditing ? (
               <div className="space-y-4">
                 <WysiwygEditor 
