@@ -295,6 +295,34 @@
       scroll-margin-top: 1rem;
     }
   }
+
+  /* Enhanced prose styles for About section */
+  .prose-about p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .prose-about p:last-child {
+    margin-bottom: 0;
+  }
+
+  .prose-about strong {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .prose-about em {
+    font-style: italic;
+  }
+
+  .prose-about a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+  }
+
+  .prose-about a:hover {
+    opacity: 0.8;
+  }
 }
 
 @keyframes fadeInUp {

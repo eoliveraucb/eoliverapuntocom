@@ -24,11 +24,29 @@ interface EditorState {
   selection: { start: number; end: number } | null;
 }
 
-export function WysiwygEditor() {
-  const [content, setContent] = useState('<p>Start typing your content here...</p>');
-  const [history, setHistory] = useState<EditorState[]>([{ content, selection: null }]);
+interface WysiwygEditorProps {
+  initialContent?: string;
+  onSave?: (content: string) => void;
+  onCancel?: () => void;
+}
+
+export function WysiwygEditor({ 
+  initialContent = '<p>Start typing your content here...</p>',
+  onSave,
+  onCancel 
+}: WysiwygEditorProps) {
+  const [content, setContent] = useState(initialContent);
+  const [history, setHistory] = useState<EditorState[]>([{ content: initialContent, selection: null }]);
   const [historyIndex, setHistoryIndex] = useState(0);
   const editorRef = useRef<HTMLDivElement>(null);
+
+  // Initialize editor with initial content
+  useEffect(() => {
+    if (editorRef.current && initialContent) {
+      editorRef.current.innerHTML = initialContent;
+      setContent(initialContent);
+    }
+  }, [initialContent]);
 
   // Save to history
   const saveToHistory = (newContent: string) => {
@@ -187,6 +205,33 @@ export function WysiwygEditor() {
               </Button>
             );
           })}
+
+          {/* Save and Cancel buttons when used in context */}
+          {(onSave || onCancel) && (
+            <>
+              <Separator orientation="vertical" className="h-6 mx-1" />
+              {onSave && (
+                <Button
+                  variant="default"
+                  size="sm"
+                  onClick={() => onSave(content)}
+                  className="h-8 px-3 bg-green-600 hover:bg-green-700 text-white"
+                >
+                  Save
+                </Button>
+              )}
+              {onCancel && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={onCancel}
+                  className="h-8 px-3"
+                >
+                  Cancel
+                </Button>
+              )}
+            </>
+          )}
         </div>
 
         {/* Editor Content */}
