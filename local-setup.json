@@ -1,0 +1,104 @@
+{
+  "project": {
+    "name": "Edwin Mauricio Olivera Portfolio",
+    "description": "Professional portfolio and design education platform",
+    "version": "1.0.0",
+    "type": "Full-stack React/Express application"
+  },
+  "requirements": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0",
+    "database": "PostgreSQL (optional for development)"
+  },
+  "setup_instructions": {
+    "1_clone_or_download": "Download or clone the project files to your local machine",
+    "2_install_dependencies": "Run 'npm install' in the project root directory",
+    "3_environment_setup": "Create a .env file in the root directory (see environment_variables section below)",
+    "4_database_setup": "Optional: Set up PostgreSQL database or use in-memory storage for development",
+    "5_start_development": "Run 'npm run dev' to start the development server"
+  },
+  "scripts": {
+    "dev": "Start development server with hot reload",
+    "build": "Build the application for production",
+    "start": "Start production server",
+    "db:generate": "Generate database migrations",
+    "db:push": "Push database schema changes"
+  },
+  "environment_variables": {
+    "required_for_production": {
+      "DATABASE_URL": "PostgreSQL connection string (e.g., postgresql://user:password@localhost:5432/portfolio)",
+      "NODE_ENV": "Set to 'production' for production deployment"
+    },
+    "optional_for_development": {
+      "NODE_ENV": "Set to 'development' (default if not specified)",
+      "DATABASE_URL": "Leave empty to use in-memory storage for development"
+    }
+  },
+  "ports": {
+    "development": 5000,
+    "description": "The application runs on port 5000 by default. Frontend and backend are served from the same port."
+  },
+  "project_structure": {
+    "client/": "React frontend application",
+    "client/src/pages/": "Page components and routes",
+    "client/src/components/": "Reusable UI components",
+    "server/": "Express backend server",
+    "shared/": "Shared types and schemas",
+    "attached_assets/": "Project images and media files"
+  },
+  "key_features": {
+    "responsive_design": "Mobile-first responsive design with dark/light theme",
+    "portfolio_showcase": "Interactive project gallery with detailed case studies",
+    "wysiwyg_editing": "In-context editing capability for content management",
+    "print_optimization": "Specialized print styles for resume/CV",
+    "theme_system": "Dark/light mode with local storage persistence"
+  },
+  "technology_stack": {
+    "frontend": {
+      "framework": "React 18 with TypeScript",
+      "styling": "Tailwind CSS with shadcn/ui components",
+      "routing": "Wouter for client-side routing",
+      "state_management": "TanStack Query + React Context",
+      "ui_components": "Radix UI primitives",
+      "build_tool": "Vite"
+    },
+    "backend": {
+      "framework": "Express.js with TypeScript",
+      "database": "Drizzle ORM with PostgreSQL",
+      "development_storage": "In-memory storage for rapid development"
+    }
+  },
+  "development_workflow": {
+    "hot_reload": "Vite provides hot module replacement for instant updates",
+    "type_safety": "Full TypeScript support across frontend and backend",
+    "component_library": "Pre-built shadcn/ui components for consistent design",
+    "database_migrations": "Drizzle Kit for schema management"
+  },
+  "production_deployment": {
+    "build_process": "Frontend builds to dist/public, backend bundles to dist/index.js",
+    "database_required": "PostgreSQL database connection required for production",
+    "environment": "Set NODE_ENV=production",
+    "static_assets": "Served from build output directory"
+  },
+  "troubleshooting": {
+    "port_conflicts": "If port 5000 is in use, the application will attempt to use the next available port",
+    "database_connection": "For development, you can run without a database - it will use in-memory storage",
+    "asset_loading": "Make sure attached_assets directory is present with all project images",
+    "build_issues": "Run 'npm install' to ensure all dependencies are installed"
+  },
+  "local_development_checklist": [
+    "✓ Node.js 20+ installed",
+    "✓ Project files downloaded/cloned",
+    "✓ Run 'npm install' in project root",
+    "✓ Create .env file (optional for development)",
+    "✓ Run 'npm run dev'",
+    "✓ Open http://localhost:5000 in browser",
+    "✓ Verify all pages load correctly",
+    "✓ Test theme switching (dark/light mode)",
+    "✓ Check responsive design on different screen sizes"
+  ],
+  "sample_env_file": {
+    "filename": ".env",
+    "content": "# Optional for development - remove if using in-memory storage\n# DATABASE_URL=postgresql://username:password@localhost:5432/portfolio\n\n# Environment\nNODE_ENV=development"
+  }
+}
