@@ -1,7 +1,6 @@
 import { Header } from "../components/portfolio/Header";
 import { Hero } from "../components/portfolio/Hero";
 import { About } from "../components/portfolio/About";
-import { AreasOfFocus } from "../components/portfolio/AreasOfFocus";
 import { Portfolio as PortfolioGallery } from "../components/portfolio/Portfolio";
 import { ProjectHighlight } from "../components/portfolio/ProjectHighlight";
 import { Courses } from "../components/portfolio/Courses";
