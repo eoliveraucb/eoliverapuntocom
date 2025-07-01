@@ -23,7 +23,7 @@ export function About() {
   const [isVisible, setIsVisible] = useState(false);
   const [skillsAnimated, setSkillsAnimated] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  const [aboutContent, setAboutContent] = useState(`
+  const defaultContent = `
     <p>I am a designer, educator, and recent graduate of the MFA program in Design for Social Innovation at the School of Visual Arts in New York. My work explores how design can be leveraged as a tool for social transformation—particularly within education systems that serve marginalized and underrepresented communities.</p>
     
     <p>Drawing from over 15 years of creative experience across disciplines, I develop hands-on, innovative learning experiences that merge technology, culture, and community engagement. My practice emphasizes collaboration, peer mentorship, and the integration of analog and digital approaches to help learners build skills that are adaptable, resilient, and future-focused.</p>
@@ -31,13 +31,27 @@ export function About() {
     <p>Much of my recent work centers on making emerging technologies—including AI—accessible and meaningful for students and educators in Latin America. I believe in the power of co-creation and aim to design educational models that empower learners to shape their own futures, while staying grounded in cultural knowledge and social context.</p>
 
     <p>My approach is driven by curiosity, empathy, and a commitment to lifelong learning. I am always excited to collaborate with others who share a vision for inclusive, impactful design education.</p>
-  `);
+  `;
+  
+  const [aboutContent, setAboutContent] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('about-content');
+      return saved || defaultContent;
+    }
+    return defaultContent;
+  });
+  
   const sectionRef = useRef<HTMLElement>(null);
 
   const handleSave = (newContent: string) => {
     setAboutContent(newContent);
     setIsEditing(false);
-    // Here you could also save to a backend/localStorage
+    
+    // Save to localStorage
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('about-content', newContent);
+    }
+    
     console.log('About content saved:', newContent);
   };
 

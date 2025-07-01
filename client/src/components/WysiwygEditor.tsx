@@ -162,11 +162,12 @@ export function WysiwygEditor({
           {/* Font Size Dropdown */}
           <select 
             onChange={(e) => changeFontSize(e.target.value)}
+            defaultValue="3"
             className="px-2 py-1 text-sm border rounded bg-white dark:bg-gray-700 dark:border-gray-600"
             title="Font Size"
           >
             <option value="1">Small</option>
-            <option value="3" selected>Normal</option>
+            <option value="3">Normal</option>
             <option value="5">Large</option>
             <option value="7">Huge</option>
           </select>
