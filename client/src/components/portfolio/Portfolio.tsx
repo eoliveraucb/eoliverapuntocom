@@ -52,11 +52,11 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 4,
-    projectId: "cleaning-concepts",
-    title: "Cleaning Concepts",
-    category: "Brand Identity",
-    image: cleaningImage,
-    icon: Home
+    projectId: "rate-race",
+    title: "3 Percent Rate Race",
+    category: "Interactive Design",
+    image: "https://ux.emauric.io/images/portfolio/ratrace/ratrace-cover.png",
+    icon: Lightbulb
   },
   {
     id: 5,
@@ -123,26 +123,30 @@ const portfolioItems: PortfolioItem[] = [
     icon: Award
   },
   {
-    id: 13,
-    projectId: "rate-race",
-    title: "3 Percent Rate Race",
-    category: "Interactive Design",
-    image: rateRaceImage,
-    icon: Lightbulb
-  },
-  {
     id: 14,
     projectId: "fameli-bolivia",
     title: "FAMELI Group Bolivia",
     category: "Community Building",
     image: prideImage,
     icon: Heart
+  },
+  {
+    id: 15,
+    projectId: "future-analog-voices",
+    title: "Future Analog Voices",
+    category: "Product Design",
+    image: "https://ux.emauric.io/images/portfolio/future/future-analog-green.png",
+    icon: Lightbulb
   }
 ];
 
-export function Portfolio() {
+interface PortfolioProps {
+  id?: string;
+}
+
+export function Portfolio({ id }: PortfolioProps) {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id={id} className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 

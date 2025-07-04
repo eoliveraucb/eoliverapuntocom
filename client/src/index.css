@@ -348,6 +348,29 @@
   }
 }
 
+@keyframes slideUpAndDown {
+  0% {
+    transform: translateY(100%) translateX(-50%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0%) translateX(-50%);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0%) translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%) translateX(-50%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-up-and-down {
+  animation: slideUpAndDown 8s ease-in-out infinite;
+}
+
 @media (max-width: 768px) {
   .mobile-menu {
     transform: translateX(-100%);

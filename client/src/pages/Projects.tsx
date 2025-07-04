@@ -185,7 +185,7 @@ export const projectsData: Project[] = [
     category: 'Game Design',
     description: 'A hybrid Role Playing Game depicting the complex process of obtaining a Green Card in the USA.',
     fullDescription: '3% Rat Race is a hybrid Role Playing Game that depicts the complex, stressful, and often bureaucratic process of obtaining a Green Card in the USA. Through playful mechanics and immersive storytelling, the game highlights the hurdles, paperwork, and emotional rollercoaster faced by immigrants on their path to permanent residency. Players take on the roles of immigrants navigating the U.S. immigration system, encountering challenges such as paperwork delays, interviews, legal fees, and random setbacks that mirror real-life bureaucracy and uncertainty. The ultimate goal is to collect your Green Card by overcoming obstacles and outlasting the "rat race" - though the game design makes this nearly impossible, reflecting the harsh reality many face. By turning a stressful journey into an interactive experience, it sparks conversation about policy, perseverance, and the human side of migration.',
-    image: rateRaceImage,
+    image: 'https://ux.emauric.io/images/portfolio/ratrace/ratrace-cover.png',
     year: '2023',
     client: 'Independent Project',
     technologies: ['Game Design', 'Social Impact Design', 'Educational Design', 'Role Playing Games', 'Immigration Policy', 'Interactive Storytelling'],
@@ -202,6 +202,19 @@ export const projectsData: Project[] = [
     year: '2015-2024',
     client: 'FAMELI Bolivia',
     technologies: ['Community Organizing', 'LGBTQ+ Advocacy', 'International Relations', 'Event Management', 'Social Impact', 'Non-profit Leadership'],
+    featured: true
+  },
+  {
+    id: 'future-analog-voices',
+    title: 'Future Analog Voices',
+    category: 'Product Design',
+    description: 'A graduate exploration into graphic language, prototyping physical artifacts and sound design.',
+    fullDescription: 'Born from a graduate assignment on synthesis and facilitation, this exploration into a graphic language explored different expressions into prototyping physical artifacts and sound design. This graphic experiment proposes that in contemporary discussions about the future and innovation, analog and embodied expressions of technology transition from nostalgia to revaluation and sustainability. The work was exhibited at Design Week NYC 2025 and SVA Graduate Center Gallery 2025.',
+    image: 'https://ux.emauric.io/images/portfolio/future/future-analog-green.png',
+    year: '2025',
+    client: 'SVA Graduate Studies',
+    technologies: ['Product Design', 'Sound Design', 'Physical Prototyping', 'Graphic Language', 'Sustainability', 'Material Innovation'],
+    externalLink: 'https://emolivera.cargo.site/edit/W2507643633',
     featured: true
   }
 ];

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../ThemeProvider";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import emlogo from "../../assets/emlogo.svg";
 import { isEditModeEnabled } from '../../lib/auth';
 
@@ -8,6 +8,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,26 +19,16 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-    setIsMobileMenuOpen(false);
-  };
-
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
   const baseNavItems = [
-        { id: "home", label: "Home" },
-        { id: "about", label: "About" },
-        { id: "portfolio", label: "Portfolio" },
-        { id: "contact", label: "Contact" },
+        { id: "home", label: "Home", href: "/" },
+        { id: "about", label: "About", href: "/#about" },
+        { id: "projects", label: "Teaching", href: "/#projects" },
+        { id: "selected-works", label: "Design", href: "/#selected-works" },
+        { id: "contact", label: "Contact", href: "/#contact" },
         { id: "cv", label: "CV", href: "/cv" },
       ];
 
@@ -80,21 +71,13 @@ export function Header() {
               <ul className="flex gap-8 list-none">
                 {navItems.map((item) => (
                   <li key={item.id}>
-                    {item.href ? (
-                      <Link href={item.href}>
-                        <button className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" style={{ color: 'var(--text-primary)' }}>
-                          {item.label}
-                        </button>
-                      </Link>
-                    ) : (
-                      <button
-                        onClick={() => scrollToSection(item.id)}
-                        className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']"
-                        style={{ color: 'var(--text-primary)' }}
-                      >
-                        {item.label}
-                      </button>
-                    )}
+                    <Link 
+                      href={item.href} 
+                      className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" 
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -188,27 +171,17 @@ export function Header() {
         style={{ backgroundColor: 'var(--bg-primary)' }}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
-          {baseNavItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
+          {navItems.map((item) => (
+            <Link 
+              key={item.id} 
+              href={item.href} 
+              onClick={() => setIsMobileMenuOpen(false)}
               className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link font-['Fraunces']"
               style={{ color: 'var(--text-primary)' }}
             >
               {item.label}
-            </button>
-          ))}
-          {navItems.find(item => item.id === "cv") && (
-            <Link href="/cv">
-              <button 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link font-['Fraunces']"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                CV
-              </button>
             </Link>
-          )}
+          ))}
 
           {/* Mobile Social Media Icons */}
           <div className="flex items-center gap-6 mt-4">

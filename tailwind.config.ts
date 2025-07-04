@@ -79,10 +79,26 @@ export default {
             height: "0",
           },
         },
+        "slide-in-from-bottom-full": {
+          from: {
+            transform: "translateY(100%)",
+          },
+          to: {
+            transform: "translateY(0)",
+          },
+        },
+        "slide-up-and-down": {
+          "0%": { transform: "translateY(100%)" }, /* Start off-screen at bottom */
+          "10%": { transform: "translateY(0)" },    /* Slide up to visible position */
+          "90%": { transform: "translateY(0)" },    /* Stay visible */
+          "100%": { transform: "translateY(100%)" }, /* Slide down and disappear */
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slide-in-from-bottom-full": "slide-in-from-bottom-full 700ms ease-out",
+        "slide-up-and-down": "slide-up-and-down 4s ease-in-out forwards",
       },
     },
   },

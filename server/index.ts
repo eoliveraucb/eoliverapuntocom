@@ -9,6 +9,7 @@ app.set('trust proxy', true); // Enable trust proxy for accurate IP detection
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+/*
 // Visitor tracking
 interface VisitorRecord {
   ip: string;
@@ -112,6 +113,7 @@ app.use((req, res, next) => {
 
   next();
 });
+*/
 
 (async () => {
   const server = await registerRoutes(app);
@@ -140,7 +142,6 @@ app.use((req, res, next) => {
   server.listen({
     port,
     host: "0.0.0.0",
-    reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
   });

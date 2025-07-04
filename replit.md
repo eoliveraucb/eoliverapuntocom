@@ -95,6 +95,17 @@ This is a comprehensive portfolio and professional platform for Edwin Mauricio O
 - **Production**: Auto-deploy with build step and production server
 - **Database**: PostgreSQL provisioned automatically in production
 
+#### Reloading the Project on Replit
+- **Manual Reload**: If the project does not automatically reload after making changes, you can manually reload it by clicking the "Run" button at the top of the Replit interface. This will restart the server and apply any recent changes.
+- **Force Refresh**: For a full refresh, you can stop the current run by clicking the "Stop" button, then click "Run" again to start a fresh instance. This ensures that all cached states are cleared.
+- **Check Console Output**: After reloading, check the console output in the Replit IDE to confirm that the server has started correctly and is listening on the expected port (usually 5000 for development).
+
+#### Pushing Changes to Repository
+- **Commit Changes**: Use the Replit built-in Git interface or the command line in the Replit shell. If using the shell, stage your changes with `git add .`, then commit with `git commit -m "Your commit message"`.
+- **Push to Remote**: Push your changes to the remote repository (e.g., GitHub) by running `git push origin main` (replace `main` with your branch name if different). Ensure you have set up the remote repository in Replit's Git settings if not already configured.
+- **Authentication**: If pushing for the first time, you may need to authenticate with your GitHub credentials or a personal access token. Follow Replit's prompts to complete this step.
+- **Verify Push**: After pushing, check the repository on GitHub (or your chosen platform) to confirm that the changes have been uploaded successfully.
+
 ### Environment Variables
 - **DATABASE_URL**: PostgreSQL connection string (required for production)
 - **NODE_ENV**: Environment flag for development/production modes

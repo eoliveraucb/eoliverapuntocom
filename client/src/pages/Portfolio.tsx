@@ -5,6 +5,7 @@ import { Portfolio as PortfolioGallery } from "../components/portfolio/Portfolio
 import { ProjectHighlight } from "../components/portfolio/ProjectHighlight";
 import { Courses } from "../components/portfolio/Courses";
 import { Contact } from "../components/portfolio/Contact";
+import RadialMandala from "../components/portfolio/RadialMandala";
 
 function AreasOfFocus() {
   const focusAreas = [
@@ -92,6 +93,46 @@ function AreasOfFocus() {
   );
 }
 
+function NetworkVisualization() {
+  return (
+    <section 
+      className="py-20 px-4 sm:px-6 lg:px-8"
+      style={{ backgroundColor: 'var(--bg-secondary)' }}
+    >
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 
+          className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-8"
+          style={{ color: 'var(--text-primary)' }}
+        >
+          Design Connections
+        </h2>
+        
+        <p 
+          className="text-lg max-w-3xl mx-auto mb-12 font-['Roboto_Flex']"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          An interactive visualization representing the interconnected nature of design thinking, 
+          educational networks, and collaborative learning ecosystems.
+        </p>
+
+        <div className="flex justify-center">
+          <div className="relative">
+            <RadialMandala />
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
+              <p 
+                className="text-sm font-['Roboto_Flex'] opacity-70"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                Interactive Network • Real-time Connections • Collaborative Learning
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Portfolio() {
   return (
     <div className="min-h-screen">
@@ -100,9 +141,10 @@ export default function Portfolio() {
         <Hero />
         <About />
         <AreasOfFocus />
-        <PortfolioGallery />
+        <Courses id="projects" />
         <ProjectHighlight />
-        <Courses />
+        <NetworkVisualization />
+        <PortfolioGallery id="selected-works" />
         <Contact />
       </main>
     </div>

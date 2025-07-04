@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { useLocation } from "wouter";
 import home1 from "@assets/home1_1750633823946.png";
 import home2 from "@assets/home2_1750633823946.png";
 import home3 from "@assets/home3_1750633823946.png";
@@ -11,6 +12,7 @@ export function Hero() {
     line2: 200,
     line3: 200,
   });
+  const [showTeachingSlider, setShowTeachingSlider] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mousePos = useRef({ x: 0, y: 0 });
   const scrollY = useRef(0);
@@ -74,6 +76,13 @@ export function Hero() {
     };
 
     animateLines();
+
+    // Logic for the teaching slider animation - starts after hero text animation
+    const teachingSliderTimeout = setTimeout(() => {
+      setShowTeachingSlider(true);
+    }, 2000); // Show after 2 seconds, allowing hero text animation to complete
+
+    timeouts.push(teachingSliderTimeout);
 
     // Interactive 2D Connectivity Temporal Force Map
     const canvas = canvasRef.current;
@@ -309,7 +318,7 @@ export function Hero() {
         className="absolute inset-0 z-0"
         style={{ 
           background: 'linear-gradient(135deg, #101013 0%, #1a1a2e 50%, #16213e 100%)',
-          opacity: 0.2
+          opacity: 0.05 /* Adjusted opacity to make background lighter */
         }}
       />
 
@@ -371,23 +380,24 @@ export function Hero() {
         <div className="w-full relative z-30 px-4">
           <div
             className="hero-content max-w-4xl relative z-30 text-center mt-[0px] mb-[0px] pt-[0px] pb-[0px] pl-[20px] pr-[20px] ml-[166.65625px] mr-[166.65625px]"
-            style={{ marginLeft: "26%", marginTop: "6%" }}
+            style={{ marginLeft: "19%", marginTop: "1%" }}
           >
             <div
               className="relative p-6 rounded-lg mb-6 text-left pl-[0px] pr-[0px] pt-[0px] pb-[0px]"
               style={{
-                backgroundColor: "var(--bg-primary)",
-                opacity: 0.85,
-                backdropFilter: "blur(4px)",
+              backgroundColor: "var(--bg-primary)",
+              opacity: 0.9,
+              backdropFilter: "blur(4px)",
               }}
             >
               <h1
-                className="text-3xl md:text-[44px] font-['Fraunces']"
-                style={{
-                  color: "var(--text-primary)",
-                  lineHeight: "1.2",
-                  marginBottom: 0,
-                }}
+              className="text-3xl md:text-[44px] font-['Fraunces']"
+              style={{
+                color: "var(--text-primary)",
+                lineHeight: "1.2",
+                marginBottom: 0,
+                textShadow: "0 4px 24px rgba(109,89,255,0.45), 0 1px 2px rgba(0,0,0,0.25)"
+              }}
               >
                 <div
                   style={{
@@ -411,7 +421,7 @@ export function Hero() {
                     transition: "font-weight 0.3s ease-out",
                   }}
                 >
-                  <span className="gradient-text">Edwin Mauricio Olivera</span>
+                  <span >Edwin Mauricio Olivera</span>
                 </div>
               </h1>
             </div>
@@ -451,7 +461,9 @@ export function Hero() {
       {/* MOBILE VERSION (Below 768px) */}
       <div className="block md:hidden w-full">
         {/* Mobile Background - Simplified */}
-        <div className="absolute inset-0 z-10">
+        <div
+          className="absolute inset-0 z-10"
+        >
           <div
             className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20"
             style={{ backdropFilter: 'blur(1px)' }}
@@ -505,7 +517,6 @@ export function Hero() {
               </div>
             </h1>
 
-            {/* Mobile Description */}
             <p 
               className="text-lg mb-8 max-w-sm mx-auto leading-relaxed font-['Sono']"
               style={{ 
@@ -563,6 +574,42 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Teaching Engagement Popup - Updated positioning as shown in images */}
+      {showTeachingSlider && (
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-xl z-50"
+          style={{
+            transformOrigin: 'bottom center'
+          }}
+        >
+          <div
+            className="h-auto bg-gradient-to-br from-purple-700 to-indigo-600 text-white p-8 rounded-t-3xl shadow-2xl"
+            style={{
+              borderBottom: '2px solid #e6e6e6',
+              boxShadow: '0 -4px 20px rgba(147, 51, 234, 0.3)',
+            }}
+          >
+            {/* Gray line handle at bottom */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-[100px] rounded-full bg-gray-400 z-50" />
+            
+            <div className="text-center flex flex-col items-center">
+              <h2 className="text-4xl font-extrabold mb-3 flex items-center justify-center gap-3 font-['Fraunces']">
+                <span className="text-5xl">🎓</span> Now Open for Teaching Engagements (EN/ES)
+              </h2>
+              <p className="text-xl text-white/90 mb-6 font-['Roboto_Flex']">
+                Digital Design | UX/UI | Emerging Tech
+              </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-indigo-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-lg"
+              >
+                Details →
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Scroll Indicator - Common for both versions */}
       <div
