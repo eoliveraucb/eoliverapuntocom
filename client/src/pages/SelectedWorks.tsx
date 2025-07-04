@@ -2,6 +2,7 @@
 import { Link } from 'wouter';
 import { useEffect } from 'react';
 import { Header } from '../components/portfolio/Header';
+import { Breadcrumb } from '../components/Breadcrumb';
 import { ExternalLink, ArrowRight, Calendar, Tag } from 'lucide-react';
 import { projectsData } from './Projects';
 
@@ -20,8 +21,15 @@ export default function SelectedWorks() {
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <Header />
       
+      {/* Breadcrumb Navigation */}
+      <div className="pt-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <Breadcrumb className="mb-4" />
+        </div>
+      </div>
+      
       {/* Hero Section with Mobile Scroll Optimization */}
-      <section className="pt-24 md:pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pb-12 md:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 

@@ -23,6 +23,35 @@ export function Header() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80;
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleNavClick = (item: any) => {
+    setIsMobileMenuOpen(false);
+    
+    if (item.href.startsWith('/#')) {
+      // Handle anchor links
+      const sectionId = item.href.replace('/#', '');
+      if (location === '/') {
+        // Already on home page, just scroll
+        setTimeout(() => scrollToSection(sectionId), 100);
+      } else {
+        // Navigate to home page first, then scroll
+        window.location.href = item.href;
+        setTimeout(() => scrollToSection(sectionId), 800);
+      }
+    }
+  };
+
   const baseNavItems = [
         { id: "home", label: "Home", href: "/" },
         { id: "about", label: "About", href: "/#about" },
@@ -71,13 +100,23 @@ export function Header() {
               <ul className="flex gap-8 list-none">
                 {navItems.map((item) => (
                   <li key={item.id}>
-                    <Link 
-                      href={item.href} 
-                      className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" 
-                      style={{ color: 'var(--text-primary)' }}
-                    >
-                      {item.label}
-                    </Link>
+                    {item.href.startsWith('/#') ? (
+                      <button
+                        onClick={() => handleNavClick(item)}
+                        className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces'] bg-transparent border-none cursor-pointer"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        {item.label}
+                      </button>
+                    ) : (
+                      <Link 
+                        href={item.href} 
+                        className="nav-link font-medium hover:opacity-80 transition-opacity font-['Fraunces']" 
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -172,15 +211,26 @@ export function Header() {
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
           {navItems.map((item) => (
-            <Link 
-              key={item.id} 
-              href={item.href} 
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link font-['Fraunces']"
-              style={{ color: 'var(--text-primary)' }}
-            >
-              {item.label}
-            </Link>
+            item.href.startsWith('/#') ? (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item)}
+                className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link font-['Fraunces'] bg-transparent border-none cursor-pointer"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                {item.label}
+              </button>
+            ) : (
+              <Link 
+                key={item.id} 
+                href={item.href} 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-2xl font-medium hover:opacity-80 transition-opacity mobile-nav-link font-['Fraunces']"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
 
           {/* Mobile Social Media Icons */}

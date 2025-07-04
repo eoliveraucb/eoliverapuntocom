@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Link } from 'wouter';
 import { Header } from '../components/portfolio/Header';
+import { Breadcrumb } from '../components/Breadcrumb';
 import { ExternalLink, Calendar, Tag, ArrowLeft } from 'lucide-react';
 
 // Import project images
@@ -234,8 +235,15 @@ export default function Projects() {
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <Header />
       
+      {/* Breadcrumb Navigation */}
+      <div className="pt-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <Breadcrumb className="mb-4" />
+        </div>
+      </div>
+      
       {/* Hero Section with Mobile Scroll Optimization */}
-      <section className="pt-24 md:pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pb-12 md:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 
             id="page-title"

@@ -145,7 +145,7 @@ export default function Portfolio() {
         <ProjectHighlight />
         <NetworkVisualization />
         <PortfolioGallery id="selected-works" />
-        <Contact />
+        <Contact id="contact" />
       </main>
     </div>
   );

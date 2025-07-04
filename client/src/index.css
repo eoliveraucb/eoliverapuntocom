@@ -371,6 +371,16 @@
   animation: slideUpAndDown 8s ease-in-out infinite;
 }
 
+/* Navigation and scroll improvements */
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-mt-20 {
+  scroll-margin-top: 5rem;
+}
+
+/* Mobile navigation improvements */
 @media (max-width: 768px) {
   .mobile-menu {
     transform: translateX(-100%);
@@ -380,4 +390,42 @@
   .mobile-menu.open {
     transform: translateX(0);
   }
+  
+  /* Better mobile scroll positioning */
+  .mobile-nav-link {
+    touch-action: manipulation;
+  }
+  
+  /* Mobile scroll optimization */
+  #page-title {
+    scroll-margin-top: 5rem;
+  }
+}
+
+/* Desktop navigation improvements */
+@media (min-width: 769px) {
+  .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Smooth section transitions */
+section {
+  scroll-margin-top: 5rem;
+}
+
+/* Better breadcrumb styling */
+.breadcrumb-separator {
+  opacity: 0.6;
+}
+
+/* Loading states for navigation */
+.nav-loading {
+  opacity: 0.7;
+  pointer-events: none;
 }

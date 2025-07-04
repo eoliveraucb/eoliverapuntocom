@@ -87,7 +87,7 @@ export function About() {
     <section 
       id="about" 
       ref={sectionRef}
-      className="section theme-transition"
+      className="section theme-transition scroll-mt-20"
       style={{ backgroundColor: 'var(--bg-secondary)' }}
     >
       <div className="container">

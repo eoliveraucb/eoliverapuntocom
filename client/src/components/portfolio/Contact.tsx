@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-export function Contact() {
+interface ContactProps {
+  id?: string;
+}
+
+export function Contact({ id }: ContactProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,8 +29,8 @@ export function Contact() {
 
   return (
     <section 
-      id="contact" 
-      className="section theme-transition"
+      id={id || "contact"} 
+      className="section theme-transition scroll-mt-20"
       style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       <div className="container">
