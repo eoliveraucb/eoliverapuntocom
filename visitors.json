@@ -1,5 +1,17 @@
 [
   {
+    "ip": "23.245.98.167",
+    "timestamp": "2025-07-04T00:22:06.185Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+    "path": "/src/components/ui/separator.tsx"
+  },
+  {
+    "ip": "173.241.229.7",
+    "timestamp": "2025-07-01T13:11:31.152Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+    "path": "/"
+  },
+  {
     "ip": "174.207.33.170",
     "timestamp": "2025-07-01T01:55:53.190Z",
     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Replit-Bonsai/2.140.7 (iOS 18.3.2)",
@@ -31,7 +43,7 @@
   },
   {
     "ip": "96.11.223.37",
-    "timestamp": "2025-07-01T02:26:52.940Z",
+    "timestamp": "2025-07-01T02:39:03.098Z",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
     "path": "/src/components/ui/separator.tsx"
   },
