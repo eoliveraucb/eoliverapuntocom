@@ -321,7 +321,6 @@ export function Hero() {
           opacity: 0.05 /* Adjusted opacity to make background lighter */
         }}
       />
-
       {/* DESKTOP & TABLET VERSION (768px and up) */}
       <div className="hidden md:block w-full">
         {/* Background Carousel - Full Screen */}
@@ -412,9 +411,7 @@ export function Hero() {
                     fontWeight: lineWeights.line2,
                     transition: "font-weight 0.3s ease-out",
                   }}
-                >
-                  experience design practice of
-                </div>
+                >Showcase of my professional practice and experiments </div>
                 <div
                   style={{
                     fontWeight: lineWeights.line3,
@@ -430,7 +427,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
       {/* MOBILE VERSION (Below 768px) */}
       <div className="block md:hidden w-full">
         {/* Mobile Background - Simplified */}
@@ -547,7 +543,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
       {/* Teaching Engagement Popup - Updated positioning as shown in images */}
       {showTeachingSlider && (
         <div
@@ -583,7 +578,6 @@ export function Hero() {
           </div>
         </div>
       )}
-
       {/* Scroll Indicator - Common for both versions */}
       <div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce-slow cursor-pointer z-40"
