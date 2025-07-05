@@ -409,7 +409,7 @@ export function Hero() {
                     fontWeight: lineWeights.line2,
                     transition: "font-weight 0.3s ease-out",
                   }}
-                  className="text-[36px]">a showcase of my teaching practice, design practice and thought experiments.</div>
+                  className="text-[36px]">a showcase of my <a href="#projects" className="text-purple-600 underline hover:text-purple-800 transition-colors duration-200">teaching experience</a>, <a href="#design" className="text-cyan-500 underline hover:text-cyan-700 transition-colors duration-200">professional practice</a> and <a href="https://medium.com/@emauric.io" target="_blank" rel="noopener noreferrer" className="text-orange-500 underline hover:text-orange-700 transition-colors duration-200">thought experiments</a>.</div>
                 <div
                   style={{
                     fontWeight: lineWeights.line3,
