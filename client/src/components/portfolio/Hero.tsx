@@ -416,7 +416,7 @@ export function Hero() {
                     transition: "font-weight 0.3s ease-out",
                   }}
                 >
-                  <span >Edwin Mauricio Olivera</span>
+                  <span className="text-[24px]">by Edwin Mauricio Olivera</span>
                 </div>
               </h1>
             </div>
