@@ -426,34 +426,7 @@ export function Hero() {
               </h1>
             </div>
 
-            <div
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-800 delay-600 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-5"
-              }`}
-            >
-              <button
-                className="btn-primary btn-ripple px-8 py-4 font-['Sono']"
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Get in touch
-              </button>
-              <button
-                className="btn-primary px-8 py-4 font-['Sono']"
-                onClick={() =>
-                  document
-                    .getElementById("portfolio")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                View My Teaching Work
-              </button>
-            </div>
+            
           </div>
         </div>
       </div>
