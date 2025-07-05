@@ -409,7 +409,7 @@ export function Hero() {
                     fontWeight: lineWeights.line2,
                     transition: "font-weight 0.3s ease-out",
                   }}
-                  className="text-[36px]">a showcase of my <a href="#projects" className="text-purple-600 underline decoration-purple-400 decoration-2 hover:text-purple-800 hover:decoration-purple-600 transition-colors duration-200">teaching experience</a>, <a href="#design" className="text-cyan-500 underline decoration-cyan-400 decoration-2 hover:text-cyan-700 hover:decoration-cyan-600 transition-colors duration-200">professional practice</a> and <a href="https://medium.com/@emauric.io" target="_blank" rel="noopener noreferrer" className="text-orange-500 underline decoration-orange-400 decoration-2 hover:text-orange-700 hover:decoration-orange-600 transition-colors duration-200">thought experiments</a>.</div>
+                  className="text-[36px]">a showcase of my <a href="#projects" className="underline decoration-purple-500 decoration-2 hover:decoration-purple-700 transition-colors duration-200" style={{ color: 'inherit' }}>teaching experience</a>, <a href="#design" className="underline decoration-cyan-500 decoration-2 hover:decoration-cyan-700 transition-colors duration-200" style={{ color: 'inherit' }}>professional practice</a> and <a href="https://medium.com/@emauric.io" target="_blank" rel="noopener noreferrer" className="underline decoration-orange-500 decoration-2 hover:decoration-orange-700 transition-colors duration-200" style={{ color: 'inherit' }}>thought experiments</a>.</div>
                 <div
                   style={{
                     fontWeight: lineWeights.line3,
