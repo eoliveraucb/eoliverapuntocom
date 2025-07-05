@@ -409,7 +409,7 @@ export function Hero() {
                     fontWeight: lineWeights.line2,
                     transition: "font-weight 0.3s ease-out",
                   }}
-                >a showcase of my professional practice, teaching experience and thought experiments.</div>
+                  className="text-[36px]">a showcase of my teaching practice, design practice and thought experiments.</div>
                 <div
                   style={{
                     fontWeight: lineWeights.line3,
