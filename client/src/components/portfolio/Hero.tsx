@@ -584,7 +584,7 @@ export function Hero() {
           }}
         >
           <div
-            className="h-auto bg-gradient-to-br from-purple-700 to-indigo-600 text-white p-8 rounded-t-3xl shadow-2xl"
+            className="h-auto bg-gradient-to-br from-purple-700 to-indigo-600 text-white p-6 rounded-t-3xl shadow-2xl"
             style={{
               borderBottom: '2px solid #e6e6e6',
               boxShadow: '0 -4px 20px rgba(147, 51, 234, 0.3)',
@@ -594,17 +594,17 @@ export function Hero() {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-[100px] rounded-full bg-gray-400 z-50" />
             
             <div className="text-center flex flex-col items-center">
-              <h2 className="text-4xl font-extrabold mb-3 flex items-center justify-center gap-3 font-['Fraunces']">
-                <span className="text-5xl">🎓</span> Now Open for Teaching Engagements (EN/ES)
+              <h2 className="text-2xl font-extrabold mb-2 font-['Fraunces']">
+                Seeking Teaching Opportunities
               </h2>
-              <p className="text-xl text-white/90 mb-6 font-['Roboto_Flex']">
-                Digital Design | UX/UI | Emerging Tech
+              <p className="text-lg text-white/90 mb-4 font-['Roboto_Flex']">
+                BFA/MFA level, workshop, lectures, UX, Emerging Tech Design, AR/VR, Experience, Experimental.
               </p>
               <a
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-indigo-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-lg"
+                href="#projects"
+                className="inline-flex items-center justify-center px-6 py-3 bg-white text-indigo-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-base"
               >
-                Details →
+                Activities and Courses →
               </a>
             </div>
           </div>
