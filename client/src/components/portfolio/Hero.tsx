@@ -403,9 +403,7 @@ export function Hero() {
                     fontWeight: lineWeights.line1,
                     transition: "font-weight 0.3s ease-out",
                   }}
-                >
-                  Design education & professional
-                </div>
+                >Social design & faculty</div>
                 <div
                   style={{
                     fontWeight: lineWeights.line2,
