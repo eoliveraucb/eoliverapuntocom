@@ -12,6 +12,11 @@ export function Hero() {
     line2: 200,
     line3: 200,
   });
+  const [linkWeights, setLinkWeights] = useState({
+    teaching: 400,
+    practice: 400,
+    experiments: 400,
+  });
   const [showTeachingSlider, setShowTeachingSlider] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mousePos = useRef({ x: 0, y: 0 });
@@ -72,7 +77,29 @@ export function Hero() {
         setLineWeights((prev) => ({ ...prev, line3: 500 }));
       }, 1300);
 
-      timeouts.push(t1, t2, t3);
+      // Animate the links after the main text animation
+      const linkAnimation1 = setTimeout(() => {
+        setLinkWeights((prev) => ({ ...prev, teaching: 800 }));
+      }, 2000);
+
+      const linkAnimation2 = setTimeout(() => {
+        setLinkWeights((prev) => ({ ...prev, teaching: 400, practice: 800 }));
+      }, 2500);
+
+      const linkAnimation3 = setTimeout(() => {
+        setLinkWeights((prev) => ({ ...prev, practice: 400, experiments: 800 }));
+      }, 3000);
+
+      // Return all links to normal weight
+      const linkReset = setTimeout(() => {
+        setLinkWeights({
+          teaching: 400,
+          practice: 400,
+          experiments: 400,
+        });
+      }, 3500);
+
+      timeouts.push(t1, t2, t3, linkAnimation1, linkAnimation2, linkAnimation3, linkReset);
     };
 
     animateLines();
@@ -409,7 +436,7 @@ export function Hero() {
                     fontWeight: lineWeights.line2,
                     transition: "font-weight 0.3s ease-out",
                   }}
-                  className="text-[36px]">a showcase of my <a href="#projects" className="underline decoration-purple-500 decoration-2 hover:decoration-purple-700 transition-colors duration-200" style={{ color: 'inherit' }}>teaching experience</a>, <a href="#design" className="underline decoration-cyan-500 decoration-2 hover:decoration-cyan-700 transition-colors duration-200" style={{ color: 'inherit' }}>professional practice</a> and <a href="https://medium.com/@emauric.io" target="_blank" rel="noopener noreferrer" className="underline decoration-orange-500 decoration-2 hover:decoration-orange-700 transition-colors duration-200" style={{ color: 'inherit' }}>thought experiments</a>.</div>
+                  className="text-[36px]">a showcase of my <a href="#projects" className="underline decoration-purple-500 decoration-2 hover:decoration-purple-700 transition-all duration-300" style={{ color: 'inherit', fontWeight: linkWeights.teaching }}>teaching experience</a>, <a href="#design" className="underline decoration-cyan-500 decoration-2 hover:decoration-cyan-700 transition-all duration-300" style={{ color: 'inherit', fontWeight: linkWeights.practice }}>professional practice</a> and <a href="https://medium.com/@emauric.io" target="_blank" rel="noopener noreferrer" className="underline decoration-orange-500 decoration-2 hover:decoration-orange-700 transition-all duration-300" style={{ color: 'inherit', fontWeight: linkWeights.experiments }}>thought experiments</a>.</div>
                 <div
                   style={{
                     fontWeight: lineWeights.line3,
