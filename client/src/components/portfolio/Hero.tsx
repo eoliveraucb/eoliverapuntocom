@@ -430,6 +430,7 @@ export function Hero() {
                     fontWeight: lineWeights.line1,
                     transition: "font-weight 0.3s ease-out",
                   }}
+                  className="gradient-text"
                 >Social Design & Education</div>
                 <div
                   style={{
@@ -443,7 +444,7 @@ export function Hero() {
                     transition: "font-weight 0.3s ease-out",
                   }}
                 >
-                  <span className="text-[24px]">by Edwin Mauricio Olivera</span>
+                  <span className="text-[24px] gradient-text">by Edwin Mauricio Olivera</span>
                 </div>
               </h1>
             </div>
