@@ -1,0 +1,807 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Avanzado: IA Generativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            /* Bolivian-inspired color palette */
+            --earth-brown: #8B4513;
+            --terracotta: #CD5C5C;
+            --andes-blue: #5F9EA0;
+            --jungle-green: #2E8B57;
+            --sun-yellow: #FFD700;
+            --llama-beige: #F5DEB3;
+            --night-purple: #483D8B;
+            --mountain-grey: #708090;
+            
+            /* Font settings */
+            --main-font: 'Roboto', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--main-font);
+            color: #333;
+            background-color: #f8f8f8;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--andes-blue), var(--jungle-green));
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0 80 L20 70 L40 85 L60 60 L80 75 L100 60 L100 100 L0 100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 100px;
+            opacity: 0.3;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .course-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .progress-container {
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-indicator {
+            position: absolute;
+            height: 100%;
+            width: 0;
+            background-color: var(--sun-yellow);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-markers {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .marker:hover {
+            transform: translateY(-5px);
+        }
+        
+        .marker-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--llama-beige);
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .marker.active .marker-dot {
+            background-color: var(--sun-yellow);
+            transform: scale(1.3);
+        }
+        
+        .marker-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .marker.active .marker-label {
+            color: white;
+            font-weight: bold;
+        }
+        
+        .principles-section {
+            padding: 3rem 0;
+            background-color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--night-purple);
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .principle-card {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid var(--andes-blue);
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .principle-card::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(47, 139, 87, 0.1);
+            z-index: 0;
+        }
+        
+        .principle-card p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .modules-section {
+            padding: 3rem 0;
+        }
+        
+        .modules-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .module-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .module-header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .module-title-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .module-week {
+            background-color: var(--andes-blue);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .module-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .module-toggle {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            transition: transform 0.3s ease;
+        }
+        
+        .module-card.open .module-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .module-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .module-card.open .module-content {
+            max-height: 1000px;
+        }
+        
+        .module-details {
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .detail-section {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--andes-blue);
+        }
+        
+        .detail-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .detail-title i {
+            font-size: 1.2rem;
+        }
+        
+        .visual-metaphor {
+            background-color: rgba(95, 158, 160, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+        
+        .metaphor-title {
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--andes-blue);
+        }
+        
+        .visual-animation {
+            height: 100px;
+            margin: 1rem 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        /* River Flow Animation */
+        .river-flow {
+            background: linear-gradient(90deg, var(--andes-blue), #7FB3D5);
+            position: relative;
+        }
+        
+        .river-flow::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path d="M0 10 C 30 20, 70 0, 100 10" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/></svg>');
+            animation: flowAnimation 8s linear infinite;
+        }
+        
+        @keyframes flowAnimation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+        
+        /* Garden Growth Animation */
+        .garden-growth {
+            background-color: #E8F5E9;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+        
+        .plant {
+            width: 10px;
+            background-color: var(--jungle-green);
+            border-radius: 5px 5px 0 0;
+            transform-origin: bottom;
+            animation: growAnimation 4s ease-out infinite;
+        }
+        
+        .plant:nth-child(2) { animation-delay: 0.5s; }
+        .plant:nth-child(3) { animation-delay: 1s; }
+        .plant:nth-child(4) { animation-delay: 1.5s; }
+        .plant:nth-child(5) { animation-delay: 2s; }
+        
+        @keyframes growAnimation {
+            0% { height: 10px; }
+            60% { height: 70px; }
+            70% { height: 65px; }
+            100% { height: 70px; }
+        }
+        
+        /* Web Spinning Animation */
+        .web-spinning {
+            background-color: #F5F5F5;
+            position: relative;
+        }
+        
+        .web {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border: 2px solid rgba(72, 61, 139, 0.7);
+            border-radius: 50%;
+            animation: webGrow 4s ease-out infinite;
+        }
+        
+        .web:nth-child(2) { animation-delay: 0.8s; }
+        .web:nth-child(3) { animation-delay: 1.6s; }
+        
+        @keyframes webGrow {
+            0% { width: 0; height: 0; opacity: 0.8; }
+            100% { width: 150px; height: 150px; opacity: 0; }
+        }
+        
+        .bolivian-context {
+            background: linear-gradient(135deg, var(--terracotta), var(--earth-brown));
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bolivian-context::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><path d="M0 50 L50 0 L100 40 L150 20 L200 60 L250 40 L300 70 L300 0 L0 0 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .context-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .context-content {
+            position: relative;
+            max-width: 800px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #f0f0f0;
+            margin-top: 3rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .module-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .module-toggle {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+        
+        /* Animation for module cards */
+        .module-card {
+            transform-origin: center;
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .module-card:nth-child(1) { animation-delay: 0.1s; }
+        .module-card:nth-child(2) { animation-delay: 0.2s; }
+        .module-card:nth-child(3) { animation-delay: 0.3s; }
+        .module-card:nth-child(4) { animation-delay: 0.4s; }
+        .module-card:nth-child(5) { animation-delay: 0.5s; }
+        .module-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Hover animations for details */
+        .detail-section {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .detail-section:hover {
+            transform: translateX(5px);
+            box-shadow: -3px 0 0 var(--andes-blue);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 id="course-title"></h1>
+            <p class="course-description" id="course-description"></p>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-indicator" id="progress-indicator"></div>
+                </div>
+                <div class="progress-markers" id="progress-markers">
+                    <!-- Progress markers will be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="bolivian-context">
+            <h2 class="context-title">Contexto Boliviano</h2>
+            <div class="context-content" id="bolivian-context"></div>
+        </section>
+        
+        <section class="principles-section">
+            <h2 class="section-title">Principios Pedagógicos</h2>
+            <div class="principles-grid" id="principles-grid">
+                <!-- Teaching principles will be added dynamically -->
+            </div>
+        </section>
+        
+        <section class="modules-section">
+            <h2 class="section-title">Módulos del Curso</h2>
+            <div class="modules-container" id="modules-container">
+                <!-- Modules will be added dynamically -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Curso Avanzado: IA Generativa y Agentes Inteligentes</p>
+        </div>
+    </footer>
+
+    <script>
+        // This is where the JSON data will be placed
+        const courseData = (function(b64){
+  const bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+  return JSON.parse(new TextDecoder('utf-8').decode(bytes));
+})("eyJjb3Vyc2VfdGl0bGUiOiJDdXJzbyBBdmFuemFkbzogSUEgR2VuZXJhdGl2YSB5IEFnZW50ZXMgSW50ZWxpZ2VudGVzIOKAlCBFeHBlcmllbmNpYSBUcmFuc2Zvcm1hZG9yYSB5IENvcnBvcmFsIiwiY291cnNlX2Rlc2NyaXB0aW9uIjoiVW4gdmlhamUgZXhwZXJpZW5jaWFsIGEgdHJhdsOpcyBkZWwgbXVuZG8gZGUgbGEgSUEsIGRvbmRlIGNhZGEgY29uY2VwdG8gc2Ugdml2ZSwgc2Ugc2llbnRlIHkgc2UgY29uc3RydXllIGNvbGVjdGl2YW1lbnRlIGVuIHVuIGNvbnRleHRvIGJpbGluZ8O8ZSBib2xpdmlhbm8uIiwibW9kdWxlcyI6W3sidGl0bGUiOiJFbCBMYXRpZG8gZGVsIEZsdWpvIOKAlCBPcnF1ZXN0YW5kbyBsYSBWaWRhIERpZ2l0YWwiLCJ3ZWVrIjoiU2VtYW5hIDEiLCJvcGVuaW5nX3JpdHVhbCI6IkVsIFB1bHNvIGRlbCBSw61vIOKAlCBDw61yY3VsbyBjb24gcGFsbWFzIHkgcGlzYWRhcyBzaW11bGFuZG8gZWwgZmx1aXIgZGUgZGF0b3MiLCJjb3JlX2FjdGl2aXR5IjoiQ29uc3RydWNjacOzbiBkZWwgRmx1am8gVml2byDigJQgUmVwcmVzZW50YWNpw7NuIGNvcnBvcmFsIGRlIG5vZG9zIEVUTCBjb24gbjhuIiwicmVmbGVjdGlvbiI6IkPDrXJjdWxvIGRlIGNvc2VjaGEgcmVmbGV4aXZhIHNvYnJlIGF1dG9tYXRpemFjacOzbiBjb25zY2llbnRlIiwidmlzdWFsX21ldGFwaG9yIjoiRWwgcsOtbyBxdWUgbGxldmEgZGF0b3MgZGVzZGUgR29vZ2xlIFNoZWV0cyBoYXN0YSBlbCBtYXIgZGlnaXRhbCJ9LHsidGl0bGUiOiJFbCBKYXJkw61uIGRlIGxhcyBDb252ZXJzYWNpb25lcyDigJQgQ3VsdGl2YW5kbyBEacOhbG9nb3MgSW50ZWxpZ2VudGVzIiwid2VlayI6IlNlbWFuYSAyIiwib3BlbmluZ19yaXR1YWwiOiJEYW56YSBkZSBsYXMgTmV1cm9uYXMg4oCUIE1vdmltaWVudG9zIHF1ZSBzaW11bGFuIHJlZGVzIG5ldXJvbmFsZXMiLCJjb3JlX2FjdGl2aXR5IjoiTGFib3JhdG9yaW8gZGUgUHJvbXB0IEVuZ2luZWVyaW5nIOKAlCBFc3RhY2lvbmVzIHJvdGF0aXZhcyBkZSBleHBlcmltZW50YWNpw7NuIiwicmVmbGVjdGlvbiI6IldvcmxkIENhZsOpIHNvYnJlIMOpdGljYSBlbiBJQSBjb252ZXJzYWNpb25hbCIsInZpc3VhbF9tZXRhcGhvciI6IkphcmTDrW4gZG9uZGUgY2FkYSBwcm9tcHQgZXMgdW5hIHNlbWlsbGEgcXVlIGZsb3JlY2UgZW4gcmVzcHVlc3RhcyJ9LHsidGl0bGUiOiJMYSBUZWxhcmHDsWEgZGUgQ29ub2NpbWllbnRvIOKAlCBUZWppZW5kbyBSQUcgQ29uc2NpZW50ZSIsIndlZWsiOiJTZW1hbmEgMy00Iiwib3BlbmluZ19yaXR1YWwiOiJUZWplciBKdW50b3Mg4oCUIEFjdGl2aWRhZCBmw61zaWNhIGRlIGNvbnN0cnVjY2nDs24gZGUgcmVkIiwiY29yZV9hY3Rpdml0eSI6IkNvbnN0cnVjY2nDs24gZGUgUkFHIFZpdmVuY2lhbCDigJQgVGVhdHJvIGRlIGRvY3VtZW50b3MgeSB2ZWN0b3JlcyIsInJlZmxlY3Rpb24iOiJGaXNoYm93bCBzb2JyZSByZXNwb25zYWJpbGlkYWQgZW4gc2lzdGVtYXMgZGUgY29ub2NpbWllbnRvIiwidmlzdWFsX21ldGFwaG9yIjoiVGVsYXJhw7FhIGFuZGluYSBkb25kZSBjYWRhIGhpbG8gY29uZWN0YSBjb25vY2ltaWVudG9zIn0seyJ0aXRsZSI6IkxvcyBHdWFyZGlhbmVzIGRlbCBTYWJlciDigJQgQWdlbnRlcyBxdWUgQ3VpZGFuIHkgUHJvdGVnZW4iLCJ3ZWVrIjoiU2VtYW5hIDUtNiIsIm9wZW5pbmdfcml0dWFsIjoiQ2VyZW1vbmlhIGRlIGxvcyBHdWFyZGlhbmVzIOKAlCBSb2xlcyB5IGNvbXByb21pc29zIMOpdGljb3MiLCJjb3JlX2FjdGl2aXR5IjoiQ3JlYWNpw7NuIGRlIEFnZW50ZXMgR3VhcmRpYW5lcyDigJQgVGFsbGVyZXMgY29sYWJvcmF0aXZvcyIsInJlZmxlY3Rpb24iOiJPcGVuIFNwYWNlIHNvYnJlIGVsIGZ1dHVybyBkZSBsb3MgYWdlbnRlcyBpbnRlbGlnZW50ZXMiLCJ2aXN1YWxfbWV0YXBob3IiOiJHdWFyZGlhbmVzIGFuY2VzdHJhbGVzIHF1ZSBwcm90ZWdlbiBlbCBjb25vY2ltaWVudG8gc2FncmFkbyJ9XSwidGVhY2hpbmdfcHJpbmNpcGxlcyI6WyJBcHJlbmRpemFqZSBzb23DoXRpY28geSBjb3Jwb3JhbCIsIk1ldMOhZm9yYXMgdmlzdWFsZXMgeSB0YW5naWJsZXMiLCJFc3RydWN0dXJhcyBsaWJlcmFkb3JhcyIsIkNvbnN0cnVjY2nDs24gY29sZWN0aXZhIGRlbCBjb25vY2ltaWVudG8iLCJJbnRlZ3JhY2nDs24gZGUgbW92aW1pZW50byB5IHJlZmxleGnDs24iLCJDb250ZXh0byBjdWx0dXJhbCBib2xpdmlhbm8iXSwiYm9saXZpYW5fY29udGV4dCI6IkRpc2XDsWFkbyBlc3BlY8OtZmljYW1lbnRlIHBhcmEgZWwgY29udGV4dG8gYm9saXZpYW5vLCBpbnRlZ3JhbmRvIG1ldMOhZm9yYXMgY3VsdHVyYWxlcyBjb21vIGVsIHLDrW8gQW1hem9uYXMsIGxhcyBtb250YcOxYXMgYW5kaW5hcywgeSBsYSBzYWJpZHVyw61hIGFuY2VzdHJhbCBkZSBsYSBjb25zdHJ1Y2Npw7NuIGNvbGVjdGl2YS4ifQ==");;
+        
+        // Initialize the page with data
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePage(courseData);
+        });
+        
+        function initializePage(data) {
+            // Set the course title and description
+            document.getElementById('course-title').textContent = data.course_title;
+            document.getElementById('course-description').textContent = data.course_description;
+            
+            // Set the Bolivian context
+            document.getElementById('bolivian-context').textContent = data.bolivian_context;
+            
+            // Create the progress markers
+            createProgressMarkers(data.modules);
+            
+            // Populate teaching principles
+            createTeachingPrinciples(data.teaching_principles);
+            
+            // Create module cards
+            createModuleCards(data.modules);
+            
+            // Add event listeners for interactive features
+            addEventListeners();
+        }
+        
+        function createProgressMarkers(modules) {
+            const markersContainer = document.getElementById('progress-markers');
+            markersContainer.innerHTML = '';
+            
+            modules.forEach((module, index) => {
+                const marker = document.createElement('div');
+                marker.className = 'marker';
+                if (index === 0) marker.classList.add('active');
+                marker.dataset.week = index;
+                
+                const dot = document.createElement('div');
+                dot.className = 'marker-dot';
+                
+                const label = document.createElement('div');
+                label.className = 'marker-label';
+                label.textContent = module.week;
+                
+                marker.appendChild(dot);
+                marker.appendChild(label);
+                markersContainer.appendChild(marker);
+            });
+            
+            // Set initial progress
+            updateProgress(0);
+        }
+        
+        function updateProgress(activeIndex) {
+            const progressIndicator = document.getElementById('progress-indicator');
+            const totalModules = document.querySelectorAll('.marker').length;
+            
+            const progressPercentage = ((activeIndex + 1) / totalModules) * 100;
+            progressIndicator.style.width = `${progressPercentage}%`;
+            
+            // Update active markers
+            document.querySelectorAll('.marker').forEach((marker, index) => {
+                if (index <= activeIndex) {
+                    marker.classList.add('active');
+                } else {
+                    marker.classList.remove('active');
+                }
+            });
+        }
+        
+        function createTeachingPrinciples(principles) {
+            const principlesGrid = document.getElementById('principles-grid');
+            principlesGrid.innerHTML = '';
+            
+            principles.forEach(principle => {
+                const card = document.createElement('div');
+                card.className = 'principle-card';
+                
+                const text = document.createElement('p');
+                text.textContent = principle;
+                
+                card.appendChild(text);
+                principlesGrid.appendChild(card);
+            });
+        }
+        
+        function createModuleCards(modules) {
+            const modulesContainer = document.getElementById('modules-container');
+            modulesContainer.innerHTML = '';
+            
+            const colors = [
+                { border: 'var(--andes-blue)', bg: 'rgba(95, 158, 160, 0.1)' },
+                { border: 'var(--jungle-green)', bg: 'rgba(46, 139, 87, 0.1)' },
+                { border: 'var(--terracotta)', bg: 'rgba(205, 92, 92, 0.1)' },
+                { border: 'var(--sun-yellow)', bg: 'rgba(255, 215, 0, 0.1)' },
+                { border: 'var(--night-purple)', bg: 'rgba(72, 61, 139, 0.1)' },
+                { border: 'var(--mountain-grey)', bg: 'rgba(112, 128, 144, 0.1)' }
+            ];
+            
+            modules.forEach((module, index) => {
+                const moduleCard = document.createElement('div');
+                moduleCard.className = 'module-card';
+                moduleCard.dataset.module = index;
+                
+                // Use color based on index
+                const colorIndex = index % colors.length;
+                moduleCard.style.borderLeft = `5px solid ${colors[colorIndex].border}`;
+                
+                // Module header
+                const moduleHeader = document.createElement('div');
+                moduleHeader.className = 'module-header';
+                
+                const titleContainer = document.createElement('div');
+                titleContainer.className = 'module-title-container';
+                
+                const weekBadge = document.createElement('div');
+                weekBadge.className = 'module-week';
+                weekBadge.textContent = module.week;
+                weekBadge.style.backgroundColor = colors[colorIndex].border;
+                
+                const title = document.createElement('h3');
+                title.className = 'module-title';
+                title.textContent = module.title;
+                
+                titleContainer.appendChild(weekBadge);
+                titleContainer.appendChild(title);
+                
+                const toggle = document.createElement('div');
+                toggle.className = 'module-toggle';
+                toggle.innerHTML = '↓';
+                
+                moduleHeader.appendChild(titleContainer);
+                moduleHeader.appendChild(toggle);
+                
+                // Module content
+                const moduleContent = document.createElement('div');
+                moduleContent.className = 'module-content';
+                
+                const moduleDetails = document.createElement('div');
+                moduleDetails.className = 'module-details';
+                
+                // Opening ritual
+                const ritualSection = createDetailSection('Ritual de Apertura', module.opening_ritual, '🔄');
+                
+                // Core activity
+                const activitySection = createDetailSection('Actividad Central', module.core_activity, '🛠️');
+                
+                // Reflection
+                const reflectionSection = createDetailSection('Reflexión', module.reflection, '💭');
+                
+                // Visual metaphor with animation
+                const metaphorSection = document.createElement('div');
+                metaphorSection.className = 'visual-metaphor';
+                metaphorSection.style.backgroundColor = colors[colorIndex].bg;
+                
+                const metaphorTitle = document.createElement('h4');
+                metaphorTitle.className = 'metaphor-title';
+                metaphorTitle.textContent = 'Metáfora Visual';
+                
+                const metaphorText = document.createElement('p');
+                metaphorText.textContent = module.visual_metaphor;
+                
+                const visualAnimation = document.createElement('div');
+                visualAnimation.className = 'visual-animation';
+                
+                // Set different animations based on module index
+                if (index % 3 === 0) {
+                    visualAnimation.classList.add('river-flow');
+                } else if (index % 3 === 1) {
+                    visualAnimation.classList.add('garden-growth');
+                    for (let i = 0; i < 5; i++) {
+                        const plant = document.createElement('div');
+                        plant.className = 'plant';
+                        visualAnimation.appendChild(plant);
+                    }
+                } else {
+                    visualAnimation.classList.add('web-spinning');
+                    for (let i = 0; i < 3; i++) {
+                        const web = document.createElement('div');
+                        web.className = 'web';
+                        visualAnimation.appendChild(web);
+                    }
+                }
+                
+                metaphorSection.appendChild(metaphorTitle);
+                metaphorSection.appendChild(metaphorText);
+                metaphorSection.appendChild(visualAnimation);
+                
+                moduleDetails.appendChild(ritualSection);
+                moduleDetails.appendChild(activitySection);
+                moduleDetails.appendChild(reflectionSection);
+                moduleDetails.appendChild(metaphorSection);
+                
+                moduleContent.appendChild(moduleDetails);
+                
+                moduleCard.appendChild(moduleHeader);
+                moduleCard.appendChild(moduleContent);
+                
+                modulesContainer.appendChild(moduleCard);
+            });
+        }
+        
+        function createDetailSection(title, content, icon) {
+            const section = document.createElement('div');
+            section.className = 'detail-section';
+            
+            const titleEl = document.createElement('h4');
+            titleEl.className = 'detail-title';
+            titleEl.innerHTML = `<span>${icon}</span> ${title}`;
+            
+            const contentEl = document.createElement('p');
+            contentEl.textContent = content;
+            
+            section.appendChild(titleEl);
+            section.appendChild(contentEl);
+            
+            return section;
+        }
+        
+        function addEventListeners() {
+            // Progress marker click
+            document.querySelectorAll('.marker').forEach(marker => {
+                marker.addEventListener('click', function() {
+                    const weekIndex = parseInt(this.dataset.week);
+                    updateProgress(weekIndex);
+                    
+                    // Scroll to the corresponding module
+                    const moduleCard = document.querySelector(`.module-card[data-module="${weekIndex}"]`);
+                    if (moduleCard) {
+                        moduleCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        
+                        // Highlight the module briefly
+                        moduleCard.classList.add('highlight');
+                        setTimeout(() => {
+                            moduleCard.classList.remove('highlight');
+                        }, 1500);
+                    }
+                });
+            });
+            
+            // Module header click to expand/collapse
+            document.querySelectorAll('.module-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    const moduleCard = this.closest('.module-card');
+                    moduleCard.classList.toggle('open');
+                    
+                    // Update progress when module is opened
+                    if (moduleCard.classList.contains('open')) {
+                        const moduleIndex = parseInt(moduleCard.dataset.module);
+                        updateProgress(moduleIndex);
+                    }
+                });
+            });
+            
+            // Smooth scroll for all internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
