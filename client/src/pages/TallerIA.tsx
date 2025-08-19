@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 interface Module {
   title: string;
@@ -207,41 +208,53 @@ export default function TallerIA() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ backgroundColor: "var(--bg-primary)", color: "var(--text-primary)" }}>
       {/* Header */}
-      <header className="bg-gradient-to-br from-teal-600 to-green-700 text-white py-8 relative overflow-hidden rounded-b-3xl shadow-lg">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-y-6"></div>
+      <header className="relative py-16 overflow-hidden" style={{
+        background: "linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)",
+        color: "var(--primary-foreground)"
+      }}>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-y-2"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-shadow-lg">
+          <h1 className="font-['Fraunces'] font-bold mb-6" style={{
+            fontSize: "clamp(2.5rem, 5vw, 4rem)",
+            lineHeight: "1.1",
+            textShadow: "0 4px 24px rgba(109,89,255,0.45), 0 1px 2px rgba(0,0,0,0.25)"
+          }}>
             {courseData.course_title}
           </h1>
-          <p className="text-xl max-w-4xl leading-relaxed opacity-95">
+          <p className="font-['Sono'] text-xl max-w-4xl leading-relaxed opacity-95">
             {courseData.course_description}
           </p>
           
           {/* Progress Bar */}
-          <div className="mt-8">
+          <div className="mt-12">
             <div className="h-2 bg-white/30 rounded-full overflow-hidden">
               <div 
-                className="h-full bg-yellow-400 rounded-full transition-all duration-300"
-                style={{ width: `${((activeModule + 1) / courseData.modules.length) * 100}%` }}
+                className="h-full rounded-full transition-all duration-300"
+                style={{ 
+                  width: `${((activeModule + 1) / courseData.modules.length) * 100}%`,
+                  backgroundColor: "var(--accent-tertiary)"
+                }}
               />
             </div>
-            <div className="flex justify-between mt-3">
+            <div className="flex justify-between mt-4">
               {courseData.modules.map((module, index) => (
                 <button
                   key={index}
                   onClick={() => updateProgress(index)}
                   className={`flex flex-col items-center cursor-pointer transition-all duration-300 hover:transform hover:scale-110 ${
-                    index <= activeModule ? 'text-yellow-300' : 'text-white/60'
+                    index <= activeModule ? 'opacity-100' : 'opacity-60'
                   }`}
                 >
                   <div className={`w-4 h-4 rounded-full mb-2 transition-all duration-300 ${
-                    index <= activeModule ? 'bg-yellow-400 scale-125' : 'bg-white/40'
-                  }`} />
-                  <span className="text-sm font-medium">{module.week}</span>
+                    index <= activeModule ? 'scale-125' : ''
+                  }`} style={{
+                    backgroundColor: index <= activeModule ? "var(--accent-tertiary)" : "rgba(255,255,255,0.4)"
+                  }} />
+                  <span className="text-sm font-['Sono'] font-medium">{module.week}</span>
                 </button>
               ))}
             </div>
@@ -249,28 +262,47 @@ export default function TallerIA() {
         </div>
       </header>
 
-      <main className="container mx-auto px-6 py-8">
+      <main className="container mx-auto px-6 py-12">
         {/* Bolivian Context */}
-        <section className="bg-gradient-to-br from-orange-600 to-red-700 text-white p-8 rounded-3xl mb-8 shadow-lg relative overflow-hidden">
+        <section className="relative p-12 rounded-3xl mb-12 overflow-hidden" style={{
+          background: "linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%)",
+          color: "var(--primary-foreground)",
+          boxShadow: "var(--shadow)"
+        }}>
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full transform translate-x-32 -translate-y-32"></div>
-          <h2 className="text-2xl font-bold mb-4 relative z-10">Contexto Boliviano</h2>
-          <p className="text-lg leading-relaxed relative z-10 max-w-4xl">
+          <h2 className="font-['Fraunces'] font-bold mb-6 relative z-10" style={{
+            fontSize: "clamp(2rem, 4vw, 3rem)"
+          }}>Contexto Boliviano</h2>
+          <p className="font-['Sono'] text-lg leading-relaxed relative z-10 max-w-4xl opacity-95">
             {courseData.bolivian_context}
           </p>
         </section>
 
         {/* Teaching Principles */}
-        <section className="bg-white rounded-3xl p-8 mb-8 shadow-lg">
-          <h2 className="text-3xl font-bold text-center mb-8 text-purple-800">
+        <section className="rounded-3xl p-12 mb-12" style={{
+          backgroundColor: "var(--bg-secondary)",
+          boxShadow: "var(--shadow)"
+        }}>
+          <h2 className="font-['Fraunces'] font-bold text-center mb-12" style={{
+            fontSize: "clamp(2rem, 4vw, 3rem)",
+            color: "var(--text-primary)"
+          }}>
             Principios Pedagógicos
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courseData.teaching_principles.map((principle, index) => (
               <div
                 key={index}
-                className="bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:transform hover:scale-105 border-l-4 border-teal-500"
+                className="p-6 rounded-2xl transition-all duration-300 hover:transform hover:scale-105"
+                style={{
+                  backgroundColor: "var(--bg-primary)",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                  borderLeft: `4px solid var(--accent-primary)`
+                }}
               >
-                <p className="font-medium text-gray-800">{principle}</p>
+                <p className="font-['Sono'] font-medium" style={{ color: "var(--text-primary)" }}>
+                  {principle}
+                </p>
               </div>
             ))}
           </div>
@@ -278,86 +310,110 @@ export default function TallerIA() {
 
         {/* Modules */}
         <section>
-          <h2 className="text-3xl font-bold text-center mb-8 text-purple-800">
+          <h2 className="font-['Fraunces'] font-bold text-center mb-12" style={{
+            fontSize: "clamp(2rem, 4vw, 3rem)",
+            color: "var(--text-primary)"
+          }}>
             Módulos del Curso
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-8">
             {courseData.modules.map((module, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+                className="rounded-3xl overflow-hidden transition-all duration-300 hover:transform hover:scale-[1.02]"
                 style={{
-                  borderLeft: `6px solid ${
-                    ['#5F9EA0', '#2E8B57', '#CD5C5C', '#483D8B'][index % 4]
-                  }`
+                  backgroundColor: "var(--bg-secondary)",
+                  boxShadow: "var(--shadow)",
+                  borderLeft: `6px solid var(--accent-primary)`
                 }}
               >
                 {/* Module Header */}
                 <div
-                  className="p-6 cursor-pointer flex justify-between items-center"
+                  className="p-8 cursor-pointer flex justify-between items-center transition-all duration-300"
                   onClick={() => toggleModule(index)}
+                  style={{ backgroundColor: "var(--bg-primary)" }}
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-6">
                     <div
-                      className="px-4 py-2 rounded-full text-white font-semibold text-sm"
+                      className="px-4 py-2 rounded-full font-['Sono'] font-semibold text-sm"
                       style={{
-                        backgroundColor: ['#5F9EA0', '#2E8B57', '#CD5C5C', '#483D8B'][index % 4]
+                        backgroundColor: "var(--accent-primary)",
+                        color: "var(--primary-foreground)"
                       }}
                     >
                       {module.week}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800">{module.title}</h3>
+                    <h3 className="font-['Fraunces'] font-bold" style={{
+                      fontSize: "clamp(1.5rem, 3vw, 2rem)",
+                      color: "var(--text-primary)"
+                    }}>{module.title}</h3>
                   </div>
                   <ChevronDown
-                    className={`w-6 h-6 text-gray-600 transition-transform duration-300 ${
+                    className={`w-6 h-6 transition-transform duration-300 ${
                       openModules.includes(index) ? 'rotate-180' : ''
                     }`}
+                    style={{ color: "var(--text-secondary)" }}
                   />
                 </div>
 
                 {/* Module Content */}
                 {openModules.includes(index) && (
-                  <div className="px-6 pb-6">
+                  <div className="p-8" style={{ backgroundColor: "var(--bg-primary)" }}>
                     {/* Ritual Section */}
-                    <div className="mb-6 pl-4 border-l-3 border-teal-500">
-                      <h4 className="font-bold text-lg mb-2 flex items-center gap-2 text-teal-700">
+                    <div className="mb-8 pl-6" style={{ borderLeft: `4px solid var(--accent-tertiary)` }}>
+                      <h4 className="font-['Fraunces'] font-bold text-xl mb-3 flex items-center gap-3" style={{ color: "var(--accent-tertiary)" }}>
                         🔄 Ritual de Apertura
                       </h4>
-                      <p className="text-gray-700 mb-2 font-medium">{module.opening_ritual}</p>
-                      <p className="text-gray-600 text-sm leading-relaxed">{module.detailed_ritual}</p>
+                      <p className="font-['Sono'] font-medium mb-3" style={{ color: "var(--text-primary)" }}>
+                        {module.opening_ritual}
+                      </p>
+                      <p className="font-['Sono'] text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                        {module.detailed_ritual}
+                      </p>
                     </div>
 
                     {/* Activity Section */}
-                    <div className="mb-6 pl-4 border-l-3 border-green-500">
-                      <h4 className="font-bold text-lg mb-2 flex items-center gap-2 text-green-700">
+                    <div className="mb-8 pl-6" style={{ borderLeft: `4px solid var(--accent-primary)` }}>
+                      <h4 className="font-['Fraunces'] font-bold text-xl mb-3 flex items-center gap-3" style={{ color: "var(--accent-primary)" }}>
                         🛠️ Actividad Central
                       </h4>
-                      <p className="text-gray-700 mb-2 font-medium">{module.core_activity}</p>
-                      <p className="text-gray-600 text-sm leading-relaxed">{module.detailed_activity}</p>
+                      <p className="font-['Sono'] font-medium mb-3" style={{ color: "var(--text-primary)" }}>
+                        {module.core_activity}
+                      </p>
+                      <p className="font-['Sono'] text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                        {module.detailed_activity}
+                      </p>
                     </div>
 
                     {/* Tools Section */}
-                    <div className="mb-6 pl-4 border-l-3 border-blue-500">
-                      <h4 className="font-bold text-lg mb-3 flex items-center gap-2 text-blue-700">
+                    <div className="mb-8 pl-6" style={{ borderLeft: `4px solid var(--accent-secondary)` }}>
+                      <h4 className="font-['Fraunces'] font-bold text-xl mb-4 flex items-center gap-3" style={{ color: "var(--accent-secondary)" }}>
                         🔧 Herramientas Recomendadas
                       </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {module.tools.map((tool, toolIndex) => (
                           <div
                             key={toolIndex}
-                            className="bg-gray-50 p-4 rounded-xl border hover:shadow-md transition-all duration-300"
+                            className="p-6 rounded-2xl transition-all duration-300 hover:transform hover:scale-105"
+                            style={{
+                              backgroundColor: "var(--bg-secondary)",
+                              border: `1px solid var(--border)`,
+                              boxShadow: "0 2px 8px rgba(0,0,0,0.04)"
+                            }}
                           >
-                            <div className="flex items-center gap-3 mb-2">
+                            <div className="flex items-center gap-4 mb-3">
                               <img
                                 src={tool.logo}
                                 alt={`${tool.name} logo`}
-                                className="w-6 h-6"
+                                className="w-7 h-7"
                                 onError={(e) => {
                                   e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjZjNmNGY2Ii8+CjxwYXRoIGQ9Ik0xMiA4VjE2TTggMTJIMTYiIHN0cm9rZT0iIzY5NzU4NSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHN2Zz4K';
                                 }}
                               />
-                              <h5 className="font-semibold text-gray-800">{tool.name}</h5>
-                              <span className={`px-2 py-1 text-xs rounded-full ${
+                              <h5 className="font-['Fraunces'] font-bold text-lg" style={{ color: "var(--text-primary)" }}>
+                                {tool.name}
+                              </h5>
+                              <span className={`px-3 py-1 text-xs font-['Sono'] font-medium rounded-full ${
                                 tool.type === 'open_source' 
                                   ? 'bg-green-100 text-green-800' 
                                   : 'bg-blue-100 text-blue-800'
@@ -365,37 +421,52 @@ export default function TallerIA() {
                                 {tool.type === 'open_source' ? 'Open Source' : 'Gratuito'}
                               </span>
                             </div>
-                            <p className="text-sm text-gray-600">{tool.description}</p>
+                            <p className="font-['Sono'] text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                              {tool.description}
+                            </p>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Reflection Section */}
-                    <div className="mb-6 pl-4 border-l-3 border-purple-500">
-                      <h4 className="font-bold text-lg mb-2 flex items-center gap-2 text-purple-700">
+                    <div className="mb-8 pl-6" style={{ borderLeft: `4px solid var(--accent-secondary)` }}>
+                      <h4 className="font-['Fraunces'] font-bold text-xl mb-3 flex items-center gap-3" style={{ color: "var(--accent-secondary)" }}>
                         💭 Reflexión
                       </h4>
-                      <p className="text-gray-700 mb-2 font-medium">{module.reflection}</p>
-                      <p className="text-gray-600 text-sm leading-relaxed">{module.detailed_reflection}</p>
+                      <p className="font-['Sono'] font-medium mb-3" style={{ color: "var(--text-primary)" }}>
+                        {module.reflection}
+                      </p>
+                      <p className="font-['Sono'] text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                        {module.detailed_reflection}
+                      </p>
                     </div>
 
                     {/* Visual Metaphor */}
                     <div
-                      className="p-6 rounded-2xl relative overflow-hidden"
+                      className="p-8 rounded-3xl relative overflow-hidden"
                       style={{
-                        backgroundColor: ['rgba(95, 158, 160, 0.1)', 'rgba(46, 139, 87, 0.1)', 'rgba(205, 92, 92, 0.1)', 'rgba(72, 61, 139, 0.1)'][index % 4]
+                        backgroundColor: "var(--bg-secondary)",
+                        border: `2px solid var(--accent-primary)`,
+                        borderRadius: "1.5rem"
                       }}
                     >
-                      <h4 className="font-bold text-lg mb-3 text-teal-700">
+                      <h4 className="font-['Fraunces'] font-bold text-xl mb-4" style={{ color: "var(--accent-primary)" }}>
                         🎭 Metáfora Visual
                       </h4>
-                      <p className="text-gray-700">{module.visual_metaphor}</p>
+                      <p className="font-['Sono'] leading-relaxed" style={{ color: "var(--text-primary)" }}>
+                        {module.visual_metaphor}
+                      </p>
                       
                       {/* Animated Visual */}
-                      <div className="mt-4 h-24 bg-gradient-to-r from-teal-100 to-blue-100 rounded-xl relative overflow-hidden">
+                      <div className="mt-6 h-24 rounded-2xl relative overflow-hidden" style={{
+                        backgroundColor: "var(--bg-primary)",
+                        border: `1px solid var(--border)`
+                      }}>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-full h-1 bg-gradient-to-r from-teal-400 to-blue-400 animate-pulse rounded-full"></div>
+                          <div className="w-full h-1 rounded-full animate-pulse" style={{
+                            background: "linear-gradient(90deg, var(--accent-tertiary), var(--accent-primary))"
+                          }}></div>
                         </div>
                       </div>
                     </div>
@@ -408,8 +479,11 @@ export default function TallerIA() {
       </main>
 
       {/* Footer */}
-      <footer className="text-center py-8 bg-gray-100 mt-12 rounded-t-3xl">
-        <p className="text-gray-600">
+      <footer className="text-center py-12 mt-16 rounded-t-3xl" style={{
+        backgroundColor: "var(--bg-secondary)",
+        borderTop: `1px solid var(--border)`
+      }}>
+        <p className="font-['Sono'] text-sm" style={{ color: "var(--text-secondary)" }}>
           © 2024 Curso Avanzado: IA Generativa y Agentes Inteligentes
         </p>
       </footer>
