@@ -4,6 +4,7 @@ import {
   RefreshCw, Palette, ArrowUp, ArrowDown, ChevronDown, Users,
   Brain, Cpu, Cog, Zap
 } from "lucide-react";
+import { Header } from "@/components/portfolio/Header";
 import { Contact } from "@/components/portfolio/Contact";
 import artImage from "@assets/art_1756131492602.png";
 import dogImage from "@assets/dog_1756131492602.png";
@@ -11,7 +12,6 @@ import genericImage from "@assets/generic_1756131492602.png";
 import picsImage from "@assets/pics_1756131492602.png";
 
 export default function CharlaIA() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
   const [timerRunning, setTimerRunning] = useState(false);
   const [timeLeft, setTimeLeft] = useState(15 * 60); // 15 minutes in seconds
@@ -53,7 +53,6 @@ export default function CharlaIA() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    setMobileMenuOpen(false);
   };
 
   const startTimer = () => {
@@ -62,95 +61,10 @@ export default function CharlaIA() {
     }
   };
 
-  const navLinks = [
-    { href: 'inicio', label: 'Inicio' },
-    { href: 'introduccion', label: 'Introducción' },
-    { href: 'ingenieria', label: 'Ingeniería' },
-    { href: 'generativa', label: 'IA Generativa' },
-    { href: 'agentes', label: 'Agentes' },
-    { href: 'revolucion', label: 'Revolución' },
-    { href: 'ejercicio', label: 'Ejercicio' }
-  ];
-
   return (
     <div style={{ backgroundColor: 'var(--bg-primary)', minHeight: '100vh' }}>
-      {/* Navigation */}
-      <nav 
-        className="fixed top-0 left-0 right-0 z-50"
-        style={{ 
-          backgroundColor: 'rgba(17, 24, 39, 0.9)',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid var(--border)'
-        }}
-      >
-        <div className="max-w-6xl mx-auto">
-          <div className="flex justify-between items-center px-6 py-4">
-            <div className="flex items-center gap-4">
-              <div 
-                className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold"
-                style={{ backgroundColor: 'var(--accent)' }}
-              >
-                NUR
-              </div>
-              <h1 
-                className="text-xl font-['Fraunces'] font-semibold"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                Universidad NUR
-              </h1>
-            </div>
-            
-            <div className="hidden md:flex gap-8">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className={`text-sm font-['Sono'] font-medium transition-colors cursor-pointer ${
-                    activeSection === link.href ? 'text-accent' : 'text-secondary hover:text-accent'
-                  }`}
-                  style={{ 
-                    color: activeSection === link.href ? 'var(--accent)' : 'var(--text-secondary)'
-                  }}
-                >
-                  {link.label}
-                </button>
-              ))}
-            </div>
-            
-            <button 
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              style={{ color: 'var(--text-secondary)' }}
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-          
-          {mobileMenuOpen && (
-            <div 
-              className="md:hidden border-t"
-              style={{ 
-                backgroundColor: 'var(--bg-primary)',
-                borderColor: 'var(--border)'
-              }}
-            >
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="block w-full text-left px-6 py-3 text-sm font-['Sono'] font-medium transition-all"
-                  style={{ 
-                    color: activeSection === link.href ? 'var(--accent)' : 'var(--text-secondary)',
-                    backgroundColor: activeSection === link.href ? 'rgba(59, 130, 246, 0.05)' : 'transparent'
-                  }}
-                >
-                  {link.label}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </nav>
+      {/* Header */}
+      <Header />
 
       {/* Hero Section */}
       <section id="inicio" className="pt-24 pb-16 min-h-screen flex items-center relative overflow-hidden">
