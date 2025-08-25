@@ -669,28 +669,28 @@ export default function CharlaIA() {
                   <Lightbulb size={24} className="text-blue-600" />
                 </div>
                 <h4 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Pensamiento Crítico</h4>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Analizar, evaluar y sintetizar información compleja</p>
+                <p className="text-base font-medium" style={{ color: 'var(--text-primary)' }}>Analizar, evaluar y sintetizar información compleja</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
                   <Palette size={24} className="text-green-600" />
                 </div>
                 <h4 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Creatividad</h4>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Generar ideas innovadoras y soluciones únicas</p>
+                <p className="text-base font-medium" style={{ color: 'var(--text-primary)' }}>Generar ideas innovadoras y soluciones únicas</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
                   <Heart size={24} className="text-purple-600" />
                 </div>
                 <h4 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Inteligencia Emocional</h4>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Entender y gestionar emociones propias y ajenas</p>
+                <p className="text-base font-medium" style={{ color: 'var(--text-primary)' }}>Entender y gestionar emociones propias y ajenas</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-4">
                   <RefreshCw size={24} className="text-orange-600" />
                 </div>
                 <h4 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Adaptabilidad</h4>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Flexibilidad ante cambios constantes</p>
+                <p className="text-base font-medium" style={{ color: 'var(--text-primary)' }}>Flexibilidad ante cambios constantes</p>
               </div>
             </div>
           </div>
