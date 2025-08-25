@@ -179,7 +179,7 @@ export default function CharlaIA() {
               style={{ color: 'var(--text-primary)' }}
             >
               Making Sense of AI<br />
-              <span style={{ color: 'var(--accent)' }}>in a Degenerative World</span>
+              <span className="text-4xl md:text-6xl" style={{ color: 'var(--accent)', fontWeight: 'bold' }}>in a Generative World</span>
             </h1>
             
             <p 
