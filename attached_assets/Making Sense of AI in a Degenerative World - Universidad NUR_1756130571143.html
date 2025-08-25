@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Sense of AI in a Degenerative World - Universidad NUR</title>
+    <meta name="description" content="Charla especializada en IA para 80 estudiantes de postgrado en Ingeniería Comercial - Universidad NUR: 80 minutos explorando aplicaciones empresariales.">
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Making Sense of AI in a Degenerative World - Universidad NUR">
+    <meta property="og:description" content="Explorando el futuro de la inteligencia artificial y su impacto en nuestra sociedad">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --background: hsl(222 47% 11%);
+            --foreground: hsl(210 40% 98%);
+            --card: hsl(222 47% 15%);
+            --card-foreground: hsl(210 40% 98%);
+            --primary: hsl(210 40% 98%);
+            --primary-foreground: hsl(222 47% 11%);
+            --secondary: hsl(217 33% 60%);
+            --secondary-foreground: hsl(210 40% 98%);
+            --muted: hsl(217 33% 17%);
+            --muted-foreground: hsl(217 33% 60%);
+            --accent: hsl(217 91.2% 59.8%);
+            --accent-foreground: hsl(210 40% 98%);
+            --border: hsl(217 33% 25%);
+            --nur-blue: hsl(217 91.2% 59.8%);
+            --nur-gold: hsl(42 93% 56%);
+            --text-primary: hsl(210 40% 98%);
+            --text-secondary: hsl(217 33% 60%);
+            --bg-light: hsl(222 47% 15%);
+            --radius: 0.75rem;
+            --font-inter: 'Inter', sans-serif;
+            --font-sans: 'Open Sans', sans-serif;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.11' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+            color: var(--foreground);
+            font-family: var(--font-inter);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-inter);
+            font-weight: 600;
+        }
+
+        /* Utility Classes */
+        .container-max {
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: 4rem 1.5rem;
+        }
+
+        .text-primary {
+            color: var(--text-primary);
+        }
+
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .bg-accent {
+            background-color: var(--accent);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(17, 24, 39, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 50;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-logo {
+            width: 3rem;
+            height: 3rem;
+            object-fit: contain;
+        }
+
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--secondary);
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: var(--background);
+            border-top: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1.5rem;
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .mobile-nav-link:hover, .mobile-nav-link.active {
+            color: var(--accent);
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 6rem;
+            padding-bottom: 4rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--background);
+        }
+
+        .hero-content {
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .agenda-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 64rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .agenda-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .agenda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .agenda-item {
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+        }
+
+        .agenda-item.intro { background-color: hsl(222 47% 20%); }
+        .agenda-item.intro .title { color: hsl(210 40% 98%); }
+        .agenda-item.intro .time { color: hsl(217 91.2% 59.8%); }
+
+        .agenda-item.engineering { background-color: hsl(145 83% 20%); }
+        .agenda-item.engineering .title { color: hsl(210 40% 98%); }
+        .agenda-item.engineering .time { color: hsl(145 63% 49%); }
+
+        .agenda-item.generative { background-color: hsl(262 83% 25%); }
+        .agenda-item.generative .title { color: hsl(210 40% 98%); }
+        .agenda-item.generative .time { color: hsl(262 88% 66%); }
+
+        .agenda-item.agents { background-color: rgb(240 253 250); }
+        .agenda-item.agents .title { color: rgb(13 148 136); }
+        .agenda-item.agents .time { color: rgb(20 184 166); }
+
+        .agenda-item.revolution { background-color: rgb(254 242 242); }
+        .agenda-item.revolution .title { color: rgb(185 28 28); }
+        .agenda-item.revolution .time { color: rgb(239 68 68); }
+
+        .agenda-item.exercise { background-color: rgb(255 247 237); }
+        .agenda-item.exercise .title { color: rgb(194 65 12); }
+        .agenda-item.exercise .time { color: rgb(249 115 22); }
+
+        .presenter-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .presenter-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .presenter-photo {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .presenter-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .presenter-title {
+            font-size: 0.875rem;
+            color: var(--secondary);
+        }
+
+        .session-info {
+            color: var(--secondary);
+            font-size: 0.875rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: hsl(217 91.2% 49.8%);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 1.5rem;
+        }
+
+        .section.light {
+            background-color: var(--background);
+        }
+
+        .section.muted {
+            background-color: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--secondary);
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-description {
+            color: var(--secondary);
+        }
+
+        /* Image Styles */
+        .feature-image {
+            border-radius: var(--radius);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            transition: box-shadow 0.3s;
+        }
+
+        .feature-image:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Interactive Elements */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            background-color: var(--card);
+            color: var(--foreground);
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .timer-display {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-title {
+            font-weight: 600;
+        }
+
+        .footer-description {
+            color: rgb(209 213 219);
+            font-size: 0.875rem;
+        }
+
+        .footer-section-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-link {
+            color: rgb(209 213 219);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgb(75 85 99);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgb(209 213 219);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .presenter-info {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .presenter-info::after {
+                content: '';
+                width: 1px;
+                height: 2rem;
+                background-color: rgb(209 213 219);
+                margin: 0 1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .agenda-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container-max">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <!-- Replace with actual NUR logo path -->
+                    <div style="width: 3rem; height: 3rem; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">NUR</div>
+                    <h1 class="nav-title">Universidad NUR</h1>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#inicio" class="nav-link active">Inicio</a>
+                    <a href="#introduccion" class="nav-link">Introducción</a>
+                    <a href="#ingenieria" class="nav-link">Ingeniería</a>
+                    <a href="#generativa" class="nav-link">IA Generativa</a>
+                    <a href="#agentes" class="nav-link">Agentes</a>
+                    <a href="#revolucion" class="nav-link">Revolución</a>
+                    <a href="#ejercicio" class="nav-link">Ejercicio</a>
+                </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#inicio" class="mobile-nav-link active" onclick="closeMobileMenu()">Inicio</a>
+                <a href="#introduccion" class="mobile-nav-link" onclick="closeMobileMenu()">Introducción</a>
+                <a href="#ingenieria" class="mobile-nav-link" onclick="closeMobileMenu()">Ingeniería</a>
+                <a href="#generativa" class="mobile-nav-link" onclick="closeMobileMenu()">IA Generativa</a>
+                <a href="#agentes" class="mobile-nav-link" onclick="closeMobileMenu()">Agentes</a>
+                <a href="#revolucion" class="mobile-nav-link" onclick="closeMobileMenu()">Revolución</a>
+                <a href="#ejercicio" class="mobile-nav-link" onclick="closeMobileMenu()">Ejercicio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container-max">
+            <div class="hero-content">
+                <div>
+                    <span class="hero-badge">
+                        Postgrado Ingeniería Comercial • 80 estudiantes • 80 minutos
+                    </span>
+                </div>
+                <h1 class="hero-title">
+                    Making Sense of AI<br />
+                    <span class="text-accent">in a Degenerative World</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Una sesión intensiva de 80 minutos diseñada para estudiantes de postgrado en Ingeniería Comercial:
+                    desde los fundamentos de IA hasta estrategias empresariales innovadoras y oportunidades de liderazgo.
+                </p>
+                
+                <!-- Timing Breakdown -->
+                <div class="agenda-box">
+                    <h3 class="agenda-title">
+                        <i class="fas fa-clock text-accent"></i>
+                        Agenda de la Sesión (80 minutos)
+                    </h3>
+                    <div class="agenda-grid">
+                        <div class="agenda-item intro">
+                            <div class="title">Introducción</div>
+                            <div class="time">10 min</div>
+                        </div>
+                        <div class="agenda-item engineering">
+                            <div class="title">Ingeniería</div>
+                            <div class="time">15 min</div>
+                        </div>
+                        <div class="agenda-item generative">
+                            <div class="title">IA Generativa</div>
+                            <div class="time">15 min</div>
+                        </div>
+                        <div class="agenda-item agents">
+                            <div class="title">Agentes</div>
+                            <div class="time">10 min</div>
+                        </div>
+                        <div class="agenda-item revolution">
+                            <div class="title">Revolución</div>
+                            <div class="time">10 min</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <div class="agenda-item exercise" style="display: inline-block;">
+                            <div class="title">Ejercicio Grupal + Presentaciones</div>
+                            <div class="time">20 minutos (15 min trabajo + 5 min presentaciones)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="presenter-info">
+                    <div class="presenter-profile">
+                        <img src="/Users/eolivera/Downloads/1746986866450.jpeg" alt="Edwin Mauricio Olivera" class="presenter-photo">
+                        <div>
+                            <a href="https://www.linkedin.com/in/emolivera/?locale=es_ES" target="_blank" rel="noopener noreferrer" class="presenter-name" style="text-decoration: none; color: inherit;">
+                                <p class="presenter-name">Edwin Mauricio Olivera</p>
+                            </a>
+                            <p class="presenter-title">Profesor de Diseño Digital</p>
+                        </div>
+                    </div>
+                    <div class="session-info">
+                        <p>
+                            <i class="fas fa-users" style="margin-right: 0.5rem;"></i>80 estudiantes • 80 minutos • Universidad NUR
+                        </p>
+                    </div>
+                </div>
+                
+                <button class="cta-button" onclick="scrollToSection('introduccion')">
+                    Comenzar la Charla
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="introduccion" class="section light">
+        <div class="container-max">
+            <div class="section-header">
+                <h2 class="section-title">Introducción</h2>
+                <p class="section-subtitle">Conectando con algo familiar para entender lo complejo</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div>
+                    <img
+                        src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                        alt="Person training a golden retriever puppy"
+                        class="feature-image"
+                    />
+                </div>
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">¿Quién tiene un perro?</h3>
+                    <p style="font-size: 1.125rem; color: var(--secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Como futuros líderes empresariales, todos conocemos el proceso de entrenar a un cachorro. 
+                        Le enseñamos comandos básicos, lo recompensamos cuando hace algo bien, y lo corregimos cuando no. 
+                        Este proceso requiere paciencia, consistencia y mucha repetición - exactamente como gestionar equipos y procesos empresariales.
+                    </p>
+                    <div style="background-color: rgb(239 246 255); padding: 1.5rem; border-radius: 0.5rem;">
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">
+                            <i class="fas fa-lightbulb text-accent" style="margin-right: 0.5rem;"></i>
+                            Conexión con IA
+                        </h4>
+                        <p style="color: var(--secondary);">
+                            Los primeros modelos de lenguaje (LLM) fueron entrenados de manera similar:
+                            usando machine learning y otros factores, básicamente entrenando a un "cachorro digital"
+                            para distinguir entre respuestas buenas y malas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Section -->
+    <section id="ingenieria" class="section muted">
+        <div class="container-max">
+            <div class="section-header">
+                <span class="section-badge" style="background-color: rgba(59, 130, 246, 0.1); color: var(--accent);">
+                    Parte 1
+                </span>
+                <h2 class="section-title">Ingeniería Comercial e IA</h2>
+                <p class="section-subtitle">El impacto transformador en los negocios</p>
+            </div>
+
+            <div class="grid grid-3" style="margin-bottom: 3rem;">
+                <div class="card">
+                    <div class="card-icon" style="background-color: rgb(240 253 244); color: rgb(22 101 52);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Automatización Inteligente</h3>
+                    <p class="card-description">La IA permite automatizar procesos complejos de toma de decisiones, optimizando operaciones y reduciendo costos operativos.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon" style="background-color: rgb(239 246 255); color: rgb(37 99 235);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="card-title">Experiencia del Cliente</h3>
+                    <p class="card-description">Personalización a escala, chatbots inteligentes y análisis predictivo para mejorar la satisfacción del cliente.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon" style="background-color: rgb(250 245 255); color: rgb(147 51 234);">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="card-title">Insights de Datos</h3>
+                    <p class="card-description">Análisis avanzado de patrones y tendencias que permiten tomar decisiones estratégicas basadas en datos reales.</p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(to right, rgb(239 246 255), rgb(238 242 255)); padding: 2rem; border-radius: var(--radius);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Oportunidades para Ingenieros Comerciales</h3>
+                <div class="grid grid-3">
+                    <div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Liderazgo en Transformación Digital</h4>
+                        <p style="color: var(--secondary); margin-bottom: 1rem;">
+                            Dirigir la implementación de IA en organizaciones bolivianas,
+                            bridgeando la brecha entre tecnología y negocio.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Consultoría Estratégica</h4>
+                        <p style="color: var(--secondary); margin-bottom: 1rem;">
+                            Asesorar a empresas en la adopción de IA para optimización
+                            de procesos y toma de decisiones.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Emprendimiento Tech</h4>
+                        <p style="color: var(--secondary);">
+                            Crear startups que resuelvan problemas locales usando IA,
+                            aprovechando el conocimiento del mercado boliviano.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generative AI Section -->
+    <section id="generativa" class="section light">
+        <div class="container-max">
+            <div class="section-header">
+                <span class="section-badge" style="background-color: rgb(250 245 255); color: rgb(147 51 234);">
+                    Parte 2
+                </span>
+                <h2 class="section-title">IA Generativa</h2>
+                <p class="section-subtitle">Creando contenido desde cero</p>
+            </div>
+
+            <div class="grid grid-2" style="align-items: center; margin-bottom: 3rem;">
+                <div>
+                    <img
+                        src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                        alt="Abstract AI-generated digital art with vibrant colors"
+                        class="feature-image"
+                    />
+                </div>
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1.5rem;">Revolucionando la Creatividad</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="width: 2rem; height: 2rem; background-color: rgb(252 231 243); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.25rem;">
+                                <i class="fas fa-image" style="color: rgb(219 39 119);"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 600; color: var(--primary);">Generación de Imágenes</h4>
+                                <p style="color: var(--secondary);">DALL-E, Midjourney, Stable Diffusion</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="width: 2rem; height: 2rem; background-color: rgb(240 253 244); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.25rem;">
+                                <i class="fas fa-edit" style="color: rgb(34 197 94);"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 600; color: var(--primary);">Generación de Texto</h4>
+                                <p style="color: var(--secondary);">GPT-4, Claude, Gemini</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="width: 2rem; height: 2rem; background-color: rgb(239 246 255); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.25rem;">
+                                <i class="fas fa-code" style="color: rgb(59 130 246);"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 600; color: var(--primary);">Generación de Código</h4>
+                                <p style="color: var(--secondary);">GitHub Copilot, CodeT5, AlphaCode</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background-color: rgb(249 250 251); padding: 2rem; border-radius: var(--radius);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1.5rem; text-align: center;">Aplicaciones Prácticas</h3>
+                <div class="grid grid-3">
+                    <div style="text-align: center;">
+                        <div style="width: 4rem; height: 4rem; background-color: rgb(255 237 213); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-paint-brush" style="color: rgb(234 88 12); font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Marketing Creativo</h4>
+                        <p style="color: var(--secondary); font-size: 0.875rem;">Generación automática de contenido publicitario, copys personalizados y assets visuales.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 4rem; height: 4rem; background-color: rgb(238 242 255); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-graduation-cap" style="color: rgb(99 102 241); font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Educación</h4>
+                        <p style="color: var(--secondary); font-size: 0.875rem;">Creación de material educativo personalizado, ejercicios adaptativos y tutorías virtuales.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 4rem; height: 4rem; background-color: rgb(240 253 250); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-cog" style="color: rgb(20 184 166); font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Desarrollo</h4>
+                        <p style="color: var(--secondary); font-size: 0.875rem;">Asistencia en programación, generación de documentación y automatización de tareas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Agents Section -->
+    <section id="agentes" class="section muted">
+        <div class="container-max">
+            <div class="section-header">
+                <span class="section-badge" style="background-color: rgb(240 253 250); color: rgb(20 184 166);">
+                    Parte 3
+                </span>
+                <h2 class="section-title">Agentes en IA</h2>
+                <p class="section-subtitle">Sistemas autónomos que actúan y aprenden</p>
+            </div>
+
+            <div class="grid grid-2" style="align-items: center; margin-bottom: 3rem;">
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1.5rem;">¿Qué son los Agentes de IA?</h3>
+                    <p style="font-size: 1.125rem; color: var(--secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Los agentes de IA son sistemas computacionales capaces de percibir su entorno,
+                        tomar decisiones autónomas y actuar para alcanzar objetivos específicos.
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 1.5rem; height: 1.5rem; background-color: rgb(34 197 94); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-check" style="color: white; font-size: 0.75rem;"></i>
+                            </div>
+                            <span style="color: var(--secondary);">Percepción del entorno</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 1.5rem; height: 1.5rem; background-color: rgb(34 197 94); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-check" style="color: white; font-size: 0.75rem;"></i>
+                            </div>
+                            <span style="color: var(--secondary);">Toma de decisiones autónoma</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 1.5rem; height: 1.5rem; background-color: rgb(34 197 94); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-check" style="color: white; font-size: 0.75rem;"></i>
+                            </div>
+                            <span style="color: var(--secondary);">Aprendizaje continuo</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <div style="width: 1.5rem; height: 1.5rem; background-color: rgb(34 197 94); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-check" style="color: white; font-size: 0.75rem;"></i>
+                            </div>
+                            <span style="color: var(--secondary);">Adaptación al cambio</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img
+                        src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                        alt="Humanoid robot interacting with technology in a modern setting"
+                        class="feature-image"
+                    />
+                </div>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon" style="background-color: rgb(254 242 242); color: rgb(220 38 38);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Agentes Reactivos</h4>
+                    <p style="color: var(--secondary); font-size: 0.875rem;">Responden directamente a estímulos del entorno sin memoria de estados anteriores.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon" style="background-color: rgb(254 249 195); color: rgb(202 138 4);">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Agentes con Memoria</h4>
+                    <p style="color: var(--secondary); font-size: 0.875rem;">Mantienen un modelo interno del mundo y pueden planificar acciones futuras.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon" style="background-color: rgb(250 245 255); color: rgb(147 51 234);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Agentes Colaborativos</h4>
+                    <p style="color: var(--secondary); font-size: 0.875rem;">Trabajan en conjunto con otros agentes para alcanzar objetivos complejos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revolution Section -->
+    <section id="revolucion" class="section light">
+        <div class="container-max">
+            <div class="section-header">
+                <span class="section-badge" style="background-color: rgb(254 242 242); color: rgb(220 38 38);">
+                    Parte 4
+                </span>
+                <h2 class="section-title">Tu Rol en la Revolución o el Anomie</h2>
+                <p class="section-subtitle">Decidiendo nuestro futuro colectivo</p>
+            </div>
+
+            <div class="grid grid-2" style="align-items: center; margin-bottom: 3rem;">
+                <div>
+                    <img
+                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                        alt="Group of diverse people looking towards a bright future horizon"
+                        class="feature-image"
+                    />
+                </div>
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1.5rem;">Dos Caminos Divergentes</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="background-color: rgb(240 253 244); padding: 1.5rem; border-radius: 0.5rem;">
+                            <h4 style="font-weight: 600; color: rgb(22 101 52); margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-arrow-up" style="margin-right: 0.5rem;"></i>
+                                Revolución: Adaptación y Crecimiento
+                            </h4>
+                            <p style="color: rgb(21 128 61); font-size: 0.875rem;">
+                                Abrazar el cambio, desarrollar nuevas habilidades, liderar la transformación
+                                digital y crear oportunidades para otros.
+                            </p>
+                        </div>
+                        <div style="background-color: rgb(254 242 242); padding: 1.5rem; border-radius: 0.5rem;">
+                            <h4 style="font-weight: 600; color: rgb(185 28 28); margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                <i class="fas fa-arrow-down" style="margin-right: 0.5rem;"></i>
+                                Anomie: Resistencia y Estancamiento
+                            </h4>
+                            <p style="color: rgb(185 28 28); font-size: 0.875rem;">
+                                Resistir el cambio, mantener el status quo, quedarse atrás
+                                y eventualmente ser reemplazado por la tecnología.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(to right, rgb(239 246 255), rgb(250 245 255)); padding: 2rem; border-radius: var(--radius);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1.5rem; text-align: center;">Habilidades para el Futuro</h3>
+                <div class="grid grid-2" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div style="text-align: center;">
+                        <div style="width: 4rem; height: 4rem; background-color: rgb(239 246 255); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-lightbulb" style="color: rgb(37 99 235); font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Pensamiento Crítico</h4>
+                        <p style="color: var(--secondary); font-size: 0.875rem;">Analizar, evaluar y sintetizar información compleja</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 4rem; height: 4rem; background-color: rgb(240 253 244); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-palette" style="color: rgb(34 197 94); font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Creatividad</h4>
+                        <p style="color: var(--secondary); font-size: 0.875rem;">Generar ideas innovadoras y soluciones únicas</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 4rem; height: 4rem; background-color: rgb(250 245 255); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-heart" style="color: rgb(147 51 234); font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Inteligencia Emocional</h4>
+                        <p style="color: var(--secondary); font-size: 0.875rem;">Entender y gestionar emociones propias y ajenas</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 4rem; height: 4rem; background-color: rgb(255 237 213); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-sync" style="color: rgb(234 88 12); font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Adaptabilidad</h4>
+                        <p style="color: var(--secondary); font-size: 0.875rem;">Flexibilidad ante cambios constantes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Group Exercise Section -->
+    <section id="ejercicio" class="section muted">
+        <div class="container-max">
+            <div class="section-header">
+                <span class="section-badge" style="background-color: rgb(255 237 213); color: rgb(234 88 12);">
+                    Parte 5
+                </span>
+                <h2 class="section-title">Ejercicio Grupal</h2>
+                <p class="section-subtitle">Aplicando los conceptos aprendidos</p>
+            </div>
+
+            <!-- Interactive Group Exercise -->
+            <div class="card" style="padding: 2rem; margin-bottom: 3rem; border: 1px solid var(--border);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1.5rem; text-align: center;">
+                    Diseña tu Agente de IA Personal
+                </h3>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <h4 style="font-size: 1.125rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Instrucciones del Ejercicio</h4>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="flex-shrink: 0; width: 2rem; height: 2rem; background-color: rgb(239 246 255); color: rgb(37 99 235); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">1</span>
+                                <div>
+                                    <h5 style="font-weight: 500; color: var(--primary);">Forma grupos de 4-5 personas</h5>
+                                    <p style="font-size: 0.875rem; color: var(--secondary);">16 grupos de futuros líderes empresariales</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="flex-shrink: 0; width: 2rem; height: 2rem; background-color: rgb(239 246 255); color: rgb(37 99 235); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">2</span>
+                                <div>
+                                    <h5 style="font-weight: 500; color: var(--primary);">Identifica un problema empresarial</h5>
+                                    <p style="font-size: 0.875rem; color: var(--secondary);">En el contexto boliviano o latinoamericano</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="flex-shrink: 0; width: 2rem; height: 2rem; background-color: rgb(239 246 255); color: rgb(37 99 235); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">3</span>
+                                <div>
+                                    <h5 style="font-weight: 500; color: var(--primary);">Diseña un agente de IA</h5>
+                                    <p style="font-size: 0.875rem; color: var(--secondary);">Que resuelva ese problema específico</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="flex-shrink: 0; width: 2rem; height: 2rem; background-color: rgb(239 246 255); color: rgb(37 99 235); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600;">4</span>
+                                <div>
+                                    <h5 style="font-weight: 500; color: var(--primary);">Presenta tu propuesta</h5>
+                                    <p style="font-size: 0.875rem; color: var(--secondary);">3 minutos por grupo (presentaciones seleccionadas)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 style="font-size: 1.125rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Plantilla de Trabajo</h4>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Problema Identificado:</label>
+                                <textarea class="form-textarea" placeholder="Describe un problema empresarial específico en Bolivia o Latinoamérica..." rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Tipo de Agente:</label>
+                                <select class="form-select">
+                                    <option value="">Selecciona un tipo...</option>
+                                    <option value="reactive">Agente Reactivo</option>
+                                    <option value="memory">Agente con Memoria</option>
+                                    <option value="collaborative">Agente Colaborativo</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Funcionalidades Principales:</label>
+                                <textarea class="form-textarea" placeholder="¿Qué puede hacer tu agente?" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Impacto Esperado:</label>
+                                <textarea class="form-textarea" placeholder="¿Cómo transformará el negocio o la industria?" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background-color: rgb(254 249 195); border-radius: 0.5rem;">
+                    <h4 style="font-weight: 600; color: rgb(161 98 7); margin-bottom: 0.75rem; display: flex; align-items: center;">
+                        <i class="fas fa-clock" style="margin-right: 0.5rem;"></i>
+                        Tiempo de Trabajo: 15 minutos
+                    </h4>
+                    <div class="grid grid-3" style="font-size: 0.875rem;">
+                        <div>
+                            <span style="font-weight: 500; color: rgb(161 98 7);">Brainstorming:</span>
+                            <span style="color: rgb(180 83 9); margin-left: 0.5rem;">4 minutos</span>
+                        </div>
+                        <div>
+                            <span style="font-weight: 500; color: rgb(161 98 7);">Desarrollo:</span>
+                            <span style="color: rgb(180 83 9); margin-left: 0.5rem;">8 minutos</span>
+                        </div>
+                        <div>
+                            <span style="font-weight: 500; color: rgb(161 98 7);">Preparación:</span>
+                            <span style="color: rgb(180 83 9); margin-left: 0.5rem;">3 minutos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timer Component -->
+                <div style="margin-top: 1.5rem; text-align: center;">
+                    <button class="cta-button" onclick="startTimer()" id="timerButton">
+                        <i class="fas fa-play"></i>
+                        Comenzar Ejercicio
+                    </button>
+                    <div class="timer-display" id="timerDisplay" style="display: none;">15:00</div>
+                </div>
+            </div>
+
+            <!-- Presentation Guidelines -->
+            <div style="background-color: rgb(249 250 251); padding: 2rem; border-radius: var(--radius);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1.5rem; text-align: center;">Guía para Presentaciones</h3>
+                <div class="grid grid-2">
+                    <div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center;">
+                            <i class="fas fa-presentation" style="margin-right: 0.5rem; color: rgb(34 197 94);"></i>
+                            Estructura Sugerida
+                        </h4>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; color: var(--secondary);">
+                            <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: rgb(34 197 94);">•</span>
+                                <span>Presentación del equipo (30 seg)</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: rgb(34 197 94);">•</span>
+                                <span>Problema identificado (1.5 min)</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: rgb(34 197 94);">•</span>
+                                <span>Solución propuesta (2 min)</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: rgb(34 197 94);">•</span>
+                                <span>Impacto esperado (1 min)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center;">
+                            <i class="fas fa-lightbulb" style="margin-right: 0.5rem; color: rgb(37 99 235);"></i>
+                            Consejos Útiles
+                        </h4>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; color: var(--secondary);">
+                            <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: rgb(37 99 235);">•</span>
+                                <span>Sé específico y concreto</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: rgb(37 99 235);">•</span>
+                                <span>Usa ejemplos reales</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: rgb(37 99 235);">•</span>
+                                <span>Explica el 'por qué' del problema</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: rgb(37 99 235);">•</span>
+                                <span>Sé creativo pero realista</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-max">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <!-- Replace with actual NUR logo path -->
+                        <div style="width: 2.5rem; height: 2.5rem; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">NUR</div>
+                        <span class="footer-title">Universidad NUR</span>
+                    </div>
+                    <p class="footer-description">
+                        Formando líderes empresariales preparados para la era de la IA.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-section-title">Contacto</h4>
+                    <div class="footer-links">
+                        <p style="color: rgb(209 213 219); font-size: 0.875rem;">Edwin Mauricio Olivera</p>
+                        <p style="color: rgb(209 213 219); font-size: 0.875rem;">eolivera@sva.edu</p>
+                        <p style="color: rgb(209 213 219); font-size: 0.875rem;">Profesor de Diseño Digital</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-section-title">Recursos</h4>
+                    <div class="footer-links">
+                        <a href="https://eolivera.com" class="footer-link" target="_blank" rel="noopener noreferrer">
+                            Portfolio Personal
+                        </a>
+                        <a href="https://medium.com/@emauric.io" class="footer-link" target="_blank" rel="noopener noreferrer">
+                            Artículos en Medium
+                        </a>
+                        <a href="#" class="footer-link">
+                            Materiales de Clase
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Universidad NUR. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        let timer = null;
+        let timeLeft = 15 * 60; // 15 minutes in seconds
+        let isRunning = false;
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('show');
+            
+            const button = document.querySelector('.mobile-menu-btn i');
+            if (menu.classList.contains('show')) {
+                button.className = 'fas fa-times';
+            } else {
+                button.className = 'fas fa-bars';
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.remove('show');
+            document.querySelector('.mobile-menu-btn i').className = 'fas fa-bars';
+        }
+
+        // Active navigation highlighting
+        function updateActiveNavigation() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+            let current = 'inicio';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Timer functionality
+        function startTimer() {
+            if (isRunning) return;
+            
+            isRunning = true;
+            const button = document.getElementById('timerButton');
+            const display = document.getElementById('timerDisplay');
+            
+            button.innerHTML = '<i class="fas fa-clock"></i> Ejercicio en Curso...';
+            button.style.opacity = '0.5';
+            button.style.cursor = 'not-allowed';
+            display.style.display = 'block';
+            
+            timer = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    isRunning = false;
+                    alert('¡Tiempo terminado! Prepárense para las presentaciones.');
+                    button.innerHTML = '<i class="fas fa-play"></i> Comenzar Ejercicio';
+                    button.style.opacity = '1';
+                    button.style.cursor = 'pointer';
+                    display.style.display = 'none';
+                    timeLeft = 15 * 60; // Reset timer
+                    return;
+                }
+                
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Navigation click handlers
+        document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                if (link.classList.contains('mobile-nav-link')) {
+                    closeMobileMenu();
+                }
+            });
+        });
+
+        // Scroll event listener
+        window.addEventListener('scroll', updateActiveNavigation);
+
+        // Initial call to set active navigation
+        updateActiveNavigation();
+    </script>
+</body>
+</html>
