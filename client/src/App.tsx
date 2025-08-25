@@ -15,6 +15,7 @@ import { UniqueVisitors } from "./pages/UniqueVisitors";
 import { NewPage } from "./pages/NewPage";
 import Editor from "./pages/Editor";
 import TallerIA from "./pages/TallerIA";
+import CharlaIA from "./pages/CharlaIA";
 import { NotFoundPage } from "./pages/not-found";
 
 function Router() {
@@ -32,6 +33,7 @@ function Router() {
       <Route path="/new-page" component={NewPage} />
       <Route path="/editor" component={Editor} />
       <Route path="/tallerIA" component={TallerIA} />
+      <Route path="/charlaIA" component={CharlaIA} />
       <Route component={NotFoundPage} />
     </Switch>
   );
