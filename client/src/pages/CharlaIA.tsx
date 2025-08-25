@@ -4,6 +4,10 @@ import {
   RefreshCw, Palette, ArrowUp, ArrowDown, ChevronDown, Users,
   Brain, Cpu, Cog, Zap
 } from "lucide-react";
+import artImage from "@assets/art_1756131492602.png";
+import dogImage from "@assets/dog_1756131492602.png";
+import genericImage from "@assets/generic_1756131492602.png";
+import picsImage from "@assets/pics_1756131492602.png";
 
 export default function CharlaIA() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -148,7 +152,15 @@ export default function CharlaIA() {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="pt-24 pb-16 min-h-screen flex items-center">
+      <section id="inicio" className="pt-24 pb-16 min-h-screen flex items-center relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url(${genericImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
             <div 
@@ -194,7 +206,7 @@ export default function CharlaIA() {
                 Agenda de la Sesión (80 minutos)
               </h3>
               
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-base">
                 <div className="text-center p-3 rounded-lg bg-blue-900">
                   <div className="font-semibold text-white mb-1">Introducción</div>
                   <div className="text-blue-300">10 min</div>
@@ -282,8 +294,8 @@ export default function CharlaIA() {
           <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Earth from space showing climate change effects"
+                src={picsImage}
+                alt="Collection of creative polaroid photos showing diverse perspectives"
                 className="w-full rounded-xl"
                 style={{ boxShadow: 'var(--shadow)' }}
               />
@@ -300,7 +312,7 @@ export default function CharlaIA() {
                   <h4 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
                     Crisis Sistémicas Interconectadas
                   </h4>
-                  <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="text-base" style={{ color: 'var(--text-secondary)' }}>
                     Cambio climático, desigualdad social, polarización política y crisis de confianza institucional
                   </p>
                 </div>
@@ -311,7 +323,7 @@ export default function CharlaIA() {
                   <h4 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
                     Aceleración Tecnológica
                   </h4>
-                  <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="text-base" style={{ color: 'var(--text-secondary)' }}>
                     IA, automatización y transformación digital redefiniendo sectores completos
                   </p>
                 </div>
@@ -322,7 +334,7 @@ export default function CharlaIA() {
                   <h4 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
                     Nuevas Oportunidades
                   </h4>
-                  <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="text-base" style={{ color: 'var(--text-secondary)' }}>
                     Liderazgo consciente, innovación regenerativa y empresas con propósito
                   </p>
                 </div>
@@ -364,10 +376,10 @@ export default function CharlaIA() {
               <h3 className="text-xl font-['Fraunces'] font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>
                 Ingeniería Tradicional
               </h3>
-              <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-base mb-4" style={{ color: 'var(--text-secondary)' }}>
                 Procesos lineales, optimización local, eficiencia como meta principal
               </p>
-              <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+              <ul className="space-y-2 text-base" style={{ color: 'var(--text-secondary)' }}>
                 <li>• Análisis causa-efecto simple</li>
                 <li>• Optimización de procesos aislados</li>
                 <li>• Métricas de productividad</li>
@@ -387,10 +399,10 @@ export default function CharlaIA() {
               <h3 className="text-xl font-['Fraunces'] font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>
                 Ingeniería de IA
               </h3>
-              <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-base mb-4" style={{ color: 'var(--text-secondary)' }}>
                 Sistemas adaptativos, aprendizaje continuo, emergencia como característica
               </p>
-              <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+              <ul className="space-y-2 text-base" style={{ color: 'var(--text-secondary)' }}>
                 <li>• Patrones complejos emergentes</li>
                 <li>• Sistemas auto-organizados</li>
                 <li>• Métricas de adaptabilidad</li>
@@ -410,10 +422,10 @@ export default function CharlaIA() {
               <h3 className="text-xl font-['Fraunces'] font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>
                 Ingeniería Regenerativa
               </h3>
-              <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-base mb-4" style={{ color: 'var(--text-secondary)' }}>
                 Sistemas que mejoran el entorno, impacto positivo neto, sostenibilidad integral
               </p>
-              <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+              <ul className="space-y-2 text-base" style={{ color: 'var(--text-secondary)' }}>
                 <li>• Ciclos regenerativos</li>
                 <li>• Valor stakeholder integral</li>
                 <li>• Métricas de impacto sistémico</li>
@@ -444,8 +456,8 @@ export default function CharlaIA() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="AI generating creative content"
+                src={artImage}
+                alt="Creative AI artwork and neural network visualizations"
                 className="w-full rounded-xl"
                 style={{ boxShadow: 'var(--shadow)' }}
               />
@@ -608,8 +620,8 @@ export default function CharlaIA() {
           <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Group of diverse people looking towards a bright future horizon"
+                src={dogImage}
+                alt="Evolution and adaptation through time - comparing past and present"
                 className="w-full rounded-xl"
                 style={{ boxShadow: 'var(--shadow)' }}
               />
