@@ -4,6 +4,7 @@ import {
   RefreshCw, Palette, ArrowUp, ArrowDown, ChevronDown, Users,
   Brain, Cpu, Cog, Zap
 } from "lucide-react";
+import { Contact } from "@/components/portfolio/Contact";
 import artImage from "@assets/art_1756131492602.png";
 import dogImage from "@assets/dog_1756131492602.png";
 import genericImage from "@assets/generic_1756131492602.png";
@@ -947,52 +948,8 @@ export default function CharlaIA() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12" style={{ backgroundColor: 'var(--text-primary)', color: 'white' }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div 
-                  className="w-10 h-10 rounded-full flex items-center justify-content-center text-white font-bold"
-                  style={{ backgroundColor: 'var(--accent)' }}
-                >
-                  NUR
-                </div>
-                <span className="font-['Fraunces'] font-semibold">Universidad NUR</span>
-              </div>
-              <p className="text-gray-300 text-sm">
-                Formando líderes empresariales preparados para la era de la IA.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-['Fraunces'] font-semibold mb-4">Contacto</h4>
-              <div className="text-gray-300 text-sm space-y-1">
-                <p>Edwin Mauricio Olivera</p>
-                <p>eolivera@sva.edu</p>
-                <p>Profesor de Diseño Digital</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-['Fraunces'] font-semibold mb-4">Recursos</h4>
-              <div className="space-y-2 text-sm">
-                <a href="https://eolivera.com" className="block text-gray-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
-                  Portfolio Personal
-                </a>
-                <a href="https://medium.com/@emauric.io" className="block text-gray-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
-                  Artículos en Medium
-                </a>
-                <a href="#" className="block text-gray-300 hover:text-white transition-colors">
-                  Materiales de Clase
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-600 pt-8 text-center text-gray-300 text-sm">
-            <p>&copy; 2024 Universidad NUR. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
+      {/* Get In Touch Section */}
+      <Contact id="contact" />
     </div>
   );
 }
