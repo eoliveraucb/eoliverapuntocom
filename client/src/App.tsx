@@ -16,6 +16,7 @@ import { NewPage } from "./pages/NewPage";
 import Editor from "./pages/Editor";
 import TallerIA from "./pages/TallerIA";
 import CharlaIA from "./pages/CharlaIA";
+import IA from "./pages/IA";
 import { NotFoundPage } from "./pages/not-found";
 
 function Router() {
@@ -34,6 +35,7 @@ function Router() {
       <Route path="/editor" component={Editor} />
       <Route path="/tallerIA" component={TallerIA} />
       <Route path="/charlaIA" component={CharlaIA} />
+      <Route path="/ia" component={IA} />
       <Route component={NotFoundPage} />
     </Switch>
   );
