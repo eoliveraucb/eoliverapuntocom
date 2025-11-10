@@ -14,7 +14,8 @@ import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_17506398
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
 import prideImage from '@assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233.png';
 import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
-import rateRaceImage from '@assets/future-analog-voices_1750639835234.png';
+import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
+import futureAnalogImage from '@assets/future-analog-green_1762790846285.png';
 
 interface PortfolioItem {
   id: number;
@@ -55,7 +56,7 @@ const portfolioItems: PortfolioItem[] = [
     projectId: "rate-race",
     title: "3 Percent Rate Race",
     category: "Interactive Design",
-    image: "https://ux.emauric.io/images/portfolio/ratrace/ratrace-cover.png",
+    image: rateRaceImage,
     icon: Lightbulb
   },
   {
@@ -135,7 +136,7 @@ const portfolioItems: PortfolioItem[] = [
     projectId: "future-analog-voices",
     title: "Future Analog Voices",
     category: "Product Design",
-    image: "https://ux.emauric.io/images/portfolio/future/future-analog-green.png",
+    image: futureAnalogImage,
     icon: Lightbulb
   }
 ];
