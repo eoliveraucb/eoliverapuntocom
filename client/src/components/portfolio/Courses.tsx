@@ -105,7 +105,7 @@ export function Courses({ id }: CoursesProps) {
             className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-4"
             style={{ color: 'var(--text-primary)' }}
           >
-            Projects and Exercises
+            Teaching Projects & Exercises
           </h2>
           <p 
             className="text-lg max-w-4xl mx-auto font-['Roboto_Flex']"
