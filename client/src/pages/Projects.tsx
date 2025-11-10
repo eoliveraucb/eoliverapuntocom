@@ -18,7 +18,8 @@ import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_17506398
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
 import prideImage from '@assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233.png';
 import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
-import rateRaceImage from '@assets/future-analog-voices_1750639835234.png';
+import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
+import futureAnalogImage from '@assets/future-analog-green_1762790846285.png';
 
 interface Project {
   id: string;
@@ -186,7 +187,7 @@ export const projectsData: Project[] = [
     category: 'Game Design',
     description: 'A hybrid Role Playing Game depicting the complex process of obtaining a Green Card in the USA.',
     fullDescription: '3% Rat Race is a hybrid Role Playing Game that depicts the complex, stressful, and often bureaucratic process of obtaining a Green Card in the USA. Through playful mechanics and immersive storytelling, the game highlights the hurdles, paperwork, and emotional rollercoaster faced by immigrants on their path to permanent residency. Players take on the roles of immigrants navigating the U.S. immigration system, encountering challenges such as paperwork delays, interviews, legal fees, and random setbacks that mirror real-life bureaucracy and uncertainty. The ultimate goal is to collect your Green Card by overcoming obstacles and outlasting the "rat race" - though the game design makes this nearly impossible, reflecting the harsh reality many face. By turning a stressful journey into an interactive experience, it sparks conversation about policy, perseverance, and the human side of migration.',
-    image: 'https://ux.emauric.io/images/portfolio/ratrace/ratrace-cover.png',
+    image: rateRaceImage,
     year: '2023',
     client: 'Independent Project',
     technologies: ['Game Design', 'Social Impact Design', 'Educational Design', 'Role Playing Games', 'Immigration Policy', 'Interactive Storytelling'],
@@ -211,7 +212,7 @@ export const projectsData: Project[] = [
     category: 'Product Design',
     description: 'A graduate exploration into graphic language, prototyping physical artifacts and sound design.',
     fullDescription: 'Born from a graduate assignment on synthesis and facilitation, this exploration into a graphic language explored different expressions into prototyping physical artifacts and sound design. This graphic experiment proposes that in contemporary discussions about the future and innovation, analog and embodied expressions of technology transition from nostalgia to revaluation and sustainability. The work was exhibited at Design Week NYC 2025 and SVA Graduate Center Gallery 2025.',
-    image: 'https://ux.emauric.io/images/portfolio/future/future-analog-green.png',
+    image: futureAnalogImage,
     year: '2025',
     client: 'SVA Graduate Studies',
     technologies: ['Product Design', 'Sound Design', 'Physical Prototyping', 'Graphic Language', 'Sustainability', 'Material Innovation'],
