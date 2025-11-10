@@ -5,6 +5,18 @@ import { Header } from '../components/portfolio/Header';
 import { ArrowLeft, ExternalLink, Calendar, User, Wrench } from 'lucide-react';
 import { projectsData } from './Projects';
 
+import rateRaceTitle from '@assets/ratrace-title_1762792515889.png';
+import rateRaceTasks from '@assets/ratrace-tasks_1762792515888.png';
+import rateRaceMotif from '@assets/ratrace-motif_1762792515889.png';
+import rateRaceMarriage from '@assets/ratrace-marraige2_1762792515889.png';
+import rateRaceSideBySide from '@assets/ratrace-sideside_1762792515889.jpg';
+import rateRacePictures from '@assets/ratrace-pictures.jpb_1762792515889.png';
+import templateCostas from '@assets/template-costas-large_1762792920403.jpeg';
+import futureAnalogGreen from '@assets/future-analog-green_1762793065986.png';
+import futureAnalog from '@assets/future-analog_1762793065989.jpeg';
+import futureRace from '@assets/future-race_1762793065989.jpeg';
+import futuresFirsts from '@assets/futures-firsts-large_1762793065990.jpeg';
+
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
   const project = projectsData.find(p => p.id === id);
@@ -456,7 +468,7 @@ export default function ProjectDetail() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
-                        src="https://ux.emauric.io/images/portfolio/ratrace/ratrace-title.png"
+                        src={rateRaceTitle}
                         alt="Game Title Design"
                         className="w-full h-auto"
                       />
@@ -468,7 +480,7 @@ export default function ProjectDetail() {
                     
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
-                        src="https://ux.emauric.io/images/portfolio/ratrace/ratrace-tasks.png"
+                        src={rateRaceTasks}
                         alt="Game Tasks"
                         className="w-full h-auto"
                       />
@@ -480,7 +492,7 @@ export default function ProjectDetail() {
                     
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
-                        src="https://ux.emauric.io/images/portfolio/ratrace/ratrace-motif.png"
+                        src={rateRaceMotif}
                         alt="Game Motif"
                         className="w-full h-auto"
                       />
@@ -492,7 +504,7 @@ export default function ProjectDetail() {
                     
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
-                        src="https://ux.emauric.io/images/portfolio/ratrace/ratrace-marraige2.png"
+                        src={rateRaceMarriage}
                         alt="Marriage Card Design"
                         className="w-full h-auto"
                       />
@@ -504,7 +516,7 @@ export default function ProjectDetail() {
                     
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
-                        src="https://ux.emauric.io/images/portfolio/ratrace/ratrace-sideside.jpg"
+                        src={rateRaceSideBySide}
                         alt="Game Overview"
                         className="w-full h-auto"
                       />
@@ -516,7 +528,7 @@ export default function ProjectDetail() {
                     
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
-                        src="https://ux.emauric.io/images/portfolio/ratrace/ratrace-pictures.jpb.png"
+                        src={rateRacePictures}
                         alt="Game Pictures"
                         className="w-full h-auto"
                       />
@@ -563,109 +575,61 @@ export default function ProjectDetail() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
-                        src="https://ux.emauric.io/images/portfolio/future/artwork-sem.png"
-                        alt="Artwork SEM"
-                        className="w-full h-auto"
-                      />
-                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Artwork SEM</h5>
-                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Detailed artwork from the project</p>
-                      </div>
-                    </div>
-                    
-                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
-                      <img
-                        src="https://ux.emauric.io/images/portfolio/future/future-analog-green.png"
-                        alt="Future Analog Green"
-                        className="w-full h-auto"
-                      />
-                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Future Analog Green</h5>
-                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>A key visual element with green tones</p>
-                      </div>
-                    </div>
-                    
-                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
-                      <img
-                        src="https://ux.emauric.io/images/portfolio/future/future-analog.png"
-                        alt="Future Analog"
-                        className="w-full h-auto"
-                      />
-                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Future Analog</h5>
-                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Another core visual from the project</p>
-                      </div>
-                    </div>
-                    
-                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
-                      <img
-                        src="https://ux.emauric.io/images/portfolio/future/future-race.png"
-                        alt="Future Race"
-                        className="w-full h-auto"
-                      />
-                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Future Race</h5>
-                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Visual related to the future and race concepts</p>
-                      </div>
-                    </div>
-                    
-                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
-                      <img
-                        src="https://ux.emauric.io/images/portfolio/future/futureanalog.png"
-                        alt="Future Analog (Small)"
-                        className="w-full h-auto"
-                      />
-                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Future Analog (Small)</h5>
-                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>A smaller version of the future analog visual</p>
-                      </div>
-                    </div>
-                    
-                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
-                      <img
-                        src="https://ux.emauric.io/images/portfolio/future/futures-firsts.png"
-                        alt="Futures Firsts"
-                        className="w-full h-auto"
-                      />
-                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Futures Firsts</h5>
-                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Visual representing initial concepts of futures</p>
-                      </div>
-                    </div>
-                    
-                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
-                      <img
-                        src="https://ux.emauric.io/images/portfolio/future/template-costas-1.png"
-                        alt="Template Costas 1"
-                        className="w-full h-auto"
-                      />
-                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Template Costas 1</h5>
-                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Design template with "Costas" theme, version 1</p>
-                      </div>
-                    </div>
-                    
-                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
-                      <img
-                        src="https://ux.emauric.io/images/portfolio/future/template-costas.png"
+                        src={templateCostas}
                         alt="Template Costas"
                         className="w-full h-auto"
                       />
                       <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Template Costas</h5>
-                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Design template with "Costas" theme</p>
+                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Visual Notes & Sketches</h5>
+                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Hand-drawn design explorations and concepts</p>
                       </div>
                     </div>
                     
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
-                        src="https://ux.emauric.io/images/portfolio/future/wdddwr34.png"
-                        alt="WDDDWR34"
+                        src={futureAnalogGreen}
+                        alt="Future Analog Green"
                         className="w-full h-auto"
                       />
                       <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>WDDDWR34</h5>
-                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Additional project visual</p>
+                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Green Collage</h5>
+                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Creative strategy and media exploration</p>
+                      </div>
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={futureAnalog}
+                        alt="Future Analog Cassettes"
+                        className="w-full h-auto"
+                      />
+                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Analog Artifacts</h5>
+                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Physical prototypes and cassette designs</p>
+                      </div>
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={futureRace}
+                        alt="Diversity & Inclusion"
+                        className="w-full h-auto"
+                      />
+                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Diversity & Inclusion</h5>
+                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Social themes and equity exploration</p>
+                      </div>
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={futuresFirsts}
+                        alt="Futures Firsts"
+                        className="w-full h-auto"
+                      />
+                      <div className="p-4" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                        <h5 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Collage Exploration</h5>
+                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Mixed media and cultural synthesis</p>
                       </div>
                     </div>
                   </div>
