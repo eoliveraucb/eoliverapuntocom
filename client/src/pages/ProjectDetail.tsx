@@ -16,6 +16,12 @@ import futureAnalogGreen from '@assets/future-analog-green_1762793065986.png';
 import futureAnalog from '@assets/future-analog_1762793065989.jpeg';
 import futureRace from '@assets/future-race_1762793065989.jpeg';
 import futuresFirsts from '@assets/futures-firsts-large_1762793065990.jpeg';
+import fameli1 from '@assets/fameli-1-large_1762794305679.jpeg';
+import fameli2 from '@assets/fameli-2-large_1762794305680.jpeg';
+import fameli3 from '@assets/fameli-3-large_1762794305680.jpeg';
+import fameli4 from '@assets/fameli-4-large_1762794305680.jpeg';
+import fameli5 from '@assets/fameli-5-large_1762794305681.jpeg';
+import fameli6 from '@assets/fameli-6-large_1762794305681.jpeg';
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -382,6 +388,69 @@ export default function ProjectDetail() {
                     >
                       FAMELI made history as the first group to participate in the diversity march (pride) in La Paz, Bolivia, marking a significant milestone in the country's journey toward tolerance and diversity. This groundbreaking participation opened doors for greater LGBTQ+ visibility and acceptance in Bolivian society.
                     </p>
+                  </div>
+                  
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-6 mt-12"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Project Gallery
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="col-span-2 md:col-span-2 rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={fameli6}
+                        alt="FAMELI group at pride march with banner"
+                        className="w-full h-full object-cover"
+                        data-testid="img-fameli-6"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={fameli2}
+                        alt="FAMELI logo and campaign message"
+                        className="w-full h-full object-cover"
+                        data-testid="img-fameli-2"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={fameli1}
+                        alt="FAMELI supporters at community event"
+                        className="w-full h-full object-cover"
+                        data-testid="img-fameli-1"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={fameli3}
+                        alt="FAMELI convention poster"
+                        className="w-full h-full object-cover"
+                        data-testid="img-fameli-3"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={fameli4}
+                        alt="Parents showing support for LGBTQ+ children"
+                        className="w-full h-full object-cover"
+                        data-testid="img-fameli-4"
+                      />
+                    </div>
+                    
+                    <div className="col-span-2 md:col-span-1 rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={fameli5}
+                        alt="Family members holding support signs"
+                        className="w-full h-full object-cover"
+                        data-testid="img-fameli-5"
+                      />
+                    </div>
                   </div>
                 </div>
               )}
