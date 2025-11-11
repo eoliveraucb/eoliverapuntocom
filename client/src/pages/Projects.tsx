@@ -20,6 +20,7 @@ import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
 import futureAnalogImage from '@assets/future-analog-green_1762790846285.png';
 import fameliImage from '@assets/fameli-2-large_1762794305680.jpeg';
 import cryptografikImage from '@assets/cryptografik_1762842192091.jpeg';
+import wocaImage from '@assets/WOCA2_1762845460292.png';
 
 interface Project {
   id: string;
@@ -119,6 +120,18 @@ export const projectsData: Project[] = [
     year: '2019',
     client: 'Sparkassenstiftung für internationale Kooperation',
     technologies: ['UI Design', 'UX Design', 'Financial Services', 'Web Design'],
+    featured: true
+  },
+  {
+    id: 'world-of-color-awards',
+    title: 'World of Color Awards',
+    category: 'Branding & Visual Identity',
+    description: 'Branding and visual identity for Vanceva\'s architectural glass division.',
+    fullDescription: 'Developed for Vanceva (Eastman) / Saflex and commissioned with Saint Louis\'s Schupp Company, this branding and visual identity initiative established a distinct, iconic presence for Vanceva\'s architectural glass division. At the project\'s core is a signature typographic ligature logomark, symbolizing the layered construction and transparent color effects achieved with Vanceva interlayers.',
+    image: wocaImage,
+    year: '2019',
+    client: 'Vanceva / Saflex Eastman',
+    technologies: ['Brand Identity', 'Logo Design', 'Typography', 'Graphic Standards'],
     featured: true
   },
   {

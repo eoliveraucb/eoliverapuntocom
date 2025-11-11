@@ -25,6 +25,10 @@ import fameli6 from '@assets/fameli-6-large_1762794305681.jpeg';
 import financeAll from '@assets/finance-all_1762842992294.png';
 import financeFin2 from '@assets/FIN2_1762843650976.png';
 import financeSimuladores from '@assets/SImuladores-Sparkassenstiftung-1_1762843666266.jpg';
+import woca2 from '@assets/WOCA2_1762845460292.png';
+import woca4 from '@assets/WOCA4_1762845460293.png';
+import woca7 from '@assets/woca7_1762845460293.png';
+import wocaVideo from '@assets/woca_1762846127912.mov';
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -536,6 +540,87 @@ export default function ProjectDetail() {
                         className="w-full h-auto"
                         data-testid="img-finance-simuladores"
                       />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Special content for World of Color Awards project */}
+              {project.id === 'world-of-color-awards' && (
+                <div className="mt-12">
+                  <div 
+                    className="p-6 rounded-lg mb-8"
+                    style={{ backgroundColor: 'var(--bg-secondary)' }}
+                  >
+                    <h3 
+                      className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      Role & Approach
+                    </h3>
+                    
+                    <ul 
+                      className="space-y-4 font-['Roboto_Flex'] text-lg"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      <li>• Designed the complete brand visual identity, with emphasis on a modular logomark that visually communicates Vanceva's technical innovation—layering colored interlayers to create transparent, customizable effects for architectural spaces.</li>
+                      <li>• Selected and refined a typographic ligature that evokes both craftsmanship and precision, reflecting the product's unique ability to combine multiple hues and transparencies.</li>
+                      <li>• Developed consistent color palettes and graphic standards for both print and digital applications, ensuring cohesive brand expression in product literature, digital catalogs, and architectural presentations.</li>
+                      <li>• Created visual guidelines establishing proper use of the logomark and supporting graphic elements across collateral, sample kits, environmental graphics, and online tools.</li>
+                    </ul>
+                    
+                    <p 
+                      className="mt-6 text-lg leading-relaxed font-['Roboto_Flex']"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      The resulting identity defines Vanceva's brand in global architectural markets, leveraging visual cues of transparency, color layering, and architectural modularity.
+                    </p>
+                  </div>
+                  
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Project Gallery
+                  </h3>
+                  
+                  <div className="space-y-6 mb-8">
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={woca2}
+                        alt="World of Color Awards branding on architectural glass installations"
+                        className="w-full h-auto"
+                        data-testid="img-woca-2"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={woca4}
+                        alt="World of Color Awards catalog showcasing winning projects"
+                        className="w-full h-auto"
+                        data-testid="img-woca-4"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={woca7}
+                        alt="World of Color Awards printed materials and award trophy"
+                        className="w-full h-auto"
+                        data-testid="img-woca-7"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden aspect-video" style={{ boxShadow: 'var(--shadow)' }}>
+                      <video
+                        src={wocaVideo}
+                        controls
+                        className="w-full h-full object-cover"
+                        data-testid="video-woca"
+                      >
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
                   </div>
                 </div>
