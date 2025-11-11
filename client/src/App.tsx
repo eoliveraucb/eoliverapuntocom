@@ -24,8 +24,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Portfolio} />
       <Route path="/selected-works" component={SelectedWorks} />
-      <Route path="/projects" component={Projects} />
-      <Route path="/projects/:id" component={ProjectDetail} />
+      <Route path="/design" component={Projects} />
+      <Route path="/design/:id" component={ProjectDetail} />
       <Route path="/resume" component={Resume} />
       <Route path="/cv" component={Resume} />
       <Route path="/visitors" component={Visitors} />

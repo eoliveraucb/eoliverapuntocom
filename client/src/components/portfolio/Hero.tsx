@@ -595,7 +595,7 @@ export function Hero() {
                 In-house and hybrid temp positions in UX/UI, UX Research, Visual Design, AR/VR/XR Design, AI service integration
               </p>
               <a
-                href="#projects"
+                href="/design"
                 className="inline-flex items-center justify-center px-6 py-3 bg-white text-indigo-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-base"
               >
                 See my portfolio

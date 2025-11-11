@@ -28,9 +28,9 @@ export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
       let label = segment.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
       
       // Custom labels for specific routes
-      if (segment === 'selected-works') label = 'Design';
+      if (segment === 'selected-works') label = 'Selected Works';
       if (segment === 'cv') label = 'Resume';
-      if (segment === 'projects') label = 'Teaching';
+      if (segment === 'design') label = 'Design';
       
       breadcrumbs.push({ label, href });
     });

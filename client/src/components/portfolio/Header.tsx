@@ -55,8 +55,8 @@ export function Header() {
   const baseNavItems = [
         { id: "home", label: "Home", href: "/" },
         { id: "about", label: "About", href: "/#about" },
-        { id: "projects", label: "Teaching", href: "/#projects" },
-        { id: "selected-works", label: "Design", href: "/#selected-works" },
+        { id: "design", label: "Design", href: "/design" },
+        { id: "selected-works", label: "Selected Works", href: "/#selected-works" },
         { id: "contact", label: "Contact", href: "/#contact" },
         { id: "cv", label: "CV", href: "/cv" },
       ];
