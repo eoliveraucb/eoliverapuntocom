@@ -10,16 +10,15 @@ import churchImage from '@assets/work--church_1750639835231.png';
 import businessEnergyImage from '@assets/b6494416084587.562a5300002a5_1750639835231.jpg';
 import worldnetImage from '@assets/worldnet-new-logo_1750639835232.png';
 import cleaningImage from '@assets/cleaning-concets_1750639835232.png';
-import somosImage from '@assets/Untitled-2_1750639835232.jpg';
 import focusFestImage from '@assets/Screenshot-2025-01-29-at-1.03.48PM_1750639835233.png';
 import finanzgruppeImage from '@assets/1604098117810_1750639835233.jpg';
 import chiliFestImage from '@assets/chili_1750639835233.png';
 import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_1750639835233.png';
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
-import prideImage from '@assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233.png';
 import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
 import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
 import futureAnalogImage from '@assets/future-analog-green_1762790846285.png';
+import fameliImage from '@assets/fameli-2-large_1762794305680.jpeg';
 
 interface Project {
   id: string;
@@ -98,18 +97,6 @@ export const projectsData: Project[] = [
     featured: false
   },
   {
-    id: 'somos-identity',
-    title: 'SOMOS Identity',
-    category: 'Cultural Design',
-    description: 'Cultural identity design celebrating Latin American heritage.',
-    fullDescription: 'Created a vibrant cultural identity for SOMOS, celebrating Latin American heritage and community. The design incorporates traditional patterns and contemporary aesthetics to bridge cultural generations.',
-    image: somosImage,
-    year: '2022',
-    client: 'SOMOS Community',
-    technologies: ['Cultural Design', 'Community Branding', 'Print Design'],
-    featured: true
-  },
-  {
     id: 'focus-fest',
     title: 'Focus Fest 2013',
     category: 'Event Design',
@@ -158,18 +145,6 @@ export const projectsData: Project[] = [
     featured: false
   },
   {
-    id: 'pride-campaign',
-    title: 'Pride Campaign',
-    category: 'Social Impact',
-    description: 'Visual campaign promoting LGBTQ+ rights and inclusion.',
-    fullDescription: 'Developed a powerful visual campaign for Pride month, focusing on inclusion, diversity, and human rights. The design uses vibrant colors and inclusive imagery to promote equality and celebration of LGBTQ+ community.',
-    image: prideImage,
-    year: '2022',
-    client: 'Pride Organization',
-    technologies: ['Campaign Design', 'Social Impact', 'Digital Graphics', 'Print Design'],
-    featured: true
-  },
-  {
     id: 'disaster-cards',
     title: 'Disaster Response Cards',
     category: 'Information Design',
@@ -200,7 +175,7 @@ export const projectsData: Project[] = [
     category: 'Community Building',
     description: 'The first group of parents and friends supporting LGBTQ+ youth in Bolivia.',
     fullDescription: 'FAMELI is the first group of parents and friends in support of their LGBTQ+ youth in Bolivia, designed with the ethos of self-guidance and self-support to combat loneliness and isolation among parents. The group provides resources and compassionate guidance for families with diverse children. Over 9 years, FAMELI has grown to include 100+ members with international impact, becoming a significant force in Bolivia\'s LGBTQ+ rights movement. The group made history as the first to participate in the diversity march (pride) in La Paz, Bolivia, marking a milestone in tolerance and diversity. FAMELI hosted "¡Desde el Corazón!" (From the Heart!), an international convention of families and allies of LGBTQ+ youth in La Paz, Bolivia, solidifying a network of support across borders.',
-    image: prideImage,
+    image: fameliImage,
     year: '2015-2024',
     client: 'FAMELI Bolivia',
     technologies: ['Community Organizing', 'LGBTQ+ Advocacy', 'International Relations', 'Event Management', 'Social Impact', 'Non-profit Leadership'],
