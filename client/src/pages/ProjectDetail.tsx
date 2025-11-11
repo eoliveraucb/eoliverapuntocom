@@ -754,18 +754,17 @@ export default function ProjectDetail() {
                     </h3>
                     
                     <div 
-                      className="grid md:grid-cols-2 gap-4 font-['Roboto_Flex'] text-lg"
+                      className="font-['Roboto_Flex'] text-lg space-y-4"
                       style={{ color: 'var(--text-secondary)' }}
                     >
                       <div>
                         <p><strong>Terrance Pitts</strong> - Director</p>
-                        <p><strong>Laneen Wells</strong> - Brand Designer</p>
-                        <p><strong>Edwin M. Olivera</strong> - UX Researcher & Visual Design Strategist</p>
+                        <p><strong>Laneen Wells</strong> - Brand Design Consultant</p>
                       </div>
+                      
                       <div>
-                        <p><strong>Aishwarya Srivastava</strong> - Team Member</p>
-                        <p><strong>Xinyu Chen</strong> - Team Member</p>
-                        <p><strong>Yisi Shen</strong> - Team Member</p>
+                        <p className="mb-2"><strong>Team:</strong></p>
+                        <p>Edwin M. Olivera, Jiayao Li, Aishwarya Srivastava, Xinyu Chen, Yisi Shen</p>
                       </div>
                     </div>
                   </div>
