@@ -461,6 +461,48 @@ export default function ProjectDetail() {
               {/* Special content for Financial Literacy Calculator project */}
               {project.id === 'finanzgruppe' && (
                 <div className="mt-12">
+                  <div 
+                    className="p-6 rounded-lg mb-8"
+                    style={{ backgroundColor: 'var(--bg-secondary)' }}
+                  >
+                    <h3 
+                      className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      Role & Approach
+                    </h3>
+                    
+                    <ul 
+                      className="space-y-4 font-['Roboto_Flex'] text-lg"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      <li>• Led end-to-end <strong>UX/UI design</strong>, from research to high-fidelity prototype.</li>
+                      <li>• Conducted <strong>contextual user research</strong> in La Paz using interviews, usability tests, and field observations to ensure cultural and linguistic relevance.</li>
+                      <li>• Applied <strong>human-centered design</strong> and <strong>UX standards</strong> (including Nielsen heuristics, accessibility, and responsive principles) to make the interface intuitive for first-time financial-tool users.</li>
+                      <li>• Created <strong>interactive calculator components</strong> showing real-world financial scenarios and future outcomes, supporting Sparkassenstiftung's "learn by doing" educational model.</li>
+                      <li>• Collaborated on implementation guidelines and analytics touchpoints for monitoring adoption and usability.</li>
+                    </ul>
+                  </div>
+                  
+                  <div 
+                    className="p-6 rounded-lg mb-8"
+                    style={{ backgroundColor: 'var(--bg-secondary)' }}
+                  >
+                    <h3 
+                      className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      Impact
+                    </h3>
+                    
+                    <p 
+                      className="text-lg leading-relaxed font-['Roboto_Flex']"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      The product functions as a <strong>replicable model</strong> for financial-literacy tools in emerging markets—adaptable to other Latin American and Global South communities through scalable design systems, localization strategies, and user-validated UX frameworks.
+                    </p>
+                  </div>
+                  
                   <h3 
                     className="text-2xl font-['Fraunces'] font-semibold mb-6"
                     style={{ color: 'var(--text-primary)' }}
