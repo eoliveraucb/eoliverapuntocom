@@ -19,6 +19,7 @@ import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
 import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
 import futureAnalogImage from '@assets/future-analog-green_1762790846285.png';
 import fameliImage from '@assets/fameli-2-large_1762794305680.jpeg';
+import cryptografikImage from '@assets/cryptografik_1762842192091.jpeg';
 
 interface Project {
   id: string;
@@ -37,11 +38,11 @@ interface Project {
 export const projectsData: Project[] = [
   {
     id: 'crypto-design',
-    title: 'Crypto Design Student Project',
+    title: 'Criptografik_ Design Student Project',
     category: 'Educational Design',
     description: 'A speculative design project where students created Bolivian cryptocurrency brands during economic uncertainty.',
     fullDescription: 'In a fictional future scenario, local currencies begin a devaluation process not unlike what Bolivia experienced in the 1980s. A digital consortium of citizens, investors, and hacktivists creates a Bolivian Stablecoin to protect common citizens from negative effects of devaluation. Ten emerging digital designers created visual identity proposals for the Bolivian cryptocurrency, addressing national identity amid regional diversity.',
-    image: journeyMapImage,
+    image: cryptografikImage,
     year: '2023',
     client: 'Universidad Privada de Santa Cruz',
     technologies: ['Speculative Design', 'Brand Identity', 'Blockchain', 'SVG Optimization'],
