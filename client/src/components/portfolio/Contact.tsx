@@ -70,8 +70,8 @@ export function Contact({ id }: ContactProps) {
                   {
                     icon: "fa-phone",
                     label: "Phone",
-                    value: "+1 (332) 261-4198",
-                    link: "tel:+13322614198"
+                    value: "+1 (314) 467-0699",
+                    link: "tel:+13144670699"
                   },
                   {
                     icon: "fa-map-marker-alt",
