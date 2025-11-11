@@ -21,6 +21,7 @@ import futureAnalogImage from '@assets/future-analog-green_1762790846285.png';
 import fameliImage from '@assets/fameli-2-large_1762794305680.jpeg';
 import cryptografikImage from '@assets/cryptografik_1762842192091.jpeg';
 import wocaImage from '@assets/WOCA2_1762845460292.png';
+import trjcImage from '@assets/mockup+1_1762847734618.jpeg';
 
 interface Project {
   id: string;
@@ -132,6 +133,18 @@ export const projectsData: Project[] = [
     year: '2019',
     client: 'Vanceva / Saflex Eastman',
     technologies: ['Brand Identity', 'Logo Design', 'Typography', 'Graphic Standards'],
+    featured: true
+  },
+  {
+    id: 'trjc-branding',
+    title: 'TRJC Branding',
+    category: 'Brand Identity',
+    description: 'Visual identity for Technology and Racial Justice Collaborative addressing AI-driven threats in criminal justice.',
+    fullDescription: 'Developed in collaboration with NYU School of Law, this branding project created a cohesive visual identity for an online community platform addressing racial justice issues caused by AI in the criminal justice system. The project included comprehensive brand identity, logo design, and newsletter templates to strengthen stakeholder engagement and information sharing.',
+    image: trjcImage,
+    year: '2024',
+    client: 'NYU School of Law',
+    technologies: ['Brand Identity', 'UX Research', 'Visual Design', 'Community Engagement'],
     featured: true
   },
   {

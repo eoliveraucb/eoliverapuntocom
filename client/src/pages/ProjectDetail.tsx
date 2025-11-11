@@ -29,6 +29,12 @@ import woca2 from '@assets/WOCA2_1762845460292.png';
 import woca4 from '@assets/WOCA4_1762845460293.png';
 import woca7 from '@assets/woca7_1762845460293.png';
 import wocaVideo from '@assets/woca_1762846127912.mov';
+import trjcMockup1 from '@assets/mockup+1_1762847734618.jpeg';
+import trjcMockup3 from '@assets/Mockup+3_1762847734618.jpeg';
+import trjcPinup from '@assets/branding+-+pin+up_1762847734619.jpeg';
+import trjcProbes from '@assets/2024+Spring+COMM+Design+Final+Presentation+(1)_1762847734617.jpeg';
+import trjcInterviews from '@assets/2024+Spring+COMM+Design+Final+Presentation_1762847734618.jpeg';
+import trjcMoodboard from '@assets/截屏2025-01-03+下午10.22.49_1762847734619.jpeg';
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -621,6 +627,146 @@ export default function ProjectDetail() {
                       >
                         Your browser does not support the video tag.
                       </video>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Special content for TRJC Branding project */}
+              {project.id === 'trjc-branding' && (
+                <div className="mt-12">
+                  <div 
+                    className="p-6 rounded-lg mb-8"
+                    style={{ backgroundColor: 'var(--bg-secondary)' }}
+                  >
+                    <h3 
+                      className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      Role & Approach
+                    </h3>
+                    
+                    <ul 
+                      className="space-y-4 font-['Roboto_Flex'] text-lg"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      <li>• Conducted user experience research through semi-structured interviews with six key stakeholders specializing in AI, social justice, national security, and technology surveillance.</li>
+                      <li>• Facilitated focus groups using digital design probes to understand visual preferences and community needs around racial justice branding.</li>
+                      <li>• Designed a comprehensive brand identity system including logo, typography (using the Bayard typeface inspired by the 1963 March on Washington), color palettes, and graphic standards.</li>
+                      <li>• Created visual guidelines for consistent brand expression across print materials, digital catalogs, newsletters, and community engagement platforms.</li>
+                      <li>• Developed accessible, human-centered designs that avoid clichéd imagery and emphasize real people and protest movements over abstract technology symbols.</li>
+                    </ul>
+                  </div>
+                  
+                  <div 
+                    className="p-6 rounded-lg mb-8"
+                    style={{ backgroundColor: 'var(--bg-secondary)' }}
+                  >
+                    <h3 
+                      className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      Research Insights
+                    </h3>
+                    
+                    <p 
+                      className="text-lg leading-relaxed font-['Roboto_Flex'] mb-4"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      The research revealed critical user needs for personalized content delivery, community connection tools, and simplified visuals using infographics. Stakeholders emphasized the importance of vibrant, human-centered designs that foster collaboration while avoiding overwhelming information, clichéd imagery, and cold technical aesthetics. The brand needed to feel emotionally resonant and distinctly valuable for advancing racial justice in the AI era.
+                    </p>
+                  </div>
+                  
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Project Gallery
+                  </h3>
+                  
+                  <div className="space-y-6 mb-8">
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={trjcMockup1}
+                        alt="TRJC logo guide cover on teal background"
+                        className="w-full h-auto"
+                        data-testid="img-trjc-mockup1"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={trjcMockup3}
+                        alt="TRJC business cards for Director with brand identity"
+                        className="w-full h-auto"
+                        data-testid="img-trjc-mockup3"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={trjcPinup}
+                        alt="TRJC branding collage with Bayard typeface and civil rights imagery"
+                        className="w-full h-auto"
+                        data-testid="img-trjc-pinup"
+                      />
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                        <img
+                          src={trjcProbes}
+                          alt="Digital design probes showing community preferences for visual identity"
+                          className="w-full h-auto"
+                          data-testid="img-trjc-probes"
+                        />
+                      </div>
+                      
+                      <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                        <img
+                          src={trjcInterviews}
+                          alt="Stakeholder interviews with racial justice organizations"
+                          className="w-full h-auto"
+                          data-testid="img-trjc-interviews"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={trjcMoodboard}
+                        alt="Visual research moodboard exploring themes of justice and community"
+                        className="w-full h-auto"
+                        data-testid="img-trjc-moodboard"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div 
+                    className="p-6 rounded-lg mb-8"
+                    style={{ backgroundColor: 'var(--bg-secondary)' }}
+                  >
+                    <h3 
+                      className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      Project Credits
+                    </h3>
+                    
+                    <div 
+                      className="grid md:grid-cols-2 gap-4 font-['Roboto_Flex'] text-lg"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      <div>
+                        <p><strong>Terrance Pitts</strong> - Director</p>
+                        <p><strong>Laneen Wells</strong> - Brand Designer</p>
+                        <p><strong>Edwin M. Olivera</strong> - UX Researcher & Visual Design Strategist</p>
+                      </div>
+                      <div>
+                        <p><strong>Aishwarya Srivastava</strong> - Team Member</p>
+                        <p><strong>Xinyu Chen</strong> - Team Member</p>
+                        <p><strong>Yisi Shen</strong> - Team Member</p>
+                      </div>
                     </div>
                   </div>
                 </div>
