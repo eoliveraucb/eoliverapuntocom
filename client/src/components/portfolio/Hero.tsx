@@ -589,16 +589,16 @@ export function Hero() {
             
             <div className="text-center flex flex-col items-center">
               <h2 className="text-2xl font-extrabold mb-2 font-['Fraunces']">
-                Seeking Teaching Opportunities
+                Seeking opportunities in NYC
               </h2>
               <p className="text-lg text-white/90 mb-4 font-['Roboto_Flex']">
-                BFA/MFA level, workshop, lectures, UX, Emerging Tech Design, AR/VR, Experience, Experimental.
+                In-house and hybrid temp positions in UX/UI, UX Research, Visual Design, AR/VR/XR Design, AI service integration
               </p>
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center px-6 py-3 bg-white text-indigo-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-base"
               >
-                Activities and Courses →
+                See my portfolio
               </a>
             </div>
           </div>
