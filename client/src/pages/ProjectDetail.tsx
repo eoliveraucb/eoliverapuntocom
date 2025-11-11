@@ -22,6 +22,9 @@ import fameli3 from '@assets/fameli-3-large_1762794305680.jpeg';
 import fameli4 from '@assets/fameli-4-large_1762794305680.jpeg';
 import fameli5 from '@assets/fameli-5-large_1762794305681.jpeg';
 import fameli6 from '@assets/fameli-6-large_1762794305681.jpeg';
+import financeAll from '@assets/finance-all_1762842992294.png';
+import financeFin2 from '@assets/FIN2_1762843650976.png';
+import financeSimuladores from '@assets/SImuladores-Sparkassenstiftung-1_1762843666266.jpg';
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -449,6 +452,47 @@ export default function ProjectDetail() {
                         alt="Family members holding support signs"
                         className="w-full h-full object-cover"
                         data-testid="img-fameli-5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Special content for Financial Literacy Calculator project */}
+              {project.id === 'finanzgruppe' && (
+                <div className="mt-12">
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Project Gallery
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={financeAll}
+                        alt="Financial literacy calculator interface overview"
+                        className="w-full h-auto"
+                        data-testid="img-finance-all"
+                      />
+                    </div>
+                    
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={financeFin2}
+                        alt="Calculator interface with savings goals"
+                        className="w-full h-auto"
+                        data-testid="img-finance-fin2"
+                      />
+                    </div>
+                    
+                    <div className="md:col-span-2 rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={financeSimuladores}
+                        alt="Workshop participants using financial literacy tools"
+                        className="w-full h-auto"
+                        data-testid="img-finance-simuladores"
                       />
                     </div>
                   </div>

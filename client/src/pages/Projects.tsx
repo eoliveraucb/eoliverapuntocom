@@ -11,7 +11,7 @@ import businessEnergyImage from '@assets/b6494416084587.562a5300002a5_1750639835
 import worldnetImage from '@assets/worldnet-new-logo_1750639835232.png';
 import cleaningImage from '@assets/cleaning-concets_1750639835232.png';
 import focusFestImage from '@assets/Screenshot-2025-01-29-at-1.03.48PM_1750639835233.png';
-import finanzgruppeImage from '@assets/1604098117810_1750639835233.jpg';
+import finanzgruppeImage from '@assets/finance-all_1762842992294.png';
 import chiliFestImage from '@assets/chili_1750639835233.png';
 import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_1750639835233.png';
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
@@ -111,7 +111,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'finanzgruppe',
-    title: 'Finanzgruppe Interface',
+    title: 'Financial Literacy Calculator',
     category: 'Digital Design',
     description: 'User interface design for financial services platform.',
     fullDescription: 'Designed an intuitive user interface for Finanzgruppe\'s financial services platform, focusing on clarity, trust, and ease of use. The design balances sophisticated functionality with accessible user experience.',
