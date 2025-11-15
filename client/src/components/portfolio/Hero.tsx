@@ -496,32 +496,64 @@ export function Hero() {
               className="text-2xl font-['Fraunces'] mb-6 leading-tight"
               style={{
                 color: "var(--text-primary)",
-                fontWeight: lineWeights.line1,
+                lineHeight: "1.3",
+                marginBottom: 0,
+                textShadow: "0 4px 24px rgba(109,89,255,0.45), 0 1px 2px rgba(0,0,0,0.25)"
               }}
             >
-              <div className="mb-2">
-                Design Education &
+              <div
+                style={{
+                  fontWeight: lineWeights.line1,
+                  transition: "font-weight 0.3s ease-out",
+                }}
+                className="gradient-text mb-4"
+              >
+                Social Design & Education
               </div>
-              <div className="mb-2">
-                Professional Experience
+              <div
+                style={{
+                  fontWeight: lineWeights.line2,
+                  transition: "font-weight 0.3s ease-out",
+                }}
+                className="text-lg font-light text-white leading-relaxed mb-4"
+              >
+                a showcase of my{" "}
+                <a 
+                  href="#projects" 
+                  className="underline decoration-purple-500 decoration-2 hover:decoration-purple-700 transition-all duration-300 font-semibold"
+                  style={{ color: '#efe3ff', fontWeight: linkWeights.teaching }}
+                >
+                  teaching experience
+                </a>
+                ,{" "}
+                <a 
+                  href="#design" 
+                  className="underline decoration-cyan-500 decoration-2 hover:decoration-cyan-700 transition-all duration-300 font-semibold"
+                  style={{ color: '#e3faff', fontWeight: linkWeights.practice }}
+                >
+                  professional practice
+                </a>
+                {" "}and{" "}
+                <a 
+                  href="https://medium.com/@emauric.io" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="underline decoration-green-500 decoration-2 hover:decoration-orange-700 transition-all duration-300 font-semibold"
+                  style={{ color: '#e3ffeb', fontWeight: linkWeights.experiments }}
+                >
+                  thought experiments
+                </a>
+                .
               </div>
-              <div>
-                <span className="gradient-text text-3xl block mt-3">
-                  Edwin Mauricio Olivera
-                </span>
+              <div
+                style={{
+                  fontWeight: lineWeights.line3,
+                  transition: "font-weight 0.3s ease-out",
+                }}
+              >
+                <span className="text-xl gradient-text">by Edwin Mauricio Olivera</span>
               </div>
             </h1>
-
-            <p 
-              className="text-lg mb-8 max-w-sm mx-auto leading-relaxed font-['Sono']"
-              style={{ 
-                color: "var(--text-secondary)",
-                opacity: 0.9 
-              }}
-            >
-              Transforming digital education through innovative design and 
-              interactive learning experiences
-            </p>
 
             {/* Mobile Action Buttons */}
             <div className="flex flex-col gap-4 w-full max-w-xs">
