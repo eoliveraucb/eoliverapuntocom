@@ -326,13 +326,20 @@ export default function ProjectDetail() {
                   
                   <div className="grid md:grid-cols-2 gap-8 mb-8" data-testid="section-mias-videos">
                     <div>
-                      <div className="aspect-video rounded-lg overflow-hidden mb-4" style={{ backgroundColor: '#000' }}>
+                      <div 
+                        className="aspect-video rounded-lg overflow-hidden mb-4 pointer-events-none" 
+                        style={{ 
+                          backgroundColor: '#000',
+                          filter: 'brightness(1.1) contrast(1.15) saturate(1.1)'
+                        }}
+                      >
                         <iframe
-                          src="https://www.youtube.com/embed/e_nKZayrOeI?autoplay=1&mute=1&loop=1&playlist=e_nKZayrOeI&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1"
+                          src="https://www.youtube.com/embed/e_nKZayrOeI?autoplay=1&mute=1&loop=1&playlist=e_nKZayrOeI&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1"
                           title="MIAS App Demo 1"
-                          className="w-full h-full"
+                          className="w-full h-full pointer-events-auto"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           data-testid="iframe-mias-video-1"
+                          style={{ pointerEvents: 'none' }}
                         />
                       </div>
                       <p 
@@ -345,13 +352,20 @@ export default function ProjectDetail() {
                     </div>
 
                     <div>
-                      <div className="aspect-video rounded-lg overflow-hidden mb-4" style={{ backgroundColor: '#000' }}>
+                      <div 
+                        className="aspect-video rounded-lg overflow-hidden mb-4 pointer-events-none" 
+                        style={{ 
+                          backgroundColor: '#000',
+                          filter: 'brightness(1.1) contrast(1.15) saturate(1.1)'
+                        }}
+                      >
                         <iframe
-                          src="https://www.youtube.com/embed/XEE5zFVaWVA?autoplay=1&mute=1&loop=1&playlist=XEE5zFVaWVA&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1"
+                          src="https://www.youtube.com/embed/XEE5zFVaWVA?autoplay=1&mute=1&loop=1&playlist=XEE5zFVaWVA&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1"
                           title="MIAS App Demo 2"
-                          className="w-full h-full"
+                          className="w-full h-full pointer-events-auto"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           data-testid="iframe-mias-video-2"
+                          style={{ pointerEvents: 'none' }}
                         />
                       </div>
                       <p 
