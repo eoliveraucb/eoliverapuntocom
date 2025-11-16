@@ -1,7 +1,6 @@
 import { Link } from 'wouter';
 import { Briefcase, Globe, Heart, Palette, Film, Users, Lightbulb, Award, Camera, Building, Utensils, Home, ExternalLink, Tag, Settings } from 'lucide-react';
-import dsiLogo from '@assets/logo-dsi_1763311308270.png';
-import { projectsData } from '../../pages/Projects';
+import { projectsData, getProjectLogo } from '../../pages/Projects';
 
 // Import all portfolio images
 import churchImage from '@assets/work--church_1750639835231.png';
@@ -282,12 +281,19 @@ export function Portfolio({ id }: PortfolioProps) {
                   </h3>
                   
                   <div className="flex items-center justify-between pt-3 border-t" style={{ borderColor: 'var(--border)' }}>
-                    <img 
-                      src={dsiLogo} 
-                      alt="DSI Logo" 
-                      className="h-6 w-auto opacity-60"
-                      data-testid={`img-portfolio-logo-${item.projectId}`}
-                    />
+                    <div 
+                      className="px-2 py-1.5 rounded-lg"
+                      style={{ 
+                        boxShadow: 'inset 2px 2px 4px rgba(0, 0, 0, 0.08), inset -2px -2px 4px rgba(255, 255, 255, 0.05)'
+                      }}
+                    >
+                      <img 
+                        src={getProjectLogo(item.projectId)} 
+                        alt="Organization Logo" 
+                        className="h-4 md:h-6 lg:h-8 w-auto opacity-60"
+                        data-testid={`img-portfolio-logo-${item.projectId}`}
+                      />
+                    </div>
                     <div 
                       className="flex items-center gap-1 text-xs font-medium" 
                       style={{ color: 'var(--accent-primary)' }}

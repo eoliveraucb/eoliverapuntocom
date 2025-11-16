@@ -4,8 +4,7 @@ import { useEffect } from 'react';
 import { Header } from '../components/portfolio/Header';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { ExternalLink, ArrowRight, Calendar, Tag, Settings } from 'lucide-react';
-import { projectsData } from './Projects';
-import dsiLogo from '@assets/logo-dsi_1763311308270.png';
+import { projectsData, getProjectLogo } from './Projects';
 
 export default function SelectedWorks() {
   // Scroll to top when component mounts
@@ -199,12 +198,19 @@ export default function SelectedWorks() {
 
                     {/* Logo */}
                     <div className="pt-6 pb-2">
-                      <img 
-                        src={dsiLogo} 
-                        alt="DSI Logo" 
-                        className="h-10 w-auto opacity-60"
-                        data-testid={`img-selected-logo-${project.id}`}
-                      />
+                      <div 
+                        className="inline-block px-4 py-2.5 rounded-lg"
+                        style={{ 
+                          boxShadow: 'inset 2px 2px 4px rgba(0, 0, 0, 0.08), inset -2px -2px 4px rgba(255, 255, 255, 0.05)'
+                        }}
+                      >
+                        <img 
+                          src={getProjectLogo(project.id)} 
+                          alt="Organization Logo" 
+                          className="h-6 md:h-12 lg:h-16 w-auto opacity-60"
+                          data-testid={`img-selected-logo-${project.id}`}
+                        />
+                      </div>
                     </div>
 
                     {/* Project Actions */}

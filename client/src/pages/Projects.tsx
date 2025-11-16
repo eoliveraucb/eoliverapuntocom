@@ -4,7 +4,12 @@ import { Link } from 'wouter';
 import { Header } from '../components/portfolio/Header';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { ExternalLink, Calendar, Tag, ArrowLeft, Settings } from 'lucide-react';
-import dsiLogo from '@assets/logo-dsi_1763311308270.png';
+import dsiLogo from '@assets/dsi_1763312718431.png';
+import nyuLawLogo from '@assets/nyu-law_1763312718432.png';
+import pgeLogo from '@assets/pge_1763312718432.png';
+import ucbCatoLogo from '@assets/ucb-cato_1763312718432.png';
+import eastmanLogo from '@assets/eastman_1763312718432.png';
+import germanCorpLogo from '@assets/german-corp_1763312718432.png';
 
 // Import project images
 import churchImage from '@assets/work--church_1750639835231.png';
@@ -224,6 +229,23 @@ export const projectsData: Project[] = [
   }
 ];
 
+// Logo mapping for each project
+export const projectLogoMap: Record<string, string> = {
+  'crypto-design': ucbCatoLogo,
+  'church-emergence': dsiLogo,
+  'rate-race': dsiLogo,
+  'future-analog-voices': dsiLogo,
+  'business-energy': pgeLogo,
+  'trjc-branding': nyuLawLogo,
+  'world-of-color-awards': eastmanLogo,
+  'finanzgruppe': germanCorpLogo,
+};
+
+// Helper function to get logo for a project
+export const getProjectLogo = (projectId: string): string => {
+  return projectLogoMap[projectId] || dsiLogo;
+};
+
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   
@@ -365,12 +387,19 @@ export default function Projects() {
                     </p>
                     
                     <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
-                      <img 
-                        src={dsiLogo} 
-                        alt="DSI Logo" 
-                        className="h-8 w-auto opacity-70"
-                        data-testid={`img-logo-${project.id}`}
-                      />
+                      <div 
+                        className="px-3 py-2 rounded-lg"
+                        style={{ 
+                          boxShadow: 'inset 2px 2px 4px rgba(0, 0, 0, 0.08), inset -2px -2px 4px rgba(255, 255, 255, 0.05)'
+                        }}
+                      >
+                        <img 
+                          src={getProjectLogo(project.id)} 
+                          alt="Organization Logo" 
+                          className="h-5 md:h-10 lg:h-12 w-auto opacity-70"
+                          data-testid={`img-logo-${project.id}`}
+                        />
+                      </div>
                       <div 
                         className="flex items-center gap-1 text-sm font-medium" 
                         style={{ color: 'var(--accent-primary)' }}
@@ -514,12 +543,19 @@ export default function Projects() {
                     </p>
                     
                     <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
-                      <img 
-                        src={dsiLogo} 
-                        alt="DSI Logo" 
-                        className="h-7 w-auto opacity-70"
-                        data-testid={`img-all-logo-${project.id}`}
-                      />
+                      <div 
+                        className="px-2 py-1.5 rounded-lg"
+                        style={{ 
+                          boxShadow: 'inset 2px 2px 4px rgba(0, 0, 0, 0.08), inset -2px -2px 4px rgba(255, 255, 255, 0.05)'
+                        }}
+                      >
+                        <img 
+                          src={getProjectLogo(project.id)} 
+                          alt="Organization Logo" 
+                          className="h-4 md:h-7 lg:h-9 w-auto opacity-70"
+                          data-testid={`img-all-logo-${project.id}`}
+                        />
+                      </div>
                       <div 
                         className="flex items-center gap-1 text-sm font-medium" 
                         style={{ color: 'var(--accent-primary)' }}
