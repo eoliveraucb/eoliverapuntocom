@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import home1 from "@assets/home1_1750633823946.png";
 import home2 from "@assets/home2_1750633823946.png";
 import home3 from "@assets/home3_1750633823946.png";
+import nycImage from "@assets/nyc_1763308483161.png";
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -610,7 +611,7 @@ export function Hero() {
           }}
         >
           <div
-            className="h-auto bg-gradient-to-br from-purple-700 to-indigo-600 text-white p-6 rounded-t-3xl shadow-2xl"
+            className="h-auto bg-gradient-to-br from-purple-700 to-indigo-600 text-white rounded-t-3xl shadow-2xl overflow-hidden relative"
             style={{
               borderBottom: '2px solid #e6e6e6',
               boxShadow: '0 -4px 20px rgba(147, 51, 234, 0.3)',
@@ -619,19 +620,32 @@ export function Hero() {
             {/* Gray line handle at bottom */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-[100px] rounded-full bg-gray-400 z-50" />
             
-            <div className="text-center flex flex-col items-center">
-              <h2 className="text-2xl font-extrabold mb-2 font-['Fraunces']">
-                Seeking opportunities in NYC
-              </h2>
-              <p className="text-lg text-white/90 mb-4 font-['Roboto_Flex']">
-                In-house and hybrid temp positions in UX/UI, UX Research, Visual Design, AR/VR/XR Design, AI service integration
-              </p>
-              <a
-                href="/design"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-indigo-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-base"
-              >
-                See my portfolio
-              </a>
+            <div className="flex items-center justify-between">
+              {/* Left side: Text and Button */}
+              <div className="flex-1 p-6 text-left">
+                <h2 className="text-2xl font-extrabold mb-2 font-['Fraunces']">
+                  Seeking opportunities in NYC
+                </h2>
+                <p className="text-base text-white/90 mb-4 font-['Roboto_Flex']">
+                  In-house and hybrid temp positions in UX/UI, UX Research, Visual Design, AR/VR/XR Design, AI service integration
+                </p>
+                <a
+                  href="/design"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-indigo-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-sm"
+                >
+                  See my portfolio
+                </a>
+              </div>
+              
+              {/* Right side: NYC Image flush right */}
+              <div className="flex-shrink-0 h-full">
+                <img
+                  src={nycImage}
+                  alt="NYC Skyline"
+                  className="h-[250px] w-auto object-contain"
+                  style={{ marginRight: '-20px' }}
+                />
+              </div>
             </div>
           </div>
         </div>
