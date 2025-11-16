@@ -189,7 +189,7 @@ export function Portfolio({ id }: PortfolioProps) {
             return (
               <Link
                 key={item.id}
-                to={`/projects/${item.projectId}`}
+                to={`/design/${item.projectId}`}
                 className="masonry-item group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 break-inside-avoid mb-6 block"
                 style={{ 
                   backgroundColor: 'var(--bg-secondary)',

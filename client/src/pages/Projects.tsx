@@ -279,7 +279,7 @@ export default function Projects() {
             {featuredProjects.map((project) => (
               <Link
                 key={project.id}
-                to={`/projects/${project.id}`}
+                to={`/design/${project.id}`}
                 className="group block"
               >
                 <div 
@@ -393,7 +393,7 @@ export default function Projects() {
             {filteredProjects.map((project) => (
               <Link
                 key={project.id}
-                to={`/projects/${project.id}`}
+                to={`/design/${project.id}`}
                 className="group block"
               >
                 <div 

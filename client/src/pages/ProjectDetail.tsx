@@ -59,7 +59,7 @@ export default function ProjectDetail() {
               The project you're looking for doesn't exist.
             </p>
             <Link
-              to="/projects"
+              to="/design"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:-translate-y-1"
               style={{ 
                 backgroundColor: 'var(--accent-primary)',
@@ -84,7 +84,7 @@ export default function ProjectDetail() {
         <div className="max-w-5xl mx-auto">
           {/* Back Button */}
           <Link
-            to="/projects"
+            to="/design"
             className="inline-flex items-center gap-2 mb-6 md:mb-8 text-sm font-medium transition-all duration-300 hover:transform hover:-translate-x-1"
             style={{ color: 'var(--accent-primary)' }}
           >
@@ -1159,7 +1159,7 @@ export default function ProjectDetail() {
               .map((relatedProject) => (
                 <Link
                   key={relatedProject.id}
-                  to={`/projects/${relatedProject.id}`}
+                  to={`/design/${relatedProject.id}`}
                   className="group block"
                 >
                   <div 

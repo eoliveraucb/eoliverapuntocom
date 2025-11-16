@@ -64,7 +64,7 @@ export default function SelectedWorks() {
                   
                   {/* Project Image */}
                   <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                    <Link to={`/projects/${project.id}`}>
+                    <Link to={`/design/${project.id}`}>
                       <div 
                         className="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-500 hover:transform hover:-translate-y-2"
                         style={{ boxShadow: 'var(--shadow)' }}
@@ -170,7 +170,7 @@ export default function SelectedWorks() {
                     {/* Project Actions */}
                     <div className="flex flex-wrap gap-4 pt-4">
                       <Link
-                        to={`/projects/${project.id}`}
+                        to={`/design/${project.id}`}
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:-translate-y-1"
                         style={{ 
                           backgroundColor: 'var(--accent-primary)',
@@ -225,7 +225,7 @@ export default function SelectedWorks() {
             across various categories and time periods.
           </p>
           <Link
-            to="/projects"
+            to="/design"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 hover:transform hover:-translate-y-1"
             style={{ 
               backgroundColor: 'var(--accent-primary)',
