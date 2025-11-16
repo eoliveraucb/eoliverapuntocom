@@ -315,24 +315,23 @@ export default function ProjectDetail() {
                     <PhoneCarousel images={miasScreenshots} autoPlaySpeed={2500} />
                   </div>
 
-                  {/* Video Demonstrations */}
+                  {/* Informational Videos */}
                   <h3 
                     className="text-2xl font-['Fraunces'] font-semibold mb-6"
                     style={{ color: 'var(--text-primary)' }}
                     data-testid="text-mias-videos-title"
                   >
-                    App Demonstrations
+                    Informational Videos
                   </h3>
                   
                   <div className="grid md:grid-cols-2 gap-8 mb-8" data-testid="section-mias-videos">
                     <div>
                       <div className="aspect-video rounded-lg overflow-hidden mb-4" style={{ backgroundColor: '#000' }}>
                         <iframe
-                          src="https://www.youtube.com/embed/e_nKZayrOeI?playback_rate=1.5"
+                          src="https://www.youtube.com/embed/e_nKZayrOeI?autoplay=1&mute=1&loop=1&playlist=e_nKZayrOeI&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1"
                           title="MIAS App Demo 1"
                           className="w-full h-full"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
                           data-testid="iframe-mias-video-1"
                         />
                       </div>
@@ -348,11 +347,10 @@ export default function ProjectDetail() {
                     <div>
                       <div className="aspect-video rounded-lg overflow-hidden mb-4" style={{ backgroundColor: '#000' }}>
                         <iframe
-                          src="https://www.youtube.com/embed/XEE5zFVaWVA?playback_rate=1.5"
+                          src="https://www.youtube.com/embed/XEE5zFVaWVA?autoplay=1&mute=1&loop=1&playlist=XEE5zFVaWVA&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1"
                           title="MIAS App Demo 2"
                           className="w-full h-full"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
                           data-testid="iframe-mias-video-2"
                         />
                       </div>
