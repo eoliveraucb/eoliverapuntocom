@@ -1,5 +1,6 @@
 import { Link } from 'wouter';
-import { Briefcase, Globe, Heart, Palette, Film, Users, Lightbulb, Award, Camera, Building, Utensils, Home } from 'lucide-react';
+import { Briefcase, Globe, Heart, Palette, Film, Users, Lightbulb, Award, Camera, Building, Utensils, Home, ExternalLink, Tag } from 'lucide-react';
+import dsiLogo from '@assets/logo-dsi_1763311308270.png';
 
 // Import all portfolio images
 import churchImage from '@assets/work--church_1750639835231.png';
@@ -153,12 +154,14 @@ export function Portfolio({ id }: PortfolioProps) {
           <h2 
             className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-4"
             style={{ color: 'var(--text-primary)' }}
+            data-testid="text-portfolio-title"
           >
             Selected Works
           </h2>
           <p 
             className="text-lg max-w-3xl mx-auto"
             style={{ color: 'var(--text-secondary)' }}
+            data-testid="text-portfolio-description"
           >
             A collection of design projects spanning branding, digital interfaces, 
             and educational materials created over years of creative practice.
@@ -174,6 +177,7 @@ export function Portfolio({ id }: PortfolioProps) {
               backgroundColor: 'var(--accent-primary)',
               color: 'white'
             }}
+            data-testid="link-view-selected-works"
           >
             View Selected Works
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,28 +199,85 @@ export function Portfolio({ id }: PortfolioProps) {
                   backgroundColor: 'var(--bg-secondary)',
                   boxShadow: 'var(--shadow)'
                 }}
+                data-testid={`link-portfolio-${item.projectId}`}
               >
                 {/* Image Container */}
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden rounded-t-lg">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
+                    data-testid={`img-portfolio-${item.projectId}`}
                   />
                   
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <IconComponent className="w-4 h-4 text-white" />
-                        <span className="text-xs font-medium text-white/80 font-['Roboto_Flex']">
+                        <IconComponent 
+                          className="w-4 h-4 text-white" 
+                          data-testid={`icon-portfolio-overlay-${item.projectId}`}
+                        />
+                        <span 
+                          className="text-xs font-medium text-white/90 font-['Roboto_Flex']"
+                          data-testid={`text-portfolio-overlay-category-${item.projectId}`}
+                        >
                           {item.category}
                         </span>
                       </div>
-                      <h3 className="text-white font-['Fraunces'] font-semibold text-base leading-tight">
+                      <h3 
+                        className="text-white font-['Fraunces'] font-semibold text-base leading-tight mb-3"
+                        data-testid={`text-portfolio-overlay-title-${item.projectId}`}
+                      >
                         {item.title}
                       </h3>
+                      <div 
+                        className="flex items-center gap-1 text-sm font-medium text-white"
+                        data-testid={`text-portfolio-overlay-view-${item.projectId}`}
+                      >
+                        View Project
+                        <ExternalLink className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Card Content */}
+                <div className="p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
+                    <span 
+                      className="text-sm font-medium"
+                      style={{ color: 'var(--accent-primary)' }}
+                      data-testid={`text-portfolio-category-${item.projectId}`}
+                    >
+                      {item.category}
+                    </span>
+                  </div>
+                  
+                  <h3 
+                    className="text-base font-['Fraunces'] font-semibold mb-4 line-clamp-2"
+                    style={{ color: 'var(--text-primary)' }}
+                    data-testid={`text-portfolio-title-${item.projectId}`}
+                  >
+                    {item.title}
+                  </h3>
+                  
+                  <div className="flex items-center justify-between pt-3 border-t" style={{ borderColor: 'var(--border)' }}>
+                    <img 
+                      src={dsiLogo} 
+                      alt="DSI Logo" 
+                      className="h-6 w-auto opacity-60"
+                      data-testid={`img-portfolio-logo-${item.projectId}`}
+                    />
+                    <div 
+                      className="flex items-center gap-1 text-xs font-medium" 
+                      style={{ color: 'var(--accent-primary)' }}
+                      data-testid={`text-portfolio-view-${item.projectId}`}
+                    >
+                      View
+                      <ExternalLink className="w-3 h-3" />
                     </div>
                   </div>
                 </div>

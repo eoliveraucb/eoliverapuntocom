@@ -5,6 +5,7 @@ import { Header } from '../components/portfolio/Header';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { ExternalLink, ArrowRight, Calendar, Tag } from 'lucide-react';
 import { projectsData } from './Projects';
+import dsiLogo from '@assets/logo-dsi_1763311308270.png';
 
 export default function SelectedWorks() {
   // Scroll to top when component mounts
@@ -36,12 +37,14 @@ export default function SelectedWorks() {
               id="page-title"
               className="text-3xl md:text-6xl font-['Fraunces'] font-bold mb-4 md:mb-6 scroll-mt-20"
               style={{ color: 'var(--text-primary)' }}
+              data-testid="text-selected-works-title"
             >
               Selected Works
             </h1>
             <p 
               className="text-xl max-w-4xl mx-auto leading-relaxed font-['Roboto_Flex']"
               style={{ color: 'var(--text-secondary)' }}
+              data-testid="text-selected-works-description"
             >
               A curated collection of my most impactful design projects, 
               spanning digital interfaces, educational initiatives, and social impact campaigns. 
@@ -64,7 +67,10 @@ export default function SelectedWorks() {
                   
                   {/* Project Image */}
                   <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                    <Link to={`/design/${project.id}`}>
+                    <Link 
+                      to={`/design/${project.id}`}
+                      data-testid={`link-selected-project-${project.id}`}
+                    >
                       <div 
                         className="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-500 hover:transform hover:-translate-y-2"
                         style={{ boxShadow: 'var(--shadow)' }}
@@ -73,6 +79,7 @@ export default function SelectedWorks() {
                           src={project.image}
                           alt={project.title}
                           className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                          data-testid={`img-selected-project-${project.id}`}
                         />
                         
                         {/* Overlay on hover */}
@@ -101,7 +108,12 @@ export default function SelectedWorks() {
                     <div className="flex flex-wrap items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
-                        <span style={{ color: 'var(--text-secondary)' }}>{project.year}</span>
+                        <span 
+                          style={{ color: 'var(--text-secondary)' }}
+                          data-testid={`text-selected-year-${project.id}`}
+                        >
+                          {project.year}
+                        </span>
                       </div>
                       
                       <div className="flex items-center gap-2">
@@ -109,6 +121,7 @@ export default function SelectedWorks() {
                         <span 
                           className="font-medium"
                           style={{ color: 'var(--accent-primary)' }}
+                          data-testid={`text-selected-category-${project.id}`}
                         >
                           {project.category}
                         </span>
@@ -120,6 +133,7 @@ export default function SelectedWorks() {
                           backgroundColor: 'var(--accent-primary)',
                           color: 'white'
                         }}
+                        data-testid={`badge-selected-featured-${project.id}`}
                       >
                         Featured
                       </span>
@@ -129,6 +143,7 @@ export default function SelectedWorks() {
                     <h2 
                       className="text-3xl md:text-4xl font-['Fraunces'] font-bold leading-tight"
                       style={{ color: 'var(--text-primary)' }}
+                      data-testid={`text-selected-title-${project.id}`}
                     >
                       {project.title}
                     </h2>
@@ -137,6 +152,7 @@ export default function SelectedWorks() {
                     <p 
                       className="text-lg leading-relaxed font-['Roboto_Flex']"
                       style={{ color: 'var(--text-secondary)' }}
+                      data-testid={`text-selected-description-${project.id}`}
                     >
                       {project.fullDescription}
                     </p>
@@ -159,6 +175,7 @@ export default function SelectedWorks() {
                                 backgroundColor: 'var(--bg-secondary)',
                                 color: 'var(--text-secondary)'
                               }}
+                              data-testid={`text-selected-tech-${project.id}-${techIndex}`}
                             >
                               {tech}
                             </span>
@@ -167,8 +184,18 @@ export default function SelectedWorks() {
                       </div>
                     )}
 
+                    {/* Logo */}
+                    <div className="pt-6 pb-2">
+                      <img 
+                        src={dsiLogo} 
+                        alt="DSI Logo" 
+                        className="h-10 w-auto opacity-60"
+                        data-testid={`img-selected-logo-${project.id}`}
+                      />
+                    </div>
+
                     {/* Project Actions */}
-                    <div className="flex flex-wrap gap-4 pt-4">
+                    <div className="flex flex-wrap gap-4 pt-2">
                       <Link
                         to={`/design/${project.id}`}
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:-translate-y-1"
@@ -176,6 +203,7 @@ export default function SelectedWorks() {
                           backgroundColor: 'var(--accent-primary)',
                           color: 'white'
                         }}
+                        data-testid={`button-selected-view-details-${project.id}`}
                       >
                         <span className="font-medium">View Details</span>
                         <ArrowRight className="w-4 h-4" />
@@ -191,6 +219,7 @@ export default function SelectedWorks() {
                             backgroundColor: 'var(--bg-secondary)',
                             color: 'var(--text-primary)'
                           }}
+                          data-testid={`link-selected-case-study-${project.id}`}
                         >
                           <span className="font-medium">Case Study</span>
                           <ExternalLink className="w-4 h-4" />
@@ -214,12 +243,14 @@ export default function SelectedWorks() {
           <h2 
             className="text-3xl font-['Fraunces'] font-bold mb-6"
             style={{ color: 'var(--text-primary)' }}
+            data-testid="text-cta-title"
           >
             Explore All Projects
           </h2>
           <p 
             className="text-lg mb-8 font-['Roboto_Flex']"
             style={{ color: 'var(--text-secondary)' }}
+            data-testid="text-cta-description"
           >
             Interested in seeing more work? Browse the complete collection of projects 
             across various categories and time periods.
@@ -231,6 +262,7 @@ export default function SelectedWorks() {
               backgroundColor: 'var(--accent-primary)',
               color: 'white'
             }}
+            data-testid="link-view-all-projects"
           >
             View All Projects
             <ArrowRight className="w-5 h-5" />

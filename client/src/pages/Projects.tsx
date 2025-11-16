@@ -4,6 +4,7 @@ import { Link } from 'wouter';
 import { Header } from '../components/portfolio/Header';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { ExternalLink, Calendar, Tag, ArrowLeft } from 'lucide-react';
+import dsiLogo from '@assets/logo-dsi_1763311308270.png';
 
 // Import project images
 import churchImage from '@assets/work--church_1750639835231.png';
@@ -252,12 +253,14 @@ export default function Projects() {
             id="page-title"
             className="text-3xl md:text-6xl font-['Fraunces'] font-bold mb-4 md:mb-6 scroll-mt-20"
             style={{ color: 'var(--text-primary)' }}
+            data-testid="text-projects-title"
           >
             Projects
           </h1>
           <p 
             className="text-xl max-w-3xl mx-auto font-['Roboto_Flex']"
             style={{ color: 'var(--text-secondary)' }}
+            data-testid="text-projects-description"
           >
             A comprehensive collection of design projects spanning branding, digital interfaces, 
             educational materials, and social impact initiatives.
@@ -281,6 +284,7 @@ export default function Projects() {
                 key={project.id}
                 to={`/design/${project.id}`}
                 className="group block"
+                data-testid={`link-project-${project.id}`}
               >
                 <div 
                   className="rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2"
@@ -288,20 +292,23 @@ export default function Projects() {
                     backgroundColor: 'var(--bg-primary)',
                     boxShadow: 'var(--shadow)'
                   }}
+                  data-testid={`card-project-${project.id}`}
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden rounded-t-lg">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-testid={`img-project-${project.id}`}
                     />
                     <div className="absolute top-4 right-4">
                       <span 
-                        className="px-2 py-1 text-xs font-medium rounded-full"
+                        className="px-3 py-1 text-xs font-medium rounded-full"
                         style={{ 
                           backgroundColor: 'var(--accent-primary)',
                           color: 'white'
                         }}
+                        data-testid={`badge-featured-${project.id}`}
                       >
                         Featured
                       </span>
@@ -309,38 +316,54 @@ export default function Projects() {
                   </div>
                   
                   <div className="p-6">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
+                        <span 
+                          className="text-sm font-medium"
+                          style={{ color: 'var(--accent-primary)' }}
+                          data-testid={`text-category-${project.id}`}
+                        >
+                          {project.category}
+                        </span>
+                      </div>
                       <span 
                         className="text-sm font-medium"
-                        style={{ color: 'var(--accent-primary)' }}
+                        style={{ color: 'var(--text-secondary)' }}
+                        data-testid={`text-year-${project.id}`}
                       >
-                        {project.category}
+                        {project.year}
                       </span>
                     </div>
                     
                     <h3 
-                      className="text-xl font-['Fraunces'] font-semibold mb-2"
+                      className="text-xl font-['Fraunces'] font-semibold mb-3"
                       style={{ color: 'var(--text-primary)' }}
+                      data-testid={`text-title-${project.id}`}
                     >
                       {project.title}
                     </h3>
                     
                     <p 
-                      className="text-sm leading-relaxed mb-4"
+                      className="text-sm leading-relaxed mb-6"
                       style={{ color: 'var(--text-secondary)' }}
+                      data-testid={`text-description-${project.id}`}
                     >
                       {project.description}
                     </p>
                     
-                    <div className="flex items-center justify-between">
-                      <span 
-                        className="text-sm font-medium"
-                        style={{ color: 'var(--text-secondary)' }}
+                    <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
+                      <img 
+                        src={dsiLogo} 
+                        alt="DSI Logo" 
+                        className="h-8 w-auto opacity-70"
+                        data-testid={`img-logo-${project.id}`}
+                      />
+                      <div 
+                        className="flex items-center gap-1 text-sm font-medium" 
+                        style={{ color: 'var(--accent-primary)' }}
+                        data-testid={`text-view-project-${project.id}`}
                       >
-                        {project.year}
-                      </span>
-                      <div className="flex items-center gap-1 text-sm font-medium" style={{ color: 'var(--accent-primary)' }}>
                         View Project
                         <ExternalLink className="w-4 h-4" />
                       </div>
@@ -382,6 +405,7 @@ export default function Projects() {
                     ? 'white' 
                     : 'var(--text-secondary)'
                 }}
+                data-testid={`button-category-${category.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 {category}
               </button>
@@ -395,6 +419,7 @@ export default function Projects() {
                 key={project.id}
                 to={`/design/${project.id}`}
                 className="group block"
+                data-testid={`link-all-project-${project.id}`}
               >
                 <div 
                   className="rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2"
@@ -402,21 +427,24 @@ export default function Projects() {
                     backgroundColor: 'var(--bg-secondary)',
                     boxShadow: 'var(--shadow)'
                   }}
+                  data-testid={`card-all-project-${project.id}`}
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden rounded-t-lg">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-testid={`img-all-project-${project.id}`}
                     />
                     {project.featured && (
-                      <div className="absolute top-2 right-2">
+                      <div className="absolute top-3 right-3">
                         <span 
                           className="px-2 py-1 text-xs font-medium rounded-full"
                           style={{ 
                             backgroundColor: 'var(--accent-primary)',
                             color: 'white'
                           }}
+                          data-testid={`badge-all-featured-${project.id}`}
                         >
                           Featured
                         </span>
@@ -424,12 +452,22 @@ export default function Projects() {
                     )}
                   </div>
                   
-                  <div className="p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Calendar className="w-3 h-3" style={{ color: 'var(--text-secondary)' }} />
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
+                        <span 
+                          className="text-sm font-medium"
+                          style={{ color: 'var(--accent-primary)' }}
+                          data-testid={`text-all-category-${project.id}`}
+                        >
+                          {project.category}
+                        </span>
+                      </div>
                       <span 
-                        className="text-xs"
+                        className="text-sm font-medium"
                         style={{ color: 'var(--text-secondary)' }}
+                        data-testid={`text-all-year-${project.id}`}
                       >
                         {project.year}
                       </span>
@@ -438,16 +476,35 @@ export default function Projects() {
                     <h3 
                       className="text-lg font-['Fraunces'] font-semibold mb-2 line-clamp-2"
                       style={{ color: 'var(--text-primary)' }}
+                      data-testid={`text-all-title-${project.id}`}
                     >
                       {project.title}
                     </h3>
                     
                     <p 
-                      className="text-xs mb-2"
-                      style={{ color: 'var(--accent-primary)' }}
+                      className="text-sm leading-relaxed mb-5 line-clamp-2"
+                      style={{ color: 'var(--text-secondary)' }}
+                      data-testid={`text-all-description-${project.id}`}
                     >
-                      {project.category}
+                      {project.description}
                     </p>
+                    
+                    <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
+                      <img 
+                        src={dsiLogo} 
+                        alt="DSI Logo" 
+                        className="h-7 w-auto opacity-70"
+                        data-testid={`img-all-logo-${project.id}`}
+                      />
+                      <div 
+                        className="flex items-center gap-1 text-sm font-medium" 
+                        style={{ color: 'var(--accent-primary)' }}
+                        data-testid={`text-all-view-project-${project.id}`}
+                      >
+                        View Project
+                        <ExternalLink className="w-4 h-4" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Link>
