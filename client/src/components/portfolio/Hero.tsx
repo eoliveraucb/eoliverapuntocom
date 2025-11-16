@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import home1 from "@assets/home1_1750633823946.png";
 import home2 from "@assets/home2_1750633823946.png";
 import home3 from "@assets/home3_1750633823946.png";
-import nycImage from "@assets/nyc3_1763310339393.png";
+import nycImage from "@assets/nyc3_1763309230097.png";
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
