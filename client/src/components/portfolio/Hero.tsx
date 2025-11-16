@@ -623,15 +623,15 @@ export function Hero() {
             <div className="flex items-center justify-between">
               {/* Left side: Text and Button */}
               <div className="flex-1 p-6 text-left max-w-[50%]">
-                <h2 className="text-2xl font-extrabold mb-2 font-['Fraunces'] whitespace-nowrap overflow-hidden text-ellipsis">
+                <h2 className="text-xl font-extrabold mb-2 font-['Fraunces'] leading-tight">
                   Seeking opportunities in NYC
                 </h2>
-                <p className="text-base text-white/90 mb-4 font-['Roboto_Flex'] line-clamp-2">
+                <p className="text-sm text-white/90 mb-4 font-['Roboto_Flex'] leading-snug">
                   In-house and hybrid temp positions in UX/UI, UX Research, Visual Design, AR/VR/XR Design, AI service integration
                 </p>
                 <a
                   href="/design"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-indigo-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-sm"
+                  className="inline-flex items-center justify-center px-5 py-2.5 bg-white text-indigo-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-sm"
                 >
                   See my portfolio
                 </a>
