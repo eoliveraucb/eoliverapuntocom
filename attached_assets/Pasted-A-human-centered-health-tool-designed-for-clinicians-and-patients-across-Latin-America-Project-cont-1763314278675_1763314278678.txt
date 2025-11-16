@@ -1,0 +1,38 @@
+A human-centered health tool designed for clinicians and patients across Latin America
+
+Project context (concise, tactful):
+Ipas commissioned a mobile solution for communities in Bolivia where access to reproductive-care information is urgent but legally and socially complex. The app needed to deliver clear, evidence-based medication guidance and patient-facing counseling while protecting user safety and privacy. Design choices were informed by on-the-ground realities: inconsistent access to care, legal grey areas, and a landscape of strong, divergent opinions among stakeholders and community actors. Our approach prioritized clinical accuracy, cultural relevance, and harm-minimization while working closely with legal and medical partners.
+
+Role & Contributions
+
+As UX/UI Director and Digital Designer, I led the end-to-end design and structure of the Mias mobile app—an evidence-based tool providing clinical guidance, patient-care scenarios, and pharmacological recommendations.
+
+My responsibilities included:
+
+Experience Design: Information architecture, content blueprinting, and user flows for clinicians, counselors, and patients.
+
+Interface & Visual Design: Wireframes, prototypes, UI system, interaction logic, and custom character illustration depicting culturally diverse, urban, and Indigenous women.
+
+Creative Direction: Shaping the overall visual style, design language, and on-screen behaviors across the app.
+
+Multilingual Content: Writing and adapting English and Spanish voice-over scripts for in-app educational videos.
+
+Usability & Accuracy: Collaborating with medical and legal experts to translate technical clinical protocols into simplified, step-by-step decision pathways that respect local regulations and user safety.
+
+Design Rationale
+
+The design centered on clarity, cultural specificity, and clinical safety:
+
+Introduced a bolder color system to increase hierarchy, accessibility, and quick scanning for health workers.
+
+Designed a bottom menu anchored by a central action button to streamline navigation during real-world consultations.
+
+Built clean, modular information cards that separate medical guidelines, patient steps, and legal considerations.
+
+Illustrated inclusive characters representing both urban and Indigenous communities to reflect the reality of the app’s user base.
+
+Developed a question-driven, step-by-step assessment flow that outputs tailored clinical recommendations.
+
+Structured pharmacological reference sections so healthcare providers can rapidly confirm dosage, timing, and protocol requirements.
+
+Implemented content and interaction patterns that emphasize privacy, informed consent, and harm-minimization given the sensitive context.
