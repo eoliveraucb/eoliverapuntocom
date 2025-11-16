@@ -3,7 +3,8 @@ import { useParams } from 'wouter';
 import { Link } from 'wouter';
 import { Header } from '../components/portfolio/Header';
 import { ArrowLeft, ExternalLink, Calendar, User, Wrench } from 'lucide-react';
-import { projectsData } from './Projects';
+import { projectsData, miasScreenshots } from './Projects';
+import { PhoneCarousel } from '../components/PhoneCarousel';
 
 import rateRaceTitle from '@assets/ratrace-title_1762792515889.png';
 import rateRaceTasks from '@assets/ratrace-tasks_1762792515888.png';
@@ -293,6 +294,91 @@ export default function ProjectDetail() {
                       style={{ color: 'var(--text-primary)' }}
                     >
                       A provocative narrative connecting AI worship to marginalized communities, inspired by the shoe-shiners of La Paz. This project invites thinkers, creators, and technologists to reflect on AI's role beyond code and algorithms, asking: How do we responsibly integrate AI into society without losing sight of human values?
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Special content for MIAS Reproductive Health App */}
+              {project.id === 'mias-reproductive-health' && (
+                <div className="mt-12">
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-8 text-center"
+                    style={{ color: 'var(--text-primary)' }}
+                    data-testid="text-mias-carousel-title"
+                  >
+                    App Screens
+                  </h3>
+                  
+                  {/* Phone Carousel */}
+                  <div className="mb-12" data-testid="section-mias-carousel">
+                    <PhoneCarousel images={miasScreenshots} autoPlaySpeed={2500} />
+                  </div>
+
+                  {/* Video Demonstrations */}
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                    style={{ color: 'var(--text-primary)' }}
+                    data-testid="text-mias-videos-title"
+                  >
+                    App Demonstrations
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-2 gap-8 mb-8" data-testid="section-mias-videos">
+                    <div>
+                      <div className="aspect-video rounded-lg overflow-hidden mb-4" style={{ backgroundColor: '#000' }}>
+                        <iframe
+                          src="https://www.youtube.com/embed/e_nKZayrOeI?playback_rate=1.5"
+                          title="MIAS App Demo 1"
+                          className="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          data-testid="iframe-mias-video-1"
+                        />
+                      </div>
+                      <p 
+                        className="text-sm text-center"
+                        style={{ color: 'var(--text-secondary)' }}
+                        data-testid="text-mias-video-1-caption"
+                      >
+                        Interactive UI Navigation
+                      </p>
+                    </div>
+
+                    <div>
+                      <div className="aspect-video rounded-lg overflow-hidden mb-4" style={{ backgroundColor: '#000' }}>
+                        <iframe
+                          src="https://www.youtube.com/embed/XEE5zFVaWVA?playback_rate=1.5"
+                          title="MIAS App Demo 2"
+                          className="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          data-testid="iframe-mias-video-2"
+                        />
+                      </div>
+                      <p 
+                        className="text-sm text-center"
+                        style={{ color: 'var(--text-secondary)' }}
+                        data-testid="text-mias-video-2-caption"
+                      >
+                        User Flow & Features
+                      </p>
+                    </div>
+                  </div>
+
+                  <div 
+                    className="p-6 rounded-lg border-l-4"
+                    style={{ 
+                      backgroundColor: 'var(--bg-secondary)',
+                      borderLeftColor: 'var(--accent-primary)'
+                    }}
+                    data-testid="section-mias-quote"
+                  >
+                    <p 
+                      className="text-lg italic leading-relaxed font-['Roboto_Flex']"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      "MIAS provides evidence-based reproductive health information in Spanish, empowering individuals with accurate medical protocols, symptom tracking, and legal framework guidance during critical healthcare decisions."
                     </p>
                   </div>
                 </div>
