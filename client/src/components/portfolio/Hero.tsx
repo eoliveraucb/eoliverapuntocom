@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import home1 from "@assets/home1_1750633823946.png";
 import home2 from "@assets/home2_1750633823946.png";
 import home3 from "@assets/home3_1750633823946.png";
-import nycImage from "@assets/nyc_1763308483161.png";
+import nycImage from "@assets/nyc3_1763310000702.png";
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -622,11 +622,11 @@ export function Hero() {
             
             <div className="flex items-center justify-between">
               {/* Left side: Text and Button */}
-              <div className="flex-1 p-6 text-left">
-                <h2 className="text-2xl font-extrabold mb-2 font-['Fraunces']">
+              <div className="flex-1 p-6 text-left max-w-[50%]">
+                <h2 className="text-2xl font-extrabold mb-2 font-['Fraunces'] whitespace-nowrap overflow-hidden text-ellipsis">
                   Seeking opportunities in NYC
                 </h2>
-                <p className="text-base text-white/90 mb-4 font-['Roboto_Flex']">
+                <p className="text-base text-white/90 mb-4 font-['Roboto_Flex'] line-clamp-2">
                   In-house and hybrid temp positions in UX/UI, UX Research, Visual Design, AR/VR/XR Design, AI service integration
                 </p>
                 <a
