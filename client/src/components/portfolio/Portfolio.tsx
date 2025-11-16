@@ -290,7 +290,7 @@ export function Portfolio({ id }: PortfolioProps) {
                       <img 
                         src={getProjectLogo(item.projectId)} 
                         alt="Organization Logo" 
-                        className="h-6 md:h-9 lg:h-12 w-auto opacity-60"
+                        className="h-3 md:h-9 lg:h-12 w-auto opacity-60"
                         data-testid={`img-portfolio-logo-${item.projectId}`}
                       />
                     </div>
