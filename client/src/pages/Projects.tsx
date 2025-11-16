@@ -29,6 +29,7 @@ import fameliImage from '@assets/fameli-2-large_1762794305680.jpeg';
 import cryptografikImage from '@assets/cryptografik_1762842192091.jpeg';
 import wocaImage from '@assets/WOCA2_1762845460292.png';
 import trjcImage from '@assets/mockup+1_1762847734618.jpeg';
+import miasMainImage from '@assets/mias-1_1763315451328.png';
 import miasScreen1 from '@assets/0a52452c-ee66-40cb-9ad6-48ce4f487032_1763315226198.jpg';
 import miasScreen2 from '@assets/0eca76e4-3bf4-48be-8a96-0d3e2dd2031e_1763315226199.jpg';
 import miasScreen3 from '@assets/5c79f027-de8e-4ea1-8e5f-bec315e1a081_1763315226199.jpg';
@@ -240,7 +241,7 @@ export const projectsData: Project[] = [
     category: 'UX/UI Design',
     description: 'A comprehensive mobile app providing reproductive health information and support for safe abortion access.',
     fullDescription: 'MIAS (Medical Information for Abortion Support) is a mobile application designed to provide accurate, accessible reproductive health information in Spanish-speaking communities. The app offers step-by-step medication protocols, symptom tracking, medical guidance, and legal framework information for reproductive healthcare. With a focus on user-centered design and health literacy, MIAS empowers individuals with evidence-based information during critical healthcare decisions.',
-    image: miasScreen1,
+    image: miasMainImage,
     year: '2019',
     client: 'IPAS Latinoamérica',
     technologies: ['Mobile UX/UI', 'React Native', 'Health Tech', 'Information Design', 'User Research'],
