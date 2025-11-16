@@ -3,7 +3,7 @@ import { Link } from 'wouter';
 import { useEffect } from 'react';
 import { Header } from '../components/portfolio/Header';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { ExternalLink, ArrowRight, Calendar, Tag } from 'lucide-react';
+import { ExternalLink, ArrowRight, Calendar, Tag, Settings } from 'lucide-react';
 import { projectsData } from './Projects';
 import dsiLogo from '@assets/logo-dsi_1763311308270.png';
 
@@ -126,6 +126,19 @@ export default function SelectedWorks() {
                           {project.category}
                         </span>
                       </div>
+                      
+                      {project.technologies && project.technologies[0] && (
+                        <div className="flex items-center gap-2">
+                          <Settings className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
+                          <span 
+                            className="font-medium"
+                            style={{ color: 'var(--text-secondary)' }}
+                            data-testid={`text-selected-tech-${project.id}`}
+                          >
+                            {project.technologies[0]}
+                          </span>
+                        </div>
+                      )}
                       
                       <span 
                         className="px-2 py-1 text-xs font-medium rounded-full"

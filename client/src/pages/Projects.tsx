@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'wouter';
 import { Header } from '../components/portfolio/Header';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { ExternalLink, Calendar, Tag, ArrowLeft } from 'lucide-react';
+import { ExternalLink, Calendar, Tag, ArrowLeft, Settings } from 'lucide-react';
 import dsiLogo from '@assets/logo-dsi_1763311308270.png';
 
 // Import project images
@@ -316,7 +316,7 @@ export default function Projects() {
                   </div>
                   
                   <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center flex-wrap gap-3 mb-3">
                       <div className="flex items-center gap-2">
                         <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
                         <span 
@@ -327,8 +327,20 @@ export default function Projects() {
                           {project.category}
                         </span>
                       </div>
+                      {project.technologies && project.technologies[0] && (
+                        <div className="flex items-center gap-2">
+                          <Settings className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
+                          <span 
+                            className="text-sm font-medium"
+                            style={{ color: 'var(--text-secondary)' }}
+                            data-testid={`text-tech-${project.id}`}
+                          >
+                            {project.technologies[0]}
+                          </span>
+                        </div>
+                      )}
                       <span 
-                        className="text-sm font-medium"
+                        className="text-sm font-medium ml-auto"
                         style={{ color: 'var(--text-secondary)' }}
                         data-testid={`text-year-${project.id}`}
                       >
@@ -453,7 +465,7 @@ export default function Projects() {
                   </div>
                   
                   <div className="p-5">
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center flex-wrap gap-2 mb-2">
                       <div className="flex items-center gap-2">
                         <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
                         <span 
@@ -464,8 +476,20 @@ export default function Projects() {
                           {project.category}
                         </span>
                       </div>
+                      {project.technologies && project.technologies[0] && (
+                        <div className="flex items-center gap-2">
+                          <Settings className="w-3 h-3" style={{ color: 'var(--text-secondary)' }} />
+                          <span 
+                            className="text-xs font-medium"
+                            style={{ color: 'var(--text-secondary)' }}
+                            data-testid={`text-all-tech-${project.id}`}
+                          >
+                            {project.technologies[0]}
+                          </span>
+                        </div>
+                      )}
                       <span 
-                        className="text-sm font-medium"
+                        className="text-sm font-medium ml-auto"
                         style={{ color: 'var(--text-secondary)' }}
                         data-testid={`text-all-year-${project.id}`}
                       >

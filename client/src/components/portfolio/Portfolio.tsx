@@ -1,6 +1,7 @@
 import { Link } from 'wouter';
-import { Briefcase, Globe, Heart, Palette, Film, Users, Lightbulb, Award, Camera, Building, Utensils, Home, ExternalLink, Tag } from 'lucide-react';
+import { Briefcase, Globe, Heart, Palette, Film, Users, Lightbulb, Award, Camera, Building, Utensils, Home, ExternalLink, Tag, Settings } from 'lucide-react';
 import dsiLogo from '@assets/logo-dsi_1763311308270.png';
+import { projectsData } from '../../pages/Projects';
 
 // Import all portfolio images
 import churchImage from '@assets/work--church_1750639835231.png';
@@ -190,6 +191,8 @@ export function Portfolio({ id }: PortfolioProps) {
         <div className="masonry-grid columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6">
           {portfolioItems.map((item) => {
             const IconComponent = item.icon;
+            const projectData = projectsData.find(p => p.id === item.projectId);
+            const firstTech = projectData?.technologies?.[0];
             return (
               <Link
                 key={item.id}
@@ -245,15 +248,29 @@ export function Portfolio({ id }: PortfolioProps) {
                 
                 {/* Card Content */}
                 <div className="p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
-                    <span 
-                      className="text-sm font-medium"
-                      style={{ color: 'var(--accent-primary)' }}
-                      data-testid={`text-portfolio-category-${item.projectId}`}
-                    >
-                      {item.category}
-                    </span>
+                  <div className="flex items-center flex-wrap gap-2 mb-2">
+                    <div className="flex items-center gap-2">
+                      <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
+                      <span 
+                        className="text-sm font-medium"
+                        style={{ color: 'var(--accent-primary)' }}
+                        data-testid={`text-portfolio-category-${item.projectId}`}
+                      >
+                        {item.category}
+                      </span>
+                    </div>
+                    {firstTech && (
+                      <div className="flex items-center gap-2">
+                        <Settings className="w-3 h-3" style={{ color: 'var(--text-secondary)' }} />
+                        <span 
+                          className="text-xs font-medium"
+                          style={{ color: 'var(--text-secondary)' }}
+                          data-testid={`text-portfolio-tech-${item.projectId}`}
+                        >
+                          {firstTech}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   
                   <h3 
