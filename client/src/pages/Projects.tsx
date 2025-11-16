@@ -396,7 +396,7 @@ export default function Projects() {
                         <img 
                           src={getProjectLogo(project.id)} 
                           alt="Organization Logo" 
-                          className="h-5 md:h-10 lg:h-12 w-auto opacity-70"
+                          className="h-8 md:h-16 lg:h-20 w-auto opacity-70"
                           data-testid={`img-logo-${project.id}`}
                         />
                       </div>
@@ -552,7 +552,7 @@ export default function Projects() {
                         <img 
                           src={getProjectLogo(project.id)} 
                           alt="Organization Logo" 
-                          className="h-4 md:h-7 lg:h-9 w-auto opacity-70"
+                          className="h-6 md:h-11 lg:h-14 w-auto opacity-70"
                           data-testid={`img-all-logo-${project.id}`}
                         />
                       </div>

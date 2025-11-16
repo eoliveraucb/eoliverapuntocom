@@ -207,7 +207,7 @@ export default function SelectedWorks() {
                         <img 
                           src={getProjectLogo(project.id)} 
                           alt="Organization Logo" 
-                          className="h-6 md:h-12 lg:h-16 w-auto opacity-60"
+                          className="h-9 md:h-20 lg:h-24 w-auto opacity-60"
                           data-testid={`img-selected-logo-${project.id}`}
                         />
                       </div>
