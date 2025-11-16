@@ -19,9 +19,18 @@ export function Hero() {
     experiments: 400,
   });
   const [showTeachingSlider, setShowTeachingSlider] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mousePos = useRef({ x: 0, y: 0 });
   const scrollY = useRef(0);
+
+  const phrases = [
+    "Good Luck Boss",
+    "Doors are closing",
+    "That's What's up"
+  ];
 
   const backgroundImages = [home1, home2, home3];
 
@@ -111,6 +120,38 @@ export function Hero() {
     }, 2000); // Show after 2 seconds, allowing hero text animation to complete
 
     timeouts.push(teachingSliderTimeout);
+
+    // Typing animation effect
+    let typingTimeout: NodeJS.Timeout;
+    
+    const typeEffect = () => {
+      const currentPhrase = phrases[phraseIndex];
+      
+      if (!isDeleting && typedText === currentPhrase) {
+        // Pause at end of phrase
+        typingTimeout = setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && typedText === "") {
+        // Move to next phrase
+        setIsDeleting(false);
+        setPhraseIndex((prev) => (prev + 1) % phrases.length);
+      } else {
+        // Type or delete character
+        const timeout = isDeleting ? 50 : 100;
+        typingTimeout = setTimeout(() => {
+          setTypedText(
+            isDeleting
+              ? currentPhrase.substring(0, typedText.length - 1)
+              : currentPhrase.substring(0, typedText.length + 1)
+          );
+        }, timeout);
+      }
+      
+      timeouts.push(typingTimeout);
+    };
+
+    if (showTeachingSlider) {
+      typeEffect();
+    }
 
     // Interactive 2D Connectivity Temporal Force Map
     const canvas = canvasRef.current;
@@ -323,7 +364,7 @@ export function Hero() {
         cancelAnimationFrame(animationId);
       }
     };
-  }, [backgroundImages.length]);
+  }, [backgroundImages.length, showTeachingSlider, typedText, phraseIndex, isDeleting, phrases]);
 
   const scrollToNext = () => {
     const aboutSection = document.getElementById("about");
@@ -624,7 +665,8 @@ export function Hero() {
               {/* Left side: Text and Button */}
               <div className="p-6 text-left max-w-[400px]">
                 <h2 className="text-xl font-extrabold mb-2 font-['Fraunces'] whitespace-nowrap">
-                  Seeking opportunities in NYC
+                  {typedText}
+                  <span className="animate-pulse">|</span>
                 </h2>
                 <p className="text-sm text-white/90 mb-4 font-['Roboto_Flex'] leading-snug">
                   In-house and hybrid temp positions in UX/UI, UX Research, Visual Design, AR/VR/XR Design, AI service integration
