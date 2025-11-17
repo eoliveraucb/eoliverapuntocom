@@ -105,8 +105,6 @@ export default function Portfolio() {
         <AreasOfFocus />
         <Courses id="projects" />
         <ProjectHighlight />
-        
-        <PortfolioGallery id="selected-works" />
         <Contact id="contact" />
       </main>
     </div>

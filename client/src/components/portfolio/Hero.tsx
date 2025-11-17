@@ -36,30 +36,30 @@ export function Hero() {
     carouselInterval = setInterval(() => {
       setCurrentImageIndex(prevIndex => {
         const nextIndex = (prevIndex + 1) % backgroundImages.length;
-        
+
         // Clear any existing timeouts to prevent conflicts
         timeouts.forEach(timeout => clearTimeout(timeout));
         timeouts.length = 0;
-        
+
         // Quick flicker effect before transition
         const flickerTimeout1 = setTimeout(() => {
           setCurrentImageIndex(prevIndex);
         }, 50);
-        
+
         const flickerTimeout2 = setTimeout(() => {
           setCurrentImageIndex(nextIndex);
         }, 100);
-        
+
         const flickerTimeout3 = setTimeout(() => {
           setCurrentImageIndex(prevIndex);
         }, 150);
-        
+
         const finalTimeout = setTimeout(() => {
           setCurrentImageIndex(nextIndex);
         }, 200);
-        
+
         timeouts.push(flickerTimeout1, flickerTimeout2, flickerTimeout3, finalTimeout);
-        
+
         return nextIndex;
       });
     }, 4000);
@@ -241,7 +241,7 @@ export function Hero() {
             const mouseIntensity = mouseInfluence * 0.8;
             const scrollIntensity = Math.abs(Math.sin(scrollInfluence + index * 0.2)) * 0.4;
             const totalIntensity = Math.min(1, baseIntensity + mouseIntensity + scrollIntensity);
-            
+
             const nodeSize = 3 + totalIntensity * 3;
 
             ctx.beginPath();
@@ -271,7 +271,7 @@ export function Hero() {
                 if (distance < 150) {
                   const alpha = Math.max(0, (150 - distance) / 150) * 0.4;
                   const pulse = Math.sin(time * 4 + index * 0.2) * 0.3 + 0.7;
-                  
+
                   // Check if connection is near mouse
                   const midX = (node.x + connectedNode.x) / 2;
                   const midY = (node.y + connectedNode.y) / 2;
@@ -280,7 +280,7 @@ export function Hero() {
                     Math.pow(midY - mousePos.current.y, 2)
                   );
                   const connectionMouseInfluence = Math.max(0, 100 - mouseDistToConnection) / 100;
-                  
+
                   // Scroll influence on connections
                   const scrollConnectionInfluence = Math.abs(Math.sin(scrollY.current * 0.01 + index * 0.1)) * 0.3;
 
@@ -377,7 +377,7 @@ export function Hero() {
           <div
             className="absolute inset-0 z-20"
             style={{
-              
+
               transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
               transform: 'perspective(1000px) translateZ(1px)'
             }}
@@ -433,12 +433,7 @@ export function Hero() {
                   }}
                   className="gradient-text"
                 >Social Design & Education</div>
-                <div
-                  style={{
-                    fontWeight: lineWeights.line2,
-                    transition: "font-weight 0.3s ease-out",
-                  }}
-                  className="text-[36px] font-light text-white">a showcase of my <a href="#projects" className="underline decoration-purple-500 decoration-2 hover:decoration-purple-700 transition-all duration-300 text-[#e0c9f5] font-semibold bg-transparent" style={{ color: '#efe3ff', fontWeight: linkWeights.teaching }}>teaching experience</a>, <a href="#design" className="underline decoration-cyan-500 decoration-2 hover:decoration-cyan-700 transition-all duration-300 text-[#d5f5f7] font-semibold" style={{ color: '#e3faff', fontWeight: linkWeights.practice }}>professional practice</a> and <a href="https://medium.com/@emauric.io" target="_blank" rel="noopener noreferrer" className="underline decoration-green-500 decoration-2 hover:decoration-orange-700 transition-all duration-300 text-[#f2dec2] font-semibold" style={{ color: '#e3ffeb', fontWeight: linkWeights.experiments }}>thought experiments</a>.</div>
+                <span className="text-[36px] font-light text-white">a showcase of my <a href="#projects" className="underline decoration-purple-500 decoration-2 hover:decoration-purple-700 transition-all duration-300 text-[#e0c9f5] font-semibold bg-transparent" style={{ color: '#efe3ff', fontWeight: linkWeights.teaching }}>teaching experience</a>, <a href="/design" className="underline decoration-cyan-500 decoration-2 hover:decoration-cyan-700 transition-all duration-300 text-[#d5f5f7] font-semibold" style={{ color: '#e3faff', fontWeight: linkWeights.practice }}>professional practice</a> and <a href="https://medium.com/@emauric.io" target="_blank" rel="noopener noreferrer" className="underline decoration-green-500 decoration-2 hover:decoration-orange-700 transition-all duration-300 text-[#f2dec2] font-semibold" style={{ color: '#e3ffeb', fontWeight: linkWeights.experiments }}>thought experiments</a>.</span>
                 <div
                   style={{
                     fontWeight: lineWeights.line3,
@@ -450,7 +445,7 @@ export function Hero() {
               </h1>
             </div>
 
-            
+
           </div>
         </div>
       </div>
@@ -619,7 +614,7 @@ export function Hero() {
           >
             {/* Gray line handle at bottom */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-[100px] rounded-full bg-gray-400 z-50" />
-            
+
             <div className="flex items-center justify-between gap-4">
               {/* Left side: Text and Button */}
               <div className="p-6 text-left max-w-[400px]">
@@ -636,7 +631,7 @@ export function Hero() {
                   See my portfolio
                 </a>
               </div>
-              
+
               {/* Right side: NYC Image flush right */}
               <div className="flex-shrink-0">
                 <img
