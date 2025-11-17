@@ -38,7 +38,7 @@ import miasScreen4 from '@assets/45f02edf-e11b-4771-b389-ae0808ba777d_1763314559
 import miasScreen5 from '@assets/5c79f027-de8e-4ea1-8e5f-bec315e1a081_1763314559705.jpg';
 
 // Import MIAS logo and cover image
-import miasCover from '@assets/Untitled-16_1763313351617.png';
+import miasCover from '@assets/Mias-main.png';
 
 interface Project {
   id: string;
