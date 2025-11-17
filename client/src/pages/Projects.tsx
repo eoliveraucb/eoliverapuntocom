@@ -261,29 +261,10 @@ export const getProjectLogo = (projectId: string): string => {
 };
 
 // MIAS app screenshots for carousel
-// Import MIAS screenshots
-import miasScreen1 from '@assets/mias-screen-1.png';
-import miasScreen2 from '@assets/mias-screen-2.png';
-import miasScreen3 from '@assets/mias-screen-3.png';
-import miasScreen4 from '@assets/mias-screen-4.png';
-import miasScreen5 from '@assets/mias-screen-5.png';
-import miasScreen6 from '@assets/mias-screen-6.png';
-import miasScreen7 from '@assets/mias-screen-7.png';
-import miasScreen8 from '@assets/mias-screen-8.png';
-import miasScreen9 from '@assets/mias-screen-9.png';
-import miasScreen10 from '@assets/mias-screen-10.png';
-
+// TODO: Upload MIAS screenshot images to client/src/assets/ and import them here
+// Example: import miasScreen1 from '@assets/mias-screen-1.png';
 export const miasScreenshots: string[] = [
-  miasScreen1,
-  miasScreen2,
-  miasScreen3,
-  miasScreen4,
-  miasScreen5,
-  miasScreen6,
-  miasScreen7,
-  miasScreen8,
-  miasScreen9,
-  miasScreen10
+  // Add actual screenshot imports here when available
 ];
 
 export default function Projects() {
