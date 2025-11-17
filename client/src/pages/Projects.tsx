@@ -247,6 +247,9 @@ export const getProjectLogo = (projectId: string): string => {
   return projectLogoMap[projectId] || dsiLogo;
 };
 
+// MIAS app screenshots for carousel (placeholder array - add actual screenshot imports if needed)
+export const miasScreenshots: string[] = [];
+
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   
