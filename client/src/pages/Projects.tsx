@@ -254,7 +254,7 @@ export const projectsData: Project[] = [
 
 // Logo mapping for each project
 export const projectLogoMap: Record<string, string> = {
-  'crypto-design': ucbLogo,
+  'crypto-design': ucbCatoLogo, // Universidad Católica Boliviana logo
   'church-emergence': dsiLogo,
   'rate-race': dsiLogo,
   'future-analog-voices': dsiLogo,
