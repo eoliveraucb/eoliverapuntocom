@@ -250,9 +250,6 @@ export const getProjectLogo = (projectId: string): string => {
 // MIAS app screenshots for carousel (placeholder array - add actual screenshot imports if needed)
 export const miasScreenshots: string[] = [];
 
-// MIAS app screenshots for carousel (placeholder array - add actual screenshot imports if needed)
-export const miasScreenshots: string[] = [];
-
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   
