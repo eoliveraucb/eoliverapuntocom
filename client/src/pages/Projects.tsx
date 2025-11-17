@@ -227,6 +227,18 @@ export const projectsData: Project[] = [
     technologies: ['Product Design', 'Sound Design', 'Physical Prototyping', 'Graphic Language', 'Sustainability', 'Material Innovation'],
     externalLink: 'https://emolivera.cargo.site/edit/W2507643633',
     featured: true
+  },
+  {
+    id: 'mias-reproductive-health',
+    title: 'MIAS Reproductive Health App',
+    category: 'Digital Health',
+    description: 'A human-centered health tool designed for clinicians and patients across Latin America.',
+    fullDescription: 'MIAS is a comprehensive reproductive health application providing evidence-based information in Spanish. The app empowers individuals with accurate medical protocols, symptom tracking, and legal framework guidance during critical healthcare decisions. Designed with accessibility and cultural sensitivity in mind, MIAS bridges the gap between medical knowledge and patient understanding across Latin American communities.',
+    image: cryptografikImage,
+    year: '2024',
+    client: 'Independent Project',
+    technologies: ['Mobile App Design', 'UX/UI', 'Healthcare', 'Accessibility', 'Spanish Localization', 'Information Architecture'],
+    featured: true
   }
 ];
 
@@ -240,6 +252,7 @@ export const projectLogoMap: Record<string, string> = {
   'trjc-branding': nyuLawLogo,
   'world-of-color-awards': eastmanLogo,
   'finanzgruppe': germanCorpLogo,
+  'mias-reproductive-health': dsiLogo,
 };
 
 // Helper function to get logo for a project
@@ -247,8 +260,13 @@ export const getProjectLogo = (projectId: string): string => {
   return projectLogoMap[projectId] || dsiLogo;
 };
 
-// MIAS app screenshots for carousel (placeholder array - add actual screenshot imports if needed)
-export const miasScreenshots: string[] = [];
+// MIAS app screenshots for carousel
+// TODO: Replace these placeholders with actual MIAS screenshot imports
+// Example: import miasScreen1 from '@assets/mias-screen-1.png';
+export const miasScreenshots: string[] = [
+  // Add actual screenshot imports here when available
+  // miasScreen1, miasScreen2, miasScreen3, etc.
+];
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
