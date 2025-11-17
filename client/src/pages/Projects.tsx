@@ -37,6 +37,10 @@ import miasScreen3 from '@assets/2626dd9e-a7e7-45b2-849d-187fa4cabaec_1763314559
 import miasScreen4 from '@assets/45f02edf-e11b-4771-b389-ae0808ba777d_1763314559706.jpg';
 import miasScreen5 from '@assets/5c79f027-de8e-4ea1-8e5f-bec315e1a081_1763314559705.jpg';
 
+// Import MIAS logo and cover image
+import miasLogo from '@assets/Ipas-LATINOAMERICA-Y-EL-CARIBE_1763418398690.png';
+import miasCover from '@assets/Untitled-16_1763418398689.png';
+
 interface Project {
   id: string;
   title: string;
@@ -241,7 +245,7 @@ export const projectsData: Project[] = [
     category: 'Digital Health',
     description: 'A human-centered health tool designed for clinicians and patients across Latin America.',
     fullDescription: 'MIAS is a comprehensive reproductive health application providing evidence-based information in Spanish. The app empowers individuals with accurate medical protocols, symptom tracking, and legal framework guidance during critical healthcare decisions. Designed with accessibility and cultural sensitivity in mind, MIAS bridges the gap between medical knowledge and patient understanding across Latin American communities.',
-    image: miasScreen1,
+    image: miasCover,
     year: '2024',
     client: 'Independent Project',
     technologies: ['Mobile App Design', 'UX/UI', 'Healthcare', 'Accessibility', 'Spanish Localization', 'Information Architecture'],
@@ -259,7 +263,7 @@ export const projectLogoMap: Record<string, string> = {
   'trjc-branding': nyuLawLogo,
   'world-of-color-awards': eastmanLogo,
   'finanzgruppe': germanCorpLogo,
-  'mias-reproductive-health': dsiLogo,
+  'mias-reproductive-health': miasLogo,
 };
 
 // Helper function to get logo for a project
