@@ -1,0 +1,105 @@
+
+
+Interdisciplinary UX and service designer integrating human-centered research, systems thinking, and emerging technologies to build scalable, equitable experiences.
+Brings a hybrid background in digital product design, creative technology, and education to deliver innovative solutions across products, programs, and learning ecosystems.
+
+- Work Showcase www.eolivera.com/design 
+
+> Work Experience
+
+Lead Service Designer | Cambio Labs NYC 
+Jul 2025 - Present | New York City | Hybrid
+
+Awarded NYC Mayor’s Office of Civic Engagement Design Champion for co-creating Manhattan’s Youth Entrepreneurship Fellowship Program, a participatory budgeting initiative.
+
+Led the service design process, tooling, and implementation by bridging user experience, entrepreneurship, and social impact projects. Applied a technology-forward, social-first
+
+Co-creating avenues for policy standards in AI and education, focusing on capacity building, somatic learning, and peer mentorship. Drove co-learning through emerging creative technologies like AR, VR, projection mapping, and smart textiles.
+
+
+Sr. UX/UI Designer | Digital Academy, EDSI 
+Jun 2020 - 2025 | Cleveland OH | Hybrid 
+
+Redesigned a proprietary Learning Management System for 700+ K-12 schools among students, administrators, and educators. Increasing administrative user effectiveness by 45% and driving adoption by 2 additional dioceses.
+
+Integrated generative AI tools (LLMs) for automated class material creation, reducing content development time by 25% for educators and administrators. 
+Information Architecture & Content Strategy: Planned and executed IA tests and content strategy recommendations to improve user experience and information flow.
+
+Senior UX Designer  |  Vulcan Software
+Nov 2018 - Jul 2021 · La Paz, Bolivia · On-site 
+Project Management: Managed multiple innovation projects simultaneously, ensuring on-time delivery and alignment with strategic goals.
+
+Client Engagement & Co-Design: Led co-design sessions with government officials and international stakeholders to deliver human-centered digital solutions aligned with policy objectives.
+
+Notable Partnerships & Brands: Sparkassen-Finanzgruppe (Germany Global), PLAN International (Bolivia, Global). Milicomm Tigo (Sweden, LATAM) 
+ Sr. Digital Art Director |  Stealth Creative 
+May 2013 - May 2016 · Saint Louis, MO · On-Site
+
+Led UX/UI design for 20+ B2B SaaS platforms, including administrative dashboards for business enterprise clients: Spectrum Enterprise, Comcast Enterprise, RCN Business, improving task completion rates by 35% through intuitive interface redesigns.
+
+Collaboration: Collaborated with multidisciplinary teams including designers, developers, behavioral scientists, and economists to deliver end-to-end digital products.
+
+Designed interactive collateral and data visualizations (R Studio, Python) to simplify complex administrative workflows for stakeholders.
+
+
+> Education
+ 2023 — 2025 
+Master of Design for Social Innovation, New York City. School of Visual Arts, New York City, NY 
+2003 — 2009 
+BFA Graphic Design, Minor in Sociology University of Memphis, Memphis, TN 
+> Certifications
+Social-Behavioral-Educational (SBE) Comprehensive
+CITI Program
+Issued May 2025 · Expires May 2028
+Credential ID 66613123
+
+OHRP: Participant-Centered Informed Consent Training
+CITI Program
+Issued Apr 2025 · Expires Apr 2028
+Credential ID 66613121
+
+Google Generative AI Training
+Google
+Issued Jun 2025
+Credential ID Y86JRQNYH8GG
+
+Future of AI Course
+BlueDot Impact
+Issued Jun 2025
+Credential ID recWyVJ9fiKV4ui20
+
+
+
+
+> Skills & Capabilities 
+
+Software & Tech Stack
+Visual Design: Figma, Adobe Illustrator, InDesign, Photoshop
+3D and Animation: Adobe After Effects, Adobe Premiere, Adobe Animate, Blender, CSS/SVG Animation
+Interactive Media: Touch Designer, Snapchat Lens Studio, TikTok Effect House,  Campaign Concepting, Rive, GSPA, Three.js
+Web Design: Visual Studio Code, Domain/Hosting setup
+Google Analytics, HotJar, Quant UX, R Studio, MAT Plot
+Front-End Development (HTML, CSS/SASS, JS, React, Next.js, Vue.js, PHP, VS Code, Git)
+Information Architecture, Content Strategy
+Generative AI Tools (Claude, ChatGPT, Hugging Face, DALL·E 3, Stable Diffusion, Midjourney, Runway ML, Image FX)
+
+Design Research
+Human-Centered Design, Service Design, UX/UI (Figma, Adobe Creative Cloud)
+Design Thinking Facilitation, Co-Design Workshops, Storyboarding, Campaign Concepting
+User/Behavioral Research (Ethnographic methods, analytics, participatory workshops)
+User/Behavioral Research (Ethnographic methods, analytics, participatory workshops)
+Information Architecture, Content Strategy
+
+
+> Creative Industry Capabilities
+
+Creative Direction & Digital Art Shape multi-channel campaigns and visual ecosystems for brands and events—merging storytelling, interaction, and identity across digital, social, and experiential touchpoints.
+
+Experiential & Hybrid Design Designing immersive brand activations that blend tactile and digital interaction—from large-scale conference experiences to on-premise engagements. (Creative Producer Group – ULTA Beauty, Miller Lite Vortex Bottle via Schupp Co.)
+
+Microlearning Design Modules that merge embodied practice, digital design, and speculative technologies. Lessons scaffold rapidly—from analog techniques (writing, molding, tapping, knotting) to digital outputs (3D, AR, AI prototyping, crypto ecosystems)—supporting creative literacy and future-ready skill development.
+
+Web3 & Future Systems Consult and prototype within decentralized and AI-augmented ecosystems, from token-based networks to procedural creative tools that extend human-led design.
+	
+AI-Driven Creative Systems
+Design and implement AI-assisted workflows (MCPs, procedural integrations, and strategic automations) to augment creative processes while maintaining human-led direction and ethical alignment.
