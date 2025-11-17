@@ -39,7 +39,6 @@ import miasScreen5 from '@assets/5c79f027-de8e-4ea1-8e5f-bec315e1a081_1763314559
 
 // Import MIAS logo and cover image
 import miasCover from '@assets/Mias-main.png';
-import ipasLogo from '@assets/ipas-lac_1763497815085.png';
 
 interface Project {
   id: string;
@@ -263,7 +262,7 @@ export const projectLogoMap: Record<string, string> = {
   'trjc-branding': nyuLawLogo,
   'world-of-color-awards': eastmanLogo,
   'finanzgruppe': germanCorpLogo,
-  'mias-reproductive-health': ipasLogo,
+  'mias-reproductive-health': dsiLogo, // Temporarily using DSI logo until IPAS logo is uploaded
 };
 
 // Helper function to get logo for a project
