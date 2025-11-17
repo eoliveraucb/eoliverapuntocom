@@ -30,6 +30,13 @@ import cryptografikImage from '@assets/cryptografik_1762842192091.jpeg';
 import wocaImage from '@assets/WOCA2_1762845460292.png';
 import trjcImage from '@assets/mockup+1_1762847734618.jpeg';
 
+// Import MIAS app screenshots
+import miasScreen1 from '@assets/0a52452c-ee66-40cb-9ad6-48ce4f487032_1763314559705.jpg';
+import miasScreen2 from '@assets/0eca76e4-3bf4-48be-8a96-0d3e2dd2031e_1763314559705.jpg';
+import miasScreen3 from '@assets/2626dd9e-a7e7-45b2-849d-187fa4cabaec_1763314559706.jpg';
+import miasScreen4 from '@assets/45f02edf-e11b-4771-b389-ae0808ba777d_1763314559706.jpg';
+import miasScreen5 from '@assets/5c79f027-de8e-4ea1-8e5f-bec315e1a081_1763314559705.jpg';
+
 interface Project {
   id: string;
   title: string;
@@ -234,7 +241,7 @@ export const projectsData: Project[] = [
     category: 'Digital Health',
     description: 'A human-centered health tool designed for clinicians and patients across Latin America.',
     fullDescription: 'MIAS is a comprehensive reproductive health application providing evidence-based information in Spanish. The app empowers individuals with accurate medical protocols, symptom tracking, and legal framework guidance during critical healthcare decisions. Designed with accessibility and cultural sensitivity in mind, MIAS bridges the gap between medical knowledge and patient understanding across Latin American communities.',
-    image: cryptografikImage,
+    image: miasScreen1,
     year: '2024',
     client: 'Independent Project',
     technologies: ['Mobile App Design', 'UX/UI', 'Healthcare', 'Accessibility', 'Spanish Localization', 'Information Architecture'],
@@ -261,10 +268,12 @@ export const getProjectLogo = (projectId: string): string => {
 };
 
 // MIAS app screenshots for carousel
-// TODO: Upload MIAS screenshot images to client/src/assets/ and import them here
-// Example: import miasScreen1 from '@assets/mias-screen-1.png';
 export const miasScreenshots: string[] = [
-  // Add actual screenshot imports here when available
+  miasScreen1, // Misoprostol vaginal administration
+  miasScreen2, // Mifepristona oral dosage
+  miasScreen3, // Misoprostol sublingual administration
+  miasScreen4, // Expected effects information
+  miasScreen5, // Contraception options
 ];
 
 export default function Projects() {
