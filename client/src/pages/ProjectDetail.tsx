@@ -716,12 +716,18 @@ export default function ProjectDetail() {
                       />
                     </div>
                     
-                    <div className="rounded-lg overflow-hidden aspect-video" style={{ boxShadow: 'var(--shadow)' }}>
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <video
                         src={wocaVideo}
-                        controls
-                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto object-contain"
                         data-testid="video-woca"
+                        ref={(el) => {
+                          if (el) el.playbackRate = 2.0;
+                        }}
                       >
                         Your browser does not support the video tag.
                       </video>
