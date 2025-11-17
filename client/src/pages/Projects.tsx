@@ -92,18 +92,7 @@ export const projectsData: Project[] = [
     technologies: ['Corporate Identity', 'Marketing Materials', 'Brand Guidelines'],
     featured: false
   },
-  {
-    id: 'worldnet-digital',
-    title: 'WorldNet Digital Services',
-    category: 'Logo Design',
-    description: 'Modern logo design for digital services company.',
-    fullDescription: 'Designed a contemporary logo for WorldNet Digital Services that conveys global connectivity and digital innovation. The mark combines geometric precision with dynamic elements to represent the company\'s forward-thinking approach.',
-    image: worldnetImage,
-    year: '2021',
-    client: 'WorldNet Digital Services',
-    technologies: ['Logo Design', 'Vector Graphics', 'Brand Identity'],
-    featured: false
-  },
+  
   {
     id: 'cleaning-concepts',
     title: 'Cleaning Concepts',
@@ -116,18 +105,7 @@ export const projectsData: Project[] = [
     technologies: ['Brand Identity', 'Logo Design', 'Marketing Collateral'],
     featured: false
   },
-  {
-    id: 'focus-fest',
-    title: 'Focus Fest 2013',
-    category: 'Event Design',
-    description: 'Complete event branding and promotional materials.',
-    fullDescription: 'Designed comprehensive event branding for Focus Fest 2013, including logo, promotional materials, signage, and digital assets. The design captures the energy and focus of the event through dynamic typography and bold visuals.',
-    image: focusFestImage,
-    year: '2013',
-    client: 'Focus Fest',
-    technologies: ['Event Branding', 'Print Design', 'Digital Design', 'Signage'],
-    featured: false
-  },
+  
   {
     id: 'finanzgruppe',
     title: 'Financial Literacy Calculator',
@@ -164,18 +142,7 @@ export const projectsData: Project[] = [
     technologies: ['Brand Identity', 'UX Research', 'Visual Design', 'Community Engagement'],
     featured: true
   },
-  {
-    id: 'chili-fest',
-    title: 'Chili Fest 2009',
-    category: 'Event Branding',
-    description: 'Spicy event branding for annual chili festival.',
-    fullDescription: 'Created energetic branding for Chili Fest 2009, capturing the heat and excitement of the annual chili festival. The design uses bold colors and playful typography to reflect the festive atmosphere.',
-    image: chiliFestImage,
-    year: '2009',
-    client: 'Chili Fest',
-    technologies: ['Event Branding', 'Illustration', 'Print Design'],
-    featured: false
-  },
+  
   {
     id: 'arte-tecnologia',
     title: 'Arte + Tecnología',
