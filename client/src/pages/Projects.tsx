@@ -323,18 +323,39 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+      {/* All Projects */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 
-            className="text-3xl font-['Fraunces'] font-bold mb-8 text-center"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            Featured Projects
-          </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project) => (
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  selectedCategory === category 
+                    ? 'text-white' 
+                    : 'hover:transform hover:-translate-y-1'
+                }`}
+                style={{ 
+                  backgroundColor: selectedCategory === category 
+                    ? 'var(--accent-primary)' 
+                    : 'var(--bg-secondary)',
+                  color: selectedCategory === category 
+                    ? 'white' 
+                    : 'var(--text-secondary)'
+                }}
+                data-testid={`button-category-${category.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjects.map((project) => (
               <Link
                 key={project.id}
                 to={`/design/${project.id}`}
@@ -344,7 +365,7 @@ export default function Projects() {
                 <div 
                   className="rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2"
                   style={{ 
-                    backgroundColor: 'var(--bg-primary)',
+                    backgroundColor: 'var(--bg-secondary)',
                     boxShadow: 'var(--shadow)'
                   }}
                   data-testid={`card-project-${project.id}`}
@@ -356,18 +377,20 @@ export default function Projects() {
                       className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
                       data-testid={`img-project-${project.id}`}
                     />
-                    <div className="absolute top-4 right-4">
-                      <span 
-                        className="px-3 py-1 text-xs font-medium rounded-full"
-                        style={{ 
-                          backgroundColor: 'var(--accent-primary)',
-                          color: 'white'
-                        }}
-                        data-testid={`badge-featured-${project.id}`}
-                      >
-                        Featured
-                      </span>
-                    </div>
+                    {project.featured && (
+                      <div className="absolute top-4 right-4">
+                        <span 
+                          className="px-3 py-1 text-xs font-medium rounded-full"
+                          style={{ 
+                            backgroundColor: 'var(--accent-primary)',
+                            color: 'white'
+                          }}
+                          data-testid={`badge-featured-${project.id}`}
+                        >
+                          Featured
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="p-6">
@@ -437,162 +460,6 @@ export default function Projects() {
                         className="flex items-center gap-1 text-sm font-medium" 
                         style={{ color: 'var(--accent-primary)' }}
                         data-testid={`text-view-project-${project.id}`}
-                      >
-                        View Project
-                        <ExternalLink className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* All Projects */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 
-            className="text-3xl font-['Fraunces'] font-bold mb-8 text-center"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            All Projects
-          </h2>
-
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  selectedCategory === category 
-                    ? 'text-white' 
-                    : 'hover:transform hover:-translate-y-1'
-                }`}
-                style={{ 
-                  backgroundColor: selectedCategory === category 
-                    ? 'var(--accent-primary)' 
-                    : 'var(--bg-secondary)',
-                  color: selectedCategory === category 
-                    ? 'white' 
-                    : 'var(--text-secondary)'
-                }}
-                data-testid={`button-category-${category.toLowerCase().replace(/\s+/g, '-')}`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProjects.map((project) => (
-              <Link
-                key={project.id}
-                to={`/design/${project.id}`}
-                className="group block"
-                data-testid={`link-all-project-${project.id}`}
-              >
-                <div 
-                  className="rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2"
-                  style={{ 
-                    backgroundColor: 'var(--bg-secondary)',
-                    boxShadow: 'var(--shadow)'
-                  }}
-                  data-testid={`card-all-project-${project.id}`}
-                >
-                  <div className="relative overflow-hidden rounded-t-lg">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                      data-testid={`img-all-project-${project.id}`}
-                    />
-                    {project.featured && (
-                      <div className="absolute top-3 right-3">
-                        <span 
-                          className="px-2 py-1 text-xs font-medium rounded-full"
-                          style={{ 
-                            backgroundColor: 'var(--accent-primary)',
-                            color: 'white'
-                          }}
-                          data-testid={`badge-all-featured-${project.id}`}
-                        >
-                          Featured
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="p-5">
-                    <div className="flex items-center flex-wrap gap-2 mb-2">
-                      <div className="flex items-center gap-2">
-                        <Tag className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
-                        <span 
-                          className="text-sm font-medium"
-                          style={{ color: 'var(--accent-primary)' }}
-                          data-testid={`text-all-category-${project.id}`}
-                        >
-                          {project.category}
-                        </span>
-                      </div>
-                      {project.technologies && project.technologies[0] && (
-                        <div className="flex items-center gap-2">
-                          <Settings className="w-3 h-3" style={{ color: 'var(--text-secondary)' }} />
-                          <span 
-                            className="text-xs font-medium"
-                            style={{ color: 'var(--text-secondary)' }}
-                            data-testid={`text-all-tech-${project.id}`}
-                          >
-                            {project.technologies[0]}
-                          </span>
-                        </div>
-                      )}
-                      <span 
-                        className="text-sm font-medium ml-auto"
-                        style={{ color: 'var(--text-secondary)' }}
-                        data-testid={`text-all-year-${project.id}`}
-                      >
-                        {project.year}
-                      </span>
-                    </div>
-
-                    <h3 
-                      className="text-lg font-['Fraunces'] font-semibold mb-2 line-clamp-2"
-                      style={{ color: 'var(--text-primary)' }}
-                      data-testid={`text-all-title-${project.id}`}
-                    >
-                      {project.title}
-                    </h3>
-
-                    <p 
-                      className="text-sm leading-relaxed mb-5 line-clamp-2"
-                      style={{ color: 'var(--text-secondary)' }}
-                      data-testid={`text-all-description-${project.id}`}
-                    >
-                      {project.description}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
-                      <div 
-                        className="px-2 py-1.5 rounded-lg"
-                        style={{ 
-                          boxShadow: 'inset 2px 2px 4px rgba(0, 0, 0, 0.08), inset -2px -2px 4px rgba(255, 255, 255, 0.05)'
-                        }}
-                      >
-                        <img 
-                          src={getProjectLogo(project.id)} 
-                          alt="Organization Logo" 
-                          className="h-6 md:h-11 lg:h-14 w-auto opacity-70"
-                          data-testid={`img-all-logo-${project.id}`}
-                        />
-                      </div>
-                      <div 
-                        className="flex items-center gap-1 text-sm font-medium" 
-                        style={{ color: 'var(--accent-primary)' }}
-                        data-testid={`text-all-view-project-${project.id}`}
                       >
                         View Project
                         <ExternalLink className="w-4 h-4" />
