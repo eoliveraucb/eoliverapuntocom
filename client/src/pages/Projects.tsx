@@ -154,8 +154,8 @@ export const projectsData: Project[] = [
   },
   {
     id: 'trjc-branding',
-    title: 'TRJC Branding',
-    category: 'Brand Identity',
+    title: 'Technology & Racial Justice Collaborative',
+    category: 'Branding & Visual Identity',
     description: 'Visual identity for Technology and Racial Justice Collaborative addressing AI-driven threats in criminal justice.',
     fullDescription: 'Developed in collaboration with NYU School of Law, this branding project created a cohesive visual identity for an online community platform addressing racial justice issues caused by AI in the criminal justice system. The project included comprehensive brand identity, logo design, and newsletter templates to strengthen stakeholder engagement and information sharing.',
     image: trjcImage,
