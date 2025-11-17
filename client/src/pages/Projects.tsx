@@ -83,7 +83,7 @@ export const projectsData: Project[] = [
   {
     id: 'business-energy',
     title: 'Business Energy Checkup',
-    category: 'Corporate Design',
+    category: 'Branding & Visual Identity',
     description: 'Corporate identity and marketing materials for energy consulting services.',
     fullDescription: 'Created a professional corporate identity for Business Energy Checkup, focusing on sustainability and efficiency. The design emphasizes trust, expertise, and environmental responsibility through clean, modern aesthetics.',
     image: businessEnergyImage,
