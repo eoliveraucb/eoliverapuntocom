@@ -107,7 +107,7 @@ export const projectsData: Project[] = [
   {
     id: 'cleaning-concepts',
     title: 'Cleaning Concepts',
-    category: 'Brand Identity',
+    category: 'Branding & Visual Identity',
     description: 'Fresh brand identity for professional cleaning services.',
     fullDescription: 'Developed a clean, trustworthy brand identity for Cleaning Concepts that emphasizes professionalism and reliability. The design uses fresh colors and modern typography to differentiate from typical cleaning service branding.',
     image: cleaningImage,
