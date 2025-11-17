@@ -8,7 +8,7 @@ import dsiLogo from '@assets/dsi_1763312718431.png';
 import nyuLawLogo from '@assets/nyu-law_1763312718432.png';
 import pgeLogo from '@assets/pge_1763312718432.png';
 import ucbCatoLogo from '@assets/ucb-cato_1763312718432.png';
-import ucbLogo from '@assets/ucb-logo.png';
+import ucbLogo from '../assets/ucb-logo.png';
 import eastmanLogo from '@assets/eastman_1763312718432.png';
 import germanCorpLogo from '@assets/german-corp_1763312718432.png';
 
