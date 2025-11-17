@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'wouter';
 import { Header } from '../components/portfolio/Header';
@@ -282,9 +281,9 @@ export const miasScreenshots: string[] = [
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  
+
   const categories = ['All', ...Array.from(new Set(projectsData.map(project => project.category)))];
-  
+
   const filteredProjects = selectedCategory === 'All' 
     ? projectsData 
     : projectsData.filter(project => project.category === selectedCategory);
@@ -294,14 +293,14 @@ export default function Projects() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <Header />
-      
+
       {/* Breadcrumb Navigation */}
       <div className="pt-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb className="mb-4" />
         </div>
       </div>
-      
+
       {/* Hero Section with Mobile Scroll Optimization */}
       <section className="pb-12 md:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
@@ -333,7 +332,7 @@ export default function Projects() {
           >
             Featured Projects
           </h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project) => (
               <Link
@@ -370,7 +369,7 @@ export default function Projects() {
                       </span>
                     </div>
                   </div>
-                  
+
                   <div className="p-6">
                     <div className="flex items-center flex-wrap gap-3 mb-3">
                       <div className="flex items-center gap-2">
@@ -403,7 +402,7 @@ export default function Projects() {
                         {project.year}
                       </span>
                     </div>
-                    
+
                     <h3 
                       className="text-xl font-['Fraunces'] font-semibold mb-3"
                       style={{ color: 'var(--text-primary)' }}
@@ -411,7 +410,7 @@ export default function Projects() {
                     >
                       {project.title}
                     </h3>
-                    
+
                     <p 
                       className="text-sm leading-relaxed mb-6"
                       style={{ color: 'var(--text-secondary)' }}
@@ -419,7 +418,7 @@ export default function Projects() {
                     >
                       {project.description}
                     </p>
-                    
+
                     <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
                       <div 
                         className="px-3 py-2 rounded-lg"
@@ -460,7 +459,7 @@ export default function Projects() {
           >
             All Projects
           </h2>
-          
+
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {categories.map((category) => (
@@ -486,7 +485,7 @@ export default function Projects() {
               </button>
             ))}
           </div>
-          
+
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredProjects.map((project) => (
@@ -526,7 +525,7 @@ export default function Projects() {
                       </div>
                     )}
                   </div>
-                  
+
                   <div className="p-5">
                     <div className="flex items-center flex-wrap gap-2 mb-2">
                       <div className="flex items-center gap-2">
@@ -559,7 +558,7 @@ export default function Projects() {
                         {project.year}
                       </span>
                     </div>
-                    
+
                     <h3 
                       className="text-lg font-['Fraunces'] font-semibold mb-2 line-clamp-2"
                       style={{ color: 'var(--text-primary)' }}
@@ -567,7 +566,7 @@ export default function Projects() {
                     >
                       {project.title}
                     </h3>
-                    
+
                     <p 
                       className="text-sm leading-relaxed mb-5 line-clamp-2"
                       style={{ color: 'var(--text-secondary)' }}
@@ -575,7 +574,7 @@ export default function Projects() {
                     >
                       {project.description}
                     </p>
-                    
+
                     <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
                       <div 
                         className="px-2 py-1.5 rounded-lg"
