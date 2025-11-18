@@ -1,0 +1,30 @@
+ARTECNO
+AI as a Social Technology: Amplifying Metacognitive Leadership
+Project Thesis & Critical Inquiry
+This project is not a technological panacea; it is a critical inquiry into the role of AI in complex social and learning systems. Artecno challenges the dominant narrative that AI must replace human educators or simplify learning.
+Instead, my thesis explores AI as a social technology—a tool designed to increase human agency and metacognition. The core motivation is to move beyond passive content delivery and use AI to help users structure their lived experience and implicit cognitive patterns, making self-knowledge the primary output, not just standardized lessons.
+As an AIX Designer, my goal was to build a cohesive ecosystem that deeply understands a user on three critical levels: their subconscious cognitive patterns, their lived autobiographical experiences, and their active learning needs. Artecno achieves this by synthesizing data from three distinct modules into a single, holistic user profile.
+My Role: AIX Designer & Developer
+As the sole creator, I was responsible for the entire project lifecycle, from UX research and the AIX Strategy (defining how AI interacts with human complexity) to front-end development and the design of the non-linear data model.
+Skills:
+AI Experience (AIX) Design & Critical Strategy
+UX/UI Design
+Front-End Development (React/JS)
+Data Visualization
+Prototyping
+Systems Design
+The Artecno Ecosystem: Modules for Self-Interrogation
+1. The "Prólogo" Hub
+The user's journey begins at the central hub. The system's design emphasizes that the user is the architect of their learning, choosing which lens of self-reflection to engage with first.
+2. Module 1: Implicit Cognitive Assessment
+The Question: Can AI detect how a user thinks, not just what they know? Instead of a simple quiz, this tool analyzes the user's implicit behavior (mouse movement, hesitation, decision speed) to build a baseline cognitive and socio-emotional profile, revealing the underlying patterns that govern their decisions. This challenges the simplicity of explicit self-reporting.
+3. Module 2: Leadership Journey Timeline
+The Question: How can we turn subjective memory into objective data for reflection? Users reflect on their past by plotting significant life events. The AI's role here is to act as a structured interviewer, prompting the user to tag each event with specific, granular leadership values, transforming a qualitative autobiography into structured, analyzable data.
+4. The AI Synthesis: Narrative Generation
+This is the core of the AIX. The system cross-references the user's implicit cognitive profile (Module 1) with their explicit timeline data (Module 2) to generate a holistic, narrative-based leadership assessment. The output is a complex, non-deterministic profile designed to prompt further self-questioning, not provide simple answers.
+5. Module 3: Personalized Learning & Lecciones
+The Question: Can learning be focused on closing the gap between who you think you are and how you actually behave? The final module is an AI assistant that provides personalized tutorials ("Lecciones") tailored to the user's unique leadership style and learning needs. Crucially, the lessons are framed around the tension points identified in the Synthesis (e.g., "Your stated value of empathy conflicts with your fast decision speed").
+6. Process: Iteration & Prototyping
+This early prototype of the timeline tool (in light-mode) focused on mapping emotional and value-based tags to life events. This iteration was crucial for refining the data model to ensure the AI could capture nuance and paradox, avoiding overly simplistic or generalized advice.
+Designed and Developed by Edwin Mauricio Olivera, Design for Social Innovation 2025, SVA NYC.
+IRB Compliance Notice: Educational purposes only. All data stored locally.
