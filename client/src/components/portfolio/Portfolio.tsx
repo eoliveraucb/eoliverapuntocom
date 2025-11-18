@@ -14,7 +14,7 @@ import chiliFestImage from '@assets/chili_1750639835233.png';
 import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_1750639835233.png';
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
 import prideImage from '@assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233.png';
-import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
+
 import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
 import futureAnalogImage from '@assets/future-analog-green_1762790846285.png';
 
@@ -116,14 +116,7 @@ const portfolioItems: PortfolioItem[] = [
     image: prideImage,
     icon: Heart
   },
-  {
-    id: 12,
-    projectId: "disaster-cards",
-    title: "Disaster Response Cards",
-    category: "Information Design",
-    image: disasterCardsImage,
-    icon: Award
-  },
+  
   {
     id: 14,
     projectId: "fameli-bolivia",

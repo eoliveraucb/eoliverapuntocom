@@ -21,7 +21,7 @@ import finanzgruppeImage from '@assets/finance-all_1762842992294.png';
 import chiliFestImage from '@assets/chili_1750639835233.png';
 import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_1750639835233.png';
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
-import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
+
 import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
 import rateRaceCards from '@assets/ca9287cd-596c-42ef-aeaf-a806e1d175c5_1763417983959.jpg';
 import rateRacePlaytest from '@assets/99b5b847-0d5a-49a3-9cb4-a1d56dab652c_1763417983959.jpg';
@@ -157,18 +157,7 @@ export const projectsData: Project[] = [
     technologies: ['Educational Design', 'STEAM', 'Print Materials', 'Digital Resources'],
     featured: false
   },
-  {
-    id: 'disaster-cards',
-    title: 'Disaster Response Cards',
-    category: 'Information Design',
-    description: 'Clear information design for emergency response procedures.',
-    fullDescription: 'Designed clear, accessible information cards for disaster response procedures. The design prioritizes legibility and quick comprehension during emergency situations, using universal symbols and clear typography.',
-    image: disasterCardsImage,
-    year: '2021',
-    client: 'Emergency Services',
-    technologies: ['Information Design', 'Emergency Communication', 'Print Design', 'Iconography'],
-    featured: false
-  },
+  
   {
     id: 'rate-race',
     title: '0.3% Rat Race',
