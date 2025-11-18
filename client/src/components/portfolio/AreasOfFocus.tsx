@@ -54,7 +54,7 @@ export function AreasOfFocus() {
 
   const [focusContent, setFocusContent] = useState(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('focus-content');
+      const saved = localStorage.getItem('focus-content-v2');
       return saved || defaultContent;
     }
     return defaultContent;
@@ -65,7 +65,7 @@ export function AreasOfFocus() {
     setIsEditing(false);
 
     if (typeof window !== 'undefined') {
-      localStorage.setItem('focus-content', newContent);
+      localStorage.setItem('focus-content-v2', newContent);
     }
   };
 
