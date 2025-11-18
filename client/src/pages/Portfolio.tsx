@@ -36,46 +36,48 @@ function AreasOfFocus() {
       className="py-20 px-4 sm:px-6 lg:px-8"
       style={{ backgroundColor: 'var(--bg-primary)' }}
     >
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 
-          className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-8"
-          style={{ color: 'var(--text-primary)' }}
-        >
-          Areas of Focus
-        </h2>
-        
-        <p 
-          className="text-lg max-w-3xl mx-auto mb-12 font-['Roboto_Flex']"
-          style={{ color: 'var(--text-secondary)' }}
-        >
-          Key areas where design education intersects with social innovation, technology, and community building.
-        </p>
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 
+            className="text-3xl md:text-4xl font-['Fraunces'] font-bold mb-4"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Areas of Focus
+          </h2>
+          
+          <p 
+            className="text-lg max-w-3xl mx-auto font-['Roboto_Flex']"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            Key areas where design education intersects with social innovation, technology, and community building.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           {focusAreas.map((area, index) => (
             <div 
               key={index}
-              className="p-6 rounded-lg transition-all duration-300 hover:transform hover:-translate-y-2"
+              className="rounded-2xl p-8 transition-all duration-300 hover:transform hover:-translate-y-1"
               style={{ 
                 backgroundColor: 'var(--bg-secondary)',
-                boxShadow: 'var(--shadow)'
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
               }}
             >
               <h3 
-                className="text-xl font-['Fraunces'] font-semibold mb-4"
+                className="text-2xl font-['Fraunces'] font-bold mb-4"
                 style={{ color: 'var(--text-primary)' }}
               >
                 {area.title}
               </h3>
               <p 
-                className="text-sm leading-relaxed font-['Roboto_Flex']"
+                className="text-base leading-relaxed font-['Roboto_Flex']"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 {area.description.split(/\b(hands-on|cross-disciplinary|analog|digital|peer mentorship|community-led|cultural knowledge|AI)\b/gi).map((part, i) => 
                   area.keywords.some(keyword => keyword.toLowerCase() === part.toLowerCase()) ? (
                     <span 
                       key={i}
-                      className="font-medium"
+                      className="font-semibold"
                       style={{ 
                         color: 'var(--accent-primary)'
                       }}
