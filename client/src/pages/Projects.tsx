@@ -23,6 +23,8 @@ import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_17506398
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
 import disasterCardsImage from '@assets/DISASTERCARDS_1750639835233.png';
 import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
+import rateRaceCards from '@assets/ca9287cd-596c-42ef-aeaf-a806e1d175c5_1763417983959.jpg';
+import rateRacePlaytest from '@assets/99b5b847-0d5a-49a3-9cb4-a1d56dab652c_1763417983959.jpg';
 import futureAnalogImage from '@assets/future-analog-green_1762790846285.png';
 import fameliImage from '@assets/fameli-2-large_1762794305680.jpeg';
 import cryptografikImage from '@assets/cryptografik_1762842192091.jpeg';
@@ -169,14 +171,14 @@ export const projectsData: Project[] = [
   },
   {
     id: 'rate-race',
-    title: '3 Percent Rate Race (RPG)',
+    title: '0.3% Rat Race',
     category: 'Game Design',
-    description: 'A hybrid Role Playing Game depicting the complex process of obtaining a Green Card in the USA.',
-    fullDescription: '3% Rat Race is a hybrid Role Playing Game that depicts the complex, stressful, and often bureaucratic process of obtaining a Green Card in the USA. Through playful mechanics and immersive storytelling, the game highlights the hurdles, paperwork, and emotional rollercoaster faced by immigrants on their path to permanent residency. Players take on the roles of immigrants navigating the U.S. immigration system, encountering challenges such as paperwork delays, interviews, legal fees, and random setbacks that mirror real-life bureaucracy and uncertainty. The ultimate goal is to collect your Green Card by overcoming obstacles and outlasting the "rat race" - though the game design makes this nearly impossible, reflecting the harsh reality many face. By turning a stressful journey into an interactive experience, it sparks conversation about policy, perseverance, and the human side of migration.',
+    description: 'An experiential tabletop game surfacing the absurdity and emotional wear of the U.S. Green Card process.',
+    fullDescription: '0.3% Rat Race is an experiential tabletop game that surfaces the absurdity, unpredictability, and emotional wear of the U.S. Green Card process. Designed as a competitive RPG, the experience walks players through two immigration pathways—Employment and Marriage—using deliberately stressful mechanics: timed mini-games, arbitrary "government" rulings, evidence-gathering challenges, and tasks that replicate the waiting, mistakes, and inconsistencies inherent to the system. As players progress, they unfold a board that slowly reveals the U.S. flag, a visual metaphor for how "opportunity" is both deferred and tightly controlled. The emotional arc alternates between humor, frustration, and reflection, mirroring the contradictory nature of the real process. Developed within a Games for Social Impact course at SVA DSI, the game embraces speculative design and critical play, using discomfort as a tool. The mechanics reproduce systemic friction through randomized status cards, absurd tasks, verification mini-games, and scavenger hunts. Rather than offering escape, the game creates a temporary microcosm of a flawed system, prompting conversation and emotional resonance.',
     image: rateRaceImage,
     year: '2023',
-    client: 'Independent Project',
-    technologies: ['Game Design', 'Social Impact Design', 'Educational Design', 'Role Playing Games', 'Immigration Policy', 'Interactive Storytelling'],
+    client: 'SVA DSI - Games for Social Impact',
+    technologies: ['Game Design', 'Social Impact Design', 'Critical Play', 'Speculative Design', 'Immigration Policy', 'Interactive Storytelling'],
     externalLink: 'https://emolivera.cargo.site/3-percent-rate-race',
     featured: true
   },
@@ -245,6 +247,12 @@ export const miasScreenshots: string[] = [
   miasScreen4, // Expected effects information
   miasScreen5, // Contraception options
 ];
+
+// 0.3% Rat Race game images
+export const rateRaceImages = {
+  cards: rateRaceCards,
+  playtest: rateRacePlaytest
+};
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
