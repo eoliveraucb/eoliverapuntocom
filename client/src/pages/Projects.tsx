@@ -285,15 +285,14 @@ export default function Projects() {
             style={{ color: 'var(--text-primary)' }}
             data-testid="text-projects-title"
           >
-            Projects
+            Design Portfolio & Capabilities
           </h1>
           <p 
             className="text-xl max-w-3xl mx-auto font-['Roboto_Flex']"
             style={{ color: 'var(--text-secondary)' }}
             data-testid="text-projects-description"
           >
-            A comprehensive collection of design projects spanning branding, digital interfaces, 
-            educational materials, and social impact initiatives.
+            Currently seeking opportunities in NYC. Over the years, I've gained experience working with clients both large and small, complemented by my hands-on teaching experience as an emerging technology design professor. I bring quick and proficient capabilities in creative ideation, prototyping, and research at the intersection of technology, creativity, and design.
           </p>
         </div>
       </section>
