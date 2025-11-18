@@ -1,0 +1,23 @@
+Co-designing team: Susanti Vijaykumar, Aishwarya Srivastava, Edwin Mauricio Olivera
+ Type: Satirical, Facilitated Game Experience
+ Context: Games for Social Impact, SVA DSI, NY
+0.3% Rat Race is an experiential tabletop game that surfaces the absurdity, unpredictability, and emotional wear of the U.S. Green Card process. Designed as a competitive RPG, the experience walks players through two immigration pathways—Employment and Marriage—using deliberately stressful mechanics: timed mini-games, arbitrary “government” rulings, evidence-gathering challenges, and tasks that replicate the waiting, mistakes, and inconsistencies inherent to the system.
+As players progress, they unfold a board that slowly reveals the U.S. flag, a visual metaphor for how “opportunity” is both deferred and tightly controlled. The emotional arc alternates between humor, frustration, and reflection, mirroring the contradictory nature of the real process.
+Project Focus
+Developed within a Games for Social Impact course, the goal was never entertainment. Instead, the game embraces speculative design and critical play, using discomfort as a tool. During playtests, our biggest success was confirming that the game was not fun—players felt stressed, rushed, confused, and occasionally powerless, which reinforced the project’s intent.
+The mechanics were crafted to reproduce systemic friction:
+Randomized status cards mimic bureaucratic opacity.
+
+
+Absurd tasks highlight the irrational labor immigrants face.
+
+
+Verification mini-games force players to “prove” relationships or skills under time pressure.
+
+
+Scavenger hunts and mismatched information reflect the constant search for missing documents.
+
+
+Rather than offering escape, the game creates a temporary microcosm of a flawed system, prompting conversation and emotional resonance.
+Outcome
+The final experience fosters a shared, embodied understanding of the immigration journey—its unpredictability, its emotional costs, and its structural imbalance. By blending satire with procedural critique, 0.3% Rat Race functions as an accessible entry point for discussing bureaucracy, identity, and empathy through play.
