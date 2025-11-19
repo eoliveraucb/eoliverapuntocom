@@ -39,9 +39,9 @@ import trjcMoodboard from '@assets/截屏2025-01-03+下午10.22.49_1762847734619
 import artecno1 from '@assets/art_1756130258319.png';
 import artecno2 from '@assets/artecno-2_1763435558472.png';
 import artecno3 from '@assets/artecno-3_1763435558469.png';
-import artecnoScreenshot1 from '@assets/Screenshot 2025-11-17 at 10.06.49 PM_1763435574185.png';
-import artecnoScreenshot2 from '@assets/Screenshot 2025-11-17 at 10.07.06 PM_1763435574184.png';
-import artecnoScreenshot3 from '@assets/Screenshot 2025-11-17 at 10.07.21 PM_1763435574183.png';
+import artecnoScreenshot1 from '@assets/Screenshot-2025-11-17-at-10.06.49-PM_1763435574185.png';
+import artecnoScreenshot2 from '@assets/Screenshot-2025-11-17-at-10.07.06-PM_1763435574184.png';
+import artecnoScreenshot3 from '@assets/Screenshot-2025-11-17-at-10.07.21-PM_1763435574183.png';
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
