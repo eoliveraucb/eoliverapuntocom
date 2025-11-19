@@ -1056,6 +1056,60 @@ export default function ProjectDetail() {
                 </div>
               )}
 
+              {/* Special content for Artecno project */}
+              {project.id === 'artecno' && (
+                <div className="mt-12">
+                  <h3 
+                    className="text-2xl font-['Fraunces'] font-semibold mb-6"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Project Gallery
+                  </h3>
+
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={artecno2}
+                        alt="Artecno project visual 1"
+                        className="w-full h-auto"
+                      />
+                    </div>
+
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={artecno3}
+                        alt="Artecno project visual 2"
+                        className="w-full h-auto"
+                      />
+                    </div>
+
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={artecnoScreenshot1}
+                        alt="Artecno screenshot 1"
+                        className="w-full h-auto"
+                      />
+                    </div>
+
+                    <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={artecnoScreenshot2}
+                        alt="Artecno screenshot 2"
+                        className="w-full h-auto"
+                      />
+                    </div>
+
+                    <div className="md:col-span-2 rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
+                      <img
+                        src={artecnoScreenshot3}
+                        alt="Artecno screenshot 3"
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Special content for Future Analog Voices project */}
               {project.id === 'future-analog-voices' && (
                 <div className="mt-12">

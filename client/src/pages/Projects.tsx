@@ -157,6 +157,18 @@ export const projectsData: Project[] = [
     technologies: ['Educational Design', 'STEAM', 'Print Materials', 'Digital Resources'],
     featured: false
   },
+  {
+    id: 'artecno',
+    title: 'Artecno Project',
+    category: 'Educational Design',
+    description: 'A comprehensive educational design project exploring the intersection of art and technology.',
+    fullDescription: 'Artecno is an educational initiative that combines artistic expression with technological innovation. The project creates engaging learning experiences that bridge creative thinking with technical skills, fostering interdisciplinary collaboration and innovation in educational settings.',
+    image: artecno1,
+    year: '2024',
+    client: 'Educational Institution',
+    technologies: ['Educational Design', 'Art & Technology', 'Interactive Learning', 'STEAM Education'],
+    featured: true
+  },
   
   {
     id: 'rate-race',
