@@ -1,4 +1,3 @@
-
 import { useParams } from 'wouter';
 import { Link } from 'wouter';
 import { Header } from '../components/portfolio/Header';
@@ -36,6 +35,12 @@ import trjcPinup from '@assets/branding+-+pin+up_1762847734619.jpeg';
 import trjcProbes from '@assets/2024+Spring+COMM+Design+Final+Presentation+(1)_1762847734617.jpeg';
 import trjcInterviews from '@assets/2024+Spring+COMM+Design+Final+Presentation_1762847734618.jpeg';
 import trjcMoodboard from '@assets/截屏2025-01-03+下午10.22.49_1762847734619.jpeg';
+import artecno1 from '@assets/art_1756130258319.png';
+import artecno2 from '@assets/artecno-2_1763435558472.png';
+import artecno3 from '@assets/artecno-3_1763435558469.png';
+import artecnoScreenshot1 from '@assets/screenshot-2025-11-17-at-10-06-49-pm.png';
+import artecnoScreenshot2 from '@assets/screenshot-2025-11-17-at-10-07-06-pm.png';
+import artecnoScreenshot3 from '@assets/screenshot-2025-11-17-at-10-07-21-pm.png';
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -79,7 +84,7 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <Header />
-      
+
       {/* Hero Section with Mobile Scroll Optimization */}
       <section className="pt-24 md:pt-12 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
@@ -92,7 +97,7 @@ export default function ProjectDetail() {
             <ArrowLeft className="w-4 h-4" />
             Back to Projects
           </Link>
-          
+
           {/* Project Header */}
           <div className="mb-12">
             {project.featured && (
@@ -108,7 +113,7 @@ export default function ProjectDetail() {
                 </span>
               </div>
             )}
-            
+
             <h1 
               id="page-title"
               className="text-3xl md:text-5xl font-['Fraunces'] font-bold mb-4 scroll-mt-20"
@@ -116,28 +121,28 @@ export default function ProjectDetail() {
             >
               {project.title}
             </h1>
-            
+
             <p 
               className="text-xl leading-relaxed mb-6 font-['Roboto_Flex']"
               style={{ color: 'var(--text-secondary)' }}
             >
               {project.description}
             </p>
-            
+
             {/* Project Meta */}
             <div className="flex flex-wrap gap-6 text-sm">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
                 <span style={{ color: 'var(--text-secondary)' }}>{project.year}</span>
               </div>
-              
+
               {project.client && (
                 <div className="flex items-center gap-2">
                   <User className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
                   <span style={{ color: 'var(--text-secondary)' }}>{project.client}</span>
                 </div>
               )}
-              
+
               <div className="flex items-center gap-2">
                 <Wrench className="w-4 h-4" style={{ color: 'var(--accent-primary)' }} />
                 <span style={{ color: 'var(--text-secondary)' }}>{project.category}</span>
@@ -175,7 +180,7 @@ export default function ProjectDetail() {
               >
                 Project Overview
               </h2>
-              
+
               <div 
                 className="prose prose-lg max-w-none"
                 style={{ color: 'var(--text-secondary)' }}
@@ -184,7 +189,7 @@ export default function ProjectDetail() {
                   {project.fullDescription}
                 </p>
               </div>
-              
+
               {/* Special content for crypto project */}
               {project.id === 'crypto-design' && (
                 <div className="mt-12">
@@ -194,7 +199,7 @@ export default function ProjectDetail() {
                   >
                     Project Video
                   </h3>
-                  
+
                   <div className="aspect-video rounded-lg overflow-hidden mb-6">
                     <iframe
                       src="https://www.youtube.com/embed/WD1bq2K42W0"
@@ -204,7 +209,7 @@ export default function ProjectDetail() {
                       allowFullScreen
                     />
                   </div>
-                  
+
                   <div 
                     className="p-6 rounded-lg border-l-4"
                     style={{ 
@@ -231,7 +236,7 @@ export default function ProjectDetail() {
                   >
                     Project Components
                   </h3>
-                  
+
                   <div className="grid md:grid-cols-2 gap-8 mb-8">
                     <div 
                       className="p-6 rounded-lg"
@@ -252,7 +257,7 @@ export default function ProjectDetail() {
                         <li>• <strong>Social Reflection:</strong> In a world marked by war, climate change, and political instability, AI becomes a symbol of hope, fear, and control</li>
                       </ul>
                     </div>
-                    
+
                     <div 
                       className="p-6 rounded-lg"
                       style={{ backgroundColor: 'var(--bg-secondary)' }}
@@ -275,7 +280,7 @@ export default function ProjectDetail() {
                       </ul>
                     </div>
                   </div>
-                  
+
                   <div 
                     className="p-6 rounded-lg border-l-4 mb-6"
                     style={{ 
@@ -309,7 +314,7 @@ export default function ProjectDetail() {
                   >
                     App Screens
                   </h3>
-                  
+
                   {/* Phone Carousel */}
                   <div className="mb-12" data-testid="section-mias-carousel">
                     <PhoneCarousel images={miasScreenshots} autoPlaySpeed={2500} />
@@ -323,7 +328,7 @@ export default function ProjectDetail() {
                   >
                     Informational Videos
                   </h3>
-                  
+
                   <div className="grid md:grid-cols-2 gap-8 mb-8" data-testid="section-mias-videos">
                     <div>
                       <div 
@@ -405,7 +410,7 @@ export default function ProjectDetail() {
                   >
                     Impact & Achievements
                   </h3>
-                  
+
                   <div className="grid md:grid-cols-3 gap-6 mb-8">
                     <div 
                       className="p-6 rounded-lg text-center"
@@ -424,7 +429,7 @@ export default function ProjectDetail() {
                         Active Members
                       </p>
                     </div>
-                    
+
                     <div 
                       className="p-6 rounded-lg text-center"
                       style={{ backgroundColor: 'var(--bg-secondary)' }}
@@ -442,7 +447,7 @@ export default function ProjectDetail() {
                         Years Active
                       </p>
                     </div>
-                    
+
                     <div 
                       className="p-6 rounded-lg text-center"
                       style={{ backgroundColor: 'var(--bg-secondary)' }}
@@ -461,7 +466,7 @@ export default function ProjectDetail() {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div 
                     className="p-6 rounded-lg border-l-4 mb-6"
                     style={{ 
@@ -482,7 +487,7 @@ export default function ProjectDetail() {
                       FAMELI hosted an international convention of families and allies of LGBTQ+ youth in La Paz, Bolivia, solidifying a network of support that transcends borders. This landmark event brought together parents, families, and allies from across Latin America to share experiences, resources, and build lasting connections in support of LGBTQ+ youth.
                     </p>
                   </div>
-                  
+
                   <div 
                     className="p-6 rounded-lg"
                     style={{ backgroundColor: 'var(--bg-secondary)' }}
@@ -500,14 +505,14 @@ export default function ProjectDetail() {
                       FAMELI made history as the first group to participate in the diversity march (pride) in La Paz, Bolivia, marking a significant milestone in the country's journey toward tolerance and diversity. This groundbreaking participation opened doors for greater LGBTQ+ visibility and acceptance in Bolivian society.
                     </p>
                   </div>
-                  
+
                   <h3 
                     className="text-2xl font-['Fraunces'] font-semibold mb-6 mt-12"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     Project Gallery
                   </h3>
-                  
+
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="col-span-2 md:col-span-2 rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
@@ -517,7 +522,7 @@ export default function ProjectDetail() {
                         data-testid="img-fameli-6"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={fameli2}
@@ -526,7 +531,7 @@ export default function ProjectDetail() {
                         data-testid="img-fameli-2"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={fameli1}
@@ -535,7 +540,7 @@ export default function ProjectDetail() {
                         data-testid="img-fameli-1"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={fameli3}
@@ -544,7 +549,7 @@ export default function ProjectDetail() {
                         data-testid="img-fameli-3"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={fameli4}
@@ -553,7 +558,7 @@ export default function ProjectDetail() {
                         data-testid="img-fameli-4"
                       />
                     </div>
-                    
+
                     <div className="col-span-2 md:col-span-1 rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={fameli5}
@@ -579,7 +584,7 @@ export default function ProjectDetail() {
                     >
                       Role & Approach
                     </h3>
-                    
+
                     <ul 
                       className="space-y-4 font-['Roboto_Flex'] text-lg"
                       style={{ color: 'var(--text-secondary)' }}
@@ -591,7 +596,7 @@ export default function ProjectDetail() {
                       <li>• Collaborated on implementation guidelines and analytics touchpoints for monitoring adoption and usability.</li>
                     </ul>
                   </div>
-                  
+
                   <div 
                     className="p-6 rounded-lg mb-8"
                     style={{ backgroundColor: 'var(--bg-secondary)' }}
@@ -602,7 +607,7 @@ export default function ProjectDetail() {
                     >
                       Impact
                     </h3>
-                    
+
                     <p 
                       className="text-lg leading-relaxed font-['Roboto_Flex']"
                       style={{ color: 'var(--text-secondary)' }}
@@ -610,14 +615,14 @@ export default function ProjectDetail() {
                       The product functions as a <strong>replicable model</strong> for financial-literacy tools in emerging markets—adaptable to other Latin American and Global South communities through scalable design systems, localization strategies, and user-validated UX frameworks.
                     </p>
                   </div>
-                  
+
                   <h3 
                     className="text-2xl font-['Fraunces'] font-semibold mb-6"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     Project Gallery
                   </h3>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
@@ -627,7 +632,7 @@ export default function ProjectDetail() {
                         data-testid="img-finance-all"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={financeFin2}
@@ -636,7 +641,7 @@ export default function ProjectDetail() {
                         data-testid="img-finance-fin2"
                       />
                     </div>
-                    
+
                     <div className="md:col-span-2 rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={financeSimuladores}
@@ -662,7 +667,7 @@ export default function ProjectDetail() {
                     >
                       Role & Approach
                     </h3>
-                    
+
                     <ul 
                       className="space-y-4 font-['Roboto_Flex'] text-lg"
                       style={{ color: 'var(--text-secondary)' }}
@@ -672,7 +677,7 @@ export default function ProjectDetail() {
                       <li>• Developed consistent color palettes and graphic standards for both print and digital applications, ensuring cohesive brand expression in product literature, digital catalogs, and architectural presentations.</li>
                       <li>• Created visual guidelines establishing proper use of the logomark and supporting graphic elements across collateral, sample kits, environmental graphics, and online tools.</li>
                     </ul>
-                    
+
                     <p 
                       className="mt-6 text-lg leading-relaxed font-['Roboto_Flex']"
                       style={{ color: 'var(--text-secondary)' }}
@@ -680,14 +685,14 @@ export default function ProjectDetail() {
                       The resulting identity defines Vanceva's brand in global architectural markets, leveraging visual cues of transparency, color layering, and architectural modularity.
                     </p>
                   </div>
-                  
+
                   <h3 
                     className="text-2xl font-['Fraunces'] font-semibold mb-6"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     Project Gallery
                   </h3>
-                  
+
                   <div className="space-y-6 mb-8">
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
@@ -697,7 +702,7 @@ export default function ProjectDetail() {
                         data-testid="img-woca-2"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={woca4}
@@ -706,7 +711,7 @@ export default function ProjectDetail() {
                         data-testid="img-woca-4"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={woca7}
@@ -715,7 +720,7 @@ export default function ProjectDetail() {
                         data-testid="img-woca-7"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <video
                         src={wocaVideo}
@@ -749,7 +754,7 @@ export default function ProjectDetail() {
                     >
                       Role & Approach
                     </h3>
-                    
+
                     <ul 
                       className="space-y-4 font-['Roboto_Flex'] text-lg"
                       style={{ color: 'var(--text-secondary)' }}
@@ -761,7 +766,7 @@ export default function ProjectDetail() {
                       <li>• Developed accessible, human-centered designs that avoid clichéd imagery and emphasize real people and protest movements over abstract technology symbols.</li>
                     </ul>
                   </div>
-                  
+
                   <div 
                     className="p-6 rounded-lg mb-8"
                     style={{ backgroundColor: 'var(--bg-secondary)' }}
@@ -772,7 +777,7 @@ export default function ProjectDetail() {
                     >
                       Research Insights
                     </h3>
-                    
+
                     <p 
                       className="text-lg leading-relaxed font-['Roboto_Flex'] mb-4"
                       style={{ color: 'var(--text-secondary)' }}
@@ -780,14 +785,14 @@ export default function ProjectDetail() {
                       The research revealed critical user needs for personalized content delivery, community connection tools, and simplified visuals using infographics. Stakeholders emphasized the importance of vibrant, human-centered designs that foster collaboration while avoiding overwhelming information, clichéd imagery, and cold technical aesthetics. The brand needed to feel emotionally resonant and distinctly valuable for advancing racial justice in the AI era.
                     </p>
                   </div>
-                  
+
                   <h3 
                     className="text-2xl font-['Fraunces'] font-semibold mb-6"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     Project Gallery
                   </h3>
-                  
+
                   <div className="space-y-6 mb-8">
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
@@ -797,7 +802,7 @@ export default function ProjectDetail() {
                         data-testid="img-trjc-mockup1"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={trjcMockup3}
@@ -806,7 +811,7 @@ export default function ProjectDetail() {
                         data-testid="img-trjc-mockup3"
                       />
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={trjcPinup}
@@ -815,7 +820,7 @@ export default function ProjectDetail() {
                         data-testid="img-trjc-pinup"
                       />
                     </div>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                         <img
@@ -825,7 +830,7 @@ export default function ProjectDetail() {
                           data-testid="img-trjc-probes"
                         />
                       </div>
-                      
+
                       <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                         <img
                           src={trjcInterviews}
@@ -835,7 +840,7 @@ export default function ProjectDetail() {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={trjcMoodboard}
@@ -845,7 +850,7 @@ export default function ProjectDetail() {
                       />
                     </div>
                   </div>
-                  
+
                   <div 
                     className="p-6 rounded-lg mb-8"
                     style={{ backgroundColor: 'var(--bg-secondary)' }}
@@ -856,7 +861,7 @@ export default function ProjectDetail() {
                     >
                       Project Credits
                     </h3>
-                    
+
                     <div 
                       className="font-['Roboto_Flex'] text-lg space-y-4"
                       style={{ color: 'var(--text-secondary)' }}
@@ -865,7 +870,7 @@ export default function ProjectDetail() {
                         <p><strong>Terrance Pitts</strong> - Director</p>
                         <p><strong>Laneen Wells</strong> - Brand Design Consultant</p>
                       </div>
-                      
+
                       <div>
                         <p className="mb-2"><strong>Team:</strong></p>
                         <p>Edwin M. Olivera, Jiayao Li, Aishwarya Srivastava, Xinyu Chen, Yisi Shen</p>
@@ -884,7 +889,7 @@ export default function ProjectDetail() {
                   >
                     Project Video
                   </h3>
-                  
+
                   <div className="aspect-video rounded-lg overflow-hidden mb-12">
                     <iframe
                       src="https://www.youtube.com/embed/mpkrlWBh03E"
@@ -901,7 +906,7 @@ export default function ProjectDetail() {
                   >
                     Game Overview
                   </h3>
-                  
+
                   <div className="grid md:grid-cols-2 gap-8 mb-8">
                     <div 
                       className="p-6 rounded-lg"
@@ -924,7 +929,7 @@ export default function ProjectDetail() {
                         <li>• Game design makes success nearly impossible, reflecting harsh reality</li>
                       </ul>
                     </div>
-                    
+
                     <div 
                       className="p-6 rounded-lg"
                       style={{ backgroundColor: 'var(--bg-secondary)' }}
@@ -953,7 +958,7 @@ export default function ProjectDetail() {
                   >
                     Game Components & Design
                   </h3>
-                  
+
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
@@ -966,7 +971,7 @@ export default function ProjectDetail() {
                         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>The main title design and branding</p>
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={rateRaceTasks}
@@ -978,7 +983,7 @@ export default function ProjectDetail() {
                         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Immigration tasks and challenges players face</p>
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={rateRaceMotif}
@@ -990,7 +995,7 @@ export default function ProjectDetail() {
                         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Design patterns and visual elements</p>
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={rateRaceMarriage}
@@ -1002,7 +1007,7 @@ export default function ProjectDetail() {
                         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Special event cards related to marriage immigration</p>
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={rateRaceSideBySide}
@@ -1014,7 +1019,7 @@ export default function ProjectDetail() {
                         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Side-by-side comparison of game components</p>
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={rateRacePictures}
@@ -1027,7 +1032,7 @@ export default function ProjectDetail() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div 
                     className="p-6 rounded-lg border-l-4 mb-6"
                     style={{ 
@@ -1060,7 +1065,7 @@ export default function ProjectDetail() {
                   >
                     Project Visuals
                   </h3>
-                  
+
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
@@ -1073,7 +1078,7 @@ export default function ProjectDetail() {
                         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Hand-drawn design explorations and concepts</p>
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={futureAnalogGreen}
@@ -1085,7 +1090,7 @@ export default function ProjectDetail() {
                         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Creative strategy and media exploration</p>
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={futureAnalog}
@@ -1097,7 +1102,7 @@ export default function ProjectDetail() {
                         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Physical prototypes and cassette designs</p>
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={futureRace}
@@ -1109,7 +1114,7 @@ export default function ProjectDetail() {
                         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Social themes and equity exploration</p>
                       </div>
                     </div>
-                    
+
                     <div className="rounded-lg overflow-hidden" style={{ boxShadow: 'var(--shadow)' }}>
                       <img
                         src={futuresFirsts}
@@ -1122,7 +1127,7 @@ export default function ProjectDetail() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div 
                     className="p-6 rounded-lg border-l-4 mb-6"
                     style={{ 
@@ -1147,7 +1152,7 @@ export default function ProjectDetail() {
                 </div>
               )}
             </div>
-            
+
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div 
@@ -1160,7 +1165,7 @@ export default function ProjectDetail() {
                 >
                   Project Details
                 </h3>
-                
+
                 <div className="space-y-4">
                   <div>
                     <h4 
@@ -1171,7 +1176,7 @@ export default function ProjectDetail() {
                     </h4>
                     <p style={{ color: 'var(--text-secondary)' }}>{project.year}</p>
                   </div>
-                  
+
                   <div>
                     <h4 
                       className="font-medium mb-2"
@@ -1181,7 +1186,7 @@ export default function ProjectDetail() {
                     </h4>
                     <p style={{ color: 'var(--text-secondary)' }}>{project.category}</p>
                   </div>
-                  
+
                   {project.client && (
                     <div>
                       <h4 
@@ -1193,7 +1198,7 @@ export default function ProjectDetail() {
                       <p style={{ color: 'var(--text-secondary)' }}>{project.client}</p>
                     </div>
                   )}
-                  
+
                   {project.technologies && (
                     <div>
                       <h4 
@@ -1218,7 +1223,7 @@ export default function ProjectDetail() {
                       </div>
                     </div>
                   )}
-                  
+
                   {project.externalLink && (
                     <div className="pt-4">
                       <a
@@ -1255,7 +1260,7 @@ export default function ProjectDetail() {
           >
             Related Projects
           </h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projectsData
               .filter(p => p.id !== project.id && (p.category === project.category || p.featured))
@@ -1278,7 +1283,7 @@ export default function ProjectDetail() {
                       alt={relatedProject.title}
                       className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    
+
                     <div className="p-4">
                       <h3 
                         className="text-lg font-['Fraunces'] font-semibold mb-2"
@@ -1286,7 +1291,7 @@ export default function ProjectDetail() {
                       >
                         {relatedProject.title}
                       </h3>
-                      
+
                       <p 
                         className="text-sm"
                         style={{ color: 'var(--accent-primary)' }}
