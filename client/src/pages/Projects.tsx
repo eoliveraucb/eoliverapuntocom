@@ -21,7 +21,6 @@ import finanzgruppeImage from '@assets/finance-all_1762842992294.png';
 import chiliFestImage from '@assets/chili_1750639835233.png';
 import journeyMapImage from '@assets/Screenshot-2025-02-05-at-6.49.02PM_1750639835233.png';
 import arteImage from '@assets/Untitled-5_1750639835233.jpg';
-import artecnoImage from '@assets/artecno-2_1763435558472.png';
 
 import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
 import rateRaceCards from '@assets/ca9287cd-596c-42ef-aeaf-a806e1d175c5_1763417983959.jpg';
@@ -95,7 +94,7 @@ export const projectsData: Project[] = [
     technologies: ['Corporate Identity', 'Marketing Materials', 'Brand Guidelines'],
     featured: false
   },
-
+  
   {
     id: 'cleaning-concepts',
     title: 'Cleaning Concepts',
@@ -108,7 +107,7 @@ export const projectsData: Project[] = [
     technologies: ['Brand Identity', 'Logo Design', 'Marketing Collateral'],
     featured: false
   },
-
+  
   {
     id: 'finanzgruppe',
     title: 'Financial Literacy Calculator',
@@ -145,20 +144,20 @@ export const projectsData: Project[] = [
     technologies: ['Brand Identity', 'UX Research', 'Visual Design', 'Community Engagement'],
     featured: true
   },
-
+  
   {
     id: 'arte-tecnologia',
     title: 'Arte + Tecnología',
     category: 'Educational Design',
     description: 'Educational materials bridging art and technology.',
-    fullDescription: 'Designed educational materials for Arte + Tecnología program, creating visual resources that make technology accessible through artistic expression. The design emphasizes creativity andinnovation in STEAM education.',
+    fullDescription: 'Designed educational materials for Arte + Tecnología program, creating visual resources that make technology accessible through artistic expression. The design emphasizes creativity and innovation in STEAM education.',
     image: arteImage,
     year: '2020',
     client: 'Educational Institution',
     technologies: ['Educational Design', 'STEAM', 'Print Materials', 'Digital Resources'],
     featured: false
   },
-
+  
   {
     id: 'rate-race',
     title: '0.3% Rat Race',
@@ -208,19 +207,6 @@ export const projectsData: Project[] = [
     client: 'Independent Project',
     technologies: ['Mobile App Design', 'UX/UI', 'Healthcare', 'Accessibility', 'Spanish Localization', 'Information Architecture'],
     featured: true
-  },
-  {
-    id: 'artecno',
-    title: 'ARTECNO',
-    category: 'AI-Assisted Learning',
-    description: 'An AI-powered platform for metacognitive leadership development.',
-    fullDescription: 'ARTECNO is a cutting-edge AI-assisted learning platform designed to foster metacognitive leadership skills. It utilizes advanced artificial intelligence to provide personalized learning paths, real-time feedback, and adaptive challenges for leaders. The platform aims to enhance self-awareness, strategic thinking, and decision-making capabilities through a blend of AI-driven insights and expert-curated content.',
-    image: artecnoImage,
-    year: '2024',
-    client: 'ARTECNO Initiative',
-    technologies: ['AI', 'Machine Learning', 'EdTech', 'Leadership Development', 'Metacognition', 'Personalized Learning'],
-    externalLink: 'https://example.com/artecno',
-    featured: true
   }
 ];
 
@@ -235,7 +221,6 @@ export const projectLogoMap: Record<string, string> = {
   'world-of-color-awards': eastmanLogo,
   'finanzgruppe': germanCorpLogo,
   'mias-reproductive-health': ipasLogo, // IPAS Latinoamérica y el Caribe logo
-  'artecno': dsiLogo, // Placeholder, assuming DSI logo for ARTECNO
 };
 
 // Helper function to get logo for a project

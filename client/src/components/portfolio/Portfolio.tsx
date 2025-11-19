@@ -17,7 +17,6 @@ import prideImage from '@assets/Screenshot-2025-02-18-at-3.24.00PM_1750639835233
 
 import rateRaceImage from '@assets/ratrace-cover_1762790837005.png';
 import futureAnalogImage from '@assets/future-analog-green_1762790846285.png';
-import artecnoImage from '@assets/artecno-2_1763435558472.png';
 
 interface PortfolioItem {
   id: number;
@@ -132,14 +131,6 @@ const portfolioItems: PortfolioItem[] = [
     title: "Future Analog Voices",
     category: "Product Design",
     image: futureAnalogImage,
-    icon: Lightbulb
-  },
-  {
-    id: 16,
-    projectId: "artecno",
-    title: "ARTECNO: AI for Metacognitive Leadership",
-    category: "AI Experience Design",
-    image: artecnoImage,
     icon: Lightbulb
   }
 ];
